@@ -5,50 +5,93 @@ var expect = require('expect.js');
 
 
 describe('Post a new match', function(){
-  it("should return 201 success", function(done){
+  // it("should return 201 success", function(done){
+  // 	request
+  // 		.post('http://localhost:3000/match')
+  // 		.send({
+		//     "matchId": 1,
+		//     "match": "TIL - VIF",
+		//     "attacks": [
+		//         {
+		//             "time": 20,
+		//             "passes": [
+		//                 {
+		//                     "fromPlayer": 4,
+		//                     "toPlayer": 10,
+		//                     "fromPos": 19,
+		//                     "toPos": 20,
+		//                     "type": "PASS"
+		//                 },
+		//                 {
+		//                     "fromPlayer": 10,
+		//                     "toPlayer": 15,
+		//                     "fromPos": 19,
+		//                     "toPos": 20,
+		//                     "type": "PASS"
+		//                 },
+		//                 {
+		//                     "fromPlayer": 15,
+		//                     "toPlayer": 19,
+		//                     "fromPos": 27,
+		//                     "toPos": 32,
+		//                     "type": "SHOTMISS"
+		//                 }
+		//             ]
+		//         }
+		//     ]
+		// })
+		// .set('Accept', 'application/json')
+  // 		.end(function(res){
+		// 	console.log(res.body);
+	 //    	expect(res).to.exist;
+		// 	expect(res.status).to.equal(201);
+		// 	done();
+  // 		});
+  // 	});
+
+	it("should return 201 success", function(done){
   	request
-  		.post('http://localhost:3000/match')
+  		.post('http://localhost:3000/match/' + 1 + '/attack')
   		.send({
-		    "matchId": 1,
-		    "match": "TIL - VIF",
-		    "attacks": [
-		        {
-		            "time": 9,
-		            "passes": [
-		                {
-		                    "fromPlayer": 4,
-		                    "toPlayer": 10,
-		                    "fromPos": 19,
-		                    "toPos": 20,
-		                    "type": "PASS"
-		                },
-		                {
-		                    "fromPlayer": 10,
-		                    "toPlayer": 15,
-		                    "fromPos": 19,
-		                    "toPos": 20,
-		                    "type": "PASS"
-		                },
-		                {
-		                    "fromPlayer": 15,
-		                    "toPlayer": 19,
-		                    "fromPos": 27,
-		                    "toPos": 32,
-		                    "type": "SHOTMISS"
-		                }
-		            ]
-		        }
-		    ]
+		    "time": 30,
+	        "passes": [
+	            {
+	                "fromPlayer": 4,
+	                "toPlayer": 10,
+	                "fromPos": 19,
+	                "toPos": 20,
+	                "type": "PASS"
+	            },
+	            {
+	                "fromPlayer": 10,
+	                "toPlayer": 15,
+	                "fromPos": 19,
+	                "toPos": 20,
+	                "type": "PASS"
+	            },
+	            {
+	                "fromPlayer": 15,
+	                "toPlayer": 19,
+	                "fromPos": 27,
+	                "toPos": 32,
+	                "type": "SHOTMISS"
+	            }
+	        ]
 		})
 		.set('Accept', 'application/json')
   		.end(function(res){
-		console.log(res.body);
-    	expect(res).to.exist;
-		expect(res.status).to.equal(201);
-		done();
+			console.log(res.body);
+	    	expect(res).to.exist;
+			expect(res.status).to.equal(201);
+			done();
+  		});
   	});
-  });
+
+
 });
+
+
+
 
 
 // describe('Get all matches', function(){
