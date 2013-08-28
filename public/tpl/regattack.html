@@ -1,0 +1,53 @@
+    <div class="container">
+      <div class="jumbotron">
+        <h2>  Team Info <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#teaminfo">
+          Collapse this section
+        </button></h2>
+
+        <div id="teaminfo" class="collapse in">
+        <form role="form-horizontal">
+          <div class="form-group">
+            <select class="form-control">
+             <option value="volvo">TIL - Vaalerenga</option>
+              <option value="saab">TIL - Sandnes Ulf</option>
+              <option value="mercedes">TIL - Rosenborg</option>
+              <option value="audi">Besiktas - TIL</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="jumbotron">
+        <h2> Attack attempt <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#attackattempts">
+          Collapse this section
+        </button></h2>
+        <div id="attackattempts" class="collapse in">
+          <div class="passes">
+            <div class="inputform">
+              <h3> Registrate pass </h3>
+              <form action="postRegAttackForm">
+                Pass from player (number):<input type="number" name="fname"> Area on pitch: <input type="text" name="fname"><br>
+                To player (number): <input type="number" name="lname"> Area on pitch: <input type="text" name="fname"><br>
+              </form>
+            </div>
+          </div>
+          
+          <button type="submit" onclick="postNewMatchData()" class="btn btn-primary">
+            <i class="icon-user icon-white"></i> Submit
+          </button>
+
+          <button type="button" onclick="addNewPass()" class="btn btn-primary">
+            <i class="icon-user icon-white"></i> New pass
+          </button>
+        </div>
+      </div>
+    </div>

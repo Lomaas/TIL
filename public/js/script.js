@@ -11,12 +11,36 @@ var postNewMatchData = function(){
 	
 }
 
+Raphael.fn.arrow = function(x1, y1, x2, y2, size) {
+	var angle = Raphael.angle(x1, y1, x2, y2);
+	var a45   = Raphael.rad(angle-45);
+	var a45m  = Raphael.rad(angle+45);
+	var a135  = Raphael.rad(angle-135);
+	var a135m = Raphael.rad(angle+135);
+	var x1a = x1 + Math.cos(a135) * size;
+	var y1a = y1 + Math.sin(a135) * size;
+	var x1b = x1 + Math.cos(a135m) * size;
+	var y1b = y1 + Math.sin(a135m) * size;
+	var x2a = x2 + Math.cos(a45) * size;
+	var y2a = y2 + Math.sin(a45) * size;
+	var x2b = x2 + Math.cos(a45m) * size;
+	var y2b = y2 + Math.sin(a45m) * size;
+	return this.path(
+	// "M"+x1+" "+y1+"L"+x1a+" "+y1a+
+	// "M"+x1+" "+y1+"L"+x1b+" "+y1b+
+	"M"+x1+" "+y1+"L"+x2+" "+y2+
+	"M"+x2+" "+y2+"L"+x2a+" "+y2a+
+	"M"+x2+" "+y2+"L"+x2b+" "+y2b
+	);
+};
+
+
 // Creates canvas
 var paper = Raphael(10, 50, 1091, 759);
 var pitchImage = paper.image('/img/pitch.png', 0, 0, 1091, 759);
 
 jQuery.ajax("matches/1/attack/9", {
-
+	method : "GET"
 });
 
 var numPlayers = 3;
@@ -77,8 +101,9 @@ var players = [
 ]
 
 var lines = [
-	{type : 'path'
-}
+	{
+		type : 'path'
+	}
 ]
 
 //paper.path("M 250 250 l 0 -50 l -50 0 l 0 -50 l -50 0 l 0 50 l -50 0 l 0 50 z");
@@ -95,6 +120,9 @@ for(counter = 0; counter < numPlayers; counter++){
 
 		console.log("M " + posX.toString()  + " " + posY.toString()  + " l " + nextCoordX.toString()  + " " + nextCoordY.toString())
 
-		var c = paper.path("M " + posX.toString()  + " " + posY.toString()  + " l " + nextCoordX.toString()  + " " + nextCoordY.toString());
+		//var c = paper.path("M " + posX.toString()  + " " + posY.toString()  + " l " + nextCoordX.toString()  + " " + nextCoordY.toString());
+		paper.arrow(posX, posY, players[counter + 1].cx, players[counter + 1].cy, 20);
 	}
 }
+
+
