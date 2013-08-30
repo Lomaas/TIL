@@ -1,32 +1,30 @@
  // This view turns a Service model into HTML. Will create LI elements.
 window.MatchView = Backbone.View.extend({
-    el : $('#page'),
+    el : $('#matches'),
  
-    initialize:function () {
+    initialize: function () {
         console.log("init matchView");
         this.model.bind("reset", this.render, this);
     },
  
-    render:function (eventName) {
-        _.each(this.model.models, function (match) {
-            console.log(match);
+    render: function (eventName) {
+        var template = _.template( $("#search_template").html(), {} );
+        // Load the compiled HTML into the Backbone "el"
+        this.$el.html( template );
+
+        console.log(this.model.toJSON());
+
+        // this.model.models.forEach(match){
+        //     console.log(match);
+        // }
+        // console.log("are you here");
+        // _.each(this.model, function (match) {
+        //     console.log("inside forLoop");
+
+        //     console.log(match);
             
-            //$(this.el).append(new MatchView({model:match}).render().el);
-        }, this);
+        //     //$(this.el).append(new MatchView({model:match}).render().el);
+        // }, this);
         return this;
-    }
-});
-
-window.ValueView = Backbone.View.extend({
-    initialize: function(args) {
-        console.log("Init ValueView");
-        _.bindAll(this, 'updateTitle');
-    },
-
-    updateTitle: function() {
-        console.log("Update Title");
-        var value = this.model.get('title');
-        console.log("Value %s", value);
-        $("#test").html(value.toString());
     }
 });

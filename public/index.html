@@ -12,13 +12,26 @@
     <![endif]-->
   </head>
   <body>
+
+    <script type="text/template" id="search_template">
+      <label>Search</label>
+      <input type="text" id="search_input" />
+      <input type="button" id="search_button" value="Search" />
+
+      var list = "<% _.each(matches, function(matchName) { %> <li><%= matchName %></li> <% }); %>";
+
+    </script>
+
+    <script type="text/template" id="">
+      <label>Age:</label>
+      <input type="text" name="age" value="<%= age %>">
+    </script>
+    <div id="form"></div>
+
     <div class="container">
-      <div class="page">..
+      <div class="page" id="matches">..</div>
 
-
-      </div>
-
-      <div id="test" class="test"> </div>
+      <div id="test"> </div>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

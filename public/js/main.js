@@ -12,8 +12,11 @@ window.AppRouter = Backbone.Router.extend({
 	home : function(){
 		this.matchList = new MatchListCollection();
 		this.matchView = new MatchView({model: this.matchList});
-		this.matchList.fetch();
-		$('#page').html(this.matchView.render().el);
+		this.matchList.reset();
+
+		console.log(this.matchList.toJSON());
+
+		this.matchView.render();
 	}
 });
 
