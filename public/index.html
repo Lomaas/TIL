@@ -1,52 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Attack registration</title>
+    <title>Football Analysis Tool</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="../../assets/js/html5shiv.js"></script>
-      <script src="../../assets/js/respond.min.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
   </head>
   <body>
+    <div id="header" class="page-header">
 
-    <script type="text/template" id="search_template">
-      <label>Search</label>
-      <input type="text" id="search_input" />
-      <input type="button" id="search_button" value="Search" />
-
-      var list = "<% _.each(matches, function(matchName) { %> <li><%= matchName %></li> <% }); %>";
-
-    </script>
-
-    <script type="text/template" id="">
-      <label>Age:</label>
-      <input type="text" name="age" value="<%= age %>">
-    </script>
-    <div id="form"></div>
-
-    <div class="container">
-      <div class="page" id="matches">..</div>
-
-      <div id="test"> </div>
     </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <div class="jumbotron">
+      <div class="container"id="matches" />
+    </div>
+
+
+    <div class="container" id="match" />
+
+
     <script src="js/lib/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/lib/bootstrap.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="js/lib/underscore.js"></script>
     <script src="js/lib/backbone.js"></script>
     <script src="js/lib/raphael.js"></script>
+    <script src="js/lib/mustache.js"></script>
     <script src="js/utils.js"> </script>
     <script src="js/models/match.js"></script>
-    <script src="js/views/matchlist.js"></script>
+    <script src="js/views/HomeView.js"></script>
+    <script src="js/views/MatchView.js"></script>
+    <script src="js/views/HeaderView.js"></script>
     <script src="js/main.js"></script>
-
-    
-
   </body>
 </html>

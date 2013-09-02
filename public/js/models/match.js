@@ -1,10 +1,5 @@
 
 window.MatchModel = Backbone.Model.extend({
-    // defaults:{
-    //     title: 'Test match',
-    //     matchId : 1,
-
-    // },
     urlRoot : 'match',
 
     getAttacks: function(){
@@ -12,11 +7,18 @@ window.MatchModel = Backbone.Model.extend({
     }
 });
 
-// Create a collection of services
 window.MatchListCollection = Backbone.Collection.extend({
-
-    // Will hold objects of the Match model
     model: MatchModel,
-    url:"../matches"
+    url: "matches",
+
+    parse : function(resp) {
+        var listOfModels = []
+        _.each(resp, function(match){
+            var tmp = new MatchModel(match)
+            listOfModels.push(tmp);
+        });
+        // console.log(listOfModels);
+        return listOfModels;
+    }
 
 });

@@ -47,10 +47,22 @@ exports.getAllMatches = function (req, res) {
 
 exports.getPassesForAttack = function (req, res) {
     Match.findOne({ 'attacks.time': 9 }, 'passes time', function (err, passes) {
-    if (err) return handleError(err);
-        console.log('Passes %j', passes) // Space Ghost is a talk show host.
+        if (err) return handleError(err);
+            console.log('Passes %j', passes)
     });
 };
+
+exports.getMatch = function(req, res){
+    mId = parseInt(req.params.matchId);
+
+    Match.findOne({ 'matchId': mId }, function (err, match) {
+        if (err) return handleError(err);
+        
+        console.log('Match %j', match);
+        res.jsonp(match)
+    });
+
+}
 
 exports.postNewMatch = function (req, res) {
     console.log("New match");

@@ -11,16 +11,22 @@ window.AppRouter = Backbone.Router.extend({
 
 	home : function(){
 		this.matchList = new MatchListCollection();
-		this.matchView = new MatchView({model: this.matchList});
-		this.matchList.reset();
+		this.homeView = new HomeView({model: this.matchList});
+        console.log(this.matchList.toJSON());
+        //this.headerView = new HeaderView();
+	},
+	matchDetails : function(matchId){
+		console.log("Changing View, match/%s", matchId)
+		if(this.homeView != undefined)	this.homeView.remove();
 
-		console.log(this.matchList.toJSON());
-
-		this.matchView.render();
+		var matchModel = new MatchModel({id : matchId});
+		this.matchView = new MatchView({model: matchModel});
 	}
 });
 
-tpl.loadTemplates(['match-list-item'], function() {
-    app = new AppRouter();
-    Backbone.history.start();
+
+templateLoader.load(["HomeView", "HeaderView", "MatchView"],
+    function () {
+        app = new AppRouter();
+        Backbone.history.start();
 });
