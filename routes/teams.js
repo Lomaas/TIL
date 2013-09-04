@@ -1,23 +1,5 @@
 var teamsCollection = "teams"
 
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-mongoose.connect('mongodb://localhost:27017/til');
-
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function callback () {
-    console.log("Yay open db teams collection")
-});
-
-var TeamSchema = new Schema({
-    name : String
-});
-
-
-var Team = mongoose.model('Teams', TeamSchema);
-
-
 exports.getAllTeams = function (req, res) {
     console.log("Find all Teams");
 

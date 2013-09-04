@@ -1,55 +1,5 @@
 var matchCollection = "matches"
 
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-mongoose.connect('mongodb://localhost:27017/til');
-
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function callback () {
-    console.log("Yay open db")
-});
-
-var PassSchema = new Schema({
-    fromPlayer : Number, 
-    toPlayer : Number,
-    fromPos : Number, 
-    toPos : Number, 
-    action : String
-});
-
-
-var AttackSchema = new Schema({
-    time : Number, 
-    touch: Number,
-    breakthrough: String,
-    breakthroughPlayer: String,
-    typeOfAttack: String,
-    attackStart : {
-        "pos": Number,
-        "type": String,
-        "player": Number
-    },
-    passes: [PassSchema],
-    finish : {
-        "player": Number,
-        "fromPos": Number,
-        "action": String
-    }
-});
-
-var MatchSchema = new Schema({
-    matchId : Number,
-    match : String,
-    score: String,
-    attacks : [AttackSchema]
-});
-
-// Instantiate models
-var Match = mongoose.model('Match', MatchSchema);
-var Attack = mongoose.model('Attack', AttackSchema);
-var Pass = mongoose.model('Pass', PassSchema);
-
 exports.getAllMatches = function (req, res) {
     console.log("Find all matches");
 
@@ -117,3 +67,18 @@ exports.deleteMatch = function (req, res) {
         res.send(200, {"msg" : "success"});
     });
 };
+
+
+// Team STATS
+
+// exports.getTeamStats = function (req, res) {
+//     teamname = parseInt(req.params.name);
+
+//     Match.find({'hometeam' : teamname, 'awayteam' : teamname}function (err, matches) {
+//         if (err) res.send(400, {"msg" : "someting wrong happend during query executing"});
+        
+//         console.log("Matches: %j", teams);
+//         res.jsonp(teams);
+//     });
+// };
+

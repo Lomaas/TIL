@@ -1,16 +1,14 @@
+<div class="container">
+  <h2>Latest matches</h2>
 
-  <div class="container" id="matches"></div>
-    <h2>Latest matches</h2>
- 
-    {{#matches}}
-
+  {{#matches}}
     <div class="panel panel-default" id="panel-matches">
       <div class="panel-heading">
         <div class="panel-title"> 
           <b><a href="#" data-id="{{matchId}}">{{name}}</a></b>
-
         </div>
       </div>
+      
       <div class="panel-body">
         <ul> 
           <li> Score: {{score}} </li>
@@ -20,6 +18,5 @@
       </div>
     </div>
 
- 
-  </div>
-  {{/matches}}
+{{/matches}}
+</div>

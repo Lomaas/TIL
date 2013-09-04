@@ -13,7 +13,6 @@ window.AppRouter = Backbone.Router.extend({
 	},
 
 	home : function(){
-		alert("in home")
 		this.matchList = new MatchListCollection();
 		this.homeView = new HomeView({model: this.matchList});
 		console.log(this.matchList.toJSON());
@@ -33,7 +32,7 @@ window.AppRouter = Backbone.Router.extend({
 	team : function(teamName){
 		alert("inside team router" + teamName);
 		var teamModel = new TeamModel({id : teamName});
-		this.teamView = new TeamView({});
+		this.teamView = new TeamView({model : teamModel});
 		this.setNewView(this.teamView);
 	},
 	
@@ -41,13 +40,11 @@ window.AppRouter = Backbone.Router.extend({
 	    //Close the current view
 	    console.log(this.currentView);
 	    if (this.currentView) {
-	    	console.log("not here")
-	        this.currentView.remove();
+	        $(this.currentView.el).empty();
+			this.currentView.unbind();
 	    }
 
-	    //Set the current view
 	    this.currentView = view;
-
 	    return this;
 	}
 

@@ -42,7 +42,6 @@ window.HomeView = Backbone.View.extend({
 
     onClickPanelItem : function(elem){
         console.log(elem);
-
     },
     clicked : function(e){
         e.preventDefault();
