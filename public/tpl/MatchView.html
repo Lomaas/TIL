@@ -1,11 +1,35 @@
+<style>
+	div.test
+	{
+		width:1091px;
+	}
+</style>
 
-<div class="page-header">
-  <h1>{{match}}</h1>
+<h1>{{match}}</h1>
+<div class="panel panel-default">
+  <div class="panel-body" id="stats">
+    <ul>
+    	<li><b>Chances registrated: 5: </b>
+    		<ul>	
+    			<li>10 min. Andersen - breakdown </li>
+    			<li>19 min. Ondrasek -breakdown </li>
+    			<li>49 min. Beniksen - dødball </li>
+    			<li>55 min. Drage - etablert</li>
+    			<li>85 min. Koppinen - dødball </li>
+    		</ul>
+	 	</li>
+    	<li> <b>Hvilke soner stopper potensielle angrep i </b></li>
+    	<li> <b>Hvilke ballvinninger fører til mål og hvor på banen</b></li>
+    	<li> <b>Breaking point for angrepet - noen blir dratt av/avgjørende pasning mellomrommet/bakrom (sone)</b></li>
+    	<li> <b> Hvilke spillere mister ballen og sone</b></li>
+    <ul>
+  </div>
 </div>
 
-
-<div id="picturePanel" />
-
+<div class="panel panel-default">
+  <div class="panel-body" id="work">
+  </div>
+</div>
 
 
 <script>
@@ -39,10 +63,11 @@ Raphael.fn.arrow = function(x1, y1, x2, y2, size) {
 	);
 };
 
-var pictureSizeX = 700;
-var pictureSizeY = 500;
+var pictureSizeX = 1091; // 1091
+var pictureSizeY = 759;	// 759
+
 // Creates canvas
-var paper = Raphael($("#picturePanel"), 1091, 759);
+var paper = Raphael('work', "100%", "100%");
 var pitchImage = paper.image('/img/pitch.png', 0, 0, pictureSizeX, pictureSizeY);
 
 
@@ -56,23 +81,51 @@ var sonePlayer3 = 17;
 
 
 var zonesDictX = {
-	10 : 3,
-	7 : 2,
-	4 : 1,
 	1 : 0,
+	2 : 0,
+	3 : 0,
+	4 : 1,
+	5 : 1,
+	6 : 1,
+	7 : 2,
+	8 : 2,
+	9 : 2,
+	10 : 3,
+	11 : 3,
+	12 : 3,
+	13 : 4,
 	14 : 4,
-	17 : 5
+	15 : 4,
+	16 : 5,
+	17 : 5,
+	18 : 5
 }
 
 var zonesDictY = {
+	1 : 0,
+	2 : 1,
+	3 : 2,
+	4 : 0,
+	5 : 1,
+	6 : 2,
+	7 : 0,
+	8 : 1,
+	9 : 2,
 	10 : 0,
+	11 : 1,
+	12 : 2,
+	13 : 3,
+	14 : 1,
+	15 : 2,
+	16 : 0,
 	17 : 1,
-	14 : 1
+	18 : 2
 }
 
 var zonesX = 6;
 var zonesY = 3;
 
+// console.log({{passes}})
 
 var players = [
 	{
@@ -107,23 +160,78 @@ var lines = [
 	}
 ]
 
-//paper.path("M 250 250 l 0 -50 l -50 0 l 0 -50 l -50 0 l 0 50 l -50 0 l 0 50 z");
-for(counter = 0; counter < numPlayers; counter++){
-	paper.add(players)
+function PassClass(cx, cy, playerNum){
+	this.type = "circle";
+	this.cx = cx;
+	this.cy= cy;
+	this.r = 10;
+	this.fill= '#f00';
+	this.stroke= "#fff";
+	this.playerNum = playerNum;
+};
 
-	if(counter + 1 != numPlayers){
-		console.log(counter)
-		console.log(players[counter]);
-		posX = players[counter].cx;
-		posY = players[counter].cy;
-		nextCoordX = players[counter + 1].cx - posX; 
-		nextCoordY = players[counter + 1].cy - posY;
+pass = new PassClass();
 
-		console.log("M " + posX.toString()  + " " + posY.toString()  + " l " + nextCoordX.toString()  + " " + nextCoordY.toString())
+var players = [];
+var allAttacks = [];
 
-		//var c = paper.path("M " + posX.toString()  + " " + posY.toString()  + " l " + nextCoordX.toString()  + " " + nextCoordY.toString());
-		paper.arrow(posX, posY, players[counter + 1].cx, players[counter + 1].cy, 20);
+//For each attack, plot each pass and edged between them
+{{ #matchObj.attacks }}
+	var passesForAttack = [];
+
+	{{#passes}}
+
+		var fromPos = parseInt({{fromPos}});
+		var toPos = parseInt({{toPos}});
+
+		var passFrom = new PassClass(pictureSizeX/zonesX * zonesDictX[fromPos] + adjustment,
+			pictureSizeY/zonesY * zonesDictY[fromPos] + adjustment,
+			{{fromPlayer}});
+	 	
+		var passTo = new PassClass(pictureSizeX/zonesX * zonesDictX[toPos] + adjustment,
+			pictureSizeY/zonesY * zonesDictY[toPos] + adjustment,
+			{{toPlayer}});
+
+		passesForAttack.push([passFrom, passTo]);
+		
+		players.push(passFrom);
+		players.push(passTo);
+
+	{{/passes}}
+	allAttacks.push(passesForAttack)
+{{/matchObj.attacks}}
+
+console.log(allAttacks);
+
+/** Add players to canvas **/
+paper.add(players)
+
+var previousPlayer= null;
+_.each(allAttacks, function(passes){
+	console.log(passes)
+	for(counter = 0; counter < passes.length; counter++){
+		console.log(passes[counter][0]);
+		var tmpPass = passes[counter];
+		var passingPlayer = tmpPass[0];
+		var recevingPlayer = tmpPass[1];
+
+		posY = passingPlayer.cy;
+		nextCoordX = recevingPlayer.cx;
+		nextCoordY = recevingPlayer.cy;
+
+		paper.arrow(passingPlayer.cx, passingPlayer.cy, nextCoordX, nextCoordY, 15);
+
+		if(previousPlayer && previousPlayer.playerNum == passingPlayer.playerNum){
+			console.log("test");
+			var vectorX = passingPlayer.cx - previousPlayer.cx;
+			var vectorY = passingPlayer.cy - previousPlayer.cy;
+			// paper.path(previousPlayer.cx, previousPlayer.cy, passingPlayer.cx, passingPlayer.cy, 15);
+			var line = paper.path("M " + previousPlayer.cx.toString()  + " " + previousPlayer.cy.toString()  + " l " + vectorX.toString()  + " " + vectorY.toString());
+			line.attr("stroke", "#00FF00");
+
+		}
+		previousPlayer = recevingPlayer;
 	}
-}
+});
 
 </script>

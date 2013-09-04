@@ -1,13 +1,12 @@
 
   <div class="container" id="matches"></div>
-    <h2>Latest matches</h2>
+    <h2>{{name}}</h2>
  
-    {{#matches}}
-
+ 
     <div class="panel panel-default" id="panel-matches">
       <div class="panel-heading">
         <div class="panel-title"> 
-          <b><a href="#" data-id="{{matchId}}">{{name}}</a></b>
+          <b><a href="#match/{{matchId}}" data-id="{{matchId}}">{{name}}</a></b>
 
         </div>
       </div>
@@ -22,4 +21,4 @@
 
  
   </div>
-  {{/matches}}
+  {{/teams}}

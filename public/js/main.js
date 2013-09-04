@@ -4,28 +4,57 @@ $.ajaxPrefilter( function( options, originalOptions, jqXHR ) {
 
 
 window.AppRouter = Backbone.Router.extend({
+	currentView : null,
+
 	routes: {
 		'' : 'home',
-		'match/:id' : "matchDetails"
+		'match/:id' : "matchDetails",
+		'team/:name' : "team"
 	},
 
 	home : function(){
+		alert("in home")
 		this.matchList = new MatchListCollection();
 		this.homeView = new HomeView({model: this.matchList});
-        console.log(this.matchList.toJSON());
-        //this.headerView = new HeaderView();
+		console.log(this.matchList.toJSON());
+        this.headerView = new HeaderView();
+
+		this.setNewView(this.homeView);
 	},
+	
 	matchDetails : function(matchId){
-		console.log("Changing View, match/%s", matchId)
-		if(this.homeView != undefined)	this.homeView.remove();
+		console.log("Changing View, match: %s", matchId)
 
 		var matchModel = new MatchModel({id : matchId});
 		this.matchView = new MatchView({model: matchModel});
+		this.setNewView(this.matchView);
+	},
+
+	team : function(teamName){
+		alert("inside team router" + teamName);
+		var teamModel = new TeamModel({id : teamName});
+		this.teamView = new TeamView({});
+		this.setNewView(this.teamView);
+	},
+	
+	setNewView: function (view) {
+	    //Close the current view
+	    console.log(this.currentView);
+	    if (this.currentView) {
+	    	console.log("not here")
+	        this.currentView.remove();
+	    }
+
+	    //Set the current view
+	    this.currentView = view;
+
+	    return this;
 	}
+
 });
 
 
-templateLoader.load(["HomeView", "HeaderView", "MatchView"],
+templateLoader.load(["HomeView", "HeaderView", "MatchView", "TeamView"],
     function () {
         app = new AppRouter();
         Backbone.history.start();

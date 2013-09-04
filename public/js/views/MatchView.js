@@ -1,7 +1,6 @@
  // This view turns a Service model into HTML. Will create LI elements.
 window.MatchView = Backbone.View.extend({
-    el : $('#match'),
-    
+    el : $('#singlematch'),
 
     initialize: function () {
         console.log("init MatchView");
@@ -16,11 +15,17 @@ window.MatchView = Backbone.View.extend({
     },
 
     render: function (eventName) {
-        console.log("in Render: %j", this.model.toJSON())
-        console.log(this.model.get("match"))
-        var temp = Mustache.render(this.template(), {match : this.model.get("match")});
-        this.$el.html(temp);
+        console.log("in Render: %j", this.model.toJSON());
+        console.log(this.model.getAttacksJSON());
 
+        var temp = Mustache.render(
+            this.template(), 
+            {   
+                "match" : this.model.get("match"), 
+                "matchObj" : this.model.toJSON()
+            }
+        );
+        this.$el.html(temp);
         return this;
     }
 });

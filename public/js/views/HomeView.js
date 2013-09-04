@@ -25,10 +25,14 @@ window.HomeView = Backbone.View.extend({
 
         _.each(this.model.models, function(match){
             console.log(match)
-
            // console.log(match.attributes)
 
-            matches.push({"name" : match.get("match"), "matchId" : match.get("matchId")});
+            matches.push({"name" : match.get("match"), 
+                "matchId" : match.get("matchId"), 
+                "keyPlayer" : "Bendik", 
+                "numAttacks" : match.get("attacks").length, 
+                "score" : match.get("score")
+            });
         });
         var temp = Mustache.render(this.template(), {matches : matches});
         this.$el.html(temp);
@@ -37,15 +41,13 @@ window.HomeView = Backbone.View.extend({
     },
 
     onClickPanelItem : function(elem){
-        console.log(elem)
+        console.log(elem);
 
     },
     clicked : function(e){
-        //e.preventDefault();
+        e.preventDefault();
         var id = $(e.currentTarget).data("id");
         console.log(id);
-
-
-        
+        app.navigate('match/' + id, true);
     }
 });

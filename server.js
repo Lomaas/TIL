@@ -1,5 +1,6 @@
 var express = require('express'),
-    matches = require('./routes/matches');
+    matches = require('./routes/matches'),
+    teams = require('./routes/teams');
  
 var app = express();
 
@@ -15,6 +16,9 @@ app.get('/matches/:matchId/attack/:time', matches.getPassesForAttack);
 app.post('/match', matches.postNewMatch);
 app.post('/match/:matchId/attack', matches.postNewAttack);
 app.del('/match/:matchId', matches.deleteMatch);
+
+app.get('/teams', teams.getAllTeams);
+app.post('/teams', teams.postNewTeam);
 
 app.listen(3000);
 console.log('Listening on port 3000...');

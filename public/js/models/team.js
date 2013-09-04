@@ -1,5 +1,5 @@
-window.AttackModel = Backbone.Model.extend({
-    urlRoot : '/match/:id/attack',
+window.TeamModel = Backbone.Model.extend({
+    urlRoot : '/team/:name',
 
 
     getPasses: function(){

@@ -12,20 +12,36 @@ db.once('open', function callback () {
 
 var PassSchema = new Schema({
     fromPlayer : Number, 
-    toPlayer : Number, 
+    toPlayer : Number,
     fromPos : Number, 
     toPos : Number, 
-    type : String
+    action : String
 });
+
 
 var AttackSchema = new Schema({
     time : Number, 
-    passes: [PassSchema]
+    touch: Number,
+    breakthrough: String,
+    breakthroughPlayer: String,
+    typeOfAttack: String,
+    attackStart : {
+        "pos": Number,
+        "type": String,
+        "player": Number
+    },
+    passes: [PassSchema],
+    finish : {
+        "player": Number,
+        "fromPos": Number,
+        "action": String
+    }
 });
 
 var MatchSchema = new Schema({
     matchId : Number,
     match : String,
+    score: String,
     attacks : [AttackSchema]
 });
 

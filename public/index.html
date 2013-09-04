@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Football Analysis Tool</title>
+    <title>Soccer Analysis Tool</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <!-- Optional theme -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
   </head>
   <body>
-    <div id="header" class="page-header">
 
-    </div>
+    <div class="page-header" id="header"> </div>
 
-    <div class="jumbotron">
-      <div class="container"id="matches" />
-    </div>
+    <div id="matches"> </div>
+    <div id="team"> </div>
 
-
-    <div class="container" id="match" />
-
+    <div class="container" id="singlematch" > </div>
 
     <script src="js/lib/jquery.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
     <script src="js/lib/underscore.js"></script>
     <script src="js/lib/backbone.js"></script>
     <script src="js/lib/raphael.js"></script>
     <script src="js/lib/mustache.js"></script>
     <script src="js/utils.js"> </script>
     <script src="js/models/match.js"></script>
+    <script src="js/models/attack.js"></script>
+    <script src="js/models/pass.js"></script>
+    <script src="js/models/team.js"></script>
     <script src="js/views/HomeView.js"></script>
     <script src="js/views/MatchView.js"></script>
     <script src="js/views/HeaderView.js"></script>
+    <script src="js/views/TeamView.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
