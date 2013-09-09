@@ -1,5 +1,6 @@
 var express = require('express'),
     matches = require('./routes/matches'),
+    player = require('./routes/player'),
     teams = require('./routes/teams');
  
 var app = express();
@@ -9,7 +10,6 @@ app.use(express.static(__dirname + '/public'));
 app.configure(function(){
   app.use(express.bodyParser());
 });
-
 
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
@@ -22,16 +22,17 @@ db.once('open', function callback () {
 });
 
 var PassSchema = new Schema({
-    fromPlayer : Number, 
-    toPlayer : Number,
-    fromPos : Number, 
-    toPos : Number, 
+    fromPlayer_id : String,
+    toPlayer_id : String,
+    fromPos : Number,
+    toPos : Number,
     action : String
 });
 
 var AttackSchema = new Schema({
     time : Number, 
     touch: Number,
+    team : String,
     breakthrough: String,
     breakthroughPlayer: String,
     typeOfAttack: String,
@@ -57,21 +58,24 @@ var MatchSchema = new Schema({
     attacks : [AttackSchema]
 });
 
-
-var TeamSchema = new Schema({
-    name : String,
-    matches: [MatchSchema]
+var PlayerSchema = new Schema({
+    _id : String, // Name
+    shirtNumber : Number
 });
 
-
-
-Team = mongoose.model('Teams', TeamSchema);
+var TeamSchema = new Schema({
+    _id : String,   // name
+    players : [PlayerSchema]
+});
 
 
 // Instantiate models
 Match = mongoose.model('Match', MatchSchema);
 Attack = mongoose.model('Attack', AttackSchema);
 Pass = mongoose.model('Pass', PassSchema);
+Team = mongoose.model('Teams', TeamSchema);
+Player = mongoose.model('Player', PlayerSchema);
+
 
 app.get('/matches', matches.getAllMatches); 
 app.get('/match/:matchId', matches.getMatch); 
@@ -80,10 +84,14 @@ app.post('/match', matches.postNewMatch);
 app.post('/match/:matchId/attack', matches.postNewAttack);
 app.del('/match/:matchId', matches.deleteMatch);
 
-app.get('/team/:name', matches.getTeamStats);
-
+// app.get('/team/:name', matches.getTeamStats);
 app.get('/teams', teams.getAllTeams);
+app.get('/teams', teams.getAllPlayers);
 app.post('/teams', teams.postNewTeam);
+
+app.get('/player/:name', player.getAllPasses);
+app.post('/player/:name', player.newPass);
+
 
 app.listen(3000);
 console.log('Listening on port 3000...');

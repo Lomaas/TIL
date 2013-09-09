@@ -5,18 +5,20 @@ $.ajaxPrefilter( function( options, originalOptions, jqXHR ) {
 
 window.AppRouter = Backbone.Router.extend({
 	currentView : null,
+	headerView : null,
 
 	routes: {
 		'' : 'home',
 		'match/:id' : "matchDetails",
-		'team/:name' : "team"
+		'team/:name' : "team",
+		'teams' : "showAllTeams"
 	},
 
 	home : function(){
 		this.matchList = new MatchListCollection();
 		this.homeView = new HomeView({model: this.matchList});
 		console.log(this.matchList.toJSON());
-        this.headerView = new HeaderView();
+  
 
 		this.setNewView(this.homeView);
 	},
@@ -35,6 +37,14 @@ window.AppRouter = Backbone.Router.extend({
 		this.teamView = new TeamView({model : teamModel});
 		this.setNewView(this.teamView);
 	},
+
+
+	showAllTeams : function(){
+		this.teamsCollection = new TeamListCollection();
+		this.teamsView = new TeamsView({model : this.teamsCollection});
+		this.setNewView(this.teamsView);
+	},
+	
 	
 	setNewView: function (view) {
 	    //Close the current view
@@ -44,6 +54,10 @@ window.AppRouter = Backbone.Router.extend({
 			this.currentView.unbind();
 	    }
 
+	    if(!this.headerView){
+      		this.headerView = new HeaderView();
+	    }
+
 	    this.currentView = view;
 	    return this;
 	}
@@ -51,7 +65,7 @@ window.AppRouter = Backbone.Router.extend({
 });
 
 
-templateLoader.load(["HomeView", "HeaderView", "MatchView", "TeamView"],
+templateLoader.load(["HomeView", "HeaderView", "MatchView", "TeamView", "TeamsView"],
     function () {
         app = new AppRouter();
         Backbone.history.start();

@@ -2,7 +2,10 @@ window.HeaderView = Backbone.View.extend({
     el : $('#header'),
 
     events : {
-        'keypress input[type=text]': 'searchOnEnter'
+        'keypress input[type=text]': 'searchOnEnter',
+        "click #list_teams" : "onClickListTeam",
+        "click #list_home" : "onClickListHome",
+        "click #list_players" : "onClickListPlayers",
     },
     
     initialize: function () {
@@ -23,5 +26,22 @@ window.HeaderView = Backbone.View.extend({
         app.navigate('team/' + $('#tags').val(), true);
         // Change Route to teams view
 
+    },
+
+    onClickListTeam: function(event){
+        console.log($("#list_teams"));
+        $("#list_teams").attr("class", "active");
+        $("#list_home").attr("class", "");
+        $("#list_players").attr("class", "");
+
+    },
+     onClickListHome: function(event){
+        $("#list_teams").attr("class", "");
+        $("#list_home").attr("class", "active");
+        $("#list_players").attr("class", "");
+    },
+     onClickListPlayers: function(event){
+
     }
+
 });

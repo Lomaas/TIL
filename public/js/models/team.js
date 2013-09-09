@@ -1,7 +1,6 @@
 window.TeamModel = Backbone.Model.extend({
     urlRoot : '/team/:name',
 
-
     getPasses: function(){
     	 var listOfModels = []
         _.each(this.get('passes'), function(attack){
@@ -14,4 +13,20 @@ window.TeamModel = Backbone.Model.extend({
     parse: function(resp){
     	console.log(resp);
     }
+});
+
+window.TeamListCollection = Backbone.Collection.extend({
+    model: TeamModel,
+    url: "teams",
+
+    parse : function(resp) {
+        var listOfModels = []
+        _.each(resp, function(match){
+            var tmp = new TeamModel(match)
+            listOfModels.push(tmp);
+        });
+        console.log(listOfModels);
+        return listOfModels;
+    }
+
 });

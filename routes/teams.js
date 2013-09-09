@@ -25,3 +25,17 @@ exports.postNewTeam = function(req, res){
 
 
 };
+
+exports.getAllPlayers =  function(req, res){
+    console.log("Get All Players");
+
+    var query = Team.find();
+    query.where('team.players').gte("Tromsø IL").exec(function (err, passes) {  
+        if (err) res.send(400, {"msg" : "someting wrong happend during query executing"});
+
+        console.log(passes);
+        console.log("passes: %j", passes);
+        res.jsonp(passes);
+    });
+
+}
