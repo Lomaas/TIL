@@ -5,92 +5,52 @@ var expect = require('expect.js');
 
 
 describe('Post a new match', function(){
-//   it("should return 201 success", function(done){
-//   	request
-//   		.post('http://localhost:3000/match')
-//   		.send({
-// 		    "matchId": 1,
-// 		    "hometeam" : "Rosenborg BK",
-// 		    "awayteam" : "Tromsø IL",
-// 		    "match": "Rosenborg BK - Tromsø IL",
-// 		    "score" : "0-5",
-// 		    "attacks": [
-// 	        	{
-// 	            	"time": 11,
-// 		            "touch" : 9,
-// 		            "team" : "Tromsø IL",
-// 		            "breakthrough" : "Pasning mellomrom",
-// 		            "breakthroughPlayer" : "Thomas Drage",
-// 		            "typeOfAttack" : "Etablert spill",
-// 		            "attackStart" : {
-// 		                "pos" : 10,
-// 		                "type" : "",
-// 		                "player" : 17,
-
-//             		},
-// 		            "passes": [
-// 		                {
-// 		                    "fromPlayer": 4,
-// 		                    "toPlayer": 10,
-// 		                    "fromPos": 10,
-// 		                    "toPos": 11,
-// 		                    "action": "PASS"
-// 		                },
-// 		                {
-// 		                    "fromPlayer": 10,
-// 		                    "toPlayer": 15,
-// 		                    "fromPos": 14,
-// 		                    "toPos": 17,
-// 		                    "action": "PASS"
-// 		                }
-// 		            ],
-//         	        "finish" : {
-// 			            "player": 15,
-// 			            "fromPos": 17,
-// 			            "action": "SHOTMISS"
-// 			        }
-// 		        }
-// 		    ]
-// 		})
-// 		.set('Accept', 'application/json')
-//   		.end(function(res){
-// 			console.log(res.body);
-// 	    	expect(res).to.exist;
-// 			expect(res.status).to.equal(201);
-// 			done();
-//   		});
-//   	});
-
-	it("should return 201 success", function(done){
+  it("should return 201 success", function(done){
   	request
-  		.post('http://localhost:3000/match/' + 2 + '/attack')
+  		.post('http://localhost:3000/match')
   		.send({
-		    "time": 39,
-		    "touch" : 9,
-	        "team" : "Vålerenga Fotball",
-		    "breakthrough" : "nei",
-		    "breakthroughPlayer" : "",
-		    "typeOfAttack" : "Gjennvinning kort angrep",
-		    "attackStart" : {
-		    	"pos" : 11,
-		    	"type" : "breakdown",
-		    	"player" : 17,
+		    "matchId": 3,
+		    "hometeam" : "Strømsgodset",
+		    "awayteam" : "Rosenborg BK",
+		    "match": "Strømsgodset - Rosenborg BK",
+		    "score" : "1-2",
+		    "attacks": [
+	        	{
+	            	"time": 19,
+		            "touch" : 5,
+		            "team" : "Rosenborg BK",
+		            "breakthrough" : "Pasning mellomrom",
+		            "breakthroughPlayer" : "Mikkel Diskelrud",
+		            "typeOfAttack" : "Etablert spill",
+		            "attackStart" : {
+		                "pos" : 10,
+		                "type" : "",
+		                "player" : 17,
 
-		    },
-	        "passes": [
-	            {
-	                "fromPlayer": 17,
-	                "toPlayer": 13,
-	                "fromPos": 14,
-	                "toPos": 17,
-	                "action": "PASS"
-	            }
-	        ],
-	        "finish" : {
-	            "player": 13,
-	            "fromPos": 17,
-	            "action": "SHOTMISS"
-	        }
+            		},
+		            "passes": [
+		                {
+		                    "fromPlayer": 4,
+		                    "toPlayer": 10,
+		                    "fromPos": 10,
+		                    "toPos": 11,
+		                    "action": "PASS"
+		                },
+		                {
+		                    "fromPlayer": 10,
+		                    "toPlayer": 15,
+		                    "fromPos": 14,
+		                    "toPos": 17,
+		                    "action": "PASS"
+		                }
+		            ],
+        	        "finish" : {
+			            "player": 15,
+			            "fromPos": 17,
+			            "action": "SHOTMISS"
+			        }
+		        }
+		    ]
 		})
 		.set('Accept', 'application/json')
   		.end(function(res){
@@ -100,6 +60,46 @@ describe('Post a new match', function(){
 			done();
   		});
   	});
+
+	// it("should return 201 success", function(done){
+ //  	request
+ //  		.post('http://localhost:3000/match/' + 2 + '/attack')
+ //  		.send({
+	// 	    "time": 39,
+	// 	    "touch" : 9,
+	//         "team" : "Vålerenga Fotball",
+	// 	    "breakthrough" : "nei",
+	// 	    "breakthroughPlayer" : "",
+	// 	    "typeOfAttack" : "Gjennvinning kort angrep",
+	// 	    "attackStart" : {
+	// 	    	"pos" : 11,
+	// 	    	"type" : "breakdown",
+	// 	    	"player" : 17,
+
+	// 	    },
+	//         "passes": [
+	//             {
+	//                 "fromPlayer": 17,
+	//                 "toPlayer": 13,
+	//                 "fromPos": 14,
+	//                 "toPos": 17,
+	//                 "action": "PASS"
+	//             }
+	//         ],
+	//         "finish" : {
+	//             "player": 13,
+	//             "fromPos": 17,
+	//             "action": "SHOTMISS"
+	//         }
+	// 	})
+	// 	.set('Accept', 'application/json')
+ //  		.end(function(res){
+	// 		console.log(res.body);
+	//     	expect(res).to.exist;
+	// 		expect(res.status).to.equal(201);
+	// 		done();
+ //  		});
+ //  	});
 
 
 });

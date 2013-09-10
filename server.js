@@ -78,14 +78,15 @@ Player = mongoose.model('Player', PlayerSchema);
 
 
 app.get('/matches', matches.getAllMatches); 
-app.get('/match/:matchId', matches.getMatch); 
-app.get('/matches/:matchId/attack/:time', matches.getPassesForAttack);
+app.get('/match/:id', matches.getMatch); 
+app.get('/matches/:id/attack/:time', matches.getPassesForAttack);
 app.post('/match', matches.postNewMatch);
-app.post('/match/:matchId/attack', matches.postNewAttack);
-app.del('/match/:matchId', matches.deleteMatch);
+app.post('/match/:id/attack', matches.postNewAttack);
+app.del('/match/:id', matches.deleteMatch);
 
 // app.get('/team/:name', matches.getTeamStats);
 app.get('/teams', teams.getAllTeams);
+app.get('/team/:name', teams.getTeam);
 app.get('/teams', teams.getAllPlayers);
 app.post('/teams', teams.postNewTeam);
 

@@ -5,7 +5,6 @@ window.TeamsView = Backbone.View.extend({
         "click a" : "clicked"
     },
 
-
     initialize: function () {
         console.log("init Teams View");
 

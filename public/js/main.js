@@ -10,7 +10,7 @@ window.AppRouter = Backbone.Router.extend({
 	routes: {
 		'' : 'home',
 		'match/:id' : "matchDetails",
-		'team/:name' : "team",
+		'team/:id' : "team",
 		'teams' : "showAllTeams"
 	},
 
@@ -32,9 +32,8 @@ window.AppRouter = Backbone.Router.extend({
 	},
 
 	team : function(teamName){
-		alert("inside team router" + teamName);
-		var teamModel = new TeamModel({id : teamName});
-		this.teamView = new TeamView({model : teamModel});
+		this.teamModel = new TeamModel({id : teamName});
+		this.teamView = new TeamView({model : this.teamModel});
 		this.setNewView(this.teamView);
 	},
 

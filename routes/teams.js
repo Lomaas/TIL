@@ -22,8 +22,6 @@ exports.postNewTeam = function(req, res){
 
         res.send(201, {"msg" : "success"});
     });
-
-
 };
 
 exports.getAllPlayers =  function(req, res){
@@ -36,6 +34,18 @@ exports.getAllPlayers =  function(req, res){
         console.log(passes);
         console.log("passes: %j", passes);
         res.jsonp(passes);
+    });
+
+}
+
+exports.getTeam = function(req, res){
+    console.log(req.params.name);
+
+    var team = req.params.name;
+
+    Match.find({$or : [{hometeam: team}, {awayteam: team}]}, function (err, docs) {
+        console.log(docs);
+        res.jsonp(docs)
     });
 
 }

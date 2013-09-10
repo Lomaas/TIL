@@ -12,14 +12,17 @@ exports.getAllMatches = function (req, res) {
 };
 
 exports.getPassesForAttack = function (req, res) {
-    Match.findOne({ 'attacks.time': 9 }, 'passes time', function (err, passes) {
+    var time = parseInt(req.params.time);
+    Match.findOne({ 'attacks.time': time }, '', function (err, passes) {
         if (err) return handleError(err);
-            console.log('Passes %j', passes)
+        console.log('Passes %j', passes);
+
+        res.jsonp(passes);
     });
 };
 
 exports.getMatch = function(req, res){
-    mId = parseInt(req.params.matchId);
+    mId = parseInt(req.params.id);
 
     Match.findOne({ 'matchId': mId }, function (err, match) {
         if (err) return handleError(err);
@@ -44,7 +47,7 @@ exports.postNewMatch = function (req, res) {
 };
 
 exports.postNewAttack = function (req, res) {
-    mId = parseInt(req.params.matchId);
+    mId = parseInt(req.params.id);
     console.log(mId);
     console.log("New attack for match %f", req.body);
     var newAttack = new Attack(req.body);
@@ -58,7 +61,7 @@ exports.postNewAttack = function (req, res) {
 };
 
 exports.deleteMatch = function (req, res) {
-    matchId = parseInt(req.params.matchId);
+    matchId = parseInt(req.params.id);
 
     Match.remove({ 'matchId': matchId }, function (err) {
         if (err) res.send(400, {"msg" : "error deleting matchId"});

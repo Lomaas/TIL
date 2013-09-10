@@ -1,5 +1,5 @@
 window.TeamModel = Backbone.Model.extend({
-    urlRoot : '/team/:name',
+    urlRoot : 'team',
 
     getPasses: function(){
     	 var listOfModels = []
