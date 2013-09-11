@@ -1,3 +1,22 @@
+var serverOptions = {
+    host: 'localhost',
+    port: 9200,
+    secure: false
+    //Optional basic HTTP Auth
+  //   auth: {
+  //   username: process.env.ES_USERNAME,
+  //       password: process.env.ES_PASSWORD
+  // }
+};
+
+indexNameElastic = "matches";
+typeNameElastic = "match";
+
+ElasticSearchClient = require('elasticsearchclient');
+
+elasticSearchClient = new ElasticSearchClient(serverOptions);
+
+
 var express = require('express'),
     matches = require('./routes/matches'),
     player = require('./routes/player'),
@@ -52,19 +71,22 @@ var AttackSchema = new Schema({
 var MatchSchema = new Schema({
     matchId : Number,
     match : String,
+    date : { type: Date, default: Date.now },
     hometeam: String,
     awayteam: String,
     score: String,
     attacks : [AttackSchema]
 });
 
+MatchSchema.index({matchId: 1}, {unique: true});
+
 var PlayerSchema = new Schema({
-    _id : String, // Name
+    name : String, // Name
     shirtNumber : Number
 });
 
 var TeamSchema = new Schema({
-    _id : String,   // name
+    name : String,   // name
     players : [PlayerSchema]
 });
 
@@ -87,10 +109,11 @@ app.del('/match/:id', matches.deleteMatch);
 // app.get('/team/:name', matches.getTeamStats);
 app.get('/teams', teams.getAllTeams);
 app.get('/team/:name', teams.getTeam);
-app.get('/teams', teams.getAllPlayers);
+app.get('/team/:name/stats', teams.getTeamStats);
 app.post('/teams', teams.postNewTeam);
 
 app.get('/player/:name', player.getAllPasses);
+app.get('/players', player.getAllPlayers);
 app.post('/player/:name', player.newPass);
 
 

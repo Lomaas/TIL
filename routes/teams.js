@@ -24,28 +24,75 @@ exports.postNewTeam = function(req, res){
     });
 };
 
-exports.getAllPlayers =  function(req, res){
-    console.log("Get All Players");
-
-    var query = Team.find();
-    query.where('team.players').gte("Tromsø IL").exec(function (err, passes) {  
-        if (err) res.send(400, {"msg" : "someting wrong happend during query executing"});
-
-        console.log(passes);
-        console.log("passes: %j", passes);
-        res.jsonp(passes);
-    });
-
-}
 
 exports.getTeam = function(req, res){
     console.log(req.params.name);
 
     var team = req.params.name;
 
-    Match.find({$or : [{hometeam: team}, {awayteam: team}]}, function (err, docs) {
-        console.log(docs);
-        res.jsonp(docs)
-    });
+    var queryObject = {
+        "fields" : ["attacks.breakthroughPlayer"],
+        "query":{
+                "match": {
+                    "attacks.team": "Strømsgodset"
+                }
+        },
+        "facets" : {
+            "breakthroughPlayer" : {
+                "terms" : {
+                    "field" : "attacks.breakthroughPlayer.untouched"
+                }
+            }
+       }
+    };
 
+    elasticSearchClient.search(indexNameElastic, typeNameElastic, queryObject)
+        .on('data', function(data) {
+            console.log("Data %s", JSON.stringify(JSON.parse(data), undefined, 2));
+            res.jsonp(data);
+        })
+        .on('done', function(done){
+            //always returns 0 right now
+            console.log(done);
+        })
+        .on('error', function(error){
+            console.log(error)
+        })
+        .exec();
+}
+
+exports.getTeamStats = function(req, res){
+    console.log(req.params.name);
+
+    var team = req.params.name;
+
+    var queryObject = {
+        "fields" : ["attacks.breakthroughPlayer"],
+        "query":{
+                "match": {
+                    "attacks.team": "Strømsgodset"
+                }
+        },
+        "facets" : {
+            "breakthroughPlayer" : {
+                "terms" : {
+                    "field" : "attacks.breakthroughPlayer.untouched"
+                }
+            }
+       }
+    };
+
+    elasticSearchClient.search(indexNameElastic, typeNameElastic, queryObject)
+        .on('data', function(data) {
+            console.log("Data %s", JSON.stringify(JSON.parse(data), undefined, 2));
+            res.jsonp(data);
+        })
+        .on('done', function(done){
+            //always returns 0 right now
+            console.log(done);
+        })
+        .on('error', function(error){
+            console.log(error);
+        })
+        .exec();
 }
