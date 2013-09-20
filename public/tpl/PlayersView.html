@@ -1,0 +1,25 @@
+
+<div class="panel panel-default">
+  <div class="panel-body">
+  	<h2> Players </h2>
+    <ul>
+    	<li>
+    		<b>Chances registrated: {{length}}: </b>
+	    	{{#attacks}}
+			<ul> {{time}}. min - {{typeOfAttack}} ({{team}})
+				<ul>
+					<li> Passes: {{passes.length}} </li>
+					<li> Touches: {{touch}} </li>
+	    			<li>Breakthrough player: {{breakthroughPlayer}}</li>
+	    			<li>Type: {{breakthrough}}</li>
+				</ul>
+			</ul>
+	 	</li>
+	 	{{/attacks}}
+    	<li> <b>Hvilke soner stopper potensielle angrep i </b></li>
+    	<li> <b>Hvilke ballvinninger fører til mål og hvor på banen</b></li>
+    	<li> <b>Breaking point for angrepet - noen blir dratt av/avgjørende pasning mellomrommet/bakrom (sone)</b></li>
+    	<li> <b> Hvilke spillere mister ballen og sone</b></li>
+    <ul>
+  </div>
+</div>

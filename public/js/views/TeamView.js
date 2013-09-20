@@ -4,19 +4,24 @@ window.TeamView = Backbone.View.extend({
     initialize: function () {
         console.log("init Team");
         var that = this;
-        console.log(this.model);
         this.model.fetch({
             success: function () {
-                console.log("fetched %d", that.model);
                 that.render();
             }
         });
     },
 
     render: function (eventName) {
-        console.log(this.model);
 
-        var temp = Mustache.render(this.template(), {teamname : this.model.id});
+        console.log(this.model.get("breakthroughPlayers"));
+
+        var temp = Mustache.render(this.template(), 
+            {
+                teamname : this.model.id, 
+                breakThrough : this.model.get("breakThrough"),
+                breakthroughPlayer : this.model.get("breakthroughPlayers"),
+                typeOfAttack : this.model.get("typeOfAttack")
+            });
         this.$el.html(temp);
 
         return this;

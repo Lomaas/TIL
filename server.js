@@ -10,12 +10,14 @@ var serverOptions = {
 };
 
 indexNameElastic = "matches";
+indexNameTeams = "teams"
+
 typeNameElastic = "match";
+typeNameTeams = "team"
 
 ElasticSearchClient = require('elasticsearchclient');
 
 elasticSearchClient = new ElasticSearchClient(serverOptions);
-
 
 var express = require('express'),
     matches = require('./routes/matches'),
@@ -98,7 +100,6 @@ Pass = mongoose.model('Pass', PassSchema);
 Team = mongoose.model('Teams', TeamSchema);
 Player = mongoose.model('Player', PlayerSchema);
 
-
 app.get('/matches', matches.getAllMatches); 
 app.get('/match/:id', matches.getMatch); 
 app.get('/matches/:id/attack/:time', matches.getPassesForAttack);
@@ -109,8 +110,9 @@ app.del('/match/:id', matches.deleteMatch);
 // app.get('/team/:name', matches.getTeamStats);
 app.get('/teams', teams.getAllTeams);
 app.get('/team/:name', teams.getTeam);
+app.get('/team/:name/players', teams.getPlayers);
 app.get('/team/:name/stats', teams.getTeamStats);
-app.post('/teams', teams.postNewTeam);
+app.post('/team', teams.postNewTeam);
 
 app.get('/player/:name', player.getAllPasses);
 app.get('/players', player.getAllPlayers);

@@ -10,9 +10,23 @@
       </div>
       <div class="panel-body">
         <ul> 
-          <li>  </li>
-          <li> </li>
-          <li>  </li>
+          <li> <b>Style of Play: </b></li>
+          <li><b> Most often breakthrough player (add zone): </b>
+            <ul>
+              {{#breakthroughPlayer}}
+              <li> {{term}}, {{count}}</li>
+              {{/breakthroughPlayer}}
+            </ul>
+
+          </li>
+          <li> <b> Types of attack: </b></li>
+            <ul>
+              {{#typeOfAttack}}
+              <li> {{term}}, {{count}}</li>
+              {{/typeOfAttack}}
+            </ul>
+          <li> <b> Team looses poesssion most often (SONE): </b></li>
+          <li> <b>Analyze of key players </b></li>
         </ul>
       </div>
     </div>

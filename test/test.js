@@ -9,37 +9,44 @@ var expect = require('expect.js');
 //   	request
 //   		.post('http://localhost:3000/match')
 //   		.send({
-// 		    "matchId": 3,
-// 		    "hometeam" : "Strømsgodset",
+// 		    "matchId": 4,
+// 		    "hometeam" : "Tromsø IL",
 // 		    "awayteam" : "Rosenborg BK",
-// 		    "match": "Strømsgodset - Rosenborg BK",
-// 		    "score" : "1-2",
+// 		    "match": "Tromsø IL - Rosenborg BK",
+// 		    "score" : "1-0",
 // 		    "attacks": [
 // 	        	{
-// 	            	"time": 19,
-// 		            "touch" : 5,
-// 		            "team" : "Rosenborg BK",
-// 		            "breakthrough" : "Pasning mellomrom",
-// 		            "breakthroughPlayer" : "Mikkel Diskelrud",
+// 	            	"time": 24,
+// 		            "touch" : 7,
+// 		            "team" : "Tromsø IL",
+// 		            "breakthrough" : "Pasning Mellomrom",
+// 		            "breakthroughPlayer" : "Morten Moldskred",
 // 		            "typeOfAttack" : "Etablert spill",
 // 		            "attackStart" : {
-// 		                "pos" : 10,
+// 		                "pos" : 11,
 // 		                "type" : "",
-// 		                "player" : 17,
+// 		                "player" : 8,
 
 //             		},
 // 		            "passes": [
 // 		                {
-// 		                    "fromPlayer": 4,
-// 		                    "toPlayer": 10,
-// 		                    "fromPos": 10,
-// 		                    "toPos": 11,
+// 		                    "fromPlayer": 8,
+// 		                    "toPlayer": 5,
+// 		                    "fromPos": 11,
+// 		                    "toPos": 14,
 // 		                    "action": "PASS"
 // 		                },
 // 		                {
-// 		                    "fromPlayer": 10,
-// 		                    "toPlayer": 15,
+// 		                    "fromPlayer": 5,
+// 		                    "toPlayer": 4,
 // 		                    "fromPos": 14,
+// 		                    "toPos": 16,
+// 		                    "action": "PASS"
+// 		                },
+// 		                 {
+// 		                    "fromPlayer": 4,
+// 		                    "toPlayer": 15,
+// 		                    "fromPos": 16,
 // 		                    "toPos": 17,
 // 		                    "action": "PASS"
 // 		                }
@@ -47,7 +54,42 @@ var expect = require('expect.js');
 //         	        "finish" : {
 // 			            "player": 15,
 // 			            "fromPos": 17,
-// 			            "action": "SHOTMISS"
+// 			            "action": "SHOTGOAL"
+// 			        }
+// 		        },
+// 		        {
+// 	            	"time": 23,
+// 		            "touch" : 5,
+// 		            "team" : "Tromsø IL",
+// 		            "breakthrough" : "Nei",
+// 		            "breakthroughPlayer" : "",
+// 		            "typeOfAttack" : "Gjenvinning kort angrep",
+// 		            "attackStart" : {
+// 		                "pos" : 11,
+// 		                "type" : "",
+// 		                "player" : 8,
+
+//             		},
+// 		            "passes": [
+// 		                {
+// 		                    "fromPlayer": 8,
+// 		                    "toPlayer": 6,
+// 		                    "fromPos": 11,
+// 		                    "toPos": 18,
+// 		                    "action": "PASS"
+// 		                },
+// 		                {
+// 		                    "fromPlayer": 6,
+// 		                    "toPlayer": 15,
+// 		                    "fromPos": 18,
+// 		                    "toPos": 17,
+// 		                    "action": "PASS"
+// 		                }
+// 		            ],
+//         	        "finish" : {
+// 			            "player": 15,
+// 			            "fromPos": 17,
+// 			            "action": "SHOTTARGET"
 // 			        }
 // 		        }
 // 		    ]
@@ -102,7 +144,7 @@ var expect = require('expect.js');
  //  	});
 
 
-});
+// });
 
 
 
@@ -148,3 +190,73 @@ var expect = require('expect.js');
 //   		});
 //   	});
 // });
+
+
+var data = {
+	"name" : "Tromsø IL",
+    "players" : [
+        {
+            "number" : 1,
+            "name" : "M. Sahlman"
+        },    
+        {
+            "name" : "H. Norbye",
+            "number" : 14
+        },
+        {
+            "number" : 7,
+            "name" :   "M. Koppinen"    
+        },
+        {
+            "number" : 3,
+            "name" :   "J. Fojut"       
+        },
+        { 
+            "number" : 4, 
+            "name" : "R. Kristiansen"  
+        },
+        { 
+            "number" : 8,
+            "name"  :  "T. Bendiksen"
+        },  
+        {
+            "number" :17,
+            "name" :  "R. Johansen"
+        },    
+        {
+            "number" : 15,
+            "name" :  "M. Andersen"    
+        },
+        {
+            "number" : 18,
+            "name" :  "J. Pritchard"   
+        },
+        {
+            "number" : 10,
+            "name" : "T. Drage"    
+        },
+        { 
+        	"name" : "T. Drage", 
+            "number" : 10
+        },
+        {
+            "name" : "M. Moldskred",
+            "number" : 5
+        }
+    ]
+};
+
+describe('Post a new team', function(){
+  it("should return 201 success", function(done){
+  	request
+  		.post('http://localhost:3000/team')
+  		.send(data)
+		.set('Accept', 'application/json')
+  		.end(function(res){
+			console.log(res.body);
+	    	expect(res).to.exist;
+			expect(res.status).to.equal(201);
+			done();
+  		});
+  	});
+});

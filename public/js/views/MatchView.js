@@ -18,11 +18,14 @@ window.MatchView = Backbone.View.extend({
         console.log("in Render: %j", this.model.toJSON());
         console.log(this.model.getAttacksJSON());
 
+        var attacks = this.model.getAttacksJSON();
         var temp = Mustache.render(
             this.template(), 
             {   
                 "match" : this.model.get("match"), 
-                "matchObj" : this.model.toJSON()
+                "matchObj" : this.model.toJSON(),
+                "attacks" : attacks,
+                "length" : attacks.length
             }
         );
         this.$el.html(temp);

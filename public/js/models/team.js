@@ -12,6 +12,7 @@ window.TeamModel = Backbone.Model.extend({
 
     parse: function(resp){
     	console.log(resp);
+        return resp;
     }
 });
 
@@ -22,7 +23,7 @@ window.TeamListCollection = Backbone.Collection.extend({
     parse : function(resp) {
         var listOfModels = []
         _.each(resp, function(match){
-            var tmp = new TeamModel(match)
+            var tmp = new TeamModel(match._source)
             listOfModels.push(tmp);
         });
         console.log(listOfModels);

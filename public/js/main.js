@@ -18,8 +18,6 @@ window.AppRouter = Backbone.Router.extend({
 		this.matchList = new MatchListCollection();
 		this.homeView = new HomeView({model: this.matchList});
 		console.log(this.matchList.toJSON());
-  
-
 		this.setNewView(this.homeView);
 	},
 	
@@ -34,9 +32,13 @@ window.AppRouter = Backbone.Router.extend({
 	team : function(teamName){
 		this.teamModel = new TeamModel({id : teamName});
 		this.teamView = new TeamView({model : this.teamModel});
+
+		this.playersList = new PlayerListCollection();
+		this.playersList.url = "teams/" + teamName + "/players"
+		this.playersView = new PlayersView({model : this.playersList});
+
 		this.setNewView(this.teamView);
 	},
-
 
 	showAllTeams : function(){
 		this.teamsCollection = new TeamListCollection();
@@ -44,10 +46,8 @@ window.AppRouter = Backbone.Router.extend({
 		this.setNewView(this.teamsView);
 	},
 	
-	
 	setNewView: function (view) {
 	    //Close the current view
-	    console.log(this.currentView);
 	    if (this.currentView) {
 	        $(this.currentView.el).empty();
 			this.currentView.unbind();
@@ -64,7 +64,7 @@ window.AppRouter = Backbone.Router.extend({
 });
 
 
-templateLoader.load(["HomeView", "HeaderView", "MatchView", "TeamView", "TeamsView"],
+templateLoader.load(["HomeView", "HeaderView", "MatchView", "TeamView", "TeamsView", "PlayersView"],
     function () {
         app = new AppRouter();
         Backbone.history.start();
