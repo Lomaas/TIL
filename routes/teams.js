@@ -53,30 +53,31 @@ exports.postNewTeam = function(req, res){
 
 exports.getPlayers = function(req, res){
     var team = req.params.name;
-    console.log("get players " + team);
+    console.log("GET PLAYERS FOR TEAM-----");
 
-        var queryObject = { 
-            "query" : {
-                "match" : {
-                    "name" : team
-                }
+    var queryObject = { 
+        "query" : {
+            "match" : {
+                "name" : team
             }
-        };
+        }
+    };
 
-        elasticSearchClient.search(indexNameTeams, typeNameTeams, queryObject)
-        .on('data', function(data) {
-            console.log(data);
-            res.jsonp(data);
-        })
-        .on('done', function(done){
-            //always returns 0 right now
-            console.log(done);
-        })
-        .on('error', function(error){
-            console.log(error)
-        })
-        .exec();
+    elasticSearchClient.search(indexNameTeams, typeNameTeams, queryObject)
+    .on('data', function(data) {
+        data = JSON.parse(data);
+        console.log("Data %s", JSON.stringify(data, undefined, 2));
 
+        res.jsonp(data.hits.hits[0]._source);
+    })
+    .on('done', function(done){
+        //always returns 0 right now
+        console.log(done);
+    })
+    .on('error', function(error){
+        console.log(error)
+    })
+    .exec();
 };
 
 exports.getTeam = function(req, res){
@@ -88,39 +89,57 @@ exports.getTeam = function(req, res){
 
     var queryObject = {
         "fields" : ["attacks.breakthroughPlayer", "attacks.breakthrough", "attacks.typeOfAttack"],
-        "query":{
-                "match": {
-                    "attacks.team": team
+        
+        "query" : {
+            "nested" : {
+                "path" : "attacks",
+                "query" : {
+                        "match" : {
+                            "attacks.team" : team
+                    }
                 }
+            }
         },
         "facets" : {
+            "fromPlayer" : {
+                "nested": "attacks.passes",
+
+                "terms" : {
+                    "field" : "attacks.passes.fromPlayer"
+                },
+            },
             "breakthroughPlayer" : {
+                "nested": "attacks",
+
                 "terms" : {
                     "fields" : ["attacks.breakthroughPlayer.untouched"]
                 }
             },
             "breakthrough" : {
+                "nested": "attacks",
                 "terms" : {
                     "fields" : ["attacks.breakthrough.untouched"]
                 }
             },
             "typeOfAttack" : {
+                "nested": "attacks",
                 "terms" : {
                     "fields" : ["attacks.typeOfAttack.untouched"]
                 }
             },
-       }
+        }
     };
 
     elasticSearchClient.search(indexNameElastic, typeNameElastic, queryObject)
         .on('data', function(data) {
             data = JSON.parse(data);
-            console.log("Data %s", JSON.stringify(data, undefined, 2));
+            //console.log("Data %s", JSON.stringify(data, undefined, 2));
             // res.jsonp(data);
             iter++;
             json['breakthroughPlayers'] = data.facets.breakthroughPlayer.terms;
             json['breakthrough'] = data.facets.breakthrough.terms;
-            json['typeOfAttack'] = data.facets.typeOfAttack.terms
+            json['typeOfAttack'] = data.facets.typeOfAttack.terms;
+            json['ballReceived'] = data.facets.fromPlayer.terms;
 
             if(iter >= numQueries){
                 callback(res, json);    
@@ -134,42 +153,6 @@ exports.getTeam = function(req, res){
             console.log(error)
         })
         .exec();
-
-    // var queryObject2 = {
-    //     "fields" : ["attacks.breakthroughPlayer", "attacks.breakthrough"],
-    //     "query":{
-    //             "match": {
-    //                 "attacks.team": "Strømsgodset"
-    //             }
-    //     },
-    //     "facets" : {
-    //         "breakthroughPlayer" : {
-    //             "terms" : {
-    //                 "field" : "attacks.breakthroughPlayer.untouched"
-    //             }
-    //         }
-    //    }
-    // };
-
-    // elasticSearchClient.search(indexNameElastic, typeNameElastic, queryObject)
-    //     .on('data', function(data) {
-    //         console.log("Data %s", JSON.stringify(JSON.parse(data), undefined, 2));
-    //         // res.jsonp(data);
-    //         iter++;
-    //         json['breakthroughPlayer'] = data;
-
-    //         if(iter >= numQueries){
-    //             callback(res, json);    
-    //         }
-    //     })
-    //     .on('done', function(done){
-    //         //always returns 0 right now
-    //         console.log(done);
-    //     })
-    //     .on('error', function(error){
-    //         console.log(error)
-    //     })
-    //     .exec();
 }
 
 function callback(res, json, numQueries){

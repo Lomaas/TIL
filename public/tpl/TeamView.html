@@ -1,33 +1,61 @@
-
-  <div class="container" id="matches"></div>
- 
- 
-    <div class="panel panel-default" id="panel-matches">
-      <div class="panel-heading">
-        <div class="panel-title"> 
-          <b>{{teamname}}</b>
-        </div>
-      </div>
-      <div class="panel-body">
-        <ul> 
-          <li> <b>Style of Play: </b></li>
-          <li><b> Most often breakthrough player (add zone): </b>
-            <ul>
-              {{#breakthroughPlayer}}
-              <li> {{term}}, {{count}}</li>
-              {{/breakthroughPlayer}}
-            </ul>
-
-          </li>
-          <li> <b> Types of attack: </b></li>
-            <ul>
-              {{#typeOfAttack}}
-              <li> {{term}}, {{count}}</li>
-              {{/typeOfAttack}}
-            </ul>
-          <li> <b> Team looses poesssion most often (SONE): </b></li>
-          <li> <b>Analyze of key players </b></li>
-        </ul>
-      </div>
+<div class="title">
+  <h1>{{teamname}}</h1>
+</div>
+<div class="panel panel-default" id="panel-matches">
+  <div class="panel-heading">
+    <div class="panel-title">
+      <b> Key aspects</b>
     </div>
   </div>
+  <div class="panel-body">
+    <ul> 
+      <li> <b>Style of Play: </b></li>
+      <li><b> Most often breakthrough player (add zone): </b>
+        <ul>
+          {{#breakthroughPlayer}}
+          <li> {{term}}, {{count}}</li>
+          {{/breakthroughPlayer}}
+        </ul>
+      </li>
+      <li> <b> Types of attack: </b></li>
+        <ul>
+          {{#typeOfAttack}}
+          <li> {{term}}, {{count}}</li>
+          {{/typeOfAttack}}
+        </ul>
+      <li> <b> Team looses poesssion most often (SONE): </b></li>
+    </ul>
+  </div>
+
+  </div>
+</div>
+
+<div class="panel panel-default" id="panel-matches">
+  <div class="panel-heading">
+    <div class="panel-title">
+      <b> Offensive play</b>
+    </div>
+  </div>
+  <div class="panel-body">
+    <h4> Analyse of key players </h4>
+
+    <ul>
+      {{#ballReceived}}
+      <li> Number {{term}}, involved in {{count}} attacks</li>
+      {{/ballReceived}}
+    </ul>
+  </div>
+
+</div>
+
+<div class="panel panel-default" id="panel-matches">
+  <div class="panel-heading">
+    <div class="panel-title">
+      <b> Defensive play</b>
+    </div>
+  </div>
+  <div class="panel-body">
+
+  </div>
+
+</div>

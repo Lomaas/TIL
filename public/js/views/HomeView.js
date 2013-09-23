@@ -20,7 +20,7 @@ window.HomeView = Backbone.View.extend({
     },
 
     render: function (eventName) {
-        console.log("in Render: %j", this.model.toJSON())
+        console.log("in Render: %j", this.model.toJSON());
         var matches = [];
 
         _.each(this.model.models, function(match){

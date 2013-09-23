@@ -20,7 +20,8 @@ window.TeamView = Backbone.View.extend({
                 teamname : this.model.id, 
                 breakThrough : this.model.get("breakThrough"),
                 breakthroughPlayer : this.model.get("breakthroughPlayers"),
-                typeOfAttack : this.model.get("typeOfAttack")
+                typeOfAttack : this.model.get("typeOfAttack"),
+                ballReceived : this.model.get("ballReceived")
             });
         this.$el.html(temp);
 

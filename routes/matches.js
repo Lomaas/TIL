@@ -37,8 +37,8 @@ exports.getPassesForAttack = function (req, res) {
     var time = parseInt(req.params.time);
     Match.findOne({ 'attacks.time': time }, '', function (err, passes) {
         if (err) return handleError(err);
+        
         console.log('Passes %j', passes);
-
         res.jsonp(passes);
     });
 };
@@ -81,27 +81,27 @@ exports.getMatch = function(req, res){
 exports.postNewMatch = function (req, res) {
     console.log("New match");
     res.send(201, {"ok" : "OK"});
-    // console.log(JSON.stringify(req.body));
+    console.log(JSON.stringify(req.body));
 
-    // var commands = []
-    // commands.push({ "index" : { "_index" :indexNameElastic, "_type" : typeNameElastic} });
-    // commands.push(req.body);
+    var commands = []
+    commands.push({ "index" : { "_index" :indexNameElastic, "_type" : typeNameElastic} });
+    commands.push(req.body);
 
-    // elasticSearchClient.bulk(commands, {})
-    //         .on('data', function(data) {
-    //             console.log(data);
+    elasticSearchClient.bulk(commands, {})
+            .on('data', function(data) {
+                console.log(data);
 
-    //         })
-    //         .on('done', function(done){
-    //             console.log(done);
-    //             res.send(201, {"msg" : "success"});
+            })
+            .on('done', function(done){
+                console.log(done);
+                res.send(201, {"msg" : "success"});
 
-    //         })
-    //         .on('error', function(error){
-    //             console.log(error);
-    //             res.send(400, {"msg" : "someting wrong happend during saving"});
-    //         })
-    //         .exec();
+            })
+            .on('error', function(error){
+                console.log(error);
+                res.send(400, {"msg" : "someting wrong happend during saving"});
+            })
+            .exec();
 
 };
 

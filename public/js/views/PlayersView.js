@@ -1,6 +1,10 @@
  // This view turns a Service model into HTML. Will create LI elements.
 window.PlayersView = Backbone.View.extend({
-    el : $('#matches'),
+    el : $('#players'),
+
+    events : {
+        "click a" : "clicked"
+    },
     
     initialize: function () {
         console.log("init HomeView");
@@ -17,11 +21,16 @@ window.PlayersView = Backbone.View.extend({
 
     render: function (eventName) {
         console.log("in Render: %j", this.model.toJSON())
-        var players = [];
-        
-        var temp = Mustache.render(this.template(), {players : players});
+        var data = this.model.toJSON();
+        var temp = Mustache.render(this.template(), {players : data});
         this.$el.html(temp);
 
         return this;
+    },
+    clicked: function(e){
+         e.preventDefault();
+        var id = $(e.currentTarget).data("id");
+        console.log(id);
+        app.navigate('match/' + id, true);
     }
 });
