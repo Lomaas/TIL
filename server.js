@@ -11,9 +11,11 @@ var serverOptions = {
 
 indexNameElastic = "matches";
 indexNameTeams = "teams"
+indexNamePlayer = "players"
 
 typeNameElastic = "match";
 typeNameTeams = "team"
+typeNamePlayer = "player";
 
 ElasticSearchClient = require('elasticsearchclient');
 
@@ -117,6 +119,7 @@ app.post('/team', teams.postNewTeam);
 app.get('/player/:name', player.getAllPasses);
 app.get('/players', player.getAllPlayers);
 app.post('/player/:name', player.newPass);
+app.post('/player', player.newPlayer);
 
 
 app.listen(3000);
