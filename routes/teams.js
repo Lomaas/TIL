@@ -5,14 +5,15 @@ exports.getAllTeams = function (req, res) {
 
     var queryObject = { 
         "query" : {
-            "match_all" : {}
-        }
+            "match_all" : {},
+        },
+        "size" : 16
     };
 
     elasticSearchClient.search(indexNameTeams, typeNameTeams, queryObject)
         .on('data', function(data) {
             data = JSON.parse(data);
-            console.log("Data %s", JSON.stringify(data.hits.hits, undefined, 2));
+            console.log("Data %s", JSON.stringify(data, undefined, 2));
 
             res.jsonp(data.hits.hits);
         })
@@ -24,7 +25,6 @@ exports.getAllTeams = function (req, res) {
             console.log(error)
         })
         .exec()
-
 };
 
 exports.postNewTeam = function(req, res){
@@ -94,8 +94,8 @@ exports.getTeam = function(req, res){
             "nested" : {
                 "path" : "attacks",
                 "query" : {
-                        "match" : {
-                            "attacks.team" : team
+                    "match" : {
+                        "attacks.team" : team
                     }
                 }
             }
@@ -108,6 +108,7 @@ exports.getTeam = function(req, res){
                     "field" : "attacks.passes.fromPlayer"
                 },
             },
+            
             "breakthroughPlayer" : {
                 "nested": "attacks",
 

@@ -8,8 +8,7 @@ import re
 # Parse it to correct format
 # Send it to server
 
-tipppeligaLagURL = 
-	[
+tipppeligaLagURL = [
 		'http://www.altomfotball.no/element.do?cmd=team&teamId=313&tournamentId=1&useFullUrl=false',
 		'http://www.altomfotball.no/element.do?cmd=team&teamId=328&tournamentId=1&useFullUrl=false',
 		'http://www.altomfotball.no/element.do?cmd=team&teamId=303&tournamentId=1&useFullUrl=false',
@@ -26,7 +25,9 @@ tipppeligaLagURL =
 		'http://www.altomfotball.no/element.do?cmd=team&teamId=315&tournamentId=1&useFullUrl=false',
 		'http://www.altomfotball.no/element.do?cmd=team&teamId=327&tournamentId=1&useFullUrl=false',
 		'http://www.altomfotball.no/element.do?cmd=team&teamId=541&tournamentId=1&useFullUrl=false'
-	]
+]
+
+counter = 1
 
 for rootUrl in tipppeligaLagURL:
 	get = urllib2.urlopen(rootUrl).read()
@@ -49,14 +50,35 @@ for rootUrl in tipppeligaLagURL:
 	opener = urllib2.build_opener(handler)
 
 
+	data = {}
+	data['name'] = teamJSON['name']
+
+	url = "http://localhost:3000/team"
+	request = urllib2.Request(url, data=json.dumps(data))
+	request.add_header("Content-Type",'application/json')
+	request.get_method = lambda: method
+
+	try:
+	    connection = opener.open(request)
+	except urllib2.HTTPError,e:
+	    connection = e
+
+	if connection.code == 201:
+	    data = connection.read()
+	    print "Success, " + data
+	else:
+		print "ERRRO"
+
+
 	for player in teamJSON['players']:
 		print player
 		player = re.sub('\s+',' ', player)
 		data = {}
 		data['name'] = player
 		data['team'] = teamJSON['name']
+		data['player_id'] = counter
+	
 		url = "http://localhost:3000/player"
-		#print url
 		request = urllib2.Request(url, data=json.dumps(data))
 		request.add_header("Content-Type",'application/json')
 		request.get_method = lambda: method
@@ -66,11 +88,11 @@ for rootUrl in tipppeligaLagURL:
 		except urllib2.HTTPError,e:
 		    connection = e
 
-		# check. Substitute with appropriate HTTP code.
 		if connection.code == 201:
 		    data = connection.read()
 		    print "Success, " + data
 		else:
 			print "ERRRO"
-		    # handle the error case. connection.read() will still contain data
-		    # if any was returned, but it probably won't be of any use
+
+
+		counter = counter + 1

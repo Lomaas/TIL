@@ -9,8 +9,8 @@ var serverOptions = {
   // }
 };
 
-var indexName = "matches";
-var typeName = "match";
+var indexName = "teams";
+var typeName = "team";
 
 ElasticSearchClient = require('elasticsearchclient');
 
@@ -19,9 +19,28 @@ var elasticSearchClient = new ElasticSearchClient(serverOptions);
 var commands = [];
 commands.push({ "index" : { "_index" :indexName, "_type" : typeName} });
 
+commands.push([
+    {
+        "name" : "Tromsø",
+    }
+);
+
+elasticSearchClient.bulk(commands, {})
+        .on('data', function(data) {
+            console.log(data);
+        })
+        .on('done', function(done){
+            console.log(done);
+        })
+        .on('error', function(error){
+            console.log(error);
+
+        })
+        .exec();
 
 // command.push({
 //     "name" : "Tromsø IL",
+//     "team_id" : 5,
 //     "players" : [
 //         {
 //             "number" : 1,
@@ -46,11 +65,11 @@ commands.push({ "index" : { "_index" :indexName, "_type" : typeName} });
 //         { 
 //             "number" : 8,
 //             "name"  :  "T. Bendiksen"
-//         } ,  
+//         },  
 //         {
 //             "number" :17,
 //             "name" :  "R. Johansen"
-//         },    
+//         },
 //         {
 //             "number" : 15,
 //             "name" :  "M. Andersen"    
@@ -71,7 +90,7 @@ commands.push({ "index" : { "_index" :indexName, "_type" : typeName} });
 //             "number" : 5
 //         }
 //     ]
-// })
+// });
 
 // commands.push({
 // 	"matchId": 4,
@@ -160,76 +179,28 @@ commands.push({ "index" : { "_index" :indexName, "_type" : typeName} });
 //             ]
 //         });
 
-// elasticSearchClient.bulk(commands, {})
-//         .on('data', function(data) {
-//         	console.log(data);
-//         })
-//         .on('done', function(done){
-//         	console.log(done);
-
-//         })
-//         .on('error', function(error){
-//         	console.log(error);
-
-//         })
-//         .exec();
 
 
 
-    var queryObject = {
-        "fields" : ["attacks.breakthroughPlayer", "attacks.breakthrough", "attacks.typeOfAttack"],
-        
-        "query" : {
-            "nested" : {
-                "path" : "attacks",
-                "query" : {
-                        "match" : {
-                            "attacks.team" : "Tromsø IL"
-                    }
-                }
-            }
-        },
-        "facets" : {
-            "fromPlayer" : {
-                "nested": "attacks.passes",
 
-                "terms" : {
-                    "field" : "attacks.passes.fromPlayer"
-                },
-            },
-            "breakthroughPlayer" : {
-                "nested": "attacks",
+//     var queryObject = {        
+//         "query" : {
+//             "match_all" : {
+//             }
+//         }
+//     };
 
-                "terms" : {
-                    "fields" : ["attacks.breakthroughPlayer.untouched"]
-                }
-            },
-            "breakthrough" : {
-                "nested": "attacks",
-                "terms" : {
-                    "fields" : ["attacks.breakthrough.untouched"]
-                }
-            },
-            "typeOfAttack" : {
-                "nested": "attacks",
-                "terms" : {
-                    "fields" : ["attacks.typeOfAttack.untouched"]
-                }
-            },
-        }
-    };
-
-elasticSearchClient.search(indexName, typeName, queryObject)
-    .on('data', function(data) {
-        console.log("Data %s", JSON.stringify(JSON.parse(data), undefined, 2));
-    })
-    .on('done', function(done){
-        //always returns 0 right now
-        console.log(done);
-    })
-    .on('error', function(error){
-        data = JSON.parse(error);
-        console.log("Data %s", JSON.stringify(data, undefined, 2));
-    })
-    .exec()
+// elasticSearchClient.search(indexName, typeName, queryObject)
+//     .on('data', function(data) {
+//         console.log("Data %s", JSON.stringify(JSON.parse(data), undefined, 2));
+//     })
+//     .on('done', function(done){
+//         //always returns 0 right now
+//         console.log(done);
+//     })
+//     .on('error', function(error){
+//         data = JSON.parse(error);
+//         console.log("Data %s", JSON.stringify(data, undefined, 2));
+//     })
+//     .exec()
 

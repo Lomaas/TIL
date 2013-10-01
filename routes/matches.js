@@ -3,24 +3,17 @@ var matchCollection = "matches"
 exports.getAllMatches = function (req, res) {
     console.log("Find all matches");
 
-    // Match.find(function (err, matches) {
-    //     if (err) res.send(400, {"msg" : "someting wrong happend during query executing"});
-    //     console.log(matches);
-    //     console.log("Matches: %j", matches);
-    //     res.jsonp(matches);
-    // });
     var queryObject = { 
         "query" : {
             "match_all" : {}
         }
     };
 
-
     elasticSearchClient.search(indexNameElastic, typeNameElastic, queryObject)
         .on('data', function(data) {
             data = JSON.parse(data);
             console.log("Data %s", JSON.stringify(data.hits.hits, undefined, 2));
-
+ 
             res.jsonp(data.hits.hits);
         })
         .on('done', function(done){
@@ -46,12 +39,6 @@ exports.getPassesForAttack = function (req, res) {
 exports.getMatch = function(req, res){
     mId = parseInt(req.params.id);
 
-    // Match.findOne({ 'matchId': mId }, function (err, match) {
-    //     if (err) return handleError(err);
-        
-    //     console.log('Match %j', match);
-    //     res.jsonp(match)
-    // });
     var queryObject = { 
         "query" : {
             "match" : {
@@ -59,7 +46,6 @@ exports.getMatch = function(req, res){
             }
         }
     };
-
 
     elasticSearchClient.search(indexNameElastic, typeNameElastic, queryObject)
         .on('data', function(data) {
@@ -80,7 +66,6 @@ exports.getMatch = function(req, res){
 
 exports.postNewMatch = function (req, res) {
     console.log("New match");
-    res.send(201, {"ok" : "OK"});
     console.log(JSON.stringify(req.body));
 
     var commands = []
@@ -90,19 +75,16 @@ exports.postNewMatch = function (req, res) {
     elasticSearchClient.bulk(commands, {})
             .on('data', function(data) {
                 console.log(data);
-
             })
             .on('done', function(done){
                 console.log(done);
                 res.send(201, {"msg" : "success"});
-
             })
             .on('error', function(error){
                 console.log(error);
                 res.send(400, {"msg" : "someting wrong happend during saving"});
             })
             .exec();
-
 };
 
 exports.postNewAttack = function (req, res) {
@@ -130,18 +112,3 @@ exports.deleteMatch = function (req, res) {
         res.send(200, {"msg" : "success"});
     });
 };
-
-
-// Team STATS
-
-// exports.getTeamStats = function (req, res) {
-//     teamname = parseInt(req.params.name);
-
-//     Match.find({'hometeam' : teamname, 'awayteam' : teamname}function (err, matches) {
-//         if (err) res.send(400, {"msg" : "someting wrong happend during query executing"});
-        
-//         console.log("Matches: %j", teams);
-//         res.jsonp(teams);
-//     });
-// };
-
