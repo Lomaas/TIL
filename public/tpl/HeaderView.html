@@ -48,7 +48,7 @@
   		success: function(resp,textStatus, jqXHR ){
   			console.log("RESPONSE %j", resp);
   			_.each(resp, function(team){
-  				availableTags.push(team.name);
+  				availableTags.push(team._source.name);
   			});
 		    $( "#tags" ).autocomplete({
 				source: availableTags

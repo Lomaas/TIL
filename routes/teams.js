@@ -103,7 +103,6 @@ exports.getTeam = function(req, res){
         "facets" : {
             "fromPlayer" : {
                 "nested": "attacks.passes",
-
                 "terms" : {
                     "field" : "attacks.passes.fromPlayer"
                 },
@@ -138,9 +137,12 @@ exports.getTeam = function(req, res){
             // res.jsonp(data);
             iter++;
             json['breakthroughPlayers'] = data.facets.breakthroughPlayer.terms;
+
             json['breakthrough'] = data.facets.breakthrough.terms;
             json['typeOfAttack'] = data.facets.typeOfAttack.terms;
             json['ballReceived'] = data.facets.fromPlayer.terms;
+
+            // WHo combines with the key players. Which passes is the key passes
 
             if(iter >= numQueries){
                 callback(res, json);    
@@ -158,40 +160,4 @@ exports.getTeam = function(req, res){
 
 function callback(res, json, numQueries){
     res.jsonp(json);
-}
-
-exports.getTeamStats = function(req, res){
-    console.log(req.params.name);
-
-    var team = req.params.name;
-
-    var queryObject = {
-        "fields" : ["attacks.breakthroughPlayer"],
-        "query":{
-                "match": {
-                    "attacks.team": "Strømsgodset"
-                }
-        },
-        "facets" : {
-            "breakthroughPlayer" : {
-                "terms" : {
-                    "field" : "attacks.breakthroughPlayer.untouched"
-                }
-            }
-       }
-    };
-
-    elasticSearchClient.search(indexNameElastic, typeNameElastic, queryObject)
-        .on('data', function(data) {
-            console.log("Data %s", JSON.stringify(JSON.parse(data), undefined, 2));
-            res.jsonp(data);
-        })
-        .on('done', function(done){
-            //always returns 0 right now
-            console.log(done);
-        })
-        .on('error', function(error){
-            console.log(error);
-        })
-        .exec();
 }

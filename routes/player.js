@@ -8,10 +8,7 @@ function buyWhore(team, playerId){
                 "path" : "attacks",
                 "query" : {
                     "match" : {
-                        "fields" : {
-                            "attacks.team" : team,
-                            "attacks.fromPlayer" : playerId                    
-                        }
+                        "attacks.team" : team
                     }
                 }
             }
@@ -67,7 +64,6 @@ exports.getStats = function (req, res){
 exports.getAllPasses = function (req, res) {
     console.log("Find all matches");
 
-
     var query = Match.find();
 	query.where('attacks.team').gte("Tromsø IL").exec(function (err, passes) {	
         if (err) res.send(400, {"msg" : "someting wrong happend during query executing"});
@@ -76,14 +72,6 @@ exports.getAllPasses = function (req, res) {
         console.log("passes: %j", passes);
         res.jsonp(passes);
     });
-    
-    // Pass.find({fromPlayer : 10}, 'fromPos', function (err, passes) {
-    //     if (err) res.send(400, {"msg" : "someting wrong happend during query executing"});
-
-    //     console.log(passes);
-    //     console.log("passes: %j", passes);
-    //     res.jsonp(passes);
-    // });
 };
 
 exports.newPass = function (req, res) {
@@ -91,21 +79,13 @@ exports.newPass = function (req, res) {
     name = parseInt(req.params.name);
 
     var query = Match.find();
-	query.where('attacks.team').gte("Tromsø IL").exec(function (err, passes) {	
+	query.where('attacks.team').gte("Tromsø IL").exec(function (err, passes) {
         if (err) res.send(400, {"msg" : "someting wrong happend during query executing"});
 
         console.log(passes);
         console.log("passes: %j", passes);
         res.jsonp(passes);
     });
-    
-    // Pass.find({fromPlayer : 10}, 'fromPos', function (err, passes) {
-    //     if (err) res.send(400, {"msg" : "someting wrong happend during query executing"});
-
-    //     console.log(passes);
-    //     console.log("passes: %j", passes);
-    //     res.jsonp(passes);
-    // });
 };
 
 exports.getPlayersForTeam = function(req, res){

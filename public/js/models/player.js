@@ -6,11 +6,17 @@ window.PlayerListCollection = Backbone.Collection.extend({
     model: PlayerModel,
 
     parse : function(resp) {
-        var listOfModels = []
+        var listOfModels = [];
         console.log(resp);
-        _.each(resp.players, function(player){
-            player.teamName = resp.name;
-            var tmp = new PlayerModel(player)
+        _.each(resp, function(player){
+            console.log(player);
+            var playerModel = {
+                "teamName" : player._source.team,
+                "name" : player._source.name,
+                "player_id" : player._source.player_id
+            };
+            var tmp = new PlayerModel(playerModel);
+
             listOfModels.push(tmp);
         });
         console.log(listOfModels);

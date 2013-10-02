@@ -39,7 +39,6 @@ app.del('/match/:id', matches.deleteMatch);
 // app.get('/team/:name', matches.getTeamStats);
 app.get('/teams', teams.getAllTeams);
 app.get('/team/:name', teams.getTeam);
-app.get('/team/:name/stats', teams.getTeamStats);
 app.post('/team', teams.postNewTeam);
 
 app.get('/players/:teamname', player.getPlayersForTeam);

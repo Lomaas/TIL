@@ -2,15 +2,10 @@ var serverOptions = {
     host: 'localhost',
     port: 9200,
     secure: false
-    //Optional basic HTTP Auth
-  //   auth: {
-  //   username: process.env.ES_USERNAME,
-  //       password: process.env.ES_PASSWORD
-  // }
 };
 
-var indexName = "teams";
-var typeName = "team";
+var indexName = "matches";
+var typeName = "match";
 
 ElasticSearchClient = require('elasticsearchclient');
 
@@ -19,11 +14,173 @@ var elasticSearchClient = new ElasticSearchClient(serverOptions);
 var commands = [];
 commands.push({ "index" : { "_index" :indexName, "_type" : typeName} });
 
-commands.push([
-    {
-        "name" : "Tromsø",
-    }
-);
+commands.push({
+        	"matchId": 1,
+            "hometeam" : "Tromsø IL",
+            "awayteam" : "Rosenborg BK",
+            "match": "Tromsø IL - Rosenborg BK",
+            "score" : "1-0",
+            "attacks": [
+                {
+                    "time": 24,
+                    "touch" : 7,
+                    "team" : "Tromsø IL",
+                    "breakthrough" : "Pasning Mellomrom",
+                    "breakthroughPlayer" : "Morten Moldskred",
+                    "typeOfAttack" : "Etablert spill",
+                    "attackStart" : {
+                        "pos" : 11,
+                        "type" : "Gjenvinning",
+                        "player" : 402,
+                    },
+                    "passes": [
+                        {
+                            "fromPlayer": 402,
+                            "toPlayer": 406,
+                            "fromPos": 11,
+                            "toPos": 14,
+                            "action": "PASS"
+                        },
+                        {
+                            "fromPlayer": 406,
+                            "toPlayer": 394,
+                            "fromPos": 14,
+                            "toPos": 16,
+                            "action": "KEYPASS"
+                        },
+                         {
+                            "fromPlayer": 394,
+                            "toPlayer": 413,
+                            "fromPos": 16,
+                            "toPos": 17,
+                            "action": "PASS"
+                        }
+                    ],
+                    "finish" : {
+                        "player": 413,
+                        "pos": 17,
+                        "action": "SHOTGOAL"
+                    }
+                },
+                {
+                    "time": 23,
+                    "touch" : 5,
+                    "team" : "Tromsø IL",
+                    "breakthrough" : "None",
+                    "breakthroughPlayer" : "None",
+                    "typeOfAttack" : "Gjenvinning kort angrep",
+                    "attackStart" : {
+                        "pos" : 11,
+                        "type" : "Gjenvinning",
+                        "player" : 402,
+
+                    },
+                    "passes": [
+                        {
+                            "fromPlayer": 402,
+                            "toPlayer": 407,
+                            "fromPos": 11,
+                            "toPos": 18,
+                            "action": "PASS"
+                        },
+                        {
+                            "fromPlayer": 407,
+                            "toPlayer": 413,
+                            "fromPos": 18,
+                            "toPos": 17,
+                            "action": "PASS"
+                        }
+                    ],
+                    "finish" : {
+                        "player": 413,
+                        "pos": 17,
+                        "action": "SHOTTARGET"
+                    }
+                },
+                {
+                    "time": 44,
+                    "touch" : 10,
+                    "team" : "Tromsø IL",
+                    "breakthrough" : "1vs1 Mellomrom",
+                    "breakthroughPlayer" : "Josh Pritchard",
+                    "typeOfAttack" : "Gjenvinning kort angrep",
+                    "attackStart" : {
+                        "pos" : 1,
+                        "type" : "Gjenvinning",
+                        "player" : 402,
+                    },
+                    "passes": [
+                        {
+                            "fromPlayer": 402,
+                            "toPlayer": 407,
+                            "fromPos": 4,
+                            "toPos": 8,
+                            "action": "PASS"
+                        },
+                        {
+                            "fromPlayer": 407, 
+                            "toPlayer": 397,
+                            "fromPos": 11,
+                            "toPos": 15,
+                            "action": "KEYPASS"
+                        },
+                        {
+                            "fromPlayer": 397,
+                            "toPlayer": 413,
+                            "fromPos": 18,
+                            "toPos": 17,
+                            "action": "PASS"
+                        }
+                    ],
+                    "finish" : {
+                        "player": 397,
+                        "pos": 17,
+                        "action": "SHOTMISS"
+                    }
+                },
+                  {
+                    "time": 60,
+                    "touch" : 15,
+                    "team" : "Tromsø IL",
+                    "breakthrough" : "None",
+                    "breakthroughPlayer" : "None",
+                    "typeOfAttack" : "Gjenvinning langt angrep",
+                    "attackStart" : {
+                        "pos" : 5,
+                        "type" : "Gjenvinning",
+                        "player" : 406,
+                    },
+                    "passes": [
+                        {
+                            "fromPlayer": 406,
+                            "toPlayer": 403,
+                            "fromPos": 5,
+                            "toPos": 7,
+                            "action": "PASS"
+                        },
+                        {
+                            "fromPlayer": 403,
+                            "toPlayer": 394,
+                            "fromPos": 7,
+                            "toPos": 10,
+                            "action": "PASS"
+                        },
+                        {
+                            "fromPlayer": 394,
+                            "toPlayer": 402,
+                            "fromPos": 13,
+                            "toPos": 14,
+                            "action": "PASS"
+                        }
+                    ],
+                    "finish" : {
+                        "player": 402,
+                        "pos": 14,
+                        "action": "SHOTMISS"
+                    }
+                }
+            ]
+        });
 
 elasticSearchClient.bulk(commands, {})
         .on('data', function(data) {
@@ -37,149 +194,6 @@ elasticSearchClient.bulk(commands, {})
 
         })
         .exec();
-
-// command.push({
-//     "name" : "Tromsø IL",
-//     "team_id" : 5,
-//     "players" : [
-//         {
-//             "number" : 1,
-//             "name" : "M. Sahlman"
-//         },    
-//         {
-//             "name" : "H. Norbye",
-//             "number" : 14
-//         },
-//         {
-//             "number" : 7,
-//             "name" :   "M. Koppinen"    
-//         },
-//         {
-//             "number" : 3,
-//             "name" :   "J. Fojut"       
-//         },
-//         { 
-//             "number" : 4, 
-//             "name" : "R. Kristiansen"  
-//         },
-//         { 
-//             "number" : 8,
-//             "name"  :  "T. Bendiksen"
-//         },  
-//         {
-//             "number" :17,
-//             "name" :  "R. Johansen"
-//         },
-//         {
-//             "number" : 15,
-//             "name" :  "M. Andersen"    
-//         },
-//         {
-//             "number" : 18,
-//             "name" :  "J. Pritchard"   
-//         },
-//         {
-//             "number" : 10,
-//             "name" : "T. Drage"    
-//         },
-//         { "name" : "T. Drage" 
-//             "number" : 10
-//         },
-//         {
-//             "name" : "M. Moldskred"
-//             "number" : 5
-//         }
-//     ]
-// });
-
-// commands.push({
-// 	"matchId": 4,
-//             "hometeam" : "Tromsø IL",
-//             "awayteam" : "Rosenborg BK",
-//             "match": "Tromsø IL - Rosenborg BK",
-//             "score" : "1-0",
-//             "attacks": [
-//                 {
-//                     "time": 24,
-//                     "touch" : 7,
-//                     "team" : "Tromsø IL",
-//                     "breakthrough" : "Pasning Mellomrom",
-//                     "breakthroughPlayer" : "Morten Moldskred",
-//                     "typeOfAttack" : "Etablert spill",
-//                     "attackStart" : {
-//                         "pos" : 11,
-//                         "type" : "",
-//                         "player" : 8,
-
-//                     },
-//                     "passes": [
-//                         {
-//                             "fromPlayer": 8,
-//                             "toPlayer": 5,
-//                             "fromPos": 11,
-//                             "toPos": 14,
-//                             "action": "PASS"
-//                         },
-//                         {
-//                             "fromPlayer": 5,
-//                             "toPlayer": 4,
-//                             "fromPos": 14,
-//                             "toPos": 16,
-//                             "action": "PASS"
-//                         },
-//                          {
-//                             "fromPlayer": 4,
-//                             "toPlayer": 15,
-//                             "fromPos": 16,
-//                             "toPos": 17,
-//                             "action": "PASS"
-//                         }
-//                     ],
-//                     "finish" : {
-//                         "player": 15,
-//                         "fromPos": 17,
-//                         "action": "SHOTGOAL"
-//                     }
-//                 },
-//                 {
-//                     "time": 23,
-//                     "touch" : 5,
-//                     "team" : "Tromsø IL",
-//                     "breakthrough" : "Nei",
-//                     "breakthroughPlayer" : "",
-//                     "typeOfAttack" : "Gjenvinning kort angrep",
-//                     "attackStart" : {
-//                         "pos" : 11,
-//                         "type" : "",
-//                         "player" : 8,
-
-//                     },
-//                     "passes": [
-//                         {
-//                             "fromPlayer": 8,
-//                             "toPlayer": 6,
-//                             "fromPos": 11,
-//                             "toPos": 18,
-//                             "action": "PASS"
-//                         },
-//                         {
-//                             "fromPlayer": 6,
-//                             "toPlayer": 15,
-//                             "fromPos": 18,
-//                             "toPos": 17,
-//                             "action": "PASS"
-//                         }
-//                     ],
-//                     "finish" : {
-//                         "player": 15,
-//                         "fromPos": 17,
-//                         "action": "SHOTTARGET"
-//                     }
-//                 }
-//             ]
-//         });
-
-
 
 
 
