@@ -7,9 +7,9 @@ window.PlayerListCollection = Backbone.Collection.extend({
 
     parse : function(resp) {
         var listOfModels = [];
-        console.log(resp);
+        // console.log(resp);
         _.each(resp, function(player){
-            console.log(player);
+            // console.log(player);
             var playerModel = {
                 "teamName" : player._source.team,
                 "name" : player._source.name,
@@ -19,7 +19,7 @@ window.PlayerListCollection = Backbone.Collection.extend({
 
             listOfModels.push(tmp);
         });
-        console.log(listOfModels);
+        // console.log(listOfModels);
         return listOfModels;
     }
 });

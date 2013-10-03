@@ -13,7 +13,7 @@ exports.getAllTeams = function (req, res) {
     elasticSearchClient.search(indexNameTeams, typeNameTeams, queryObject)
         .on('data', function(data) {
             data = JSON.parse(data);
-            console.log("Data %s", JSON.stringify(data, undefined, 2));
+            // console.log("Data %s", JSON.stringify(data, undefined, 2));
 
             res.jsonp(data.hits.hits);
         })
@@ -66,7 +66,7 @@ exports.getPlayers = function(req, res){
     elasticSearchClient.search(indexNameTeams, typeNameTeams, queryObject)
     .on('data', function(data) {
         data = JSON.parse(data);
-        console.log("Data %s", JSON.stringify(data, undefined, 2));
+        //console.log("Data %s", JSON.stringify(data, undefined, 2));
 
         res.jsonp(data.hits.hits[0]._source);
     })
@@ -87,9 +87,7 @@ exports.getTeam = function(req, res){
     var numQueries = 1;
     var json = {};
 
-    var queryObject = {
-        "fields" : ["attacks.breakthroughPlayer", "attacks.breakthrough", "attacks.typeOfAttack"],
-        
+    var queryObject = {        
         "query" : {
             "nested" : {
                 "path" : "attacks",
@@ -107,10 +105,14 @@ exports.getTeam = function(req, res){
                     "field" : "attacks.passes.fromPlayer"
                 },
             },
-            
+            "toPlayer" : {
+                "nested": "attacks.passes",
+                "terms" : {
+                    "field" : "attacks.passes.toPlayer"
+                },
+            },
             "breakthroughPlayer" : {
                 "nested": "attacks",
-
                 "terms" : {
                     "fields" : ["attacks.breakthroughPlayer.untouched"]
                 }
@@ -118,13 +120,19 @@ exports.getTeam = function(req, res){
             "breakthrough" : {
                 "nested": "attacks",
                 "terms" : {
-                    "fields" : ["attacks.breakthrough.untouched"]
+                    "field" : "attacks.breakthrough.untouched"
                 }
             },
             "typeOfAttack" : {
                 "nested": "attacks",
                 "terms" : {
-                    "fields" : ["attacks.typeOfAttack.untouched"]
+                    "field" : "attacks.typeOfAttack.untouched"
+                }
+            },
+            "zones" : {
+                "nested": "attacks.passes",
+                "terms" : {
+                    "fields" : ["attacks.passes.fromPos", "attacks.passes.toPos"]
                 }
             },
         }
@@ -133,14 +141,14 @@ exports.getTeam = function(req, res){
     elasticSearchClient.search(indexNameElastic, typeNameElastic, queryObject)
         .on('data', function(data) {
             data = JSON.parse(data);
-            //console.log("Data %s", JSON.stringify(data, undefined, 2));
-            // res.jsonp(data);
+            console.log("Data %s", JSON.stringify(data, undefined, 2));
             iter++;
             json['breakthroughPlayers'] = data.facets.breakthroughPlayer.terms;
 
             json['breakthrough'] = data.facets.breakthrough.terms;
             json['typeOfAttack'] = data.facets.typeOfAttack.terms;
             json['ballReceived'] = data.facets.fromPlayer.terms;
+            json['zones'] = data.facets.zones.terms;
 
             // WHo combines with the key players. Which passes is the key passes
 

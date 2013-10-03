@@ -9,12 +9,18 @@
   </div>
   <div class="panel-body">
     <ul> 
-      <li> <b>Style of Play: </b></li>
       <li><b> Most often breakthrough player (add zone): </b>
         <ul>
           {{#breakthroughPlayer}}
           <li> {{term}}, {{count}}</li>
           {{/breakthroughPlayer}}
+        </ul>
+      </li>
+      <li><b> Breakthrough from: </b>
+        <ul>
+          {{#breakthrough}}
+          <li> {{term}}, {{count}}</li>
+          {{/breakthrough}}
         </ul>
       </li>
       <li> <b> Types of attack: </b></li>
@@ -26,7 +32,6 @@
       <li> <b> Team looses poesssion most often (SONE): </b></li>
     </ul>
   </div>
-
   </div>
 </div>
 
@@ -38,15 +43,23 @@
   </div>
   <div class="panel-body">
     <h4> Analyse of key players </h4>
-
-    <ul>
       {{#ballReceived}}
-      <li> Number {{term}}, involved in {{count}} attacks</li>
-      {{/ballReceived}}
-    </ul>
+        <ul>
+          </li>
+            {{name}} involved in {{count}} attacks
+            <div id="{{player_id}}">
 
-    Query who combines most often in successful attacks
-    Plot them
+            </div>
+          </li>
+        </ul>
+      {{/ballReceived}}
+
+    <h4> Attacking zones </h4>
+    <ul>
+      {{#zones}}
+      <li> In zone {{term}}, {{count}} times </li>
+      {{/zones}}
+    </ul>
   </div>
 
 </div>

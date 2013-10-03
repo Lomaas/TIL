@@ -1,5 +1,5 @@
 $.ajaxPrefilter( function( options, originalOptions, jqXHR ) {
-	options.url = 'http://localhost:3000/' + options.url;
+	options.url = 'http://129.242.22.160:3000/' + options.url;
 });
 
 
@@ -31,12 +31,12 @@ window.AppRouter = Backbone.Router.extend({
 	},
 
 	team : function(teamName){
-		this.teamModel = new TeamModel({id : teamName});
-		this.teamView = new TeamView({model : this.teamModel});
-
 		this.playersList = new PlayerListCollection();
 		this.playersList.url = "players/" + teamName;
 		this.playersView = new PlayersView({model : this.playersList});
+
+		this.teamModel = new TeamModel({id : teamName});
+		this.teamView = new TeamView({model : this.teamModel, playersModel : this.playersList});
 
 		this.setNewView([this.teamView, this.playersView]);
 	},

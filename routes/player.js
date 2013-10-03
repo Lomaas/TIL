@@ -1,14 +1,11 @@
 
 function buyWhore(team, playerId){
-    console.log(team, playerId)
      var queryObject = {
-        "fields" : ["attacks.breakthroughPlayer", "attacks.breakthrough", "attacks.typeOfAttack", "attacks.fromPlayer", "attacks.toPlayer", "attacks.team"],
         "query" : {
-            "nested" : {
-                "path" : "attacks",
+            "filtered" : {
                 "query" : {
-                    "match" : {
-                        "attacks.team" : team
+                    "query_string" : {
+                        "query": "hometeam:Tromsø"
                     }
                 }
             }
@@ -18,15 +15,17 @@ function buyWhore(team, playerId){
     elasticSearchClient.search(indexNameElastic, typeNameElastic, queryObject)
         .on('data', function(data) {
             data = JSON.parse(data);
+            console.log(team, playerId)
+
             console.log("Data buyWhore%s", JSON.stringify(data, undefined, 2));
 
         })
         .on('done', function(done){
             //always returns 0 right now
-            console.log(done);
+            console.log("Done ", done);
         })
         .on('error', function(error){
-            console.log(error)
+            console.log("Error ", error);
         })
         .exec();
 }
@@ -48,15 +47,13 @@ exports.getStats = function (req, res){
             data = JSON.parse(data);
             console.log("Data %s", JSON.stringify(data, undefined, 2));
             buyWhore(data.hits.hits[0]._source.team, data.hits.hits[0]._source.player_id);
-
-            res.jsonp(data.hits.hits);
         })
         .on('done', function(done){
             //always returns 0 right now
-            console.log(done);
+            console.log("Done ", done);
         })
         .on('error', function(error){
-            console.log(error)
+            console.log("Error ", error);
         })
         .exec();
 };
@@ -104,7 +101,7 @@ exports.getPlayersForTeam = function(req, res){
     elasticSearchClient.search(indexNamePlayer, typeNamePlayer, queryObject)
     .on('data', function(data) {
         data = JSON.parse(data);
-        console.log("Data %s", JSON.stringify(data, undefined, 2));
+        // console.log("Data %s", JSON.stringify(data, undefined, 2));
 
         res.jsonp(data.hits.hits);
     })
@@ -130,7 +127,7 @@ exports.getAllPlayers =  function(req, res){
 
     elasticSearchClient.search(indexNamePlayer, typeNamePlayer, queryObject)
         .on('data', function(data) {
-            console.log("Data %s", JSON.stringify(JSON.parse(data), undefined, 2));
+            // console.log("Data %s", JSON.stringify(JSON.parse(data), undefined, 2));
             res.jsonp(data);
         })
         .on('done', function(done){

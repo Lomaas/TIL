@@ -12,18 +12,19 @@
     	<li>
     		<b>Chances registrated: {{length}}: </b>
 	    	{{#attacks}}
-			<ul> <b> {{time}}. min - {{typeOfAttack}} ({{team}}) </b>
-				<input type="checkbox" name="attack" value="{{time}}" checked="true"><br>
-				<ul>
-					<li> Passes: {{passes.length}} </li>
-					<li> Touches: {{touch}} </li>
-	    			<li>Breakthrough player: {{breakthroughPlayer}}, {{breakthrough}}</li>
-	    			<li>Attack start: {{attackStart.type}}, {{attackStart.player}} zone {{attackStart.pos}}</li>
-	    			<li> Finish: {{finish.action}} from zone {{finish.pos}}</li>
+				<ul> <b> {{time}}. min - {{typeOfAttack}} ({{team}}) </b>
+					<input type="checkbox" name="attack" value="{{time}}" checked="true"><br>
+					<ul>
+						<li> Passes: {{passes.length}} </li>
+						<li> Touches: {{touch}} </li>
+		    			<li>Breakthrough player: {{breakthroughPlayer}}, {{breakthrough}}</li>
+		    			<li>Attack start: {{attackStart.type}}, {{attackStart.player}} zone {{attackStart.pos}}</li>
+		    			<li> Finish: {{finish.action}} from zone {{finish.pos}}</li>
+					</ul>
 				</ul>
-			</ul>
-	 	</li>
+		 	</li>
 	 	{{/attacks}}
+
     	<li> <b>Hvilke soner stopper potensielle angrep i </b></li>
     	<li> <b>Hvilke ballvinninger fører til mål og hvor på banen</b></li>
     	<li> <b>Breaking point for angrepet - noen blir dratt av/avgjørende pasning mellomrommet/bakrom (sone)</b></li>
@@ -45,238 +46,261 @@
 
 <script>
 
-var addNewPass = function() {
+	Raphael.fn.arrow = function(x1, y1, x2, y2, size) {
+		var angle = Raphael.angle(x1, y1, x2, y2);
+		var a45   = Raphael.rad(angle-45);
+		var a45m  = Raphael.rad(angle+45);
+		var a135  = Raphael.rad(angle-135);
+		var a135m = Raphael.rad(angle+135);
+		var x1a = x1 + Math.cos(a135) * size;
+		var y1a = y1 + Math.sin(a135) * size;
+		var x1b = x1 + Math.cos(a135m) * size;
+		var y1b = y1 + Math.sin(a135m) * size;
+		var x2a = x2 + Math.cos(a45) * size;
+		var y2a = y2 + Math.sin(a45) * size;
+		var x2b = x2 + Math.cos(a45m) * size;
+		var y2b = y2 + Math.sin(a45m) * size;
 
-}
+		return this.path(
+			// "M"+x1+" "+y1+"L"+x1a+" "+y1a+
+			// "M"+x1+" "+y1+"L"+x1b+" "+y1b+
+			"M"+x1+" "+y1+"L"+x2+" "+y2+
+			"M"+x2+" "+y2+"L"+x2a+" "+y2a+
+			"M"+x2+" "+y2+"L"+x2b+" "+y2b
+		);
+	};
+	// Creates canvas
+	var paper = Raphael('work', "100%", "100%");
+	var pictureSizeX = 1091;
+	var pictureSizeY = 759;
+	var pitchImage = paper.image('/img/pitch.png', 0, 0, pictureSizeX, pictureSizeY);
 
+	var counter;
+	var adjustment = 50;
 
+	var pitchSizeX = pictureSizeX - adjustment*2;
+	var pitchSizeY = pictureSizeY - adjustment*2;
 
-Raphael.fn.arrow = function(x1, y1, x2, y2, size) {
-	var angle = Raphael.angle(x1, y1, x2, y2);
-	var a45   = Raphael.rad(angle-45);
-	var a45m  = Raphael.rad(angle+45);
-	var a135  = Raphael.rad(angle-135);
-	var a135m = Raphael.rad(angle+135);
-	var x1a = x1 + Math.cos(a135) * size;
-	var y1a = y1 + Math.sin(a135) * size;
-	var x1b = x1 + Math.cos(a135m) * size;
-	var y1b = y1 + Math.sin(a135m) * size;
-	var x2a = x2 + Math.cos(a45) * size;
-	var y2a = y2 + Math.sin(a45) * size;
-	var x2b = x2 + Math.cos(a45m) * size;
-	var y2b = y2 + Math.sin(a45m) * size;
-	return this.path(
-	// "M"+x1+" "+y1+"L"+x1a+" "+y1a+
-	// "M"+x1+" "+y1+"L"+x1b+" "+y1b+
-	"M"+x1+" "+y1+"L"+x2+" "+y2+
-	"M"+x2+" "+y2+"L"+x2a+" "+y2a+
-	"M"+x2+" "+y2+"L"+x2b+" "+y2b
-	);
-};
+	var cornerZones = {};
+	cornerZones.cx = {
+		20 : 10, 
+		21 : 1081, 
+		22 : 10, 
+		23 : 1081
+	};
 
-// Creates canvas
-var paper = Raphael('work', "100%", "100%");
-var pitchImage = paper.image('/img/pitch.png', 0, 0, 1091, 759);
+	cornerZones.cy = {
+		20 : 10, 
+		21 : 10, 
+		22 : 749, 
+		23 : 749
+	};
 
-var numPlayers = 3;
-var counter;
-var adjustment = 50;
+	var zonesDictX = {
+		1 : 0,
+		2 : 0,
+		3 : 0,
+		4 : 1,
+		5 : 1,
+		6 : 1,
+		7 : 2,
+		8 : 2,
+		9 : 2,
+		10 : 3,
+		11 : 3,
+		12 : 3,
+		13 : 4,
+		14 : 4,
+		15 : 4,
+		16 : 5,
+		17 : 5,
+		18 : 5,
+		20 : 0,
+		21 : 5,
+		22 : 0,
+		23 : 5
+	};
 
-var pictureSizeX = 1091 - adjustment*2; // 1091
-var pictureSizeY = 759 - adjustment*2;	// 759
+	var zonesDictY = {
+		1 : 0,
+		2 : 1,
+		3 : 2,
+		4 : 0,
+		5 : 1,
+		6 : 2,
+		7 : 0,
+		8 : 1,
+		9 : 2,
+		10 : 0,
+		11 : 1,
+		12 : 2,
+		13 : 0,
+		14 : 1,
+		15 : 2,
+		16 : 0,
+		17 : 1,
+		18 : 2,
+		20 : 0,
+		21 : 0,
+		22 : 3,
+		23 : 3
+	};
 
+	var zonesX = 6;
+	var zonesY = 3;
 
-var sonePlayer1 = 10;
-var sonePlayer2 = 14;
-var sonePlayer3 = 17;
+	goal = {
+		"cx" : 1041,
+		"cy" : 380
+	};
 
-var zonesDictX = {
-	1 : 0,
-	2 : 0,
-	3 : 0,
-	4 : 1,
-	5 : 1,
-	6 : 1,
-	7 : 2,
-	8 : 2,
-	9 : 2,
-	10 : 3,
-	11 : 3,
-	12 : 3,
-	13 : 4,
-	14 : 4,
-	15 : 4,
-	16 : 5,
-	17 : 5,
-	18 : 5
-};
+	function PassClass(cx, cy, playerNum){
+		this.type = "circle";
+		this.cx = cx;
+		this.cy= cy;
+		this.r = 10;
+		this.fill= '#f00';
+		this.stroke= "#fff";
+		this.playerNum = playerNum;
+	};
 
-var zonesDictY = {
-	1 : 0,
-	2 : 1,
-	3 : 2,
-	4 : 0,
-	5 : 1,
-	6 : 2,
-	7 : 0,
-	8 : 1,
-	9 : 2,
-	10 : 0,
-	11 : 1,
-	12 : 2,
-	13 : 0,
-	14 : 1,
-	15 : 2,
-	16 : 0,
-	17 : 1,
-	18 : 2
-};
+	function PlayerClass(cx, cy, playerNum, stroke, fill){
+		this.type = "circle";
+		this.cx = cx;
+		this.cy= cy;
+		this.r = 10;
+		this.fill= fill;
+		this.stroke= stroke;
+		this.playerNum = playerNum;
+	};
 
-var zonesX = 6;
-var zonesY = 3;
-
-var lines = [
-	{
-		type : 'path'
-	}
-]
-
-goal = {
-	"cx" : 1041,
-	"cy" : 380
-};
-
-function PassClass(cx, cy, playerNum){
-	this.type = "circle";
-	this.cx = cx;
-	this.cy= cy;
-	this.r = 10;
-	this.fill= '#f00';
-	this.stroke= "#fff";
-	this.playerNum = playerNum;
-};
-
-function PlayerClass(cx, cy, playerNum, stroke, fill){
-	this.type = "circle";
-	this.cx = cx;
-	this.cy= cy;
-	this.r = 10;
-	this.fill= fill;
-	this.stroke= stroke;
-	this.playerNum = playerNum;
-};
-
-pass = new PassClass();
-
-var players = [];
-var allAttacks = [];
-
-//For each attack, plot each pass and edged between them
-{{ #matchObj.attacks }}
-	var passesForAttack = [];
-	var attackData = {};
-
-	{{#passes}}
-
-		var fromPos = parseInt({{fromPos}});
-		var toPos = parseInt({{toPos}});
-
-		var passFrom = new PassClass(pictureSizeX/zonesX * zonesDictX[fromPos] + ((pictureSizeX/zonesX)/2) + adjustment,
-			pictureSizeY/zonesY * zonesDictY[fromPos] + ((pictureSizeY/zonesY)/2) + adjustment,
-			{{fromPlayer}});
-
-	 	
-		var passTo = new PassClass(pictureSizeX/zonesX * zonesDictX[toPos] + ((pictureSizeX/zonesX)/2) + adjustment,
-			pictureSizeY/zonesY * zonesDictY[toPos] + ((pictureSizeY/zonesY)/2) + adjustment,
-			{{toPlayer}});
-
-		passesForAttack.push([passFrom, passTo]);
-		
-		players.push(passFrom);
-		players.push(passTo);
-
-	{{/passes}}
-
-	attackData.passes = passesForAttack;
-	var posStart = {{attackStart.pos}};
-	var posFinish = {{finish.pos}};
-
-	attackData.start = new PlayerClass(
-		pictureSizeX/zonesX * zonesDictX[posStart] + ((pictureSizeX/zonesX)/2) + adjustment,
-		pictureSizeY/zonesY * zonesDictY[posStart] + ((pictureSizeY/zonesY)/2) + adjustment,
-		{{attackStart.player}}, 
-		'#fff',
-		'#0000ff'
-	);
-
-	attackData.finish = new PlayerClass(
-		pictureSizeX/zonesX * zonesDictX[posFinish] + ((pictureSizeX/zonesX)/2) + adjustment,
-		pictureSizeY/zonesY * zonesDictY[posFinish] + ((pictureSizeY/zonesY)/2) + adjustment,
-		{{finish.player}},
-		'#f00',
-		'#f00'
-	);
-
-	players.push(attackData.start);
-	players.push(attackData.finish);
-
-	allAttacks.push(attackData);
-
-{{/matchObj.attacks}}
-
-console.log(allAttacks);
-
-/** Add players to canvas **/
-paper.add(players)
-
-
-/** Set AttackStart**/
-
-
-
-/** Draw passes **/
-var previousPlayer = null;
-_.each(allAttacks, function(attack){
-	console.log(attack);
-	var attackStart = attack.start;
-	var attackFinish = attack.finish;
-	var passes = attack.passes;
-	var firstPass = attack.passes[0][0];
-
-	console.log(attackStart.cx, firstPass.cx);
-	if(attackStart.cx != firstPass.cx || attackStart.cy != firstPass.cy){
+	function drawAttackStart(attackStart, firstPass){
 		var vectorX = firstPass.cx - attackStart.cx;
 		var vectorY = firstPass.cy - attackStart.cy;
 		var line = paper.path("M " + attackStart.cx.toString()  + " " + attackStart.cy.toString()  + " l " + vectorX.toString()  + " " + vectorY.toString());
 		line.attr("stroke", "#00FF00");
-	}
+	};
 
-	paper.arrow(attackFinish.cx, attackFinish.cy, goal.cx, goal.cy, 15);
+	function drawPasses(passes){
+		for(counter = 0; counter < passes.length; counter++){
+			var passingPlayer = passes[counter][0];
+			var recevingPlayer = passes[counter][1];
 
-	for(counter = 0; counter < passes.length; counter++){
-		console.log(passes[counter][0]);
-		var tmpPass = passes[counter];
-		var passingPlayer = tmpPass[0];
-		var recevingPlayer = tmpPass[1];
+			nextCoordX = recevingPlayer.cx;
+			nextCoordY = recevingPlayer.cy;
 
-		posY = passingPlayer.cy;
-		nextCoordX = recevingPlayer.cx;
-		nextCoordY = recevingPlayer.cy;
+			/** Draw arrow between players **/
+			paper.arrow(passingPlayer.cx, passingPlayer.cy, nextCoordX, nextCoordY, 15);
 
-		/** Draw arrow between players **/
-		paper.arrow(passingPlayer.cx, passingPlayer.cy, nextCoordX, nextCoordY, 15);
+			/** Draws line if player transported the ball **/
+			if(previousPlayer && previousPlayer.playerNum == passingPlayer.playerNum){
+				vectorX = passingPlayer.cx - previousPlayer.cx;
+				vectorY = passingPlayer.cy - previousPlayer.cy;
+				line = paper.path("M " + previousPlayer.cx.toString()  + " " + previousPlayer.cy.toString()  + " l " + vectorX.toString()  + " " + vectorY.toString());
+				line.attr("stroke", "#00FF00");
 
-		/** Draws line if player transported the ball **/
-		if(previousPlayer && previousPlayer.playerNum == passingPlayer.playerNum){
-			console.log("test");
-			vectorX = passingPlayer.cx - previousPlayer.cx;
-			vectorY = passingPlayer.cy - previousPlayer.cy;
-			line = paper.path("M " + previousPlayer.cx.toString()  + " " + previousPlayer.cy.toString()  + " l " + vectorX.toString()  + " " + vectorY.toString());
-			line.attr("stroke", "#00FF00");
-
+			}
+			previousPlayer = recevingPlayer;
 		}
-		previousPlayer = recevingPlayer;
-	}
-});
+	};
 
+	var players = [];
+	var allAttacks = [];
+
+	//For each attack, plot each pass and edged between them
+	{{ #matchObj.attacks }}
+		var passesForAttack = [];
+		var attackData = {};
+
+		{{#passes}}
+
+			var fromPos = parseInt({{fromPos}});
+			var toPos = parseInt({{toPos}});
+
+			var passFrom = new PassClass(pitchSizeX/zonesX * zonesDictX[fromPos] + ((pitchSizeX/zonesX)/2) + adjustment,
+				pitchSizeY/zonesY * zonesDictY[fromPos] + ((pitchSizeY/zonesY)/2) + adjustment,
+				{{fromPlayer}});
+
+		 	
+			var passTo = new PassClass(pitchSizeX/zonesX * zonesDictX[toPos] + ((pitchSizeX/zonesX)/2) + adjustment,
+				pitchSizeY/zonesY * zonesDictY[toPos] + ((pitchSizeY/zonesY)/2) + adjustment,
+				{{toPlayer}});
+
+			passesForAttack.push([passFrom, passTo]);
+			
+			players.push(passFrom);
+			players.push(passTo);
+
+		{{/passes}}
+
+		attackData.passes = passesForAttack;
+		var posStart = {{attackStart.pos}};
+		var posFinish = {{finish.pos}};
+		// var attackStartType = {{attackStart.typeAction}};
+		var cx = 1;
+		var cy = 1;
+
+		// if({{attackStart.action}} == "Corner"){
+		// 	cx = cornerZones.cx[posStart];
+		// 	cy = cornerZones.cy[posStart];
+		// }
+		// else {
+			cx = pitchSizeX/zonesX * zonesDictX[posStart] + ((pitchSizeX/zonesX)/2) + adjustment;
+			cy = pitchSizeY/zonesY * zonesDictY[posStart] + ((pitchSizeY/zonesY)/2) + adjustment;
+		// }
+
+		attackData.start = new PlayerClass(
+			cx,
+			cy,
+			{{attackStart.player}}, 
+			'#fff',
+			'#0000ff'
+		);
+
+		attackData.finish = new PlayerClass(
+			pitchSizeX/zonesX * zonesDictX[posFinish] + ((pitchSizeX/zonesX)/2) + adjustment,
+			pitchSizeY/zonesY * zonesDictY[posFinish] + ((pitchSizeY/zonesY)/2) + adjustment,
+			{{finish.player}},
+			'#f00',
+			'#f00'
+		);
+
+		players.push(attackData.start);
+		players.push(attackData.finish);
+
+		allAttacks.push(attackData);
+
+	{{/matchObj.attacks}}
+
+	console.log(allAttacks);
+
+	/** Add players to canvas **/
+	paper.add(players)
+
+	/** Draw passes **/
+	var previousPlayer = null;
+	console.log(allAttacks);
+
+	_.each(allAttacks, function(attack){
+		var attackStart = attack.start;
+		var attackFinish = attack.finish;
+		var passes = attack.passes;
+		
+		if(attack.passes.length != 0){
+			var firstPass = attack.passes[0][0];
+			// Draw passes
+			drawPasses(passes);
+		}
+		else {
+			firstPass = attackFinish;
+		}
+
+		// Only draw start if difference from first player position
+		if(attackStart.cx != firstPass.cx || attackStart.cy != firstPass.cy){
+			drawAttackStart(attackStart, firstPass);
+		}
+
+		// Draw finish
+		paper.arrow(attackFinish.cx, attackFinish.cy, goal.cx, goal.cy, 15);
+	});
 </script>

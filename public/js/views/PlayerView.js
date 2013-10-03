@@ -15,7 +15,7 @@ window.PlayerView = Backbone.View.extend({
     render: function (eventName) {
         console.log("in Render: %j", this.model.toJSON())
 
-        var temp = Mustache.render(this.template(), 
+        var temp = Mustache.render(this.template(),
             {
                 stats : this.model.toJSON(), 
                 name : this.model.get("name")
