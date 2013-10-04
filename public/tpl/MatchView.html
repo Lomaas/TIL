@@ -17,8 +17,19 @@
 					<ul>
 						<li> Passes: {{passes.length}} </li>
 						<li> Touches: {{touch}} </li>
-		    			<li>Breakthrough player: {{breakthroughPlayer}}, {{breakthrough}}</li>
-		    			<li>Attack start: {{attackStart.type}}, {{attackStart.player}} zone {{attackStart.pos}}</li>
+		    			<li>Breakthrough player: 
+		    				<ul>
+		    					<li>
+		    						{{breakthroughPlayer}}, {{breakthrough}}
+		    					</li>
+		    				</ul>
+	    				</li>
+		    			<li>Attack start: 
+		    				<ul>
+		    					<li>{{attackStart.typeAction}}, {{attackStart.player}} zone {{attackStart.pos}}
+		    					</li>
+		    				</ul>
+    					</li>
 		    			<li> Finish: {{finish.action}} from zone {{finish.pos}}</li>
 					</ul>
 				</ul>
@@ -71,9 +82,9 @@
 	};
 	// Creates canvas
 	var paper = Raphael('work', "100%", "100%");
-	var pictureSizeX = 1091;
-	var pictureSizeY = 759;
-	var pitchImage = paper.image('/img/pitch.png', 0, 0, pictureSizeX, pictureSizeY);
+	var pictureSizeX = 765;
+	var pictureSizeY = 532;
+	var pitchImage = paper.image('/img/pitchMedium.png', 0, 0, pictureSizeX, pictureSizeY);
 
 	var counter;
 	var adjustment = 50;
@@ -150,8 +161,8 @@
 	var zonesY = 3;
 
 	goal = {
-		"cx" : 1041,
-		"cy" : 380
+		"cx" : pictureSizeX - 30,
+		"cy" : pictureSizeY/2
 	};
 
 	function PassClass(cx, cy, playerNum){
