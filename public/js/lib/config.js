@@ -1,7 +1,14 @@
-var adjustment = 50;
+var Config = {
+	colors : ["#E0E4CC", "#F38630", "#69D2E7", "#69D2AA", "#2305AC"],
+	counter : 0,
+	getColors : function(){
+		var color = this.colors[this.counter];
+		this.counter = this.counter+1%this.colors.length;
+		return color;
+	}
+};
 
-var pitchSizeX = pictureSizeX - adjustment*2;
-var pitchSizeY = pictureSizeY - adjustment*2;
+var adjustment = 50;
 
 var cornerZones = {};
 cornerZones.cx = {
@@ -70,4 +77,3 @@ var zonesDictY = {
 
 var zonesX = 6;
 var zonesY = 3;
-

@@ -13,9 +13,13 @@ window.TeamView = Backbone.View.extend({
 
     render: function (eventName) {
         var playersDict = {}
+        var dataPieChart = [];
+        var dataBarChart = [];
+        var dataBarTerms = [];
 
         var players = this.options.playersModel.toJSON();
         var i;
+
         for(i=0; i < players.length; i++){
             playersDict[players[i].player_id.toString()] = {
                 "name" : players[i].name,
@@ -46,6 +50,65 @@ window.TeamView = Backbone.View.extend({
                 zones : this.model.get("zones")
             });
         this.$el.html(temp);
+
+        _.each(this.model.get("typeOfAttack"), function(attack){
+            dataPieChart.push({
+                "value" : attack.count,
+                "color" : Config.getColors(),
+                "label" : attack.term + " (" + attack.count + ")",
+                "labelColor": 'black',
+                "labelFontSize": '15'
+            })
+        });
+
+      _.each(this.model.get("breakthroughPlayers"), function(player){
+            dataBarChart.push(player.count);
+            dataBarTerms.push(player.term);
+        });
+
+        var ctx = $("#typesOfAttack").get(0).getContext("2d");
+        var pieChart = new Chart2(ctx).Pie(dataPieChart, {
+            labelAlign: 'center'
+        });
+
+      $('#testtest').highcharts({
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Breakthrough'
+            },
+            xAxis: {
+                categories: dataBarTerms
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Number'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'Breakthrough players',
+                data: dataBarChart
+
+            }]
+        });
+
+
 
         var adjustment = 5;
         var pictureSizeX = 413;
@@ -81,13 +144,11 @@ window.TeamView = Backbone.View.extend({
 
             var animCircle1 = Raphael.animation({cx: pictureSizeX - 20, cy: 30}, 2e3);
             var animCircle2 = Raphael.animation({cx: pictureSizeX - 20, cy: pictureSizeY/2 - 30}, 2e3);
-
+            
             circle1.animate(animCircle1); // run the given animation immediately
             circle2.animate(animCircle2.delay(500)); // run the given animation after 500 ms
 
         });
-
-
         return this;
     }
 });
