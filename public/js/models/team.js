@@ -12,6 +12,27 @@ window.TeamModel = Backbone.Model.extend({
 
     parse: function(resp){
     	console.log(resp);
+        var breakthroughXaxis = [];
+        var breakthroughValues = [];
+
+        _.each(resp.breakthrough, function(breakthrough){
+            breakthroughXaxis.push(breakthrough.term);
+            breakthroughValues.push(breakthrough.count);
+        });
+        resp.breakthroughXaxis = breakthroughXaxis;
+        resp.breakthroughValues = breakthroughValues;
+
+        resp["players"] = {};
+        _.each(resp.breakthroughPlayers, function(player){
+            console.log(player.term)
+            resp.players[player.term.toString()] = {
+                "numBreakthrough" : player.count
+            }
+        });
+
+        delete resp["breakthrough"];
+        delete resp["breakthroughPlayers"];
+
         return resp;
     }
 });
@@ -31,3 +52,4 @@ window.TeamListCollection = Backbone.Collection.extend({
     }
 
 });
+

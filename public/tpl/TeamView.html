@@ -8,33 +8,9 @@
     </div>
   </div>
   <div class="panel-body">
-    <ul> 
-      <li><b> Most often breakthrough player: </b>
-        <ul>
-          {{#breakthroughPlayer}}
-          <li> {{term}}, {{count}}</li>
-          {{/breakthroughPlayer}}
-        </ul>
-      </li>
-      <li><b> Breakthrough from: </b>
-        <ul>
-                  <div id="testtest" style="width:100%; height:400px;"></div>
-
-          {{#breakthrough}}
-          <li> {{term}}, {{count}}</li>
-          {{/breakthrough}}
-        </ul>
-      </li>
-      <li> <b> Types of attack: </b></li>
-
-        <canvas id="typesOfAttack" width="400" height="400"></canvas>
-          <ul>
-            {{#typeOfAttack}}
-            <li> {{term}}, {{count}}</li>
-            {{/typeOfAttack}}
-          </ul>
-      <li> <b> Team looses poesssion most often (SONE): </b></li>
-    </ul>
+      <div id="breakthroughPlayerChart" style="width:100%; height:500px;"></div>
+      <div id="breakthroughFrom" style="width:100%; height:400px;"></div>
+      <canvas id="typesOfAttack" width="400" height="400"></canvas>
   </div>
   </div>
 </div>
@@ -47,16 +23,7 @@
   </div>
   <div class="panel-body">
     <h4> Analyse of key players </h4>
-      {{#ballReceived}}
-        <ul>
-          </li>
-            {{name}} involved in {{count}} attacks
-            <div id="{{player_id}}">
-
-            </div>
-          </li>
-        </ul>
-      {{/ballReceived}}
+    <img src="img/pitch2.png" alt="mordi"> </img>
 
     <h4> Attacking zones </h4>
     <ul>
@@ -65,7 +32,6 @@
       {{/zones}}
     </ul>
   </div>
-
 </div>
 
 <div class="panel panel-default" id="panel-matches">

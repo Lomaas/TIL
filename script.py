@@ -8,6 +8,12 @@ import re
 # Parse it to correct format
 # Send it to server
 
+import unicodedata, re
+
+
+def remove_control_chars(s):
+    return s.decode('unicode-escape')
+
 tipppeligaLagURL = [
 		'http://www.altomfotball.no/element.do?cmd=team&teamId=313&tournamentId=1&useFullUrl=false',
 		'http://www.altomfotball.no/element.do?cmd=team&teamId=328&tournamentId=1&useFullUrl=false',
@@ -31,7 +37,8 @@ counter = 1
 
 for rootUrl in tipppeligaLagURL:
 	get = urllib2.urlopen(rootUrl).read()
-	dom = BeautifulSoup(get)
+	html = get
+	dom = BeautifulSoup(html)
 	players = dom.find_all('td', {'class' : 'sd_table_player'})
 	team = dom.find('span', {'sd_select_text'})
 
@@ -41,7 +48,11 @@ for rootUrl in tipppeligaLagURL:
 	teamJSON['players'] = []
 
 	for i in players:
-	    teamJSON['players'].append(i.get_text())
+		player = i.get_text().encode('ascii', 'ignore')
+		player = re.sub(r"(\w)([A-Z])", r"\1 \2", player)
+		player = player[1:]
+		print player
+		teamJSON['players'].append(player)
 
 	print teamJSON
 
