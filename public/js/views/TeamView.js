@@ -28,6 +28,7 @@ window.TeamView = Backbone.View.extend({
         var players = this.options.playersModel.toJSON();
         var i;
         console.log(players);
+        
         if(players == undefined)
             alert("players undefined");
 
@@ -194,8 +195,8 @@ window.TeamView = Backbone.View.extend({
         var widthZone = width/Config.zonesX;
         var heightZone = height/Config.zonesY;
         rect = new Rectangle(ctx, width, height, Config.zonesX, Config.zonesY, Config.zonesDictX, Config.zonesDictY);
-        rect.drawRect();
-        rect.drawPercentNumbers(this.model.get("zones").zones, this.model.get("zones").total);
+        rect.drawPitch();
+        //rect.drawPercentNumbers(this.model.get("zones").zones, this.model.get("zones").total);
 
         return this;
     }

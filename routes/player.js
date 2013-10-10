@@ -1,12 +1,16 @@
 
 function buyWhore(team, playerId){
      var queryObject = {
-        "query" : {
-            "nested" : {
-                "path" : "passes",
-                "query" : {
-                    "match" : {
-                        "fromPlayer" : playerId
+        "query": {
+            "nested": {
+                "path": "passes",
+                "query": {
+                    "bool": {
+                        "must": [
+                            {"match": {"passes.action": "PASS"}}
+                        ],
+                        "must_not": [],
+                        "should": []
                     }
                 }
             }
@@ -35,16 +39,15 @@ exports.getStats = function (req, res){
     var queryObject = {
         "query" : {
             "match" : {
-              "_id" : req.params.id
+                "team" : "Tromsø"
             }
-        },
-    };
-
-    elasticSearchClient.search(indexNamePlayer, typeNamePlayer, queryObject)
+        }
+    }
+    
+    elasticSearchClient.search(indexNameAttacks, typeNameAttacks, queryObject)
         .on('data', function(data) {
             data = JSON.parse(data);
-            console.log("Data %s", JSON.stringify(data, undefined, 2));
-            buyWhore(data.hits.hits[0]._source.team, data.hits.hits[0]._source.player_id);
+            console.log("Data buyWhore%s", JSON.stringify(data, undefined, 2));
         })
         .on('done', function(done){
             //always returns 0 right now
@@ -54,6 +57,29 @@ exports.getStats = function (req, res){
             console.log("Error ", error);
         })
         .exec();
+
+    // var queryObject = {
+    //     "query" : {
+    //         "match" : {
+    //           "_id" : req.params.id
+    //         }
+    //     },
+    // };
+
+    // elasticSearchClient.search(indexNamePlayer, typeNamePlayer, queryObject)
+    //     .on('data', function(data) {
+    //         data = JSON.parse(data);
+    //         console.log("Data %s", JSON.stringify(data, undefined, 2));
+    //         buyWhore(data.hits.hits[0]._source.team, data.hits.hits[0]._source.player_id);
+    //     })
+    //     .on('done', function(done){
+    //         //always returns 0 right now
+    //         console.log("Done ", done);
+    //     })
+    //     .on('error', function(error){
+    //         console.log("Error ", error);
+    //     })
+    //     .exec();
 };
 
 // Query all keypases for a player. Count which zone it offcurs most often

@@ -429,55 +429,54 @@ commands.push({ "index" : { "_index" :indexName, "_type" : typeName} });
 //     }
 // });
 
-commands.push(
-  {
-            "time": 71,
-            "touch" : 7,
-            "team" : "Tromsø",
-            "breakthrough" : "None",
-            "breakthroughPlayer" : "None",
-            "typeOfAttack" : "Gjenvinning langt angrep",
-            "attackStart" : {
-                "pos" : 10,
-                "typeAction" : "Gjenvinning",
-                "player" : 393,
-            },
-            "passes": [
-                {
-                    "fromPlayer": 393,
-                    "toPlayer": 413,
-                    "fromPos": 10,
-                    "toPos": 17,
-                    "action": "LONGPASS"
-                },
-                {
-                    "fromPlayer": 413,
-                    "toPlayer": 411,
-                    "fromPos": 17,
-                    "toPos": 17,
-                    "action": "PASS"
-                },
-                {
-                    "fromPlayer": 411,
-                    "toPlayer": 404,
-                    "fromPos": 17,
-                    "toPos": 17,
-                    "action": "PASS"
-                },
-                {
-                    "fromPlayer": 404,
-                    "toPlayer": 412,
-                    "fromPos": 17,
-                    "toPos": 17,
-                    "action": "PASS"
-                }
-            ],
-            "finish" : {
-                "player": 412,
-                "pos": 17,
-                "action": "SHOTGOAL",
-                "touch" : 1
-            }
+commands.push({
+    "time": 71,
+    "touch" : 7,
+    "team" : "Tromsø",
+    "breakthrough" : "None",
+    "breakthroughPlayer" : "None",
+    "typeOfAttack" : "Gjenvinning langt angrep",
+    "attackStart" : {
+        "pos" : 10,
+        "typeAction" : "Gjenvinning",
+        "player" : 393,
+    },
+    "passes": [
+        {
+            "fromPlayer": 393,
+            "toPlayer": 413,
+            "fromPos": 10,
+            "toPos": 17,
+            "action": "LONGPASS"
+        },
+        {
+            "fromPlayer": 413,
+            "toPlayer": 411,
+            "fromPos": 17,
+            "toPos": 17,
+            "action": "PASS"
+        },
+        {
+            "fromPlayer": 411,
+            "toPlayer": 404,
+            "fromPos": 17,
+            "toPos": 17,
+            "action": "PASS"
+        },
+        {
+            "fromPlayer": 404,
+            "toPlayer": 412,
+            "fromPos": 17,
+            "toPos": 17,
+            "action": "PASS"
+        }
+    ],
+    "finish" : {
+        "player": 412,
+        "pos": 17,
+        "action": "SHOTGOAL",
+        "touch" : 1
+    }
 });
 
 elasticSearchClient.bulk(commands, {})

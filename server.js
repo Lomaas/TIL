@@ -16,6 +16,9 @@ typeNamePlayer = "player";
 indexNameAttacks = "attacks"
 typeNameAttacks = "attack"
 
+indexNamePasses = "passes"
+typeNamePasses = "pass"
+
 ElasticSearchClient = require('elasticsearchclient');
 
 elasticSearchClient = new ElasticSearchClient(serverOptions);

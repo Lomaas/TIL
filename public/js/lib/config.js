@@ -7,54 +7,70 @@ var Config = {
 		return color;
 	},
 	zonesX : 6,
-	zonesY : 3,
+	zonesY : 4,
 	zonesDictX : {
 		1 : 0,
 		2 : 0,
 		3 : 0,
-		4 : 1,
+		4 : 0,
 		5 : 1,
 		6 : 1,
-		7 : 2,
-		8 : 2,
+		7 : 1,
+		8 : 1,
 		9 : 2,
-		10 : 3,
-		11 : 3,
-		12 : 3,
-		13 : 4,
-		14 : 4,
-		15 : 4,
-		16 : 5,
-		17 : 5,
-		18 : 5,
-		20 : 0,
+		10 : 2,
+		11 : 2,
+		12 : 2,
+		13 : 3,
+		14 : 3,
+		15 : 3,
+		16 : 3,
+		17 : 4,
+		18 : 4,
+		19 : 4,
+		20 : 4,
 		21 : 5,
-		22 : 0,
-		23 : 5
+		22 : 5,
+		23 : 5,
+		24 : 5.6,
+		25 : 5,
+		26 : 5,
+		30 : 0,
+		31 : 5,
+		32 : 0,
+		33 : 5
 	},
 	zonesDictY : {
 		1 : 0,
 		2 : 1,
 		3 : 2,
-		4 : 0,
-		5 : 1,
-		6 : 2,
-		7 : 0,
-		8 : 1,
-		9 : 2,
-		10 : 0,
-		11 : 1,
-		12 : 2,
+		4 : 3,
+		5 : 0,
+		6 : 1,
+		7 : 2,
+		8 : 3,
+		9 : 0,
+		10 : 1,
+		11 : 2,
+		12 : 3,
 		13 : 0,
 		14 : 1,
 		15 : 2,
-		16 : 0,
-		17 : 1,
-		18 : 2,
-		20 : 0,
+		16 : 3,
+		17 : 0,
+		18 : 1,
+		19 : 2,
+		20 : 3,
 		21 : 0,
-		22 : 3,
-		23 : 3
+		22 : 1,
+		23 : 1.5,
+		24 : 1.5,
+		25 : 2.5,
+		26 : 3,
+		30 : 0,
+		31 : 0,
+		32 : 3,
+		33 : 3
 	}
 };
 
@@ -69,10 +85,10 @@ function Rectangle(ctx, width, height, zonesX, zonesY, zonesDictX, zonesDictY){
     this.zonesDictX = zonesDictX;
     this.zonesDictY = zonesDictY;
 
-    this.drawRect = function(){
+    this.drawPitch = function(){
 	   	this.ctx.rect(0,0,this.width, this.height);
 
-	    this.ctx.fillStyle = "green"
+	    this.ctx.fillStyle = "lightgreen"
 	    this.ctx.fill();
 
 	    this.ctx.lineWidth = "2";    
@@ -95,13 +111,39 @@ function Rectangle(ctx, width, height, zonesX, zonesY, zonesDictX, zonesDictY){
 	    for(iter=1; iter < this.zonesY; iter++){
 	        this.ctx.beginPath();
 	        this.ctx.moveTo(0, this.heightZone*iter);
-	        this.ctx.lineTo(this.width, this.heightZone*iter);
+
+	        if(iter == 2){
+		        this.ctx.lineTo(this.width-this.widthZone, this.heightZone*iter);
+	        }
+	        else {
+	        	this.ctx.lineTo(this.width, this.heightZone*iter);
+	        }
 	        this.ctx.strokeStyle = '#000000';
 	        this.ctx.lineWidth = 2;
 	        this.ctx.stroke();
 	    }
 
+	    // 16 meter
+	    this.ctx.beginPath();
+	    this.ctx.moveTo(this.widthZone*5, this.heightZone + this.heightZone/2);
+        this.ctx.lineTo(this.widthZone*6, this.heightZone + this.heightZone/2);   
+        this.ctx.strokeStyle = '#000000';
+        this.ctx.lineWidth = 2;
+        this.ctx.stroke();
 
+	    this.ctx.beginPath();
+	    this.ctx.moveTo(this.widthZone*5, this.heightZone*2 + this.heightZone/2);
+        this.ctx.lineTo(this.widthZone*6, this.heightZone*2 + this.heightZone/2);   
+        this.ctx.strokeStyle = '#000000';
+        this.ctx.lineWidth = 2;
+        this.ctx.stroke();
+
+	    this.ctx.beginPath();
+	    this.ctx.moveTo(this.widthZone*6 - this.widthZone/3, this.heightZone + this.heightZone/2);
+        this.ctx.lineTo(this.widthZone*6 - this.widthZone/3, this.heightZone*2 + this.heightZone/2);   
+        this.ctx.strokeStyle = '#000000';
+        this.ctx.lineWidth = 2;
+        this.ctx.stroke();
     };
 
     this.drawPercentNumbers = function(zones, total){
