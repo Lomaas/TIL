@@ -2,23 +2,22 @@
 function buyWhore(team, playerId){
      var queryObject = {
         "query" : {
-            "filtered" : {
+            "nested" : {
+                "path" : "passes",
                 "query" : {
-                    "query_string" : {
-                        "query": "hometeam:Tromsø"
+                    "match" : {
+                        "fromPlayer" : playerId
                     }
                 }
             }
         }
-    };
-
-    elasticSearchClient.search(indexNameElastic, typeNameElastic, queryObject)
+    }
+    
+    elasticSearchClient.search(indexNameAttacks, typeNameAttacks, queryObject)
         .on('data', function(data) {
             data = JSON.parse(data);
-            console.log(team, playerId)
-
+            console.log(team, playerId);
             console.log("Data buyWhore%s", JSON.stringify(data, undefined, 2));
-
         })
         .on('done', function(done){
             //always returns 0 right now
@@ -28,13 +27,12 @@ function buyWhore(team, playerId){
             console.log("Error ", error);
         })
         .exec();
-}
-
+};
 
 exports.getStats = function (req, res){
     console.log("get stats " + req.params.id);
 
-    var queryObject = { 
+    var queryObject = {
         "query" : {
             "match" : {
               "_id" : req.params.id
@@ -57,6 +55,8 @@ exports.getStats = function (req, res){
         })
         .exec();
 };
+
+// Query all keypases for a player. Count which zone it offcurs most often
 
 exports.getAllPasses = function (req, res) {
     console.log("Find all matches");

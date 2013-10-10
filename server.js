@@ -5,12 +5,16 @@ var serverOptions = {
 };
 
 indexNameElastic = "matches";
-indexNameTeams = "teams"
-indexNamePlayer = "players"
-
 typeNameElastic = "match";
+
+indexNameTeams = "teams"
 typeNameTeams = "team"
+
+indexNamePlayer = "players"
 typeNamePlayer = "player";
+
+indexNameAttacks = "attacks"
+typeNameAttacks = "attack"
 
 ElasticSearchClient = require('elasticsearchclient');
 
@@ -19,6 +23,7 @@ elasticSearchClient = new ElasticSearchClient(serverOptions);
 var express = require('express'),
     matches = require('./routes/matches'),
     player = require('./routes/player'),
+    attacks = require('./routes/attacks'),
     teams = require('./routes/teams');
  
 var app = express();
@@ -46,6 +51,9 @@ app.get('/player/:id', player.getStats);
 app.get('/players', player.getAllPlayers);
 app.post('/player/:name', player.newPass);
 app.post('/player', player.newPlayer);
+
+
+app.post('/attack/:matchId', attacks.putAttack);
 
 app.listen(3000);
 console.log('Listening on port 3000...');

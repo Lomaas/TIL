@@ -148,7 +148,10 @@ exports.getTeam = function(req, res){
             json['breakthrough'] = data.facets.breakthrough.terms;
             json['typeOfAttack'] = data.facets.typeOfAttack.terms;
             json['ballReceived'] = data.facets.fromPlayer.terms;
-            json['zones'] = data.facets.zones.terms;
+            json['zones'] = {
+                "zones" : data.facets.zones.terms,
+                "total" : data.facets.zones.total
+            };
 
             // WHo combines with the key players. Which passes is the key passes
 
