@@ -1,53 +1,10 @@
+var passModel = require('./models/pass');
+
 exports.getStats = function (req, res){
     console.log("get stats " + req.params.id.toString());
+    response = passModel.getPassStats(parseInt(req.params.id));                  
 
-     var queryObject = {
-        "query": {
-            "bool": {
-                "must": [
-                    {"match": {"fromPlayer": parseInt(req.params.id)}}                  
-                ],
-                "must_not": [
-                ],
-                "should": []
-            }
-        },
-         "facets" : {
-            "fromPos" : {
-                "terms" : {
-                    "field" : "fromPos"
-                }
-            },
-            "toPos" : {
-                "terms" : {
-                    "field" : "toPos"
-                }
-            },
-            "action" : {
-                "terms" : {
-                    "field" : "action"
-                }
-            }
-        }
-    };
-    
-    elasticSearchClient.search(indexNamePasses, typeNamePasses, queryObject)
-        .on('data', function(data) {
-            data = JSON.parse(data);
-            console.log("Data: %s", JSON.stringify(data, undefined, 2));
-            response = {
-                "facets" : data.facets
-            }
-            res.send(201, response);
-        })
-        .on('done', function(done){
-            //always returns 0 right now
-            console.log("Done ", done);
-        })
-        .on('error', function(error){
-            console.log("Error ", error);
-        })
-        .exec();
+    res.jsonp(response);
 };
 
 // Query all keypases for a player. Count which zone it offcurs most often

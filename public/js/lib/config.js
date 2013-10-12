@@ -31,8 +31,8 @@ var Config = {
 		20 : 4,
 		21 : 5,
 		22 : 5,
-		23 : 5,
-		24 : 5.6,
+		23 : 4.8,
+		24 : 5.4,
 		25 : 5,
 		26 : 5,
 		30 : 0,
@@ -62,10 +62,10 @@ var Config = {
 		19 : 2,
 		20 : 3,
 		21 : 0,
-		22 : 1,
+		22 : 0.85,
 		23 : 1.5,
 		24 : 1.5,
-		25 : 2.5,
+		25 : 2.3,
 		26 : 3,
 		30 : 0,
 		31 : 0,
@@ -147,7 +147,7 @@ function Rectangle(ctx, width, height, zonesX, zonesY, zonesDictX, zonesDictY){
     };
 
     this.drawPercentNumbers = function(zones, total){
-    	this.ctx.fillStyle = "white";
+    	this.ctx.fillStyle = "black";
 	    this.ctx.font = "bold 16px Arial";
 	    var adjustment = 20;
 	    var that = this;
@@ -158,6 +158,12 @@ function Rectangle(ctx, width, height, zonesX, zonesY, zonesDictX, zonesDictY){
 
 	        var x = that.zonesDictX[zone] * that.widthZone + that.widthZone/2 - adjustment;
 	        var y = that.zonesDictY[zone] * that.heightZone + that.heightZone/2;
+
+	        if(zone == 24){
+	        	console.log(x, y);
+	        	console.log(that.zonesDictX[zone]);
+	        	console.log(that.zonesDictY[zone]);
+	        }
 	        var percent = (((count/total) * 100).toFixed(2));
 
 	        that.ctx.fillText(percent.toString()+"%", x, y);

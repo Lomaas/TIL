@@ -13,7 +13,7 @@ window.PlayerView = Backbone.View.extend({
     },
 
     render: function (eventName) {
-        console.log("in Render: %j", this.model.toJSON())
+        console.log("in Render: %j", this.model.toJSON());
 
         var temp = Mustache.render(this.template(),
             {
@@ -22,6 +22,24 @@ window.PlayerView = Backbone.View.extend({
             }
         );
         this.$el.html(temp);
+        var width = 600;
+        var height = 400;
+        var widthZone = width/Config.zonesX;
+        var heightZone = height/Config.zonesY;
+        
+        var c=document.getElementById("attackingZonesPlayedFrom");
+        var ctx=c.getContext("2d");
+   
+        rect = new Rectangle(ctx, width, height, Config.zonesX, Config.zonesY, Config.zonesDictX, Config.zonesDictY);
+        rect.drawPitch();
+        rect.drawPercentNumbers(this.model.get("facets").fromPos.terms, this.model.get("facets").fromPos.total);
+
+        c=document.getElementById("attackingZonesPlayedTo");
+        ctx=c.getContext("2d");
+   
+        rect = new Rectangle(ctx, width, height, Config.zonesX, Config.zonesY, Config.zonesDictX, Config.zonesDictY);
+        rect.drawPitch();
+        rect.drawPercentNumbers(this.model.get("facets").toPos.terms, this.model.get("facets").toPos.total);
 
         return this;
     }

@@ -1,5 +1,9 @@
 window.PlayerModel = Backbone.Model.extend({
-    urlRoot : 'player'
+    urlRoot : 'player',
+    parse : function(resp){
+        console.log(resp);
+        return resp;
+    }
 });
 
 window.PlayerListCollection = Backbone.Collection.extend({

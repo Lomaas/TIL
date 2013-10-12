@@ -97,7 +97,8 @@ exports.getTeam = function(req, res){
             "fromPlayer" : {
                 "nested": "passes",
                 "terms" : {
-                    "field" : "passes.fromPlayer"
+                    "field" : "passes.fromPlayer",
+                    "size" : 30
                 },
             },
             "toPlayer" : {
@@ -108,7 +109,8 @@ exports.getTeam = function(req, res){
             },
             "breakthroughPlayer" : {
                 "terms" : {
-                    "fields" : ["breakthroughPlayer.untouched"]
+                    "fields" : ["breakthroughPlayer.untouched"],
+                    "size" : 30
                 }
             },
             "breakthrough" : {
@@ -124,7 +126,8 @@ exports.getTeam = function(req, res){
             "zones" : {
                 "nested": "passes",
                 "terms" : {
-                    "fields" : ["passes.fromPos", "passes.toPos"]
+                    "fields" : ["passes.fromPos", "passes.toPos"],
+                    "size" : 30
                 },
             },
         }

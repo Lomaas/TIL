@@ -49,8 +49,6 @@ window.TeamView = Backbone.View.extend({
 
         var receivedPasses = this.model.get("ballReceived");
 
-        console.log(keyPlayers["Josh Pritchard"]);
-
         for(i=0; i < receivedPasses.length; i++){
             var playerId = receivedPasses[i].term.toString();
 
@@ -69,12 +67,12 @@ window.TeamView = Backbone.View.extend({
             }
         }
         var temp = Mustache.render(this.template(), {
-                teamname : this.model.id, 
-                breakthrough : this.model.get("breakthrough"),
-                breakthroughPlayer : this.model.get("breakthroughPlayers"),
-                typeOfAttack : this.model.get("typeOfAttack"),
-                zones : this.model.get("zones").zones
-            });
+            teamname : this.model.id, 
+            breakthrough : this.model.get("breakthrough"),
+            breakthroughPlayer : this.model.get("breakthroughPlayers"),
+            typeOfAttack : this.model.get("typeOfAttack"),
+            zones : this.model.get("zones").zones
+        });
         this.$el.html(temp);
 
 
@@ -118,36 +116,33 @@ window.TeamView = Backbone.View.extend({
         console.log(breakthroughValues);
         console.log(involvedValues);
 
-
         $('#breakthroughPlayerChart').highcharts({
-                chart: {
-                    type: 'bar'
-                },
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Which players is most involved in attacks/breakthrough player'
+            },
+            xAxis: {
+                categories: Object.keys(keyPlayers)
+            },
+            yAxis: {
+                min: 0,
                 title: {
-                    text: 'Which players is most involved in attacks/breakthrough player'
+                    text: 'Number'
+                }
+            },
+            series: [
+                {
+                    name: 'Breakthrough player',
+                    data: breakthroughValues
                 },
-                xAxis: {
-                    categories: Object.keys(keyPlayers)
-                },
-                yAxis: {
-                    min: 0,
-                    title: {
-                        text: 'Number'
-                    }
-                },
-                series: [
-                    {
-                        name: 'Breakthrough player',
-                        data: breakthroughValues
-                    },
-                    {
-                        name: "Attacks involved in",
-                        data: involvedValues
-                    }
-                ]
-            }
-
-        );
+                {
+                    name: "Attacks involved in",
+                    data: involvedValues
+                }
+            ]
+        });
 
         //var typesBreakthorugh = ["Pasning Bakrom", "Pasning Mellomrom", "1vs1 Bakrom", "1vs1 Mellomrom", "Gjennombrudd i LA"];
         $('#breakthroughFrom').highcharts({
@@ -196,7 +191,7 @@ window.TeamView = Backbone.View.extend({
         var heightZone = height/Config.zonesY;
         rect = new Rectangle(ctx, width, height, Config.zonesX, Config.zonesY, Config.zonesDictX, Config.zonesDictY);
         rect.drawPitch();
-        //rect.drawPercentNumbers(this.model.get("zones").zones, this.model.get("zones").total);
+        rect.drawPercentNumbers(this.model.get("zones").zones, this.model.get("zones").total);
 
         return this;
     }
