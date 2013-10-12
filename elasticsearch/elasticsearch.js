@@ -376,7 +376,277 @@ insertMatch({
                 "pos": 23,
                 "action": "SHOTTARGET"
             }
-        }
+        },
+       {
+            "time": 57,
+            "touch" : 15,
+            "team" : "Rosenborg",
+            "breakthrough" : "None",
+            "breakthroughPlayer" : "None",
+            "typeOfAttack" : "Etablert spill",
+            "attackStart" : {
+                "pos" : 17,
+                "typeAction" : "Innkast",
+                "player" : 7
+            },
+            "passes": [                
+                {
+                    "fromPlayer": 7,
+                    "toPlayer": 23,
+                    "fromPos": 17,
+                    "toPos": 17,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 23,
+                    "toPlayer": 7,
+                    "fromPos": 17,
+                    "toPos": 17,
+                    "action": "PASS"
+                },
+                {
+                   "fromPlayer": 7,
+                    "toPlayer": 23,
+                    "fromPos": 17,
+                    "toPos": 17,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 23,
+                    "toPlayer": 8,
+                    "fromPos": 17,
+                    "toPos": 9,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 8,
+                    "toPlayer": 13,
+                    "fromPos": 10,
+                    "toPos": 11,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 13,
+                    "toPlayer": 26,
+                    "fromPos": 15,
+                    "toPos": 20,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 26,
+                    "toPlayer": 6,
+                    "fromPos": 20,
+                    "toPos": 20,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 6,
+                    "toPlayer": 13,
+                    "fromPos": 20,
+                    "toPos": 15,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 13,
+                    "toPlayer": 18,
+                    "fromPos": 15,
+                    "toPos": 14,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 18,
+                    "toPlayer": 7,
+                    "fromPos": 15,
+                    "toPos": 17,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 7,
+                    "toPlayer": 26,
+                    "fromPos": 21,
+                    "toPos": 24,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 26,
+                    "toPlayer": 23,
+                    "fromPos": 24,
+                    "toPos": 24,
+                    "action": "PASS"
+                }
+            ],
+            "finish" : {
+                "player": 23,
+                "pos": 24,
+                "action": "SHOTTARGET"
+            }
+        },
+        {
+            "time": 76,
+            "touch" : 5,
+            "team" : "Tromsø",
+            "breakthrough" : "Pasning bakrom",
+            "breakthroughPlayer" : "Remi Johansen",
+            "typeOfAttack" : "Gjenvinning langt angrep",
+            "attackStart" : {
+                "pos" : 11,
+                "typeAction" : "Gjenvinning",
+                "player" : 396,
+
+            },
+            "passes": [
+                {
+                    "fromPlayer": 396,
+                    "toPlayer": 413,
+                    "fromPos": 11,
+                    "toPos": 14,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 413,
+                    "toPlayer": 403,
+                    "fromPos": 14,
+                    "toPos": 113,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 403,
+                    "toPlayer": 402,
+                    "fromPos": 13,
+                    "toPos": 14,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 402,
+                    "toPlayer": 406,
+                    "fromPos": 14,
+                    "toPos": 14,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 406,
+                    "toPlayer": 403,
+                    "fromPos": 18,
+                    "toPos": 22,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 403,
+                    "toPlayer": 407,
+                    "fromPos": 22,
+                    "toPos": 23,
+                    "action": "PASS"
+                }
+            ],
+            "finish" : {
+                "player": 411,
+                "pos": 25,
+                "action": "SHOTTARGET"
+            }
+        },
+        {
+            "time": 80,
+            "touch" : 15,
+            "team" : "Rosenborg",
+            "breakthrough" : "None",
+            "breakthroughPlayer" : "None",
+            "typeOfAttack" : "Etablert spill",
+            "attackStart" : {
+                "pos" : 16,
+                "typeAction" : "Innkast",
+                "player" : 6
+            },
+            "passes": [                
+                {
+                    "fromPlayer": 6,
+                    "toPlayer": 25,
+                    "fromPos": 16,
+                    "toPos": 19,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 25,
+                    "toPlayer": 6,
+                    "fromPos": 16,
+                    "toPos": 16,
+                    "action": "PASS"
+                },
+                {
+                   "fromPlayer": 6,
+                    "toPlayer": 22,
+                    "fromPos": 16,
+                    "toPos": 16,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 22,
+                    "toPlayer": 7,
+                    "fromPos": 20,
+                    "toPos": 21,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 7,
+                    "toPlayer": 26,
+                    "fromPos": 21,
+                    "toPos": 18,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 26,
+                    "toPlayer": 7,
+                    "fromPos": 18,
+                    "toPos": 21,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 7,
+                    "toPlayer": 16,
+                    "fromPos": 21,
+                    "toPos": 22,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 16,
+                    "toPlayer": 25,
+                    "fromPos": 22,
+                    "toPos": 23,
+                    "action": "PASS"
+                }
+            ],
+            "finish" : {
+                "player": 25,
+                "pos": 23,
+                "action": "SHOTTARGET"
+            }
+        },
+        {
+            "time": 83,
+            "touch" : 1,
+            "team" : "Rosenborg",
+            "breakthrough" : "None",
+            "breakthroughPlayer" : "None",
+            "typeOfAttack" : "Gjenvinning kort angrep",
+            "attackStart" : {
+                "pos" : 20,
+                "typeAction" : "Frispark",
+                "player" : 6
+            },
+            "passes": [   
+                {
+                    "fromPlayer": 6,
+                    "toPlayer": 16,
+                    "fromPos": 26,
+                    "toPos": 23,
+                    "action": "PASS"
+                }             
+            ],
+            "finish" : {
+                "player": 16,
+                "pos": 23,
+                "action": "SHOTTARGET"
+            }
+        },
     ]
 });
 
