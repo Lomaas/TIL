@@ -1,53 +1,44 @@
+exports.getStats = function (req, res){
+    console.log("get stats " + req.params.id.toString());
 
-function buyWhore(team, playerId){
      var queryObject = {
         "query": {
-            "nested": {
-                "path": "passes",
-                "query": {
-                    "bool": {
-                        "must": [
-                            {"match": {"passes.action": "PASS"}}
-                        ],
-                        "must_not": [],
-                        "should": []
-                    }
+            "bool": {
+                "must": [
+                    {"match": {"fromPlayer": parseInt(req.params.id)}}                  
+                ],
+                "must_not": [
+                ],
+                "should": []
+            }
+        },
+         "facets" : {
+            "fromPos" : {
+                "terms" : {
+                    "field" : "fromPos"
+                }
+            },
+            "toPos" : {
+                "terms" : {
+                    "field" : "toPos"
+                }
+            },
+            "action" : {
+                "terms" : {
+                    "field" : "action"
                 }
             }
         }
-    }
+    };
     
-    elasticSearchClient.search(indexNameAttacks, typeNameAttacks, queryObject)
+    elasticSearchClient.search(indexNamePasses, typeNamePasses, queryObject)
         .on('data', function(data) {
             data = JSON.parse(data);
-            console.log(team, playerId);
-            console.log("Data buyWhore%s", JSON.stringify(data, undefined, 2));
-        })
-        .on('done', function(done){
-            //always returns 0 right now
-            console.log("Done ", done);
-        })
-        .on('error', function(error){
-            console.log("Error ", error);
-        })
-        .exec();
-};
-
-exports.getStats = function (req, res){
-    console.log("get stats " + req.params.id);
-
-    var queryObject = {
-        "query" : {
-            "match" : {
-                "team" : "Tromsø"
+            console.log("Data: %s", JSON.stringify(data, undefined, 2));
+            response = {
+                "facets" : data.facets
             }
-        }
-    }
-    
-    elasticSearchClient.search(indexNameAttacks, typeNameAttacks, queryObject)
-        .on('data', function(data) {
-            data = JSON.parse(data);
-            console.log("Data buyWhore%s", JSON.stringify(data, undefined, 2));
+            res.send(201, response);
         })
         .on('done', function(done){
             //always returns 0 right now
@@ -57,65 +48,44 @@ exports.getStats = function (req, res){
             console.log("Error ", error);
         })
         .exec();
-
-    // var queryObject = {
-    //     "query" : {
-    //         "match" : {
-    //           "_id" : req.params.id
-    //         }
-    //     },
-    // };
-
-    // elasticSearchClient.search(indexNamePlayer, typeNamePlayer, queryObject)
-    //     .on('data', function(data) {
-    //         data = JSON.parse(data);
-    //         console.log("Data %s", JSON.stringify(data, undefined, 2));
-    //         buyWhore(data.hits.hits[0]._source.team, data.hits.hits[0]._source.player_id);
-    //     })
-    //     .on('done', function(done){
-    //         //always returns 0 right now
-    //         console.log("Done ", done);
-    //     })
-    //     .on('error', function(error){
-    //         console.log("Error ", error);
-    //     })
-    //     .exec();
 };
 
 // Query all keypases for a player. Count which zone it offcurs most often
 
-exports.getAllPasses = function (req, res) {
-    console.log("Find all matches");
 
-    var query = Match.find();
-	query.where('attacks.team').gte("Tromsø IL").exec(function (err, passes) {	
-        if (err) res.send(400, {"msg" : "someting wrong happend during query executing"});
+exports.getPassesForPlayer = function(req, res){
+    var playerId = parseInt(req.params.id);
 
-        console.log(passes);
-        console.log("passes: %j", passes);
-        res.jsonp(passes);
-    });
-};
+    var queryObject = { 
+        "query" : {
+            "match" : {
+                "fromPlayer" : playerId
+            }
+        }
+    };
 
-exports.newPass = function (req, res) {
-    console.log("NewPass");
-    name = parseInt(req.params.name);
+    elasticSearchClient.search(indexNameElastic, typeNameElastic, queryObject)
+        .on('data', function(data) {
+            data = JSON.parse(data);
+            console.log("Data %s", JSON.stringify(data.hits.hits, undefined, 2));
 
-    var query = Match.find();
-	query.where('attacks.team').gte("Tromsø IL").exec(function (err, passes) {
-        if (err) res.send(400, {"msg" : "someting wrong happend during query executing"});
+            res.jsonp(data);
+        })
+        .on('done', function(done){
+            console.log(done);
+        })
+        .on('error', function(error){
+            console.log(error)
+        })
+        .exec()
+}
 
-        console.log(passes);
-        console.log("passes: %j", passes);
-        res.jsonp(passes);
-    });
-};
 
 exports.getPlayersForTeam = function(req, res){
     var team = req.params.teamname;
     console.log("GET PLAYERS FOR TEAM-----" + team);
 
-    var queryObject = { 
+    var queryObject = {
         "query" : {
             "match" : {
                 "team" : team
@@ -132,7 +102,6 @@ exports.getPlayersForTeam = function(req, res){
         res.jsonp(data.hits.hits);
     })
     .on('done', function(done){
-        //always returns 0 right now
         console.log(done);
     })
     .on('error', function(error){

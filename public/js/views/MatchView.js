@@ -22,7 +22,7 @@ window.MatchView = Backbone.View.extend({
         var temp = Mustache.render(
             this.template(), 
             {   
-                "match" : this.model.get("match"), 
+                "match" : this.model.get("hometeam") + " - " + this.model.get("awayteam"), 
                 "matchObj" : this.model.toJSON(),
                 "attacks" : attacks,
                 "length" : attacks.length

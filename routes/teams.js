@@ -89,56 +89,48 @@ exports.getTeam = function(req, res){
 
     var queryObject = {        
         "query" : {
-            "nested" : {
-                "path" : "attacks",
-                "query" : {
-                    "match" : {
-                        "attacks.team" : team
-                    }
-                }
+            "match" : {
+                "team" : team
             }
         },
         "facets" : {
             "fromPlayer" : {
-                "nested": "attacks.passes",
+                "nested": "passes",
                 "terms" : {
-                    "field" : "attacks.passes.fromPlayer"
+                    "field" : "passes.fromPlayer"
                 },
             },
             "toPlayer" : {
-                "nested": "attacks.passes",
+                "nested": "passes",
                 "terms" : {
-                    "field" : "attacks.passes.toPlayer"
+                    "field" : "passes.toPlayer"
                 },
             },
             "breakthroughPlayer" : {
-                "nested": "attacks",
                 "terms" : {
-                    "fields" : ["attacks.breakthroughPlayer.untouched"]
+                    "fields" : ["breakthroughPlayer.untouched"]
                 }
             },
             "breakthrough" : {
-                "nested": "attacks",
                 "terms" : {
-                    "field" : "attacks.breakthrough.untouched"
+                    "field" : "breakthrough.untouched"
                 }
             },
             "typeOfAttack" : {
-                "nested": "attacks",
                 "terms" : {
-                    "field" : "attacks.typeOfAttack.untouched"
+                    "field" : "typeOfAttack.untouched"
                 }
             },
             "zones" : {
-                "nested": "attacks.passes",
+                "nested": "passes",
                 "terms" : {
-                    "fields" : ["attacks.passes.fromPos", "attacks.passes.toPos"]
-                }
+                    "fields" : ["passes.fromPos", "passes.toPos"]
+                },
             },
         }
     };
 
-    elasticSearchClient.search(indexNameElastic, typeNameElastic, queryObject)
+    elasticSearchClient.search(indexNameAttacks, typeNameAttacks, queryObject)
         .on('data', function(data) {
             data = JSON.parse(data);
             console.log("Data %s", JSON.stringify(data, undefined, 2));
@@ -172,3 +164,57 @@ exports.getTeam = function(req, res){
 function callback(res, json, numQueries){
     res.jsonp(json);
 }
+
+
+
+//
+    // var queryObject = {        
+    //     "query" : {
+    //         "nested" : {
+    //             "path" : "attacks",
+    //             "query" : {
+    //                 "match" : {
+    //                     "attacks.team" : team
+    //                 }
+    //             }
+    //         }
+    //     },
+    //     "facets" : {
+    //         "fromPlayer" : {
+    //             "nested": "attacks.passes",
+    //             "terms" : {
+    //                 "field" : "attacks.passes.fromPlayer"
+    //             },
+    //         },
+    //         "toPlayer" : {
+    //             "nested": "attacks.passes",
+    //             "terms" : {
+    //                 "field" : "attacks.passes.toPlayer"
+    //             },
+    //         },
+    //         "breakthroughPlayer" : {
+    //             "nested": "attacks",
+    //             "terms" : {
+    //                 "fields" : ["attacks.breakthroughPlayer.untouched"]
+    //             }
+    //         },
+    //         "breakthrough" : {
+    //             "nested": "attacks",
+    //             "terms" : {
+    //                 "field" : "attacks.breakthrough.untouched"
+    //             }
+    //         },
+    //         "typeOfAttack" : {
+    //             "nested": "attacks",
+    //             "terms" : {
+    //                 "field" : "attacks.typeOfAttack.untouched"
+    //             }
+    //         },
+    //         "zones" : {
+    //             "nested": "attacks.passes",
+    //             "terms" : {
+    //                 "fields" : ["attacks.passes.fromPos", "attacks.passes.toPos"]
+    //             }
+    //         },
+    //     }
+    // };
