@@ -1,7 +1,7 @@
 var indexNamePasses = "passes";
 var typeNamePasses = "pass"
 
-exports.getPassStats = function(userId){
+exports.getPassStats = function(userId, callback){
     var queryObject = {
         "query": {
             "bool": {
@@ -47,7 +47,7 @@ exports.getPassStats = function(userId){
             response = {
                 "facets" : data.facets
             }
-            return response;
+            callback(response);
         })
         .on('done', function(done){
             //always returns 0 right now
@@ -57,4 +57,24 @@ exports.getPassStats = function(userId){
             console.log("Error ", error);
         })
         .exec();
-}
+};
+
+exports.newPass = function(pass, callback){
+    var commands = []
+    commands.push({ "index" : { "_index" :indexNamePasses, "_type" : typeNamePasses} });
+    commands.push(pass);
+
+    elasticSearchClient.bulk(commands, {})
+        .on('data', function(data) {
+            console.log(data);
+        })
+        .on('done', function(done){
+            console.log(done);
+            callback(OK_REQUEST);
+        })
+        .on('error', function(error){
+            console.log(error);
+            callback(BAD_REQUEST);
+        })
+        .exec();
+};

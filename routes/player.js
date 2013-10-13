@@ -1,10 +1,12 @@
-var passModel = require('./models/pass');
+var passModel = require('./../models/pass');
 
 exports.getStats = function (req, res){
     console.log("get stats " + req.params.id.toString());
-    response = passModel.getPassStats(parseInt(req.params.id));                  
 
-    res.jsonp(response);
+    response = passModel.getPassStats(parseInt(req.params.id), function(response){
+        console.log(response);
+        res.jsonp(response);
+    });                  
 };
 
 // Query all keypases for a player. Count which zone it offcurs most often

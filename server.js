@@ -19,6 +19,15 @@ typeNameAttacks = "attack"
 indexNamePasses = "passes"
 typeNamePasses = "pass"
 
+// Error codes from Models
+OK_REQUEST = 1;
+BAD_REQUEST = 2;
+
+winston = require('winston');
+winston.add(winston.transports.File, { filename: 'error.log' });
+
+winston.log('error', 'test');
+
 ElasticSearchClient = require('elasticsearchclient');
 
 elasticSearchClient = new ElasticSearchClient(serverOptions);
@@ -39,13 +48,9 @@ app.configure(function(){
 });
 
 app.get('/matches', matches.getAllMatches); 
-app.get('/match/:id', matches.getMatch); 
-app.get('/matches/:id/attack/:time', matches.getPassesForAttack);
+app.get('/match/:id', matches.getMatch);
 app.post('/match', matches.postNewMatch);
-app.post('/match/:id/attack', matches.postNewAttack);
-app.del('/match/:id', matches.deleteMatch);
 
-// app.get('/team/:name', matches.getTeamStats);
 app.get('/teams', teams.getAllTeams);
 app.get('/team/:name', teams.getTeam);
 app.post('/team', teams.postNewTeam);
@@ -55,11 +60,9 @@ app.get('/player/:id', player.getStats);
 app.get('/players', player.getAllPlayers);
 app.post('/player', player.newPlayer);
 
-
 app.post('/attack/:matchId', attacks.putAttack);
 
 app.post('/pass', passes.newPass);
-
 
 app.listen(3000);
 console.log('Listening on port 3000...');

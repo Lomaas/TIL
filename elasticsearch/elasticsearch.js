@@ -851,7 +851,213 @@ insertMatch({
     ]
 });
 
-
+insertMatch({
+    "hometeam" : "Molde",
+    "awayteam" : "Tromsø",
+    "score" : "1-0",
+    "date" : Date.now(),
+    "attacks": [
+             {
+            "time": 3,
+            "touch" : 4,
+            "team" : "Molde",
+            "breakthrough" : "None",
+            "breakthroughPlayer" : "None",
+            "typeOfAttack" : "Kontring",
+            "attackStart" : {
+                "pos" : 6,
+                "typeAction" : "Gjenvinning",
+                "player" : 167,
+            },
+            "passes": [
+                {
+                    "fromPlayer": 167,
+                    "toPlayer": 175,
+                    "fromPos": 6,
+                    "toPos": 17,
+                    "action": "PASS"
+                }
+            ],
+            "finish" : {
+                "player": 175,
+                "pos": 18,
+                "action": "SHOTGOAL"
+            }
+        },
+        {
+            "time": 9,
+            "touch" : 3,
+            "team" : "Molde",
+            "breakthrough" : "None",
+            "breakthroughPlayer" : "None",
+            "typeOfAttack" : "Kontring",
+            "attackStart" : {
+                "pos" : 12,
+                "typeAction" : "Gjenvinning",
+                "player" : 159,
+            },
+            "passes": [
+                {
+                    "fromPlayer": 159,
+                    "toPlayer": 165,
+                    "fromPos": 12,
+                    "toPos": 16,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 165,
+                    "toPlayer": 169,
+                    "fromPos": 16,
+                    "toPos": 15,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 169,
+                    "toPlayer": 159,
+                    "fromPos": 15,
+                    "toPos": 20,
+                    "action": "PASS"
+                }
+            ],
+            "finish" : {
+                "player": 159,
+                "pos": 26,
+                "action": "SHOTGOAL"
+            }
+        },
+        {
+            "time": 62,
+            "touch" : 3,
+            "team" : "Start",
+            "breakthrough" : "1vs1 Mellomrom",
+            "breakthroughPlayer" : "Espen Hoff",
+            "typeOfAttack" : "Gjenvinning kort angrep",
+            "attackStart" : {
+                "pos" : 11,
+                "typeAction" : "Gjenvinning",
+                "player" : 347,
+            },
+            "passes": [
+                {
+                    "fromPlayer": 347,
+                    "toPlayer": 356,
+                    "fromPos": 14,
+                    "toPos": 17,
+                    "action": "KEYPASS"
+                }
+            ],
+            "finish" : {
+                "player": 356,
+                "pos": 17,
+                "action": "SHOTGOAL"
+            }
+        },
+        {
+            "time": 67,
+            "touch" : 7,
+            "team" : "Tromsø",
+            "breakthrough" : "None",
+            "breakthroughPlayer" : "None",
+            "typeOfAttack" : "Gjenvinning langt angrep",
+            "attackStart" : {
+                "pos" : 11,
+                "typeAction" : "Gjenvinning",
+                "player" : 402,
+            },
+            "passes": [
+                {
+                    "fromPlayer": 402,
+                    "toPlayer": 412,
+                    "fromPos": 13,
+                    "toPos": 16,
+                    "action": "KEYPASS"
+                },
+                {
+                    "fromPlayer": 412,
+                    "toPlayer": 413,
+                    "fromPos": 16,
+                    "toPos": 17,
+                    "action": "CROSS"
+                }
+            ],
+            "finish" : {
+                "player": 413,
+                "pos": 17,
+                "action": "SHOTGOAL",
+                "touch" : 1
+            }
+        },
+        {
+            "time": 71,
+            "touch" : 7,
+            "team" : "Tromsø",
+            "breakthrough" : "None",
+            "breakthroughPlayer" : "None",
+            "typeOfAttack" : "Gjenvinning langt angrep",
+            "attackStart" : {
+                "pos" : 10,
+                "typeAction" : "Gjenvinning",
+                "player" : 393,
+            },
+            "passes": [
+                {
+                    "fromPlayer": 393,
+                    "toPlayer": 413,
+                    "fromPos": 10,
+                    "toPos": 17,
+                    "action": "LONGPASS"
+                },
+                {
+                    "fromPlayer": 413,
+                    "toPlayer": 411,
+                    "fromPos": 17,
+                    "toPos": 17,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 411,
+                    "toPlayer": 404,
+                    "fromPos": 17,
+                    "toPos": 17,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 404,
+                    "toPlayer": 412,
+                    "fromPos": 17,
+                    "toPos": 17,
+                    "action": "PASS"
+                }
+            ],
+            "finish" : {
+                "player": 412,
+                "pos": 17,
+                "action": "SHOTGOAL",
+                "touch" : 1
+            }
+        },
+        {
+            "time": 71,
+            "touch" : 1,
+            "team" : "Tromsø",
+            "breakthrough" : "None",
+            "breakthroughPlayer" : "None",
+            "typeOfAttack" : "Dødball",
+            "attackStart" : {
+                "pos" : 14,
+                "typeAction" : "Frispark",
+                "player" : 412,
+            },
+            "passes" : [],
+            "finish" : {
+                "player": 412,
+                "pos": 14,
+                "action": "SHOTTARGET",
+                "touch" : 1
+            }
+        }
+    ]
+});
 
 
 function insertMatch(object){
