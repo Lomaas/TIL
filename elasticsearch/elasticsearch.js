@@ -922,140 +922,557 @@ insertMatch({
             "finish" : {
                 "player": 159,
                 "pos": 26,
-                "action": "SHOTGOAL"
+                "action": "SHOTMISS"
             }
         },
         {
-            "time": 62,
+            "time": 14,
             "touch" : 3,
-            "team" : "Start",
-            "breakthrough" : "1vs1 Mellomrom",
-            "breakthroughPlayer" : "Espen Hoff",
+            "team" : "Molde",
+            "breakthrough" : "None",
+            "breakthroughPlayer" : "None",
             "typeOfAttack" : "Gjenvinning kort angrep",
             "attackStart" : {
-                "pos" : 11,
-                "typeAction" : "Gjenvinning",
-                "player" : 347,
+                "pos" : 21,
+                "typeAction" : "Innkast",
+                "player" : 162,
             },
             "passes": [
                 {
-                    "fromPlayer": 347,
-                    "toPlayer": 356,
-                    "fromPos": 14,
-                    "toPos": 17,
-                    "action": "KEYPASS"
+                    "fromPlayer": 162,
+                    "toPlayer": 172,
+                    "fromPos": 22,
+                    "toPos": 22,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 172,
+                    "toPlayer": 169,
+                    "fromPos": 22,
+                    "toPos": 22,
+                    "action": "PASS"
                 }
             ],
             "finish" : {
-                "player": 356,
-                "pos": 17,
-                "action": "SHOTGOAL"
+                "player": 169,
+                "pos": 22,
+                "action": "SHOTMISS"
             }
         },
         {
-            "time": 67,
+            "time": 17,
             "touch" : 7,
             "team" : "Tromsø",
-            "breakthrough" : "None",
-            "breakthroughPlayer" : "None",
-            "typeOfAttack" : "Gjenvinning langt angrep",
+            "breakthrough" : "Pasning bakrom",
+            "breakthroughPlayer" : "Thomas Kind Bendiksen",
+            "typeOfAttack" : "Kontring",
             "attackStart" : {
                 "pos" : 11,
-                "typeAction" : "Gjenvinning",
-                "player" : 402,
+                "typeAction" : "5 meter",
+                "player" : 390,
             },
             "passes": [
                 {
                     "fromPlayer": 402,
-                    "toPlayer": 412,
-                    "fromPos": 13,
-                    "toPos": 16,
+                    "toPlayer": 411,
+                    "fromPos": 10,
+                    "toPos": 21,
                     "action": "KEYPASS"
                 },
                 {
-                    "fromPlayer": 412,
+                    "fromPlayer": 411,
                     "toPlayer": 413,
-                    "fromPos": 16,
-                    "toPos": 17,
+                    "fromPos": 22,
+                    "toPos": 24,
                     "action": "CROSS"
                 }
             ],
             "finish" : {
                 "player": 413,
-                "pos": 17,
-                "action": "SHOTGOAL",
-                "touch" : 1
+                "pos": 24,
+                "action": "SHOTMISS"
             }
         },
         {
-            "time": 71,
-            "touch" : 7,
+            "time": 18,
+            "touch" : 3,
             "team" : "Tromsø",
+            "breakthrough" : "None",
+            "breakthroughPlayer" : "None",
+            "typeOfAttack" : "Gjenvinning kort angrep",
+            "attackStart" : {
+                "pos" : 18,
+                "typeAction" : "Gjenvinning",
+                "player" : 165,
+            },
+            "passes": [
+                {
+                    "fromPlayer": 165,
+                    "toPlayer": 177,
+                    "fromPos": 18,
+                    "toPos": 18,
+                    "action": "PASS"
+                }
+            ],
+            "finish" : {
+                "player": 177,
+                "pos": 18,
+                "action": "SHOTTARGET"
+            }
+        },
+        {
+            "time": 26,
+            "touch" : 3,
+            "team" : "Tromsø",
+            "breakthrough" : "None",
+            "breakthroughPlayer" : "None",
+            "typeOfAttack" : "Gjenvinning kort angrep",
+            "attackStart" : {
+                "pos" : 15,
+                "typeAction" : "Gjenvinning",
+                "player" : 411,
+            },
+            "passes" : [],
+            "finish" : {
+                "player": 411,
+                "pos": 25,
+                "action": "SHOTTARGET"
+            }
+        },
+        {
+            "time": 44,
+            "touch" : 3,
+            "team" : "Molde",
+            "breakthrough" : "None",
+            "breakthroughPlayer" : "None",
+            "typeOfAttack" : "Gjenvinning kort angrep",
+            "attackStart" : {
+                "pos" : 22,
+                "typeAction" : "Gjenvinning",
+                "player" : 175,
+            },
+            "passes": [
+                {
+                    "fromPlayer": 175,
+                    "toPlayer": 177,
+                    "fromPos": 22,
+                    "toPos": 22,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 177,
+                    "toPlayer": 167,
+                    "fromPos": 22,
+                    "toPos": 23,
+                    "action": "PASS"
+                }
+            ],
+            "finish" : {
+                "player": 167,
+                "pos": 23,
+                "action": "SHOTTARGET"
+            }
+        },
+        {
+            "time": 54,
+            "touch" : 3,
+            "team" : "Molde",
             "breakthrough" : "None",
             "breakthroughPlayer" : "None",
             "typeOfAttack" : "Gjenvinning langt angrep",
             "attackStart" : {
                 "pos" : 10,
                 "typeAction" : "Gjenvinning",
-                "player" : 393,
+                "player" : 163,
             },
             "passes": [
                 {
-                    "fromPlayer": 393,
-                    "toPlayer": 413,
-                    "fromPos": 10,
-                    "toPos": 17,
+                    "fromPlayer": 163,
+                    "toPlayer": 172,
+                    "fromPos": 22,
+                    "toPos": 22,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 172,
+                    "toPlayer": 159,
+                    "fromPos": 22,
+                    "toPos": 23,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 159,
+                    "toPlayer": 169,
+                    "fromPos": 11,
+                    "toPos": 13,
                     "action": "LONGPASS"
                 },
                 {
-                    "fromPlayer": 413,
-                    "toPlayer": 411,
-                    "fromPos": 17,
-                    "toPos": 17,
-                    "action": "PASS"
-                },
-                {
-                    "fromPlayer": 411,
-                    "toPlayer": 404,
-                    "fromPos": 17,
-                    "toPos": 17,
-                    "action": "PASS"
-                },
-                {
-                    "fromPlayer": 404,
-                    "toPlayer": 412,
-                    "fromPos": 17,
-                    "toPos": 17,
+                    "fromPlayer": 169,
+                    "toPlayer": 167,
+                    "fromPos": 22,
+                    "toPos": 18,
                     "action": "PASS"
                 }
             ],
             "finish" : {
-                "player": 412,
-                "pos": 17,
-                "action": "SHOTGOAL",
-                "touch" : 1
+                "player": 167,
+                "pos": 18,
+                "action": "SHOTMISS"
             }
         },
         {
-            "time": 71,
-            "touch" : 1,
+            "time": 57,
+            "touch" : 3,
             "team" : "Tromsø",
             "breakthrough" : "None",
             "breakthroughPlayer" : "None",
-            "typeOfAttack" : "Dødball",
+            "typeOfAttack" : "Etablert spill",
             "attackStart" : {
-                "pos" : 14,
-                "typeAction" : "Frispark",
-                "player" : 412,
+                "pos" : 20,
+                "typeAction" : "Innkast",
+                "player" : 163,
             },
-            "passes" : [],
+            "passes": [
+                {
+                    "fromPlayer": 402,
+                    "toPlayer": 394,
+                    "fromPos": 15,
+                    "toPos": 14,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 394,
+                    "toPlayer": 412,
+                    "fromPos": 14,
+                    "toPos": 18,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 412,
+                    "toPlayer": 402,
+                    "fromPos": 14,
+                    "toPos": 14,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 402,
+                    "toPlayer": 394,
+                    "fromPos": 14,
+                    "toPos": 17,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 394,
+                    "toPlayer": 396,
+                    "fromPos": 13,
+                    "toPos": 12,
+                    "action": "PASS"
+                },
+
+                {
+                    "fromPlayer": 396,
+                    "toPlayer": 407,
+                    "fromPos": 12,
+                    "toPos": 16,
+                    "action": "PASS"
+                }
+            ],
             "finish" : {
-                "player": 412,
-                "pos": 14,
-                "action": "SHOTTARGET",
-                "touch" : 1
+                "player": 407,
+                "pos": 25,
+                "action": "SHOTTARGET"
             }
-        }
+        },
+        {
+            "time": 58,
+            "touch" : 3,
+            "team" : "Tromsø",
+            "breakthrough" : "None",
+            "breakthroughPlayer" : "None",
+            "typeOfAttack" : "Gjenvinning kort angrep",
+            "attackStart" : {
+                "pos" : 26,
+                "typeAction" : "Gjenvinning",
+                "player" : 404,
+            },
+            "passes": [
+                {
+                    "fromPlayer": 404,
+                    "toPlayer": 413,
+                    "fromPos": 26,
+                    "toPos": 23,
+                    "action": "CROSS"
+                }
+            ],
+            "finish" : {
+                "player": 413,
+                "pos": 23,
+                "action": "SHOTMISS"
+            }
+        },
+        {
+            "time": 82,
+            "touch" : 2,
+            "team" : "Molde",
+            "breakthrough" : "1vs1 Mellomrom",
+            "breakthroughPlayer" : "Mats Møller Dæhli",
+            "typeOfAttack" : "Gjenvinning langt angrep",
+            "attackStart" : {
+                "pos" : 11,
+                "typeAction" : "Gjenvinning",
+                "player" : 165,
+            },
+            "passes": [
+                {
+                    "fromPlayer": 165,
+                    "toPlayer": 159,
+                    "fromPos": 11,
+                    "toPos": 11,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 159,
+                    "toPlayer": 163,
+                    "fromPos": 11,
+                    "toPos": 11,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 163,
+                    "toPlayer": 167,
+                    "fromPos": 11,
+                    "toPos": 10,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 167,
+                    "toPlayer": 162,
+                    "fromPos": 10,
+                    "toPos": 9,
+                    "action": "PASS"
+                },
+                 {
+                    "fromPlayer": 162,
+                    "toPlayer": 167,
+                    "fromPos": 13,
+                    "toPos": 14,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 167,
+                    "toPlayer": 162,
+                    "fromPos": 13,
+                    "toPos": 21,
+                    "action": "PASS"
+                },
+                 {
+                    "fromPlayer": 162,
+                    "toPlayer": 166,
+                    "fromPos": 21,
+                    "toPos": 21,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 166,
+                    "toPlayer": 177,
+                    "fromPos": 22,
+                    "toPos": 22,
+                    "action": "PASS"
+                }
+            ],
+            "finish" : {
+                "player": 177,
+                "pos": 22,
+                "action": "SHOTMISS"
+            }
+        },
+        {
+            "time": 84,
+            "touch" : 3,
+            "team" : "Tromsø",
+            "breakthrough" : "None",
+            "breakthroughPlayer" : "None",
+            "typeOfAttack" : "Kontring",
+            "attackStart" : {
+                "pos" : 15,
+                "typeAction" : "Gjenvinning",
+                "player" : 403,
+            },
+            "passes": [
+                {
+                    "fromPlayer": 403,
+                    "toPlayer": 413,
+                    "fromPos": 15,
+                    "toPos": 20,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 413,
+                    "toPlayer": 406,
+                    "fromPos": 20,
+                    "toPos": 26,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 406,
+                    "toPlayer": 394,
+                    "fromPos": 26,
+                    "toPos": 23,
+                    "action": "CROSS"
+                },
+                {
+                    "fromPlayer": 394,
+                    "toPlayer": 402,
+                    "fromPos": 23,
+                    "toPos": 19,
+                    "action": "PASS"
+                },
+            ],
+            "finish" : {
+                "player": 402,
+                "pos": 19,
+                "action": "SHOTMISS"
+            }
+        },
+        {
+            "time": 87,
+            "touch" : 3,
+            "team" : "Molde",
+            "breakthrough" : "Pasning Mellomrom",
+            "breakthroughPlayer" : "Mats Møller Dæhli",
+            "typeOfAttack" : "Etablert spill",
+            "attackStart" : {
+                "pos" : 10,
+                "typeAction" : "Gjenvinning",
+                "player" : 162,
+            },
+            "passes": [
+                {
+                    "fromPlayer": 162,
+                    "toPlayer": 163,
+                    "fromPos": 10,
+                    "toPos": 6,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 163,
+                    "toPlayer": 159,
+                    "fromPos": 6,
+                    "toPos": 12,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 159,
+                    "toPlayer": 177,
+                    "fromPos": 12,
+                    "toPos": 15,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 177,
+                    "toPlayer": 166,
+                    "fromPos": 15,
+                    "toPos": 15,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 166,
+                    "toPlayer": 159,
+                    "fromPos": 15,
+                    "toPos": 15,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 159,
+                    "toPlayer": 162,
+                    "fromPos": 15,
+                    "toPos": 13,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 162,
+                    "toPlayer": 157,
+                    "fromPos": 14,
+                    "toPos": 11,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 157,
+                    "toPlayer": 166,
+                    "fromPos": 11,
+                    "toPos": 16,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 166,
+                    "toPlayer": 167,
+                    "fromPos": 16,
+                    "toPos": 19,
+                    "action": "KEYPASS"
+                },
+                {
+                    "fromPlayer": 167,
+                    "toPlayer": 181,
+                    "fromPos": 19,
+                    "toPos": 19,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 181,
+                    "toPlayer": 167,
+                    "fromPos": 19,
+                    "toPos": 19,
+                    "action": "KEYPASS"
+                },
+            ],
+            "finish" : {
+                "player": 167,
+                "pos": 19,
+                "action": "SHOTMISS"
+            }
+        },
+       {
+            "time": 89,
+            "touch" : 3,
+            "team" : "Tromsø",
+            "breakthrough" : "None",
+            "breakthroughPlayer" : "None",
+            "typeOfAttack" : "Gjenvinning kort angrep",
+            "attackStart" : {
+                "pos" : 15,
+                "typeAction" : "Gjenvinning",
+                "player" : 399,
+            },
+            "passes": [
+                {
+                    "fromPlayer": 399,
+                    "toPlayer": 396,
+                    "fromPos": 15,
+                    "toPos": 19,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 396,
+                    "toPlayer": 406,
+                    "fromPos": 19,
+                    "toPos": 18,
+                    "action": "PASS"
+                },
+                {
+                    "fromPlayer": 406,
+                    "toPlayer": 403,
+                    "fromPos": 18,
+                    "toPos": 22,
+                    "action": "PASS"
+                }
+            ],
+            "finish" : {
+                "player": 403,
+                "pos": 22,
+                "action": "SHOTTARGET"
+            }
+        },
     ]
 });
 
