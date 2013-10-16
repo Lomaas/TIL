@@ -4,7 +4,8 @@ window.HomeView = Backbone.View.extend({
     
     events : {
         "click #panel-matches" : "onClickPanelItem",
-        "click a" : "clicked"
+        "click a" : "clicked",
+        "click #newMatch" : "onButtonNewMatch"
     },
 
     initialize: function () {
@@ -28,7 +29,7 @@ window.HomeView = Backbone.View.extend({
            // console.log(match.attributes)
 
             matches.push({"name" : match.get("hometeam") + " - " + match.get("awayteam"), 
-                "matchId" : match.get("matchId"), 
+                "matchId" : match.id, 
                 "keyPlayer" : "Bendik", 
                 "numAttacks" : match.get("attacks").length, 
                 "score" : match.get("score")
@@ -40,9 +41,14 @@ window.HomeView = Backbone.View.extend({
         return this;
     },
 
+    onButtonNewMatch : function(e){
+        app.navigate('match/new', true);
+    },
+
     onClickPanelItem : function(elem){
         console.log(elem);
     },
+
     clicked : function(e){
         e.preventDefault();
         var id = $(e.currentTarget).data("id");

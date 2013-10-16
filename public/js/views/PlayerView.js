@@ -40,6 +40,31 @@ window.PlayerView = Backbone.View.extend({
         rect = new Rectangle(ctx, width, height, Config.zonesX, Config.zonesY, Config.zonesDictX, Config.zonesDictY);
         rect.drawPitch();
         rect.drawPercentNumbers(this.model.get("facets").toPos.terms, this.model.get("facets").toPos.total);
+        console.log(this.model);
+        $('#playedToChart').highcharts({
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Counting of passes ' + this.model.get("name") + ' has played to and to who'
+            },
+            xAxis: {
+                categories: this.model.get("toPlayerXaxis")
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Number'
+                }
+            },
+            series: [
+                {
+                    name: 'Passes to player',
+                    data: this.model.get("toPlayerYaxis")
+                },
+            ]
+        });
+
 
         return this;
     }

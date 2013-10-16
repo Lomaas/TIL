@@ -39,6 +39,7 @@ window.MatchListCollection = Backbone.Collection.extend({
         _.each(resp, function(match){
             console.log(match);
             var tmp = new MatchModel(match._source)
+            tmp.id = match._id;
             listOfModels.push(tmp);
         });
         // console.log(listOfModels);

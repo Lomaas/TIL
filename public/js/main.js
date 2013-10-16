@@ -9,10 +9,11 @@ window.AppRouter = Backbone.Router.extend({
 
 	routes: {
 		'' : 'home',
-		'match/:id' : "matchDetails",
-		'team/:id' : "team",
-		'teams' : "teams",
-		'player/:id' : "player" 
+		'match/new' : 'newMatch',
+		'match/:id' : 'matchDetails',
+		'team/:id' : 'team',
+		'teams' : 'teams',
+		'player/:id' : 'player' 
 	},
 
 	home : function(){
@@ -20,6 +21,11 @@ window.AppRouter = Backbone.Router.extend({
 		this.homeView = new HomeView({model: this.matchList});
 		console.log(this.matchList.toJSON());
 		this.setNewView([this.homeView]);
+	},
+
+	newMatch : function(){
+		this.regMatchView = new RegMatchView();
+		this.setNewView([this.regMatchView]);
 	},
 	
 	matchDetails : function(matchId){
@@ -74,8 +80,7 @@ window.AppRouter = Backbone.Router.extend({
 
 });
 
-
-templateLoader.load(["HomeView", "HeaderView", "MatchView", "TeamView", "TeamsView", "PlayersView", "PlayerView"],
+templateLoader.load(["HomeView", "HeaderView", "MatchView", "TeamView", "TeamsView", "PlayersView", "PlayerView", "RegMatchView"],
     function () {
         app = new AppRouter();
         Backbone.history.start();

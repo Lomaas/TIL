@@ -1,5 +1,16 @@
+<style>
+     #divButtonNewMatch {
+        margin:0;
+        margin-top: 5px;
+        padding: 10;
+    }
+</style>
+
 <div class="container">
   <h2>Latest matches</h2>
+  <div id="divButtonNewMatch">   
+    <button type="button" class="btn btn-primary" id="newMatch">New match</button>
+  </div>
   {{#matches}}
     <div class="panel panel-default" id="panel-matches">
       <div class="panel-heading">

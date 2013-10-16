@@ -1,4 +1,4 @@
-var teamsCollection = "teams"
+  var teamsCollection = "teams"
 
 exports.getAllTeams = function (req, res) {
     console.log("Find all Teams");
@@ -130,6 +130,18 @@ exports.getTeam = function(req, res){
                     "size" : 30
                 },
             },
+            "attackStart" : {
+                "terms" : {
+                    "field" : "attackStart.pos",
+                    "size" : 30
+                }
+            },
+            "attackFinish" : {
+                "terms" : {
+                    "field" : "finish.pos",
+                    "size" : 30
+                }
+            }
         }
     };
 
@@ -143,9 +155,17 @@ exports.getTeam = function(req, res){
             json['breakthrough'] = data.facets.breakthrough.terms;
             json['typeOfAttack'] = data.facets.typeOfAttack.terms;
             json['ballReceived'] = data.facets.fromPlayer.terms;
+            json['attackStart'] = data.facets.attackStart = {
+                "zones" : data.facets.attackStart.terms,
+                "total" : data.facets.attackStart.total
+            };
             json['zones'] = {
                 "zones" : data.facets.zones.terms,
                 "total" : data.facets.zones.total
+            };
+            json['attackFinish'] = {
+                "zones" : data.facets.attackFinish.terms,
+                "total" : data.facets.attackFinish.total
             };
 
             // WHo combines with the key players. Which passes is the key passes

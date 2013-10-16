@@ -75,24 +75,40 @@ window.TeamView = Backbone.View.extend({
         });
         this.$el.html(temp);
 
-
-        // create Type of attack pie chart
         _.each(this.model.get("typeOfAttack"), function(attack){
-            dataPieChart.push({
-                "value" : attack.count,
-                "color" : Config.getColors(),
-                "label" : attack.term + " (" + attack.count + ")",
-                "labelColor": 'black',
-                "labelFontSize": '15'
-            })
+            dataPieChart.push([attack.term, attack.count]);
         });
 
         console.log(keyPlayers);
 
-        var ctx = $("#typesOfAttack").get(0).getContext("2d");
-        var pieChart = new Chart(ctx).Pie(dataPieChart, {
-            labelAlign: 'center'
-        });
+
+        $('#typesOfAttack').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false
+        },
+        title: {
+            text: 'Types of attack'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    color: '#000000',
+                    connectorColor: '#000000',
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Types of attack',
+            data: dataPieChart
+        }]
+    });
 
         var breakthroughValues = []
         var involvedValues = [];
@@ -143,44 +159,51 @@ window.TeamView = Backbone.View.extend({
                 }
             ]
         });
+        if(this.model.get("breakthroughXaxis").length == 1){
+           $('#breakthroughFrom').remove();
+        }
+        else {
+            $('#breakthroughFrom').highcharts({
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: "Where was the breakthroughs from"
+                },
+                xAxis: {
+                    categories: this.model.get("breakthroughXaxis")
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Number'
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">Num: </td>' +
+                        '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                },
+                series: [{
+                    name: "Breakthrough from",
+                    data: this.model.get("breakthroughValues")
+
+                }]
+            }); 
+        }
 
         //var typesBreakthorugh = ["Pasning Bakrom", "Pasning Mellomrom", "1vs1 Bakrom", "1vs1 Mellomrom", "Gjennombrudd i LA"];
-        $('#breakthroughFrom').highcharts({
-            chart: {
-                type: 'column'
-            },
-            title: {
-                text: "Where was the breakthroughs from"
-            },
-            xAxis: {
-                categories: this.model.get("breakthroughXaxis")
-            },
-            yAxis: {
-                min: 0,
-                title: {
-                    text: 'Number'
-                }
-            },
-            tooltip: {
-                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-                pointFormat: '<tr><td style="color:{series.color};padding:0">Num: </td>' +
-                    '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
-                footerFormat: '</table>',
-                shared: true,
-                useHTML: true
-            },
-            plotOptions: {
-                column: {
-                    pointPadding: 0.2,
-                    borderWidth: 0
-                }
-            },
-            series: [{
-                name: "Breakthrough from",
-                data: this.model.get("breakthroughValues")
 
-            }]
-        });
+        console.log(this.model.get("attackFinish"));
     
         var width = 600;
         var height = 400;
@@ -192,6 +215,19 @@ window.TeamView = Backbone.View.extend({
         rect = new Rectangle(ctx, width, height, Config.zonesX, Config.zonesY, Config.zonesDictX, Config.zonesDictY);
         rect.drawPitch();
         rect.drawPercentNumbers(this.model.get("zones").zones, this.model.get("zones").total);
+
+        console.log(this.model.get("attackStart"));
+        c = document.getElementById("attackStart");
+        ctx = c.getContext("2d");
+        rect = new Rectangle(ctx, width, height, Config.zonesX, Config.zonesY, Config.zonesDictX, Config.zonesDictY);
+        rect.drawPitch();
+        rect.drawPercentNumbers(this.model.get("attackStart").zones, this.model.get("attackStart").total);
+
+        c = document.getElementById("attackFinish");
+        ctx = c.getContext("2d");
+        rect = new Rectangle(ctx, width, height, Config.zonesX, Config.zonesY, Config.zonesDictX, Config.zonesDictY);
+        rect.drawPitch();
+        rect.drawPercentNumbers(this.model.get("attackFinish").zones, this.model.get("attackFinish").total);
 
         return this;
     }

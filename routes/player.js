@@ -4,7 +4,6 @@ exports.getStats = function (req, res){
     console.log("get stats " + req.params.id.toString());
 
     response = passModel.getPassStats(parseInt(req.params.id), function(response){
-        console.log(response);
         res.jsonp(response);
     });                  
 };

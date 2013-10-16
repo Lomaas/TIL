@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="jumbotron">
+    <h2>  Team Info <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#teaminfo">
+      Collapse this section
+    </button></h2>
+
+    <div id="teaminfo" class="collapse in">
+      <form role="form-horizontal">
+        <div class="form-group">
+          <select class="form-control">
+           <option value="volvo">TIL - Vaalerenga</option>
+            <option value="saab">TIL - Sandnes Ulf</option>
+            <option value="mercedes">TIL - Rosenborg</option>
+            <option value="audi">Sarpsbrog - Tromsø</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="result"></label>
+          <input type="email" class="form-control" id="result" placeholder="Enter result">
+          <label for="date"></label>
+          <input type="date" class="form-control" id="date" placeholder="Enter date">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="jumbotron">
+    <h2> Attack attempt <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#attackattempts">
+      Collapse this section
+    </button></h2>
+    <div id="attackattempts" class="collapse in">
+      <div class="form-group">
+        <h3> General stuff </h3>
+        <input type="text" class="form-control" id="result" placeholder="Enter time">
+        <input type="text" class="form-control" id="date" placeholder="Enter number of touches">
+        <input type="text" class="form-control" id="result" placeholder="Enter result">
+        <input type="text" class="form-control" id="breakthrough" placeholder="Enter number of touches">
+        <input type="text" class="form-control" id="breakthroughPlayer" placeholder="Enter breakthrough player">
+        <input type="text" class="form-control" id="typeOfAttack" placeholder="Enter type of attack">
+
+        <h3> Attack start </h3>
+        <input type="text" class="form-control" id="pos" placeholder="Enter attack start position">
+        <input type="text" class="form-control" id="typeaction" placeholder="Enter type action">
+        <input type="text" class="form-control" id="player" placeholder="Enter player">
+
+        <h3> Attack finish </h3>
+        <input type="text" class="form-control" id="finishPos" placeholder="Enter attack finish position">
+        <input type="text" class="form-control" id="finishAction" placeholder="Enter type action">
+        <input type="text" class="form-control" id="finishPlayer" placeholder="Enter player">
+      </div>
+      <div class="passes">
+        <div class="inputform">
+          <h3> Registrate pass </h3>
+          <form action="postRegAttackForm">
+            Pass from player (number):<input type="number" name="fname"> Area on pitch: <input type="text" name="fname"><br>
+            To player (number): <input type="number" name="lname"> Area on pitch: <input type="text" name="fname"><br>
+          </form>
+        </div>
+      </div>
+      
+      <button type="submit" id="postNewMatchData" class="btn btn-primary">
+        <i class="icon-user icon-white"></i> Submit
+      </button>
+
+      <button type="button" id="addNewPass" class="btn btn-primary">
+        <i class="icon-user icon-white"></i> New pass
+      </button>
+      <button type="button" id="addNewAttack" class="btn btn-primary">
+        <i class="icon-user icon-white"></i> New attack
+      </button>
+    </div>
+  </div>
+</div>
