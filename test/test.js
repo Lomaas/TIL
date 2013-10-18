@@ -246,17 +246,37 @@ var data = {
     ]
 };
 
+// describe('Post a new team', function(){
+//   it("should return 201 success", function(done){
+//   	request
+//   		.post('http://localhost:3000/team')
+//   		.send(data)
+// 		.set('Accept', 'application/json')
+//   		.end(function(res){
+// 			console.log(res.body);
+// 	    	expect(res).to.exist;
+// 			expect(res.status).to.equal(201);
+// 			done();
+//   		});
+//   	});
+// });
+
+
 describe('Post a new team', function(){
   it("should return 201 success", function(done){
-  	request
-  		.post('http://localhost:3000/team')
-  		.send(data)
-		.set('Accept', 'application/json')
-  		.end(function(res){
-			console.log(res.body);
-	    	expect(res).to.exist;
-			expect(res.status).to.equal(201);
-			done();
-  		});
-  	});
+    request
+        .post('http://localhost:3000/player')
+        .send({
+            'name' : 'Mohammed Fellah',
+            'team' : 'Esbjerg',
+            'player_id' : 480
+        })
+        .set('Accept', 'application/json')
+        .end(function(res){
+            console.log(res.body);
+            expect(res).to.exist;
+            expect(res.status).to.equal(201);
+            done();
+        });
+    });
 });
