@@ -3,9 +3,9 @@ window.RegMatchView = Backbone.View.extend({
     el : $('#newmatch'),
     
     events : {
-        "click addNewPass" : "addNewPass",
-        "click addNewAttack" : "addNewAttack",
-        "click postNewMatchData" : "postNewMatchData"
+        "click #addNewPass" : "addNewPass",
+        "click #addNewAttack" : "addNewAttack",
+        "click #postNewMatchData" : "postNewMatchData"
     },
     
     initialize: function () {
