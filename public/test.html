@@ -2,37 +2,70 @@
 <html>
   <head>
     <title>Illustrate attack</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-
-    <script src="js/raphael.js" charset="utf-8"></script>
-    <script src="js/jquery.js" > </script>
   </head>
   <body>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/lib/jquery.js"></script>
+    <script src="js/lib/parsley.js"></script>
     
-    <div id="canvas_container"></div>  
 
-    <div id="sone1"> </div>
-    <div id="sone2"> </div>
-    <div id="sone3"> </div>
-    <div id="sone4"> </div>
-    <div id="sone5"> </div>
-    <div id="sone6"> </div>
-    <div id="sone7"> </div>
-    <div id="sone8"> </div>
-    <div id="sone9"> </div>
-    <div id="sone10"> </div>
-    <div id="sone11"> </div>
-    <div id="sone12"> </div>
-    <div id="sone13"> </div>
-    <div id="sone14"> </div>
-    <div id="sone15"> </div>
-    <div id="sone16"> </div>
-    <div id="sone17"> </div>
-    <div id="sone18"> </div>
-
-  </body>
+<form accept-charset="UTF-8" action="/users" class="new_user" id="new_user" method="post" novalidate="novalidate">
+    <fieldset>
+        <div class="control-group">
+            <label for="user_name">Name</label>
+            <div class="form-inline">
+                <div class="controls">
+                    <input data-notblank="true" data-required="true" id="user_name" name="user[name]" placeholder="J. Doe" size="30" type="text" />
+                </div>
+          </div>
+        </div>
+        <div class="control-group ">
+            <label for="user_email">Email</label>
+              <div class="form-inline">
+                  <div class="controls">
+                      <input data-notblank="true" data-required="true" data-type="email" id="user_email" name="user[email]" placeholder="jdoe@example.com" size="30" type="email" value="" />
+                  </div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label for="user_password">Password</label>
+            <div class="form-inline">
+                <div class="controls">
+                    <input data-minlength="6" data-notblank="true" data-required="true" id="user_password" name="user[password]" placeholder="min. 6 characters" size="30" type="password" />
+                </div>
+            </div>
+        </div>
+        <div class="control-group">
+            <label for="user_password_confirmation">Password confirmation</label>
+            <div class="form-inline">
+                <div class="controls">
+                    <input data-equalto-message="The password confirmation should match the password" data-equalto="#user_password" data-required="true" id="user_password_confirmation" name="user[password_confirmation]" size="30" type="password" />
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <input class="btn btn-primary" name="commit" type="submit" value="Sign up" />
+        </div>
+    </fieldset>
+</form>
 </html>
+
+
+<!-- Load the JS -->
+<script src="/assets/jquery.js?body=1" type="text/javascript"></script>
+<script src="/assets/twitter/bootstrap.js?body=1" type="text/javascript"></script>
+<script src="/assets/parsley.js?body=1" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#new_user').parsley({
+            successClass: 'success',
+            errorClass: 'error',
+            errors: {
+                classHandler: function(el) {
+                    return $(el).closest('.control-group');
+                },
+                errorsWrapper: '<span class=\"help-inline\"></span>',
+                errorElem: '<span></span>'
+            }
+        });
+    });
+</script>

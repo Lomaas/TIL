@@ -3,9 +3,10 @@ window.PlayerModel = Backbone.Model.extend({
     parse : function(resp){
         console.log(resp);
         resp['toPlayerXaxis'] = [];
-        resp['toPlayerYaxis'] = []
-        _.each(resp.facets.toPlayer.terms, function(pass){
-            resp['toPlayerXaxis'].push(pass.term);
+        resp['toPlayerYaxis'] = [];
+        
+        _.each(resp.facets.toPlayer, function(pass){
+            resp['toPlayerXaxis'].push(pass.name);
             resp['toPlayerYaxis'].push(pass.count);
         });
         return resp;

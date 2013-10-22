@@ -1,15 +1,42 @@
 var passModel = require('./../models/pass');
+var teamModel = require('./../models/team');
+var playerModel = require('./../models/player');
 
 exports.getStats = function (req, res){
     console.log("get stats " + req.params.id.toString());
 
-    response = passModel.getPassStats(parseInt(req.params.id), function(response){
-        res.jsonp(response);
+    passModel.getPassStats(parseInt(req.params.id), function(response){
+
+        var i;
+        var playerArray = [];
+        var playersDict = {};
+
+        for(i=0; i< response.facets.toPlayer.terms.length; i++){
+            playerArray.push(response.facets.toPlayer.terms[i].term);
+            playersDict[response.facets.toPlayer.terms[i].term] = {
+                "count" : response.facets.toPlayer.terms[i].count,
+                "term" : response.facets.toPlayer.terms[i].term
+            };
+        }
+        playerModel.getSomePlayers(playerArray, function(players){
+            playerArray = [];
+
+            for(i=0; i< players.length; i++){
+                var player = players[i]._source;
+
+                playerArray.push({
+                    "count" : playersDict[player.player_id].count,
+                    "name" : player.name,
+                    "term" : player.player_id
+                });
+            }
+            response.facets.toPlayer = playerArray;
+            console.log("Data %s", JSON.stringify(response, undefined, 2));
+
+            res.jsonp(response);
+        });
     });                  
 };
-
-// Query all keypases for a player. Count which zone it offcurs most often
-
 
 exports.getPassesForPlayer = function(req, res){
     var playerId = parseInt(req.params.id);

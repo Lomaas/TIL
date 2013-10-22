@@ -29,7 +29,7 @@ window.AppRouter = Backbone.Router.extend({
 	},
 	
 	matchDetails : function(matchId){
-		console.log("Changing View, match: %s", matchId)
+		console.log("Changing View, match: %s", matchId);
 
 		var matchModel = new MatchModel({id : matchId});
 		this.matchView = new MatchView({model: matchModel});
@@ -80,7 +80,7 @@ window.AppRouter = Backbone.Router.extend({
 
 });
 
-templateLoader.load(["HomeView", "HeaderView", "MatchView", "TeamView", "TeamsView", "PlayersView", "PlayerView", "RegMatchView"],
+templateLoader.load(["HomeView", "HeaderView", "MatchView", "TeamView", "TeamsView", "PlayersView", "PlayerView", "RegMatchView", "RegAttackView", "RegPassView"],
     function () {
         app = new AppRouter();
         Backbone.history.start();

@@ -1,0 +1,114 @@
+<div class="container" id="wrapperContainer">
+  <div class="jumbotron" id="jumbotronAttack">
+    <h2> Attack attempt <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#attackattempts">
+      Collapse this section
+    </button></h2>
+
+     <button type="button" id="destroy" class="btn btn-danger">
+      <i class="icon-user icon-white"></i> Remove attack
+    </button>
+    <div id="attackattempts" class="collapse in">
+
+        <h3> General stuff </h3>
+
+        <form id="attack">
+          <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon">$</span>
+                <input class="form-control" placeholder="Time of attack" name="time" type="number" />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon">$</span>
+                <input class="form-control" placeholder="Team" name="team" type="text" />
+            </div>
+          </div>
+          <div class="form-group">
+            <select class="form-control">
+              <option value="None">None</option>
+              <option value="1vs1 Mellomrom<">1vs1 Mellomrom</option>
+              <option value="1vs1 Bakrom">1vs1 Bakrom</option>
+              <option value="Pasning Mellomrom">Pasning Mellomrom</option>
+              <option value="Pasning Bakrom">Pasning Bakrom</option>
+              <option value="Gjennombrudd i LA">Gjennombrudd i LA</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon">$</span>
+                <input class="form-control" placeholder="Breakthrough Player" name="breakthroughPlayer" type="text" />
+            </div>
+          </div>
+          <div class="form-group">
+            <select class="form-control">
+              <option value="Etablert spill<">Etablert spill</option>
+              <option value="Gjennvinning langt angrep">Gjennvinning langt angrep</option>
+              <option value="Gjennvinning kort angrep">Gjennvinning kort angrep</option>
+              <option value="Kontring">Kontring</option>
+              <option value="Dødball">Dødball</option>
+            </select>
+          </div>
+   
+        </form>
+
+
+        <h3> Attack start </h3>
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">$</span>
+            <input class="form-control" placeholder="Zone" name="position" type="number" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <select class="form-control">
+            <option value="Gjenvinning">Gjenvinning</option>
+            <option value="5-meter">5-meter</option>
+            <option value="Innkast">Innkast</option>
+            <option value="Corner">Corner</option>
+            <option value="Frispark">Frispark</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+                <span class="input-group-addon">$</span>
+                <input class="form-control" placeholder="Player ID" name="playerID" type="number" />
+          </div>
+        </div>
+        <div id="passes">
+
+        </div>
+
+        <h3> Attack finish </h3>
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">$</span>
+            <input class="form-control" placeholder="Zone" name="positionFinish" type="number" />
+          </div>
+        </div>
+        <div class="form-group">
+          <select class="form-control">
+            <option value="SHOTMISS">Shot MISS</option>
+            <option value="SHOTTARGET">Shot TARGET</option>
+            <option value="SHOTGOAL">Shot GOAL</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon">$</span>
+            <input class="form-control" placeholder="Player ID" name="playerIDFinish" type="number" />
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="button" id="addNewAttack" class="btn btn-primary">
+          <i class="icon-user icon-white"></i> New Attack
+        </button> 
+          <button type="button" id="addNewPass" class="btn btn-primary">
+        <i class="icon-user icon-white"></i> New pass
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,76 +1,51 @@
-<div class="container">
-  <div class="jumbotron">
-    <h2>  Team Info <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#teaminfo">
-      Collapse this section
-    </button></h2>
+<div class="jumbotron">
+  <h2>  Team Info 
+    <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#teaminfo"> Collapse this section </button></h2>
 
-    <div id="teaminfo" class="collapse in">
-      <form role="form-horizontal">
-        <div class="form-group">
-          <select class="form-control">
-           <option value="volvo">TIL - Vaalerenga</option>
-            <option value="saab">TIL - Sandnes Ulf</option>
-            <option value="mercedes">TIL - Rosenborg</option>
-            <option value="audi">Sarpsbrog - Tromsø</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="result"></label>
-          <input type="email" class="form-control" id="result" placeholder="Enter result">
-          <label for="date"></label>
-          <input type="date" class="form-control" id="date" placeholder="Enter date">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    </div>
-  </div>
-</div>
+  <div id="teaminfo" class="collapse in">
 
-<div class="container">
-  <div class="jumbotron">
-    <h2> Attack attempt <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#attackattempts">
-      Collapse this section
-    </button></h2>
-    <div id="attackattempts" class="collapse in">
+
+    <form id="keiko">
       <div class="form-group">
-        <h3> General stuff </h3>
-        <input type="text" class="form-control" id="result" placeholder="Enter time">
-        <input type="text" class="form-control" id="date" placeholder="Enter number of touches">
-        <input type="text" class="form-control" id="result" placeholder="Enter result">
-        <input type="text" class="form-control" id="breakthrough" placeholder="Enter number of touches">
-        <input type="text" class="form-control" id="breakthroughPlayer" placeholder="Enter breakthrough player">
-        <input type="text" class="form-control" id="typeOfAttack" placeholder="Enter type of attack">
-
-        <h3> Attack start </h3>
-        <input type="text" class="form-control" id="pos" placeholder="Enter attack start position">
-        <input type="text" class="form-control" id="typeaction" placeholder="Enter type action">
-        <input type="text" class="form-control" id="player" placeholder="Enter player">
-
-        <h3> Attack finish </h3>
-        <input type="text" class="form-control" id="finishPos" placeholder="Enter attack finish position">
-        <input type="text" class="form-control" id="finishAction" placeholder="Enter type action">
-        <input type="text" class="form-control" id="finishPlayer" placeholder="Enter player">
+        <select class="form-control">
+          <option value="volvo">TIL - Strømsgodset</option>
+          <option value="saab">Tromsø - Hønefoss</option>
+          <option value="mercedes">Tromsø - Start</option>
+          <option value="mercedes">Haugesund - Tromsø</option>
+          <option value="audi">Sarpsborg - Tromsø</option>
+          <option value="mercedes">Strømsgodset - Tromsø</option>
+          <option value="mercedes">Sandnes Ulf - Tromsø</option>
+          <option value="mercedes">Viking - Tromsø</option>
+          <option value="mercedes">Tromsø - Lillestrøm</option>
+          <option value="mercedes">Tromsø - Sogndal</option>
+          <option value="mercedes">Tromsø - Brann</option>
+        </select>
       </div>
-      <div class="passes">
-        <div class="inputform">
-          <h3> Registrate pass </h3>
-          <form action="postRegAttackForm">
-            Pass from player (number):<input type="number" name="fname"> Area on pitch: <input type="text" name="fname"><br>
-            To player (number): <input type="number" name="lname"> Area on pitch: <input type="text" name="fname"><br>
-          </form>
+      <div class="form-group">
+        <label class="control-label" for="hometeamGoals">Hometeam goals:</label>
+        <div class="input-group">
+            <span class="input-group-addon">$</span>
+            <input class="form-control" placeholder="Goals" name="hometeamGoals" type="number" />
         </div>
       </div>
-      
-      <button type="submit" id="postNewMatchData" class="btn btn-primary">
-        <i class="icon-user icon-white"></i> Submit
-      </button>
-
-      <button type="button" id="addNewPass" class="btn btn-primary">
-        <i class="icon-user icon-white"></i> New pass
-      </button>
+      <div class="form-group">
+        <label class="control-label" for="awayteamGoals">Awayteam goals:</label>
+        <div class="input-group">
+            <span class="input-group-addon"></span>
+            <input class="form-control" placeholder="Goals" name="awayteamGoals" type="number" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="date">Date:</label>
+        <div class="input-group">
+            <span class="input-group-addon"></span>
+            <input class="form-control" placeholder="date" name="date" type="date" />
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
       <button type="button" id="addNewAttack" class="btn btn-primary">
-        <i class="icon-user icon-white"></i> New attack
+        <i class="icon-user icon-white"></i> New Attack
       </button>
-    </div>
+    </form>
   </div>
 </div>

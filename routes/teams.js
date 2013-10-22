@@ -1,4 +1,5 @@
-  var teamsCollection = "teams"
+var teamsCollection = "teams"
+var teamModel = require('./../models/team');
 
 exports.getAllTeams = function (req, res) {
     console.log("Find all Teams");
@@ -52,32 +53,9 @@ exports.postNewTeam = function(req, res){
 };
 
 exports.getPlayers = function(req, res){
-    var team = req.params.name;
-    console.log("GET PLAYERS FOR TEAM-----");
-
-    var queryObject = { 
-        "query" : {
-            "match" : {
-                "name" : team
-            }
-        }
-    };
-
-    elasticSearchClient.search(indexNameTeams, typeNameTeams, queryObject)
-    .on('data', function(data) {
-        data = JSON.parse(data);
-        //console.log("Data %s", JSON.stringify(data, undefined, 2));
-
-        res.jsonp(data.hits.hits[0]._source);
-    })
-    .on('done', function(done){
-        //always returns 0 right now
-        console.log(done);
-    })
-    .on('error', function(error){
-        console.log(error)
-    })
-    .exec();
+    response = teamModel.getPlayers(req.params.name, function(response){
+        res.jsonp(response);
+    });  
 };
 
 exports.getTeam = function(req, res){
