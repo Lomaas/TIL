@@ -1,7 +1,5 @@
 var matchModel = require('./../models/match');
 
-var matchCollection = "matches"
-
 exports.getAllMatches = function (req, res) {
     console.log("Find all matches");
 
@@ -11,9 +9,7 @@ exports.getAllMatches = function (req, res) {
 };
 
 exports.getMatch = function(req, res){
-    mId = req.params.id;
-
-    matchModel.getMatch(mId, function(response){
+    matchModel.getMatch(req.params.id, function(response){
         res.jsonp(response);
     });
 }

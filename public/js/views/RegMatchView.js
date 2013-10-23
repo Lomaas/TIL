@@ -13,34 +13,36 @@ window.RegMatchView = Backbone.View.extend({
         this.render();
         this.counter = 0;
 
-        $('#keiko').validate({
-              rules: {
-                  hometeamGoals: {
-                      maxlength: 2,
-                      required: true
-                  },
-                  awayteamGoals: {
-                      maxlength: 2,
-                      required: true
-                  }
-              },
-              highlight: function(element) {
-                  $(element).closest('.form-group').addClass('has-error');
-              },
-              unhighlight: function(element) {
-                  $(element).closest('.form-group').removeClass('has-error');
-              },
-              errorElement: 'span',
-              errorClass: 'help-block',
-              errorPlacement: function(error, element) {
-                  if(element.parent('.input-group').length) {
-                      error.insertAfter(element.parent());
-                  } else {
-                      error.insertAfter(element);
-                  }
-              }
-          });
-
+        $('#match-form').validate({
+            rules: {
+                hometeamGoals: {
+                    maxlength: 2,
+                    required: true
+                },
+                awayteamGoals: {
+                    maxlength: 2,
+                    required: true
+                },
+                date : {
+                  required: true
+                }
+            },
+            highlight: function(element) {
+                $(element).closest('.form-group').addClass('has-error');
+            },
+            unhighlight: function(element) {
+                $(element).closest('.form-group').removeClass('has-error');
+            },
+            errorElement: 'span',
+            errorClass: 'help-block',
+            errorPlacement: function(error, element) {
+                if(element.parent('.input-group').length) {
+                    error.insertAfter(element.parent());
+                } else {
+                    error.insertAfter(element);
+                }
+            }
+        });
     },
 
     render: function (eventName) {
@@ -51,10 +53,44 @@ window.RegMatchView = Backbone.View.extend({
     },
 
     postNewMatchData : function(e){
+        e.preventDefault();
         console.log("postNewMatchData");
+        response = {};
+        response['attacks'] = [];
+
+        console.log($('form').serializeArray());
+
+        var counter = 0;
+
+        _.each($('form').serializeArray(), function(obj){
+          if(counter < 3){
+            response[obj.name] = obj.value;
+          }
+          if(obj.name == "time"){
+            var name = obj.name;
+
+            response['attacks'].push({
+              name : obj.value
+            });
+          }
+
+          counter ++;
+        });
+
+        jQuery.ajax({
+          url: "teams",
+          method: "POST",
+          data: response,
+          dataType : "json",
+          success: function(resp, textStatus, jqXHR){
+            console.log("RESPONSE %j", resp);
+            
+          }
+        });
     },
 
     addNewAttack : function(e){
+
         console.log("addNewAttack");
         var divEl = 'newAttack-' + this.counter.toString();
         console.log(divEl);

@@ -11,7 +11,7 @@ window.RegAttackView = Backbone.View.extend({
         console.log("init RegAttackView");
         this.render();
 
-        $('#attack').validate({
+        $('#attack-form').validate({
           rules: {
               time: {
                   range: [0, 100],
@@ -23,6 +23,22 @@ window.RegAttackView = Backbone.View.extend({
               },
               breakthroughPlayer: {
                   required: true,
+              },
+              positionStart: {
+                required: true,
+                range: [1, 33]
+              },
+              playerIDStart: {
+                required: true,
+                range:[0, 500]
+              },
+              positionFinish: {
+                required: true,
+                range: [1, 33]
+              },
+              playerIDFinish: {
+                required: true,
+                range:[0, 500]
               },
           },
           highlight: function(element) {

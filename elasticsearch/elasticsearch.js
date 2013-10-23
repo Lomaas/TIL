@@ -2611,7 +2611,6 @@ insertMatch({
 });
 
 
-
 function insertMatch(object){
     var commands = [];
     commands.push({ "index" : { "_index" :"matches", "_type" : "match"} });
@@ -2631,7 +2630,6 @@ function insertMatch(object){
 
         })
         .exec();
-
 }
 
 function insertAttacksAndPasses(attackObj, matchId){

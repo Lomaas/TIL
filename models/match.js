@@ -44,11 +44,11 @@ exports.getMatch = function(mId, callback){
         .on('error', function(error){
 	        winston.log('error', error);
         })
-        .exec()
+        .exec();
 };
 
 exports.newMatch = function(match, callback){
-    var commands = []
+    var commands = [];
     commands.push({ "index" : { "_index" :indexNameMatches, "_type" : typeNameMatches} });
     commands.push(match);
 

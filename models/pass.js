@@ -43,7 +43,8 @@ exports.getPassStats = function(userId, callback){
     elasticSearchClient.search(indexNamePasses, typeNamePasses, queryObject)
         .on('data', function(data) {
             data = JSON.parse(data);
-            console.log("Data: %s", JSON.stringify(data, undefined, 2));
+            console.log("Data %s", JSON.stringify(data, undefined, 2));
+
             response = {
                 "facets" : data.facets
             }

@@ -3,9 +3,7 @@
     <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#teaminfo"> Collapse this section </button></h2>
 
   <div id="teaminfo" class="collapse in">
-
-
-    <form id="keiko">
+    <form id="match-form" name="form">
       <div class="form-group">
         <select class="form-control">
           <option value="volvo">TIL - Strømsgodset</option>
@@ -42,7 +40,7 @@
             <input class="form-control" placeholder="date" name="date" type="date" />
         </div>
       </div>
-      <button type="submit" class="btn btn-success">Submit</button>
+      <button type="submit" id="postNewMatchData"class="btn btn-success">Submit</button>
       <button type="button" id="addNewAttack" class="btn btn-primary">
         <i class="icon-user icon-white"></i> New Attack
       </button>

@@ -45,14 +45,14 @@
   	jQuery.ajax({
   		url: "teams",
   		dataType : "json",
-  		success: function(resp,textStatus, jqXHR ){
+  		success: function headerResponse(resp,textStatus, jqXHR ){
   			console.log("RESPONSE %j", resp);
   			_.each(resp, function(team){
   				availableTags.push(team._source.name);
   			});
 		    $( "#tags" ).autocomplete({
-				source: availableTags
-			});
+  				source: availableTags
+  			});
 		}
   	});
   });

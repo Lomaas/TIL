@@ -267,9 +267,9 @@ describe('Post a new team', function(){
     request
         .post('http://localhost:3000/player')
         .send({
-            'name' : 'Mohammed Fellah',
-            'team' : 'Esbjerg',
-            'player_id' : 480
+            'name' : 'Saliou Ciss',
+            'team' : 'Valenciennes',
+            'player_id' : 481
         })
         .set('Accept', 'application/json')
         .end(function(res){

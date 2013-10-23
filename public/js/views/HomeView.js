@@ -25,7 +25,7 @@ window.HomeView = Backbone.View.extend({
         var matches = [];
 
         _.each(this.model.models, function(match){
-            console.log(match)
+            console.log(match);
            // console.log(match.attributes)
 
             matches.push({"name" : match.get("hometeam") + " - " + match.get("awayteam"), 

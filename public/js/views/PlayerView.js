@@ -18,7 +18,8 @@ window.PlayerView = Backbone.View.extend({
         var temp = Mustache.render(this.template(),
             {
                 stats : this.model.toJSON(), 
-                name : this.model.get("name")
+                name : this.model.get("currentPlayer").name,
+                team : this.model.get("currentPlayer").team
             }
         );
         this.$el.html(temp);
@@ -46,7 +47,7 @@ window.PlayerView = Backbone.View.extend({
                 type: 'bar'
             },
             title: {
-                text: 'Counting of passes ' + this.model.get("name") + ' has played to and to who'
+                text: 'Counting of passes ' + this.model.get("currentPlayer").name + ' has played to and to who'
             },
             xAxis: {
                 categories: this.model.get("toPlayerXaxis")

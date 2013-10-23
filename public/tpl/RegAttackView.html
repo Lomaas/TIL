@@ -4,14 +4,12 @@
       Collapse this section
     </button></h2>
 
-     <button type="button" id="destroy" class="btn btn-danger">
+    <button type="button" id="destroy" class="btn btn-danger">
       <i class="icon-user icon-white"></i> Remove attack
     </button>
     <div id="attackattempts" class="collapse in">
-
         <h3> General stuff </h3>
-
-        <form id="attack">
+        <form name="form" id="attack-form">
           <div class="form-group">
             <div class="input-group">
                 <span class="input-group-addon">$</span>
@@ -49,60 +47,55 @@
               <option value="Dødball">Dødball</option>
             </select>
           </div>
-   
+
+          <h3> Attack start </h3>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon">$</span>
+              <input class="form-control" placeholder="Zone" name="positionStart" type="number" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <select class="form-control">
+              <option value="Gjenvinning">Gjenvinning</option>
+              <option value="5-meter">5-meter</option>
+              <option value="Innkast">Innkast</option>
+              <option value="Corner">Corner</option>
+              <option value="Frispark">Frispark</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <div class="input-group">
+                  <span class="input-group-addon">$</span>
+                  <input class="form-control" placeholder="Player ID" name="playerIDStart" type="number" />
+            </div>
+          </div>
+          <div id="passes">
+
+          </div>
+          <h3> Attack finish </h3>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon">$</span>
+              <input class="form-control" placeholder="Zone" name="positionFinish" type="number" />
+            </div>
+          </div>
+          <div class="form-group">
+            <select class="form-control">
+              <option value="SHOTMISS">Shot MISS</option>
+              <option value="SHOTTARGET">Shot TARGET</option>
+              <option value="SHOTGOAL">Shot GOAL</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon">$</span>
+              <input class="form-control" placeholder="Player ID" name="playerIDFinish" type="number" />
+            </div>
+          </div>
         </form>
-
-
-        <h3> Attack start </h3>
-        <div class="form-group">
-          <div class="input-group">
-            <span class="input-group-addon">$</span>
-            <input class="form-control" placeholder="Zone" name="position" type="number" />
-          </div>
-        </div>
-
-        <div class="form-group">
-          <select class="form-control">
-            <option value="Gjenvinning">Gjenvinning</option>
-            <option value="5-meter">5-meter</option>
-            <option value="Innkast">Innkast</option>
-            <option value="Corner">Corner</option>
-            <option value="Frispark">Frispark</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <div class="input-group">
-                <span class="input-group-addon">$</span>
-                <input class="form-control" placeholder="Player ID" name="playerID" type="number" />
-          </div>
-        </div>
-        <div id="passes">
-
-        </div>
-
-        <h3> Attack finish </h3>
-        <div class="form-group">
-          <div class="input-group">
-            <span class="input-group-addon">$</span>
-            <input class="form-control" placeholder="Zone" name="positionFinish" type="number" />
-          </div>
-        </div>
-        <div class="form-group">
-          <select class="form-control">
-            <option value="SHOTMISS">Shot MISS</option>
-            <option value="SHOTTARGET">Shot TARGET</option>
-            <option value="SHOTGOAL">Shot GOAL</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <div class="input-group">
-            <span class="input-group-addon">$</span>
-            <input class="form-control" placeholder="Player ID" name="playerIDFinish" type="number" />
-          </div>
-        </div>
-
-        <button type="submit" class="btn btn-success">Submit</button>
         <button type="button" id="addNewAttack" class="btn btn-primary">
           <i class="icon-user icon-white"></i> New Attack
         </button> 

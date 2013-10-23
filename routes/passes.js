@@ -11,6 +11,6 @@ exports.newPass = function (req, res) {
                 res.send(400, {"msg" : "bad data"});
             default:
                 res.send(404);
-        }    
+        }
     });
 };

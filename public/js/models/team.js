@@ -42,8 +42,10 @@ window.TeamListCollection = Backbone.Collection.extend({
     url: "teams",
 
     parse : function(resp) {
-        var listOfModels = []
+        var listOfModels = [];
+        console.log(resp);
         _.each(resp, function(match){
+            console.log(match._source);
             var tmp = new TeamModel(match._source)
             listOfModels.push(tmp);
         });
