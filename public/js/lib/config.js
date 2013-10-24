@@ -155,10 +155,16 @@ function Rectangle(ctx, width, height, zonesX, zonesY, zonesDictX, zonesDictY){
 	    _.each(zones, function(data){
 			var zone = data.term;
 	        var count = data.count;
+	        var x, y;
 
-	        var x = that.zonesDictX[zone] * that.widthZone + that.widthZone/2 - adjustment;
-	        var y = that.zonesDictY[zone] * that.heightZone + that.heightZone/2;
-
+	        if(zone == 30 || zone == 31){
+ 				x = that.zonesDictX[zone] * that.widthZone + that.widthZone/2 - adjustment;
+	        	y = that.zonesDictY[zone] * that.heightZone + 15;
+	        }
+	        else{
+		        x = that.zonesDictX[zone] * that.widthZone + that.widthZone/2 - adjustment;
+		        y = that.zonesDictY[zone] * that.heightZone + that.heightZone/2;
+	        }
 	        var percent = (((count/total) * 100).toFixed(2));
 
 	        that.ctx.fillText(percent.toString()+"%", x, y);

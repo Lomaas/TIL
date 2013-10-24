@@ -11,7 +11,7 @@ insertMatch({
     "hometeam" : "Tromsø",
     "awayteam" : "Rosenborg",
     "score" : "1-0",
-    "date" : Date.now(),
+    "date" : '2013-15-09',
     "attacks": [
         {
             "time": 4,
@@ -654,7 +654,7 @@ insertMatch({
     "hometeam" : "Tromsø",
     "awayteam" : "Start",
     "score" : "2-3",
-    "date" : Date.now(),
+    "date" : '2013-09-29',
     "attacks": [
              {
             "time": 40,
@@ -855,7 +855,7 @@ insertMatch({
     "hometeam" : "Molde",
     "awayteam" : "Tromsø",
     "score" : "1-0",
-    "date" : Date.now(),
+    "date" : '2013-06-10',
     "attacks": [
              {
             "time": 3,
@@ -1480,7 +1480,7 @@ insertMatch({
     "hometeam" : "Tromsø",
     "awayteam" : "Vålerenga",
     "score" : "2-2",
-    "date" : Date.now(),
+    "date" : '2013-08-04',
     "attacks": [
              {
             "time": 7,
@@ -2133,7 +2133,7 @@ insertMatch({
     "hometeam" : "Tromsø",
     "awayteam" : "Ålesund",
     "score" : "1-2",
-    "date" : Date.now(),
+    "date" : '2013-08-18',
     "attacks": [
 		{
             "time": 13,

@@ -1,5 +1,5 @@
 window.AttackModel = Backbone.Model.extend({
-    urlRoot : '/match/:id/attack',
+    url : 'attack/:id',
 
     getPasses: function(){
     	 var listOfModels = []

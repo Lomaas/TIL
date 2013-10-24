@@ -1,13 +1,13 @@
- // This view turns a Service model into HTML. Will create LI elements.
+// This view turns a Service model into HTML. Will create LI elements.
 window.RegMatchView = Backbone.View.extend({
     el : $('#newmatch'),
     counter : 0,
-    
+
     events : {
         "click #addNewAttack" : "addNewAttack",
         "click #postNewMatchData" : "postNewMatchData"
     },
-    
+
     initialize: function () {
         console.log("init RegMatchView");
         this.render();
@@ -24,7 +24,7 @@ window.RegMatchView = Backbone.View.extend({
                     required: true
                 },
                 date : {
-                  required: true
+                    required: true
                 }
             },
             highlight: function(element) {
@@ -45,7 +45,7 @@ window.RegMatchView = Backbone.View.extend({
         });
     },
 
-    render: function (eventName) {
+    render: function () {
         console.log("in Render");
         var temp = Mustache.render(this.template(), {});
         this.$el.html(temp);
@@ -55,48 +55,29 @@ window.RegMatchView = Backbone.View.extend({
     postNewMatchData : function(e){
         e.preventDefault();
         console.log("postNewMatchData");
-        response = {};
+        var response = {};
         response['attacks'] = [];
-
         console.log($('form').serializeArray());
 
-        var counter = 0;
-
         _.each($('form').serializeArray(), function(obj){
-          if(counter < 3){
-            response[obj.name] = obj.value;
-          }
-          if(obj.name == "time"){
             var name = obj.name;
-
-            response['attacks'].push({
-              name : obj.value
-            });
-          }
-
-          counter ++;
+            response[name] = obj.value;
         });
 
-        jQuery.ajax({
-          url: "teams",
-          method: "POST",
-          data: response,
-          dataType : "json",
-          success: function(resp, textStatus, jqXHR){
-            console.log("RESPONSE %j", resp);
-            
-          }
-        });
-    },
+        // Fix the response
+        var tmp = $('#match').val().split("&");
+        var hometeam = tmp[0].split("=")[1];
+        var awayteam = tmp[1].split("=")[1];
 
-    addNewAttack : function(e){
+        response['hometeam'] = hometeam;
+        response['awayteam'] = awayteam;
+        response['score'] = response.hometeamGoals + "-" + response.awayteamGoals;
+        delete response['hometeamGoals'];
+        delete response['awayteamGoals'];
+        console.log(response);
+        new MatchModel(response).save();
 
-        console.log("addNewAttack");
-        var divEl = 'newAttack-' + this.counter.toString();
-        console.log(divEl);
-        this.$el.append('<div class="container" id="'+ divEl + '"> </div>');
-        var regAttackView = new RegAttackView({el : $('#' + divEl)});
-        this.counter ++;
+        app.navigate("", true);
     },
 
     addNewPass : function(e){

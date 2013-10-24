@@ -6,36 +6,42 @@
 </style>
 
 <h1>{{match}}</h1>
-<div class="panel panel-default">
-  <div class="panel-body" id="stats">
-    <ul>
-    	<li>
-    		<b>Chances registrated: {{length}}: </b>
-	    	{{#attacks}}
-				<ul> <b> {{time}}. min - {{typeOfAttack}} ({{team}}) </b>
-					<input type="checkbox" name="attack" value="{{time}}" checked="true"><br>
-					<ul>
-						<li> Passes: {{passes.length}} </li>
-						<li> Touches: {{touch}} </li>
-		    			<li>Breakthrough player: 
-		    				<ul>
-		    					<li>
-		    						{{breakthroughPlayer}}, {{breakthrough}}
-		    					</li>
-		    				</ul>
-	    				</li>
-		    			<li>Attack start: 
-		    				<ul>
-		    					<li>{{attackStart.typeAction}}, {{attackStart.player}} zone {{attackStart.pos}}
-		    					</li>
-		    				</ul>
-    					</li>
-		    			<li> Finish: {{finish.action}} from zone {{finish.pos}}</li>
-					</ul>
-				</ul>
-		 	</li>
-	 	{{/attacks}}
+<button type="button" id="addNewAttack" class="btn btn-primary">
+    <i class="icon-user icon-white"></i> New attack
+</button>
 
+<div class="panel panel-default">
+    <div class="panel-body" id="stats">
+        <div id="attack-form">
+
+        </div>
+        <ul>
+            <li>
+                <b>Chances registrated: {{length}}: </b>
+                {{#attacks}}
+                        <ul> <b> {{time}}. min - {{typeOfAttack}} ({{team}}) </b>
+                        <input type="checkbox" name="attack" value="{{time}}" checked="true"><br>
+                        <ul>
+                            <li> Passes: {{passes.length}} </li>
+                            <li> Touches: {{touch}} </li>
+                            <li>Breakthrough player:
+                                <ul>
+                                    <li>
+                                        {{breakthroughPlayer}}, {{breakthrough}}
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>Attack start:
+                                <ul>
+                                    <li>{{attackStart.typeAction}}, {{attackStart.player}} zone {{attackStart.pos}}
+                                    </li>
+                                </ul>
+                            </li>
+                            <li> Finish: {{finish.action}} from zone {{finish.pos}}</li>
+                        </ul>
+                    </ul>
+                </li>
+	 	{{/attacks}}
     	<li> <b>Hvilke soner stopper potensielle angrep i </b></li>
     	<li> <b>Hvilke ballvinninger fører til mål og hvor på banen</b></li>
     	<li> <b>Breaking point for angrepet - noen blir dratt av/avgjørende pasning mellomrommet/bakrom (sone)</b></li>

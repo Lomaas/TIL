@@ -31,7 +31,7 @@ window.PlayerView = Backbone.View.extend({
         var c=document.getElementById("attackingZonesPlayedFrom");
         var ctx=c.getContext("2d");
    
-        rect = new Rectangle(ctx, width, height, Config.zonesX, Config.zonesY, Config.zonesDictX, Config.zonesDictY);
+        var rect = new Rectangle(ctx, width, height, Config.zonesX, Config.zonesY, Config.zonesDictX, Config.zonesDictY);
         rect.drawPitch();
         rect.drawPercentNumbers(this.model.get("facets").fromPos.terms, this.model.get("facets").fromPos.total);
 

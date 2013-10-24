@@ -32,7 +32,8 @@ window.HomeView = Backbone.View.extend({
                 "matchId" : match.id, 
                 "keyPlayer" : "Bendik", 
                 "numAttacks" : match.get("attacks").length, 
-                "score" : match.get("score")
+                "score" : match.get("score"),
+                "date" : match.get("date")
             });
         });
         var temp = Mustache.render(this.template(), {matches : matches});

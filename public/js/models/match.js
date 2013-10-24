@@ -19,12 +19,10 @@ window.MatchModel = Backbone.Model.extend({
             var tmp = new AttackModel(attack);
             listOfModels.push(tmp.toJSON());
         });
-        // console.log(listOfModels);
         return listOfModels;
     },
 
     parse : function(resp){
-
         console.log("%j", resp);
         return resp._source;
     }

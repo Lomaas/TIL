@@ -2,6 +2,11 @@
 window.MatchView = Backbone.View.extend({
     el : $('#singlematch'),
 
+    events : {
+        "click #addNewAttack" : "addNewAttack",
+        "click #addNewPass" : "addNewPass"
+    },
+
     initialize: function () {
         console.log("init MatchView");
         this.model.bind("reset", this.render, this);
@@ -30,5 +35,11 @@ window.MatchView = Backbone.View.extend({
         );
         this.$el.html(temp);
         return this;
+    },
+
+    addNewAttack : function(e){
+         console.log("addNewAttack");
+         var regAttackView = new RegAttackView({el : $('#attack-form')});
+
     }
 });

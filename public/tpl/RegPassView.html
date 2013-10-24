@@ -1,33 +1,39 @@
 <div class="inputform">
-  <h3> Registrate pass </h3>
+    <h3> Registrate pass </h3>
     <button type="button" id="destroy" class="btn btn-danger">
-      <i class="icon-user icon-white"></i> Remove pass
+        <i class="icon-user icon-white"></i> Remove pass
     </button>
-	<form name="form" id="pass-form">
-      <div class="form-group">
-        <div class="input-group">
-            <span class="input-group-addon">$</span>
-            <input class="form-control" placeholder="Pass from (player id)" name="passFrom" type="number" />
+    <form name="pass-form" id="pass-form">
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon">$</span>
+                <input class="form-control" placeholder="Pass from (player id)" name="fromPlayer" type="number" />
+            </div>
         </div>
-      </div>
-      <div class="form-group">
-        <div class="input-group">
-            <span class="input-group-addon"></span>
-            <input class="form-control" placeholder="From zone" name="fromZone" type="number" />
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon"></span>
+                <input class="form-control" placeholder="From zone" name="fromPos" type="number" />
+            </div>
         </div>
-      </div>
-      <div class="form-group">
-        <div class="input-group">
-            <span class="input-group-addon"></span>
-            <input class="form-control" placeholder="To player (player id)" name="toPlayer" type="number" />
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon"></span>
+                <input class="form-control" placeholder="To player (player id)" name="toPlayer" type="number" />
+            </div>
         </div>
-      </div>
-      <div class="form-group">
-        <div class="input-group">
-            <span class="input-group-addon"></span>
-        	<input class="form-control" placeholder="To zone" name="toZone" type="number" />
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon"></span>
+                <input class="form-control" placeholder="To zone" name="toPos" type="number" />
+            </div>
         </div>
-      </div>
-	</form>
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon"></span>
+                <input class="form-control" placeholder="Action (CROSS, PASS, KEYPASS, LONGBALL)" name="action" type="text" />
+            </div>
+        </div>
+    </form>
 </div>
 

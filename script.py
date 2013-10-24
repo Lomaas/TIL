@@ -33,7 +33,7 @@ tipppeligaLagURL = [
 		'http://www.altomfotball.no/element.do?cmd=team&teamId=541&tournamentId=1&useFullUrl=false'
 ]
 
-counter = 1
+counter = 0
 
 for rootUrl in tipppeligaLagURL:
 	get = urllib2.urlopen(rootUrl).read()

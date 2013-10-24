@@ -9,15 +9,19 @@ exports.getAllMatches = function (req, res) {
 };
 
 exports.getMatch = function(req, res){
-    matchModel.getMatch(req.params.id, function(response){
+    matchModel.getMatch(req.params.id, function(err, response){
+        if(err) res.send(400);
+
         res.jsonp(response);
     });
-}
+};
 
 exports.postNewMatch = function (req, res) {
-    console.log("New match");
+    console.log("New match ");
+    var input = req.body;
+    console.log(req.body);
 
-    matchModel.newMatch(req.body, function(response){
+    matchModel.newMatch(input, function(response){
         switch(response){
             case OK_REQUEST:
                 res.send(201, {"msg" : "success"});

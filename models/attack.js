@@ -37,13 +37,13 @@ exports.getAttacksSummaryStatsForTeam = function(team, callback){
                 "terms" : {
                     "field" : "passes.fromPlayer",
                     "size" : 30
-                },
+                }
             },
             "toPlayer" : {
                 "nested": "passes",
                 "terms" : {
                     "field" : "passes.toPlayer"
-                },
+
             },
             "breakthroughPlayer" : {
                 "terms" : {
@@ -66,7 +66,7 @@ exports.getAttacksSummaryStatsForTeam = function(team, callback){
                 "terms" : {
                     "fields" : ["passes.fromPos", "passes.toPos"],
                     "size" : 30
-                },
+                }
             },
             "attackStart" : {
                 "terms" : {

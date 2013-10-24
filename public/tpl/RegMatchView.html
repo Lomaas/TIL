@@ -1,49 +1,47 @@
 <div class="jumbotron">
-  <h2>  Team Info 
-    <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#teaminfo"> Collapse this section </button></h2>
+    <h2>  Team Info
+        <button type="button" class="btn btn-default" data-toggle="collapse" data-target="#teaminfo"> Collapse this section </button></h2>
 
-  <div id="teaminfo" class="collapse in">
-    <form id="match-form" name="form">
-      <div class="form-group">
-        <select class="form-control">
-          <option value="volvo">TIL - Strømsgodset</option>
-          <option value="saab">Tromsø - Hønefoss</option>
-          <option value="mercedes">Tromsø - Start</option>
-          <option value="mercedes">Haugesund - Tromsø</option>
-          <option value="audi">Sarpsborg - Tromsø</option>
-          <option value="mercedes">Strømsgodset - Tromsø</option>
-          <option value="mercedes">Sandnes Ulf - Tromsø</option>
-          <option value="mercedes">Viking - Tromsø</option>
-          <option value="mercedes">Tromsø - Lillestrøm</option>
-          <option value="mercedes">Tromsø - Sogndal</option>
-          <option value="mercedes">Tromsø - Brann</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="control-label" for="hometeamGoals">Hometeam goals:</label>
-        <div class="input-group">
-            <span class="input-group-addon">$</span>
-            <input class="form-control" placeholder="Goals" name="hometeamGoals" type="number" />
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="control-label" for="awayteamGoals">Awayteam goals:</label>
-        <div class="input-group">
-            <span class="input-group-addon"></span>
-            <input class="form-control" placeholder="Goals" name="awayteamGoals" type="number" />
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="control-label" for="date">Date:</label>
-        <div class="input-group">
-            <span class="input-group-addon"></span>
-            <input class="form-control" placeholder="date" name="date" type="date" />
-        </div>
-      </div>
-      <button type="submit" id="postNewMatchData"class="btn btn-success">Submit</button>
-      <button type="button" id="addNewAttack" class="btn btn-primary">
-        <i class="icon-user icon-white"></i> New Attack
-      </button>
-    </form>
-  </div>
+    <div id="teaminfo" class="collapse in">
+        <form id="match-form" name="form">
+            <div class="form-group">
+                <select class="form-control" id="match">
+                    <option value="hometeam=Tromsø&awayteam=Strømsgodset">Tromsø - Strømsgodset</option>
+                    <option value="hometeam=Tromsø&awayteam=Viking">Tromsø - Viking</option>
+                    <option value="hometeam=Tromsø$awayteam=Hønefoss">Tromsø - Hønefoss</option>
+                    <option value="hometeam=Tromsø&awayteam=Start">Tromsø - Start</option>
+                    <option value="hometeam=Haugesund&awayteam=Tromsø">Haugesund - Tromsø</option>
+                    <option value="hometeam=Sarpsborg&awayteam=Tromsø">Sarpsborg - Tromsø</option>
+                    <option value="hometeam=Strømsgodset&awayteam=Tromsø">Strømsgodset - Tromsø</option>
+                    <option value="hometeam=Sandnes Ulf&awayteam=Tromsø">Sandnes Ulf - Tromsø</option>
+                    <option value="hometeam=Viking&awayteam=Tromsø">Viking - Tromsø</option>
+                    <option value="hometeam=Tromsø&awayteam=Lillestrøm">Tromsø - Lillestrøm</option>
+                    <option value="hometeam=Tromsø&awayteam=Sogndal">Tromsø - Sogndal</option>
+                    <option value="hometeam=Tromsø&awayteam=Brann">Tromsø - Brann</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="hometeamGoals">Hometeam goals:</label>
+                <div class="input-group">
+                    <span class="input-group-addon">$</span>
+                    <input class="form-control" placeholder="Goals" name="hometeamGoals" type="number" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="awayteamGoals">Awayteam goals:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"></span>
+                    <input class="form-control" placeholder="Goals" name="awayteamGoals" type="number" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="date">Date:</label>
+                <div class="input-group">
+                    <span class="input-group-addon"></span>
+                    <input class="form-control" placeholder="date" name="date" type="date" />
+                </div>
+            </div>
+            <button type="submit" id="postNewMatchData"class="btn btn-success">Submit</button>
+        </form>
+    </div>
 </div>

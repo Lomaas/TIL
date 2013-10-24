@@ -1,7 +1,7 @@
 var attackModel = require('./../models/attack');
 
 exports.putAttack = function (req, res){
-    console.log("Put attack");
+    console.log("Put attack", req.body);
     var attack = req.body;
 
     attackModel.newAttack(req.body, function(response){

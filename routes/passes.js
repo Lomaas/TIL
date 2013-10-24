@@ -1,7 +1,7 @@
 var passModel = require('./../models/pass');
 
 exports.newPass = function (req, res) {
-    console.log("NewPass");
+    console.log("NewPass", req.body);
 
     passModel.newPass(req.body, function(response){
         switch(response){

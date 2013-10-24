@@ -19,7 +19,7 @@ window.PlayersView = Backbone.View.extend({
         });
     },
 
-    render: function (eventName) {
+    render: function () {
         console.log("in Render: %j", this.model.toJSON());
         var data = this.model.toJSON();
         var temp = Mustache.render(this.template(), {players : data});

@@ -34,19 +34,19 @@ app.configure(function(){
 
 app.get('/matches', matches.getAllMatches); 
 app.get('/match/:id', matches.getMatch);
-app.post('/match/new', matches.postNewMatch);
+app.post('/match', matches.postNewMatch);
 
 app.get('/teams', teams.getTeams);
 app.get('/team/:name/players', teams.getPlayers);
 app.get('/team/:name', teams.getStats);
-app.post('/team/new', teams.postNewTeam);
+app.post('/team', teams.postNewTeam);
 
 app.get('/player/:id', player.getStats);
-app.post('/player/new', player.newPlayer);
+app.post('/player', player.newPlayer);
 
 app.post('/attack/:matchId', attacks.putAttack);
 
-app.post('/pass/new', passes.newPass);
+app.post('/pass', passes.newPass);
 
 app.listen(3000);
 console.log('Listening on port 3000...');

@@ -36,10 +36,7 @@ exports.getMatch = function(mId, callback){
         .on('data', function(data) {
             data = JSON.parse(data);
             console.log("Data %s", JSON.stringify(data.hits.hits, undefined, 2));
-            callback(data.hits.hits[0]);
-        })
-        .on('done', function(done){
-            console.log(done);
+            callback(err=false, data.hits.hits[0]);
         })
         .on('error', function(error){
 	        winston.log('error', error);

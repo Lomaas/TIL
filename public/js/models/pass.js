@@ -1,5 +1,5 @@
 
 window.PassModel = Backbone.Model.extend({
-    urlRoot : '/match/:id/attack/:time',
+    url: 'pass',
     idAttribute: "_id"
 });
