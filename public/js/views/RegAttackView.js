@@ -7,8 +7,10 @@ window.RegAttackView = Backbone.View.extend({
         "click #submitAttack" : "submitAttack"
     },
 
-    initialize: function () {
+    initialize: function (options) {
         console.log("init RegAttackView");
+        console.log(options);
+        this.matchId = options.matchId;
         this.render();
 
         $('#attack-form').validate({
@@ -83,16 +85,35 @@ window.RegAttackView = Backbone.View.extend({
     submitAttack : function(e){
         e.preventDefault();
         console.log("submitAttack");
-        var response = {};
-        console.log($('form').serializeArray());
 
-        var array = $('form').serializeArray();
+        var response = this.fixResponse($('form').serializeArray());
+        new AttackModel(response).save();   // post to backend
+    },
+
+    fixResponse : function(array){
         var passes = [];
+        var response = {};
 
         for(var i=0; i < array.length; i++){
             var obj = array[i];
             console.log(obj.name);
-            if(obj.name == "fromPlayer"){
+            if(obj.name == "positionStart"){
+                response['attackStart'] = {
+                    pos : array[i].positionStart,
+                    player : array[i+1].playerIDStart,
+                    typeAction : $('#positionStart-form').val()
+                };
+                i += 1;
+            }
+            else if(obj.name == "positionFinish"){
+                response['finish'] = {
+                    pos : array[i],
+                    player : array[i+1],
+                    action : $('#positionFinish-form').val()
+                };
+                i += 1;
+            }
+            else if(obj.name == "fromPlayer"){
                 var pass = {
                     fromPlayer : array[i].value,
                     fromPos : array[i+1].value,
@@ -105,13 +126,14 @@ window.RegAttackView = Backbone.View.extend({
                 i += 4;
                 passes.push(pass);
             }
-            else{
+            else {
                 var name = obj.name;
                 response[name] = obj.value;
             }
         }
         console.log(passes);
         response['passes'] = passes;
-        new AttackModel(response).save();
+        response['matchId'] = this.matchId;
+        return response;
     }
 });

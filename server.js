@@ -11,10 +11,7 @@ BAD_REQUEST = 2;
 winston = require('winston');
 winston.add(winston.transports.File, { filename: 'error.log' });
 
-winston.log('error', 'test');
-
 ElasticSearchClient = require('elasticsearchclient');
-
 elasticSearchClient = new ElasticSearchClient(serverOptions);
 
 var express = require('express'),
@@ -32,7 +29,7 @@ app.configure(function(){
   app.use(express.bodyParser());
 });
 
-app.get('/matches', matches.getAllMatches); 
+app.get('/matches', matches.getAllMatches);
 app.get('/match/:id', matches.getMatch);
 app.post('/match', matches.postNewMatch);
 
@@ -44,7 +41,7 @@ app.post('/team', teams.postNewTeam);
 app.get('/player/:id', player.getStats);
 app.post('/player', player.newPlayer);
 
-app.post('/attack/:matchId', attacks.putAttack);
+app.post('/attack', attacks.postNewAttack);
 
 app.post('/pass', passes.newPass);
 

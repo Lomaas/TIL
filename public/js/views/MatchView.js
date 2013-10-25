@@ -39,7 +39,9 @@ window.MatchView = Backbone.View.extend({
 
     addNewAttack : function(e){
          console.log("addNewAttack");
-         var regAttackView = new RegAttackView({el : $('#attack-form')});
-
+         var regAttackView = new RegAttackView({
+             el : $('#attack-form'),
+             matchId : this.model.get('id')
+         });
     }
 });

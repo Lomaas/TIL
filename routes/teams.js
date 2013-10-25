@@ -39,7 +39,6 @@ exports.getPlayers = function(req, res){
 };
 
 exports.getStats = function(req, res){
-    console.log('Get attacks summary for team');
     attackModel.getAttacksSummaryStatsForTeam(req.params.name, function(err, response){
         if(err)    res.send(400);
 

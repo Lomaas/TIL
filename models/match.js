@@ -40,6 +40,7 @@ exports.getMatch = function(mId, callback){
         })
         .on('error', function(error){
 	        winston.log('error', error);
+            callback(err=true, undefined);
         })
         .exec();
 };
@@ -50,9 +51,6 @@ exports.newMatch = function(match, callback){
     commands.push(match);
 
     elasticSearchClient.bulk(commands, {})
-	    .on('data', function(data) {
-	        console.log(data);
-	    })
 	    .on('done', function(done){
 	        console.log(done);
 	        callback(OK_REQUEST);
@@ -62,4 +60,28 @@ exports.newMatch = function(match, callback){
 	        callback(BAD_REQUEST);
 	    })
 	    .exec();
+}
+
+exports.newAttackForMatch = function(attack, matchId, callback){
+    this.getMatch(matchId, function getMatchCallback(err, response){
+        console.log("res %s", JSON.stringify(response, undefined, 2));
+        var match = response._source;
+        match.attacks.push(attack);
+
+        var commands = [];
+        console.log(match.attacks);
+        commands.push({ "update" : {"_index" :indexNameMatches, "_type" : typeNameMatches, "_id" : matchId }});
+        commands.push({"attacks" : match.attacks });
+
+        elasticSearchClient.bulk(commands, {})
+            .on('done', function(done){
+                console.log(done);
+                callback(OK_REQUEST);
+            })
+            .on('error', function(error){
+                winston.log('error', error);
+                callback(BAD_REQUEST);
+            })
+            .exec();
+    });
 }

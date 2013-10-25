@@ -69,27 +69,18 @@ exports.getPassesForPlayer = function(req, res){
 
 
 exports.newPlayer = function(req, res){
-    console.log("New player");
+    console.log("New player %j", req.body);
     var player = req.body;
 
-    console.log(JSON.stringify(req.body));
-
-    var commands = [];
-    commands.push({ "index" : { "_index" :indexNamePlayer, "_type" : typeNamePlayer} });
-    commands.push(player);
-
-    elasticSearchClient.bulk(commands, {})
-            .on('data', function(data) {
-                console.log(data);
-            })
-            .on('done', function(done){
-                console.log(done);
-                res.send(201, {"msg" : "success"});
-            })
-            .on('error', function(error){
-                console.log(error);
+    playerModel.newPlayer(req.body, function handleNewPlayer(response){
+        switch(response){
+            case OK_REQUEST:
+                 res.send(201, {"msg" : "success"});
+                break;
+            case BAD_REQUEST:
                 res.send(400, {"msg" : "someting wrong happend during saving"});
-            })
-            .exec();
+                break;
+        }
+    });
 };
 

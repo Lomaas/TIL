@@ -1,6 +1,23 @@
 var indexNamePlayer = "players"
 var typeNamePlayer = "player";
 
+
+exports.newPlayer = function(player, callback){
+    var commands = [];
+    commands.push({ "index" : { "_index" :indexNamePlayer, "_type" : typeNamePlayer} });
+    commands.push(player);
+
+    elasticSearchClient.bulk(commands, {})
+        .on('done', function(done){
+            callback(OK_REQUEST);
+        })
+        .on('error', function(error){
+            winston.log('error', error);
+            callback(BAD_REQUEST);
+        })
+        .exec();
+}
+
 exports.getPlayer = function(player_id, callback){
     console.log("GET PLAYER FOR TEAM-----");
 
