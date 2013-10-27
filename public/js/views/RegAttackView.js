@@ -93,22 +93,23 @@ window.RegAttackView = Backbone.View.extend({
     fixResponse : function(array){
         var passes = [];
         var response = {};
+        console.log(array);
 
         for(var i=0; i < array.length; i++){
             var obj = array[i];
-            console.log(obj.name);
+
             if(obj.name == "positionStart"){
                 response['attackStart'] = {
-                    pos : array[i].positionStart,
-                    player : array[i+1].playerIDStart,
+                    pos : array[i].value,
+                    player : array[i+1].value,
                     typeAction : $('#positionStart-form').val()
                 };
                 i += 1;
             }
             else if(obj.name == "positionFinish"){
                 response['finish'] = {
-                    pos : array[i],
-                    player : array[i+1],
+                    pos : array[i].value,
+                    player : array[i+1].value,
                     action : $('#positionFinish-form').val()
                 };
                 i += 1;
@@ -131,9 +132,11 @@ window.RegAttackView = Backbone.View.extend({
                 response[name] = obj.value;
             }
         }
-        console.log(passes);
         response['passes'] = passes;
         response['matchId'] = this.matchId;
+        response['breakthrough'] = $('#breakthrough-form').val();
+        console.log(response);
+
         return response;
     }
 });

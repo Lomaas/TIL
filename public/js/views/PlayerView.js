@@ -1,7 +1,7 @@
 window.PlayerView = Backbone.View.extend({
     el : $('#player'),
 
-    initialize: function () {
+    initialize: function (options) {
         console.log("init Player View");
         var that = this;
 
@@ -42,6 +42,7 @@ window.PlayerView = Backbone.View.extend({
         rect.drawPitch();
         rect.drawPercentNumbers(this.model.get("facets").toPos.terms, this.model.get("facets").toPos.total);
         console.log(this.model);
+
         $('#playedToChart').highcharts({
             chart: {
                 type: 'bar'
@@ -65,8 +66,52 @@ window.PlayerView = Backbone.View.extend({
                 },
             ]
         });
+        var that = this;
+        jQuery.ajax({
+            url: "stats/breakthroughs/" + this.model.get("currentPlayer").name,
+            dataType : "json",
+            success: function getBreakthroughs(resp, textStatus, jqXHR){
+                console.log("RESPONSE %j", resp);
 
+                var dataPieChart = [];
+                _.each(resp.breakthrough, function(breakthrough){
+                    dataPieChart.push([breakthrough.term, breakthrough.count]);
+                });
+                if(dataPieChart.length > 0)
+                    that.renderBreakthroughChart(dataPieChart);
+            }
+      	});
 
         return this;
+    },
+    renderBreakthroughChart : function(dataPieChart){
+        $('#typesOfBreakthrough').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+            },
+            title: {
+                text: 'Breakthrough'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        color: '#000000',
+                        connectorColor: '#000000',
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                    }
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: 'Breakthroughs',
+                data: dataPieChart
+            }]
+        });
     }
+
 });
