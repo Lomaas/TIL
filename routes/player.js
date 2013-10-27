@@ -1,6 +1,6 @@
 var passModel = require('./../models/pass');
-var teamModel = require('./../models/team');
 var playerModel = require('./../models/player');
+var attackModel = require('./../models/attack');
 
 exports.getStats = function (req, res){
     console.log("get stats " + req.params.id.toString());
@@ -84,3 +84,11 @@ exports.newPlayer = function(req, res){
     });
 };
 
+
+exports.getBreakthroughsForPlayer = function(req, res){
+    attackModel.getBreakthroughsForPlayer(req.params.name, function callbackGetBreakthPlayer(err, response){
+        if(err) res.send(400);
+
+        res.jsonp(response);
+    });
+};

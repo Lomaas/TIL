@@ -2,8 +2,10 @@ var attackModel = require('./../models/attack');
 var matchModel = require('./../models/match');
 
 exports.postNewAttack = function (req, res){
-    console.log("Put attack", req.body);
+    console.log("Put attack %s", JSON.stringify(req.body, undefined, 2));
+
     var attack = req.body;
+    attack['touch'] = 0;
 
     attackModel.newAttack(req.body, function(response){
        switch(response){
