@@ -39,11 +39,15 @@ app.get('/team/:name', teams.getStats);
 app.post('/team', teams.postNewTeam);
 
 app.get('/player/:id', player.getStats);
+app.get('/player/:name/breakthroughs', player.getBreakthroughsForPlayer);
 app.post('/player', player.newPlayer);
 
 app.post('/attack', attacks.postNewAttack);
 
 app.post('/pass', passes.newPass);
+
+app.get('/stats/breakthroughs/:name', player.getBreakthroughsForPlayer);
+
 
 app.listen(3000);
 console.log('Listening on port 3000...');
