@@ -2610,6 +2610,551 @@ insertMatch({
     ]
 });
 
+insertObject({
+      "date": "2013-10-19",
+      "hometeam": "Tromsø",
+      "awayteam": "Viking",
+      "score": "4-3",
+      "attacks": [
+        {
+          "attackStart": {
+            "typeAction": "Gjenvinning",
+            "player": "68",
+            "pos": "15"
+          },
+          "finish": {
+            "player": "72",
+            "action": "",
+            "pos": "23"
+          },
+          "time": "4",
+          "breakthroughPlayer": "Makthar Thioune",
+          "matchId": "rhy-La6DRaOqwxLmRstuOw",
+          "team": "Viking",
+          "passes": [
+            {
+              "fromPlayer": "68",
+              "toPos": "23",
+              "fromPos": "15",
+              "toPlayer": "72",
+              "action": "KEYPASS"
+            }
+          ],
+          "breakthrough": "Pasning Bakrom"
+        },
+        {
+          "finish": {
+            "player": "404",
+            "action": "",
+            "pos": "23"
+          },
+          "attackStart": {
+            "typeAction": "Gjenvinning",
+            "player": "404",
+            "pos": "23"
+          },
+          "time": "10",
+          "breakthroughPlayer": "None",
+          "matchId": "rhy-La6DRaOqwxLmRstuOw",
+          "passes": [],
+          "team": "Tromsø",
+          "breakthrough": "None"
+        },
+        {
+          "attackStart": {
+            "typeAction": "Gjenvinning",
+            "player": "394",
+            "pos": "2"
+          },
+          "finish": {
+            "player": "411",
+            "action": "",
+            "pos": "23"
+          },
+          "time": "18",
+          "breakthroughPlayer": "None",
+          "matchId": "rhy-La6DRaOqwxLmRstuOw",
+          "team": "Tromsø",
+          "passes": [
+            {
+              "fromPlayer": "394",
+              "toPos": "5",
+              "fromPos": "2",
+              "toPlayer": "403",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "403",
+              "toPos": "22",
+              "fromPos": "9",
+              "toPlayer": "404",
+              "action": "KEYPASS"
+            },
+            {
+              "fromPlayer": "404",
+              "toPos": "23",
+              "fromPos": "22",
+              "toPlayer": "411",
+              "action": "PASS"
+            }
+          ],
+          "breakthrough": "None"
+        },
+        {
+          "finish": {
+            "player": "395",
+            "action": "",
+            "pos": "23"
+          },
+          "attackStart": {
+            "typeAction": "Gjenvinning",
+            "player": "411",
+            "pos": "26"
+          },
+          "time": "27",
+          "breakthroughPlayer": "None",
+          "matchId": "rhy-La6DRaOqwxLmRstuOw",
+          "passes": [
+            {
+              "fromPlayer": "411",
+              "toPos": "22",
+              "fromPos": "26",
+              "action": "CROSS",
+              "toPlayer": "393"
+            },
+            {
+              "fromPlayer": "393",
+              "toPos": "23",
+              "fromPos": "22",
+              "action": "PASS",
+              "toPlayer": "395"
+            }
+          ],
+          "team": "Tromsø",
+          "breakthrough": "None"
+        },
+        {
+          "attackStart": {
+            "typeAction": "5-meter",
+            "player": "390",
+            "pos": "3"
+          },
+          "finish": {
+            "player": "406",
+            "action": "",
+            "pos": "19"
+          },
+          "time": "34",
+          "breakthroughPlayer": "Morten Moldskred",
+          "matchId": "rhy-La6DRaOqwxLmRstuOw",
+          "team": "Tromsø",
+          "passes": [
+            {
+              "fromPlayer": "390",
+              "toPos": "15",
+              "fromPos": "3",
+              "toPlayer": "413",
+              "action": "LONGBALL"
+            },
+            {
+              "fromPlayer": "413",
+              "toPos": "20",
+              "fromPos": "15",
+              "toPlayer": "411",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "411",
+              "toPos": "26",
+              "fromPos": "20",
+              "toPlayer": "404",
+              "action": "KEYPASS"
+            },
+            {
+              "fromPlayer": "404",
+              "toPos": "19",
+              "fromPos": "26",
+              "toPlayer": "406",
+              "action": "CROSS"
+            }
+          ],
+          "breakthrough": "Pasning Mellomrom"
+        },
+        {
+          "finish": {
+            "player": "404",
+            "action": "",
+            "pos": "23"
+          },
+          "attackStart": {
+            "typeAction": "Gjenvinning",
+            "player": "403",
+            "pos": "13"
+          },
+          "time": "35",
+          "breakthroughPlayer": "None",
+          "matchId": "rhy-La6DRaOqwxLmRstuOw",
+          "passes": [
+            {
+              "fromPlayer": "403",
+              "toPos": "13",
+              "fromPos": "13",
+              "action": "PASS",
+              "toPlayer": "402"
+            },
+            {
+              "fromPlayer": "402",
+              "toPos": "17",
+              "fromPos": "14",
+              "action": "KEYPASS",
+              "toPlayer": "403"
+            },
+            {
+              "fromPlayer": "403",
+              "toPos": "18",
+              "fromPos": "17",
+              "action": "PASS",
+              "toPlayer": "404"
+            }
+          ],
+          "team": "Tromsø",
+          "breakthrough": "None"
+        },
+        {
+          "attackStart": {
+            "typeAction": "Gjenvinning",
+            "player": "394",
+            "pos": "21"
+          },
+          "finish": {
+            "player": "394",
+            "action": "",
+            "pos": "22"
+          },
+          "time": "43",
+          "breakthroughPlayer": "",
+          "matchId": "rhy-La6DRaOqwxLmRstuOw",
+          "team": "Tromsø",
+          "passes": [],
+          "breakthrough": "None"
+        },
+        {
+          "finish": {
+            "player": "396",
+            "action": "",
+            "pos": "25"
+          },
+          "attackStart": {
+            "typeAction": "Gjenvinning",
+            "player": "403",
+            "pos": "6"
+          },
+          "time": "45",
+          "breakthroughPlayer": "",
+          "matchId": "rhy-La6DRaOqwxLmRstuOw",
+          "passes": [
+            {
+              "fromPlayer": "403",
+              "toPos": "10",
+              "fromPos": "6",
+              "action": "PASS",
+              "toPlayer": "411"
+            },
+            {
+              "fromPlayer": "411",
+              "toPos": "9",
+              "fromPos": "9",
+              "action": "PASS",
+              "toPlayer": "394"
+            },
+            {
+              "fromPlayer": "394",
+              "toPos": "9",
+              "fromPos": "9",
+              "action": "PASS",
+              "toPlayer": "403"
+            },
+            {
+              "fromPlayer": "403",
+              "toPos": "14",
+              "fromPos": "9",
+              "action": "PASS",
+              "toPlayer": "402"
+            },
+            {
+              "fromPlayer": "402",
+              "toPos": "17",
+              "fromPos": "18",
+              "action": "PASS",
+              "toPlayer": "411"
+            },
+            {
+              "fromPlayer": "411",
+              "toPos": "18",
+              "fromPos": "17",
+              "action": "PASS",
+              "toPlayer": "404"
+            },
+            {
+              "fromPlayer": "404",
+              "toPos": "18",
+              "fromPos": "18",
+              "action": "PASS",
+              "toPlayer": "403"
+            },
+            {
+              "fromPlayer": "403",
+              "toPos": "19",
+              "fromPos": "18",
+              "action": "PASS",
+              "toPlayer": "397"
+            }
+          ],
+          "team": "Tromsø",
+          "breakthrough": "None"
+        },
+        {
+          "attackStart": {
+            "typeAction": "Frispark",
+            "player": "395",
+            "pos": "7"
+          },
+          "finish": {
+            "player": "413",
+            "action": "",
+            "pos": "23"
+          },
+          "time": "62",
+          "breakthroughPlayer": "Adnan Causevic",
+          "matchId": "rhy-La6DRaOqwxLmRstuOw",
+          "team": "Tromsø",
+          "passes": [
+            {
+              "fromPlayer": "395",
+              "toPos": "12",
+              "fromPos": "7",
+              "toPlayer": "399",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "399",
+              "toPos": "11",
+              "fromPos": "12",
+              "toPlayer": "395",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "395",
+              "toPos": "18",
+              "fromPos": "11",
+              "toPlayer": "413",
+              "action": ""
+            }
+          ],
+          "breakthrough": "Pasning Bakrom"
+        },
+        {
+          "finish": {
+            "player": "411",
+            "action": "",
+            "pos": "23"
+          },
+          "attackStart": {
+            "typeAction": "Gjenvinning",
+            "player": "",
+            "pos": "12"
+          },
+          "time": "64",
+          "breakthroughPlayer": "None",
+          "matchId": "rhy-La6DRaOqwxLmRstuOw",
+          "passes": [
+            {
+              "fromPlayer": "406",
+              "toPos": "16",
+              "fromPos": "12",
+              "action": "PASS",
+              "toPlayer": "413"
+            },
+            {
+              "fromPlayer": "413",
+              "toPos": "16",
+              "fromPos": "16",
+              "action": "PASS",
+              "toPlayer": "404"
+            },
+            {
+              "fromPlayer": "404",
+              "toPos": "16",
+              "fromPos": "16",
+              "action": "PASS",
+              "toPlayer": "413"
+            },
+            {
+              "fromPlayer": "413",
+              "toPos": "20",
+              "fromPos": "20",
+              "action": "PASS",
+              "toPlayer": "404"
+            },
+            {
+              "fromPlayer": "404",
+              "toPos": "23",
+              "fromPos": "25",
+              "action": "PASS",
+              "toPlayer": "411"
+            }
+          ],
+          "team": "Tromsø",
+          "breakthrough": "None"
+        },
+        {
+          "attackStart": {
+            "typeAction": "Innkast",
+            "player": "394",
+            "pos": "9"
+          },
+          "finish": {
+            "player": "413",
+            "action": "",
+            "pos": "22"
+          },
+          "time": "71",
+          "breakthroughPlayer": "",
+          "matchId": "rhy-La6DRaOqwxLmRstuOw",
+          "team": "Tromsø",
+          "passes": [
+            {
+              "fromPlayer": "394",
+              "toPos": "6",
+              "fromPos": "9",
+              "toPlayer": "393",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "393",
+              "toPos": "11",
+              "fromPos": "6",
+              "toPlayer": "395",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "395",
+              "toPos": "21",
+              "fromPos": "11",
+              "toPlayer": "403",
+              "action": "LONGBALL"
+            },
+            {
+              "fromPlayer": "403",
+              "toPos": "22",
+              "fromPos": "21",
+              "toPlayer": "413",
+              "action": "PASS"
+            }
+          ],
+          "breakthrough": "None"
+        },
+        {
+          "finish": {
+            "player": "404",
+            "action": "",
+            "pos": "25"
+          },
+          "attackStart": {
+            "typeAction": "Gjenvinning",
+            "player": "402",
+            "pos": "14"
+          },
+          "time": "78",
+          "breakthroughPlayer": "Thomas Kind Bendiksen",
+          "matchId": "rhy-La6DRaOqwxLmRstuOw",
+          "passes": [
+            {
+              "fromPlayer": "402",
+              "toPos": "19",
+              "fromPos": "15",
+              "action": "KEYPASS",
+              "toPlayer": "404"
+            }
+          ],
+          "team": "Tromsø",
+          "breakthrough": "Pasning Mellomrom"
+        },
+        {
+          "attackStart": {
+            "typeAction": "Gjenvinning",
+            "player": "412",
+            "pos": "19"
+          },
+          "finish": {
+            "player": "393",
+            "action": "",
+            "pos": "23"
+          },
+          "time": "81",
+          "breakthroughPlayer": "None",
+          "matchId": "rhy-La6DRaOqwxLmRstuOw",
+          "team": "Tromsø",
+          "passes": [
+            {
+              "fromPlayer": "412",
+              "toPos": "25",
+              "fromPos": "19",
+              "toPlayer": "404",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "404",
+              "toPos": "23",
+              "fromPos": "25",
+              "toPlayer": "393",
+              "action": "PASS"
+            }
+          ],
+          "breakthrough": "None"
+        },
+        {
+          "finish": {
+            "player": "412",
+            "action": "",
+            "pos": "23"
+          },
+          "attackStart": {
+            "typeAction": "Gjenvinning",
+            "player": "410",
+            "pos": "10"
+          },
+          "time": "92",
+          "breakthroughPlayer": "None",
+          "matchId": "rhy-La6DRaOqwxLmRstuOw",
+          "passes": [
+            {
+              "fromPlayer": "410",
+              "toPos": "11",
+              "fromPos": "10",
+              "action": "PASS",
+              "toPlayer": "404"
+            },
+            {
+              "fromPlayer": "404",
+              "toPos": "16",
+              "fromPos": "11",
+              "action": "PASS",
+              "toPlayer": "411"
+            },
+            {
+              "fromPlayer": "411",
+              "toPos": "23",
+              "fromPos": "20",
+              "action": "KEYPASS",
+              "toPlayer": "412"
+            }
+          ],
+          "team": "Tromsø",
+          "breakthrough": "None"
+        }
+      ]
+});
 
 function insertMatch(object){
     var commands = [];

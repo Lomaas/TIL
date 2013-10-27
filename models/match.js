@@ -64,14 +64,13 @@ exports.newMatch = function(match, callback){
 
 exports.newAttackForMatch = function(attack, matchId, callback){
     this.getMatch(matchId, function getMatchCallback(err, response){
-        console.log("res %s", JSON.stringify(response, undefined, 2));
+//        console.log("res %s", JSON.stringify(response, undefined, 2));
         var match = response._source;
         match.attacks.push(attack);
 
         var commands = [];
-        console.log(match.attacks);
-        commands.push({ "update" : {"_index" :indexNameMatches, "_type" : typeNameMatches, "_id" : matchId }});
-        commands.push({"attacks" : match.attacks });
+        commands.push({ "update" : {"_index" :indexNameMatches, "_type" : typeNameMatches, "_id" : matchId, "_retry_on_conflict" : 3 }});
+        commands.push({"doc" : {"attacks" : match.attacks }});
 
         elasticSearchClient.bulk(commands, {})
             .on('done', function(done){

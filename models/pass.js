@@ -36,6 +36,11 @@ exports.getPassStats = function(userId, callback){
                     "field" : "toPlayer",
                     "size" : 30
                 }
+            },
+            "typeOfPasses" : {
+                "terms" : {
+                    "field" : "action"
+                }
             }
         }
     };

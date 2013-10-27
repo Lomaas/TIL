@@ -13,6 +13,7 @@ exports.newAttack = function(attack, callback){
         })
         .on('error', function(error){
             console.log(error);
+            winston.log('error', error);
             callback(BAD_REQUEST);
         })
         .exec();
@@ -112,6 +113,71 @@ exports.getAttacksSummaryStatsForTeam = function(team, callback){
         })
         .exec();
 }
+
+exports.getAssistKing = function(playerName, callback){
+    var queryObject = {
+        "query" : {
+            "match" : {
+                "breakthroughPlayer.untouched" : playerName
+            }
+        },
+        "facets": {
+            "breakthrough": {
+                "terms": {
+                    "field": "breakthrough.untouched"
+                }
+            }
+        }
+    };
+
+    elasticSearchClient.search(indexNameAttacks, typeNameAttacks, queryObject)
+        .on('data', function (data) {
+            data = JSON.parse(data);
+            json = {};
+            console.log("Data %s", JSON.stringify(data, undefined, 2));
+            json['breakthrough'] = data.facets.breakthrough.terms;
+
+            callback(err = false, json);
+        })
+        .on('error', function (error) {
+            console.log(error)
+            callback(err = true, undefined);
+        })
+        .exec();
+};
+
+
+exports.getBreakthroughsForPlayer = function(playerName, callback){
+    var queryObject = {
+        "query" : {
+            "match" : {
+                "breakthroughPlayer.untouched" : playerName
+            }
+        },
+        "facets": {
+            "breakthrough": {
+                "terms": {
+                    "field": "breakthrough.untouched"
+                }
+            }
+        }
+    };
+
+    elasticSearchClient.search(indexNameAttacks, typeNameAttacks, queryObject)
+        .on('data', function (data) {
+            data = JSON.parse(data);
+            json = {};
+            console.log("Data %s", JSON.stringify(data, undefined, 2));
+            json['breakthrough'] = data.facets.breakthrough.terms;
+
+            callback(err = false, json);
+        })
+        .on('error', function (error) {
+            console.log(error)
+            callback(err = true, undefined);
+        })
+        .exec();
+};
 
 //exports.getMatchAttacks = function(mId, callback){
 //    var queryObject = {
