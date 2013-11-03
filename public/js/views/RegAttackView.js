@@ -88,6 +88,8 @@ window.RegAttackView = Backbone.View.extend({
 
         var response = this.fixResponse($('form').serializeArray());
         new AttackModel(response).save();   // post to backend
+        $('#wrapperContainer').removeData().unbind();
+        $('#wrapperContainer').empty();
     },
 
     fixResponse : function(array){
