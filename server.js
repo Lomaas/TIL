@@ -36,10 +36,12 @@ app.post('/match', matches.postNewMatch);
 app.get('/teams', teams.getTeams);
 app.get('/team/:name/players', teams.getPlayers);
 app.get('/team/:name', teams.getStats);
+app.get('/team/:name/finalthird', teams.getPassesIntoFinalThird);
 app.post('/team', teams.postNewTeam);
 
 app.get('/player/:id', player.getStats);
 app.get('/player/:name/breakthroughs', player.getBreakthroughsForPlayer);
+app.get('/player/:id/finalthird', player.getPassesIntoFinalThird);
 app.post('/player', player.newPlayer);
 
 app.post('/attack', attacks.postNewAttack);
