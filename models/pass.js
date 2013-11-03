@@ -1,7 +1,7 @@
 var indexNamePasses = "passes";
 var typeNamePasses = "pass"
 
-exports.getPassStats = function(userId, callback){
+exports.getPassStatsFromPlayer = function(userId, callback){
     var queryObject = {
         "query": {
             "bool": {
@@ -47,13 +47,18 @@ exports.getPassStats = function(userId, callback){
     
     elasticSearchClient.search(indexNamePasses, typeNamePasses, queryObject)
         .on('data', function(data) {
-            data = JSON.parse(data);
-            console.log("Data %s", JSON.stringify(data, undefined, 2));
+            var dataFromPlayer = JSON.parse(data);
 
-            response = {
-                "facets" : data.facets
-            }
-            callback(response);
+            getPassStatsToPlayer(userId, function(err, response){
+                var dataToPlayer = response;
+
+                response = {
+                    "facetsFromPlayer" : dataFromPlayer.facets,
+                    "facetsToPlayer" : dataToPlayer.facets
+                }
+                callback(response);
+            })
+
         })
         .on('done', function(done){
             //always returns 0 right now
@@ -61,6 +66,65 @@ exports.getPassStats = function(userId, callback){
         })
         .on('error', function(error){
             console.log("Error ", error);
+        })
+        .exec();
+};
+
+var getPassStatsToPlayer = function(userId, callback){
+    var queryObject = {
+        "query": {
+            "bool": {
+                "must": [
+                    {"match": {"toPlayer": userId}}
+                ],
+                "must_not": [
+                ],
+                "should": []
+            }
+        },
+         "facets" : {
+            "fromPos" : {
+                "terms" : {
+                    "field" : "fromPos",
+                    "size" : 30
+                }
+            },
+            "toPos" : {
+                "terms" : {
+                    "field" : "toPos",
+                    "size" : 30
+                }
+            },
+            "action" : {
+                "terms" : {
+                    "field" : "action"
+                }
+            },
+            "fromPlayer" : {
+                "terms" : {
+                    "field" : "fromPlayer",
+                    "size" : 30
+                }
+            },
+            "typeOfPasses" : {
+                "terms" : {
+                    "field" : "action"
+                }
+            }
+        }
+    };
+
+    elasticSearchClient.search(indexNamePasses, typeNamePasses, queryObject)
+        .on('data', function(data) {
+            data = JSON.parse(data);
+            response = {
+                "facets" : data.facets
+            }
+            callback(err = false, response);
+        })
+        .on('error', function(error){
+            console.log("Error ", error);
+            callback(err = false, undefined);
         })
         .exec();
 };

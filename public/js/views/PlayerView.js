@@ -33,25 +33,25 @@ window.PlayerView = Backbone.View.extend({
    
         var rect = new Rectangle(ctx, width, height, Config.zonesX, Config.zonesY, Config.zonesDictX, Config.zonesDictY);
         rect.drawPitch();
-        rect.drawPercentNumbers(this.model.get("facets").fromPos.terms, this.model.get("facets").fromPos.total);
+        rect.drawPercentNumbers(this.model.get("facetsFromPlayer").fromPos.terms, this.model.get("facetsFromPlayer").fromPos.total);
 
         c=document.getElementById("attackingZonesPlayedTo");
         ctx=c.getContext("2d");
    
         rect = new Rectangle(ctx, width, height, Config.zonesX, Config.zonesY, Config.zonesDictX, Config.zonesDictY);
         rect.drawPitch();
-        rect.drawPercentNumbers(this.model.get("facets").toPos.terms, this.model.get("facets").toPos.total);
+        rect.drawPercentNumbers(this.model.get("facetsToPlayer").toPos.terms, this.model.get("facetsToPlayer").toPos.total);
         console.log(this.model);
 
-        $('#playedToChart').highcharts({
+        $('#passesChart').highcharts({
             chart: {
                 type: 'bar'
             },
             title: {
-                text: 'Counting of passes ' + this.model.get("currentPlayer").name + ' has played to and to who'
+                text: 'Passes received and played for ' + this.model.get("currentPlayer").name
             },
             xAxis: {
-                categories: this.model.get("toPlayerXaxis")
+                categories: this.model.get("playerXaxis")
             },
             yAxis: {
                 min: 0,
@@ -61,11 +61,17 @@ window.PlayerView = Backbone.View.extend({
             },
             series: [
                 {
-                    name: 'Passes to player',
+                    name: 'To player',
                     data: this.model.get("toPlayerYaxis")
+                },
+                {
+                    name: 'From player',
+                    data: this.model.get("fromPlayerYaxis")
                 },
             ]
         });
+
+        // Create a own view for this
         var that = this;
         jQuery.ajax({
             url: "stats/breakthroughs/" + this.model.get("currentPlayer").name,

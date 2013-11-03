@@ -6,32 +6,54 @@ exports.getStats = function (req, res){
     console.log("get stats " + req.params.id.toString());
 
     playerModel.getPlayer(req.params.id, function(currentPlayer){
-        passModel.getPassStats(parseInt(req.params.id), function(response){
+        passModel.getPassStatsFromPlayer(parseInt(req.params.id), function(response){
+            console.log("Data %s", JSON.stringify(response, undefined, 2));
+
             var i;
             var playerArray = [];
-            var playersDict = {};
+            var playersDictFromPlayer = {};
+            var playersDictToPlayer = {};
 
-            for(i=0; i< response.facets.toPlayer.terms.length; i++){
-                playerArray.push(response.facets.toPlayer.terms[i].term);
-                playersDict[response.facets.toPlayer.terms[i].term] = {
-                    "count" : response.facets.toPlayer.terms[i].count,
-                    "term" : response.facets.toPlayer.terms[i].term
+            for(i=0; i< response.facetsFromPlayer.toPlayer.terms.length; i++){
+                playerArray.push(response.facetsFromPlayer.toPlayer.terms[i].term);
+                playersDictFromPlayer[response.facetsFromPlayer.toPlayer.terms[i].term] = {
+                    "count" : response.facetsFromPlayer.toPlayer.terms[i].count,
+                    "term" : response.facetsFromPlayer.toPlayer.terms[i].term
+                };
+            };
+
+            for(i=0; i< response.facetsToPlayer.fromPlayer.terms.length; i++){
+                playerArray.push(response.facetsToPlayer.fromPlayer.terms[i].term);
+                playersDictToPlayer[response.facetsToPlayer.fromPlayer.terms[i].term] = {
+                    "count" : response.facetsToPlayer.fromPlayer.terms[i].count,
+                    "term" : response.facetsToPlayer.fromPlayer.terms[i].term
                 };
             }
+
             playerModel.getSomePlayers(playerArray, function(players){
                 playerArray = [];
 
                 for(i=0; i< players.length; i++){
                     var player = players[i]._source;
 
+                    var countToPlayer = 0;
+                    var countFromPlayer = 0;
+
+                    if(playersDictFromPlayer[player.player_id] != undefined)
+                        countToPlayer = playersDictFromPlayer[player.player_id].count;
+
+                    if(playersDictToPlayer[player.player_id] != undefined)
+                        countFromPlayer = playersDictToPlayer[player.player_id].count;
+
                     playerArray.push({
-                        "count" : playersDict[player.player_id].count,
+                        "countToPlayer" : countToPlayer,
+                        "countFromPlayer" : countFromPlayer,
                         "name" : player.name,
                         "term" : player.player_id
                     });
                 }
-                response.facets.toPlayer = playerArray;
-                response.currentPlayer = currentPlayer;
+                response['facets'] = playerArray;
+                response['currentPlayer'] = currentPlayer;
                 console.log("Data %s", JSON.stringify(response, undefined, 2));
 
                 res.jsonp(response);

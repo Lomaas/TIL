@@ -2,12 +2,14 @@ window.PlayerModel = Backbone.Model.extend({
     urlRoot : 'player',
     parse : function(resp){
         console.log(resp);
-        resp['toPlayerXaxis'] = [];
+        resp['playerXaxis'] = [];
         resp['toPlayerYaxis'] = [];
+        resp['fromPlayerYaxis'] = [];
         
-        _.each(resp.facets.toPlayer, function(pass){
-            resp['toPlayerXaxis'].push(pass.name);
-            resp['toPlayerYaxis'].push(pass.count);
+        _.each(resp.facets, function(pass){
+            resp['playerXaxis'].push(pass.name);
+            resp['toPlayerYaxis'].push(pass.countToPlayer);
+            resp['fromPlayerYaxis'].push(pass.countFromPlayer);
         });
         return resp;
     }
