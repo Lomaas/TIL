@@ -42,7 +42,7 @@ window.AppRouter = Backbone.Router.extend({
 		this.playersView = new PlayersView({model : this.playersList});
 
 		this.teamModel = new TeamModel({id : teamName});
-		this.teamView = new TeamView({model : this.teamModel, playersModel : this.playersList});
+		this.teamView = new TeamView({model : this.teamModel, playersModel : this.playersList, name : teamName});
 
 		this.setNewView([this.teamView, this.playersView]);
 	},
@@ -64,7 +64,6 @@ window.AppRouter = Backbone.Router.extend({
 	    //Close the current view
 	    if (this.currentViews.length > 0) {
     	    _.each(this.currentViews, function(views){
-
 	        	$(views.el).empty();
 				views.unbind();
 			});

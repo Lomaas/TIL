@@ -89,6 +89,13 @@ exports.getPassesForPlayer = function(req, res){
         .exec()
 }
 
+exports.getPassesIntoFinalThird = function(req, res){
+    passModel.passesIntoFinalThird(req.params.id, function callbackPassesIntoFinalThird(err, response){
+        if(err) res.send(400);
+
+        res.jsonp(response);
+    });
+}
 
 exports.newPlayer = function(req, res){
     console.log("New player %j", req.body);
