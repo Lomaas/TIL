@@ -3156,6 +3156,401 @@ insertObject({
       ]
 });
 
+
+insertObject({
+    "date": "2013-05-26",
+    "hometeam": "Viking",
+    "awayteam": "Tromsø",
+    "score": "2-1",
+    attacks : [
+        {
+          "attackStart": {
+            "typeAction": "Gjenvinning",
+            "player": "396",
+            "pos": "15"
+          },
+          "finish": {
+            "player": "413",
+            "action": "SHOTMISS",
+            "pos": "23"
+          },
+          "time": "7",
+          "breakthroughPlayer": "Ruben Kristiansen",
+          "touch": 0,
+          "matchId": "SSTLEyFmTS2ulRy7oZH2BA",
+          "team": "Tromsø",
+          "passes": [
+            {
+              "fromPlayer": "396",
+              "toPos": "16",
+              "fromPos": "15",
+              "toPlayer": "397",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "397",
+              "toPos": "15",
+              "fromPos": "16",
+              "toPlayer": "482",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "482",
+              "toPos": "17",
+              "fromPos": "15",
+              "toPlayer": "394",
+              "action": "LONGBALL"
+            },
+            {
+              "fromPlayer": "394",
+              "toPos": "23",
+              "fromPos": "21",
+              "toPlayer": "413",
+              "action": "CROSS"
+            }
+          ],
+          "breakthrough": "Gjennombrudd Kant"
+        },
+        {
+          "finish": {
+            "player": "413",
+            "action": "SHOTMISS",
+            "pos": "23"
+          },
+          "attackStart": {
+            "typeAction": "Gjenvinning",
+            "player": "393",
+            "pos": "7"
+          },
+          "time": "10",
+          "touch": 0,
+          "breakthroughPlayer": "Morten Moldskred",
+          "matchId": "SSTLEyFmTS2ulRy7oZH2BA",
+          "passes": [
+            {
+              "fromPlayer": "393",
+              "toPos": "15",
+              "fromPos": "6",
+              "action": "LONGBALL",
+              "toPlayer": "413"
+            },
+            {
+              "fromPlayer": "413",
+              "toPos": "15",
+              "fromPos": "15",
+              "action": "PASS",
+              "toPlayer": "482"
+            },
+            {
+              "fromPlayer": "482",
+              "toPos": "15",
+              "fromPos": "15",
+              "action": "PASS",
+              "toPlayer": "411"
+            },
+            {
+              "fromPlayer": "411",
+              "toPos": "25",
+              "fromPos": "19",
+              "action": "PASS",
+              "toPlayer": "404"
+            },
+            {
+              "fromPlayer": "404",
+              "toPos": "23",
+              "fromPos": "25",
+              "action": "PASS",
+              "toPlayer": "413"
+            }
+          ],
+          "team": "Tromsø",
+          "breakthrough": "Pasning Bakrom"
+        },
+        {
+          "attackStart": {
+            "typeAction": "Gjenvinning",
+            "player": "482",
+            "pos": "19"
+          },
+          "finish": {
+            "player": "482",
+            "action": "SHOTGOAL",
+            "pos": "19"
+          },
+          "time": "76",
+          "breakthroughPlayer": "None",
+          "touch": 0,
+          "matchId": "SSTLEyFmTS2ulRy7oZH2BA",
+          "team": "Tromsø",
+          "passes": [],
+          "breakthrough": "None"
+        },
+        {
+          "finish": {
+            "player": "406",
+            "action": "SHOTTARGET",
+            "pos": "18"
+          },
+          "attackStart": {
+            "typeAction": "Gjenvinning",
+            "player": "39",
+            "pos": "9"
+          },
+          "time": "78",
+          "touch": 0,
+          "breakthroughPlayer": "Ruben Yttergård Jenssen",
+          "matchId": "SSTLEyFmTS2ulRy7oZH2BA",
+          "passes": [
+            {
+              "fromPlayer": "394",
+              "toPos": "9",
+              "fromPos": "9",
+              "action": "PASS",
+              "toPlayer": "482"
+            },
+            {
+              "fromPlayer": "482",
+              "toPos": "9",
+              "fromPos": "9",
+              "action": "PASS",
+              "toPlayer": "394"
+            },
+            {
+              "fromPlayer": "394",
+              "toPos": "6",
+              "fromPos": "9",
+              "action": "PASS",
+              "toPlayer": "396"
+            },
+            {
+              "fromPlayer": "396",
+              "toPos": "10",
+              "fromPos": "6",
+              "action": "PASS",
+              "toPlayer": "482"
+            },
+            {
+              "fromPlayer": "482",
+              "toPos": "16",
+              "fromPos": "11",
+              "action": "PASS",
+              "toPlayer": "407"
+            },
+            {
+              "fromPlayer": "407",
+              "toPos": "18",
+              "fromPos": "20",
+              "action": "CROSS",
+              "toPlayer": "413"
+            },
+            {
+              "fromPlayer": "413",
+              "toPos": "18",
+              "fromPos": "19",
+              "action": "PASS",
+              "toPlayer": "406"
+            }
+          ],
+          "team": "Tromsø",
+          "breakthrough": "None"
+        },
+        {
+          "attackStart": {
+            "typeAction": "Gjenvinning",
+            "player": "406",
+            "pos": "14"
+          },
+          "finish": {
+            "player": "395",
+            "action": "SHOTTARGET",
+            "pos": "25"
+          },
+          "time": "83",
+          "breakthroughPlayer": "None",
+          "touch": 0,
+          "matchId": "SSTLEyFmTS2ulRy7oZH2BA",
+          "team": "Tromsø",
+          "passes": [
+            {
+              "fromPlayer": "406",
+              "toPos": "19",
+              "fromPos": "14",
+              "toPlayer": "413",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "413",
+              "toPos": "15",
+              "fromPos": "19",
+              "toPlayer": "406",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "406",
+              "toPos": "20",
+              "fromPos": "14",
+              "toPlayer": "397",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "397",
+              "toPos": "19",
+              "fromPos": "20",
+              "toPlayer": "404",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "404",
+              "toPos": "25",
+              "fromPos": "25",
+              "toPlayer": "395",
+              "action": "PASS"
+            }
+          ],
+          "breakthrough": "None"
+        },
+        {
+          "finish": {
+            "player": "413",
+            "action": "",
+            "pos": "23"
+          },
+          "attackStart": {
+            "typeAction": "Gjenvinning",
+            "player": "482",
+            "pos": "14"
+          },
+          "time": "85",
+          "touch": 0,
+          "breakthroughPlayer": "None",
+          "matchId": "SSTLEyFmTS2ulRy7oZH2BA",
+          "passes": [
+            {
+              "fromPlayer": "482",
+              "toPos": "23",
+              "fromPos": "18",
+              "action": "LONGBALL",
+              "toPlayer": "407"
+            },
+            {
+              "fromPlayer": "407",
+              "toPos": "23",
+              "fromPos": "23",
+              "action": "PASS",
+              "toPlayer": "413"
+            }
+          ],
+          "team": "Tromsø",
+          "breakthrough": "None"
+        }
+      ]
+});
+
+insertObject({
+    "hometeam" : "Tromsø",
+    "awayteam" : "Strømsgodset",
+    "score" : "0-0",
+    "date" : "2013-10-03",
+    "attacks" : [
+        {
+            "time": "10",
+            "team": "Strømsgodset",
+            "breakthroughPlayer": "None",
+            "attackStart": {
+                "pos": "15",
+                "player": "33",
+                "typeAction": "Gjenvinning"
+            },
+            "finish": {
+                "pos": "25",
+                "player": "42",
+                "action": "SHOTTARGET"
+            },
+            "passes": [
+                {
+                    {
+                      "fromPlayer": "33",
+                      "fromPos": "15",
+                      "toPlayer": "32",
+                      "toPos": "15",
+                      "action": "PASS"
+                    },
+                    {
+                      "fromPlayer": "32",
+                      "fromPos": "11",
+                      "toPlayer": "36",
+                      "toPos": "14",
+                      "action": "PASS"
+                    },
+                    {
+                      "fromPlayer": "36",
+                      "fromPos": "14",
+                      "toPlayer": "41",
+                      "toPos": "14",
+                      "action": "PASS"
+                    },
+                    {
+                      "fromPlayer": "41",
+                      "fromPos": "14",
+                      "toPlayer": "32",
+                      "toPos": "10",
+                      "action": "PASS"
+                    },
+                    {
+                      "fromPlayer": "32",
+                      "fromPos": "10",
+                      "toPlayer": "33",
+                      "toPos": "11",
+                      "action": "PASS"
+                    },
+                    {
+                      "fromPlayer": "33",
+                      "fromPos": "16",
+                      "toPlayer": "35",
+                      "toPos": "16",
+                      "action": "PASS"
+                    },
+                    {
+                      "fromPlayer": "35",
+                      "fromPos": "16",
+                      "toPlayer": "33",
+                      "toPos": "16",
+                      "action": "PASS"
+                    },
+                    {
+                      "fromPlayer": "33",
+                      "fromPos": "12",
+                      "toPlayer": "32",
+                      "toPos": "11",
+                      "action": "PASS"
+                    },
+                    {
+                      "fromPlayer": "32",
+                      "fromPos": "11",
+                      "toPlayer": "44",
+                      "toPos": "14",
+                      "action": "PASS"
+                    },
+                    {
+                      "fromPlayer": "44",
+                      "fromPos": "14",
+                      "toPlayer": "48",
+                      "toPos": "17",
+                      "action": "PASS"
+                    },
+                    {
+                      "fromPlayer": "48",
+                      "fromPos": "17",
+                      "toPlayer": "42",
+                      "toPos": "25",
+                      "action": "CROSS"
+                    }
+                }
+            ]
+        }
+    ]
+});
+
 function insertMatch(object){
     var commands = [];
     commands.push({ "index" : { "_index" :"matches", "_type" : "match"} });

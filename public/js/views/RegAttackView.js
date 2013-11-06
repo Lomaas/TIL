@@ -108,10 +108,10 @@ window.RegAttackView = Backbone.View.extend({
                 };
                 i += 1;
             }
-            else if(obj.name == "positionFinish"){
+            else if(obj.name == "playerIDFinish"){
                 response['finish'] = {
-                    pos : array[i].value,
-                    player : array[i+1].value,
+                    player : array[i].value,
+                    pos : array[i+1].value,
                     action : $('#positionFinish-form').val()
                 };
                 i += 1;

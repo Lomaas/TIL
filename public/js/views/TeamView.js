@@ -206,7 +206,7 @@ window.TeamView = Backbone.View.extend({
                     type: 'column'
                 },
                 title: {
-                    text: "Where was the breakthroughs from"
+                    text: "Breakthroughs counted by area"
                 },
                 xAxis: {
                     categories: this.model.get("breakthroughXaxis")
