@@ -87,6 +87,7 @@ exports.getAttacksSummaryStatsForTeam = function(team, callback){
         .on('data', function (data) {
             data = JSON.parse(data);
             console.log("Data %s", JSON.stringify(data, undefined, 2));
+
             json['breakthroughPlayers'] = data.facets.breakthroughPlayer.terms;
             json['breakthrough'] = data.facets.breakthrough.terms;
             json['typeOfAttack'] = data.facets.typeOfAttack.terms;
@@ -114,6 +115,7 @@ exports.getAttacksSummaryStatsForTeam = function(team, callback){
         .exec();
 }
 
+// TODO Not finished
 exports.getAssistKing = function(playerName, callback){
     var queryObject = {
         "query" : {
@@ -178,6 +180,7 @@ exports.getBreakthroughsForPlayer = function(playerName, callback){
         })
         .exec();
 };
+
 
 //exports.getMatchAttacks = function(mId, callback){
 //    var queryObject = {

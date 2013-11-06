@@ -148,3 +148,188 @@ exports.newPass = function(pass, callback){
         })
         .exec();
 };
+
+
+exports.passesIntoFinalThird = function(userId, callback){
+    var queryObject = {
+        "query": {
+            "bool": {
+                "must": [
+                    {
+                        "match": {
+                            "fromPlayer": userId
+                        }
+                    },
+                    {
+                        "range" : {
+                            "toPos" : {
+                                "gte" : 17,
+                                "lte" : 26
+                            }
+                        }
+                    },
+                    {
+                        "range" : {
+                            "fromPos" : {
+                                "gte" : 1,
+                                "lte" : 16
+                            }
+                        }
+                    }
+                ],
+                "must_not": [
+                ],
+                "should": []
+            }
+        }
+    };
+
+    elasticSearchClient.search(indexNamePasses, typeNamePasses, queryObject)
+        .on('data', function(data) {
+            data = JSON.parse(data);
+
+            console.log("Data %s", JSON.stringify(data, undefined, 2));
+            callback(err = false, data.hits);
+        })
+        .on('error', function(error){
+            console.log("Error ", error);
+            callback(err = false, undefined);
+        })
+        .exec();
+};
+
+exports.passesIntoFinalThirdTeam = function(rangeStart, rangeEnd, callback){
+    console.log(rangeStart);
+    console.log(rangeEnd);
+
+    var queryObject = {
+        "query": {
+            "bool": {
+                "must": [
+                    {
+                         "range" : {
+                            "fromPlayer" : {
+                                "gte" : rangeStart,
+                                "lte" : rangeEnd
+                            }
+                        }
+                    },
+                    {
+                        "range" : {
+                            "toPos" : {
+                                "gte" : 17,
+                                "lte" : 26
+                            }
+                        }
+                    },
+                    {
+                        "range" : {
+                            "fromPos" : {
+                                "gte" : 1,
+                                "lte" : 16
+                            }
+                        }
+                    }
+                ],
+                "must_not": [
+                ],
+                "should": []
+            }
+        },
+        size: 2000,
+        "facets" : {
+            "fromPlayer" : {
+                "terms" : {
+                    "field" : "fromPlayer"
+                }
+            }
+        }
+    };
+
+    elasticSearchClient.search(indexNamePasses, typeNamePasses, queryObject)
+        .on('data', function(data) {
+            data = JSON.parse(data);
+
+            console.log("Data %s", JSON.stringify(data, undefined, 2));
+            response = {};
+            response['facets'] = data.facets;
+            response['hits'] = data.hits;
+            callback(err = false, response);
+        })
+        .on('error', function(error){
+            console.log("Error ", error);
+            callback(err = false, undefined);
+        })
+        .exec();
+};
+
+exports.passesGoingForwardTeam = function(rangeStart, rangeEnd, callback){
+    console.log(rangeStart);
+    console.log(rangeEnd);
+
+    var queryObject = {
+        "query": {
+            "bool": {
+                "must": [
+                    {
+                         "range" : {
+                            "fromPlayer" : {
+                                "gte" : rangeStart,
+                                "lte" : rangeEnd
+                            }
+                        }
+                    },
+                    {
+                        "range" : {
+                            "toPos" : [
+                                {
+                                    "gte" : 17,
+                                    "lte" : 20
+                                },
+                                {
+                                    "gte" : 13,
+                                    "lte" : 16
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "range" : {
+                            "fromPos" : {
+                                "gte" : 21,
+                                "lte" : 26
+                            }
+                        }
+                    }
+                ],
+                "must_not": [
+                ],
+                "should": []
+            }
+        },
+        size: 2000,
+        "facets" : {
+            "fromPlayer" : {
+                "terms" : {
+                    "field" : "fromPlayer"
+                }
+            }
+        }
+    };
+
+    elasticSearchClient.search(indexNamePasses, typeNamePasses, queryObject)
+        .on('data', function(data) {
+            data = JSON.parse(data);
+
+            console.log("Data %s", JSON.stringify(data, undefined, 2));
+            response = {};
+            response['facets'] = data.facets;
+            response['hits'] = data.hits;
+            callback(err = false, response);
+        })
+        .on('error', function(error){
+            console.log("Error ", error);
+            callback(err = false, undefined);
+        })
+        .exec();
+};

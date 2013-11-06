@@ -11,7 +11,14 @@ window.RegAttackView = Backbone.View.extend({
         console.log("init RegAttackView");
         console.log(options);
         this.matchId = options.matchId;
+        this.matchModel = options.matchModel;
         this.render();
+    },
+
+    render: function () {
+        console.log("in Render RegAttackView");
+        var temp = Mustache.render(this.template(), {});
+        this.$el.html(temp);
 
         $('#attack-form').validate({
             rules: {
@@ -59,12 +66,6 @@ window.RegAttackView = Backbone.View.extend({
                 }
             }
         });
-    },
-
-    render: function (eventName) {
-        console.log("in Render RegAttackView");
-        var temp = Mustache.render(this.template(), {});
-        this.$el.html(temp);
         return this;
     },
 
@@ -85,9 +86,22 @@ window.RegAttackView = Backbone.View.extend({
     submitAttack : function(e){
         e.preventDefault();
         console.log("submitAttack");
+        var that = this;
 
         var response = this.fixResponse($('form').serializeArray());
-        new AttackModel(response).save();   // post to backend
+        var attackModel = new AttackModel(response);
+
+        attackModel.save(null, {
+            success: function (model, response) {
+                console.log("success");
+                that.matchModel.fetch();
+            },
+            error: function (model, response) {
+                console.log("error");
+                alert("The attack could not be submitted");
+            }
+        });
+
         $('#wrapperContainer').removeData().unbind();
         $('#wrapperContainer').empty();
     },
@@ -137,6 +151,8 @@ window.RegAttackView = Backbone.View.extend({
         response['passes'] = passes;
         response['matchId'] = this.matchId;
         response['breakthrough'] = $('#breakthrough-form').val();
+        response['typeOfAttack'] = $('#typeOfAttack-form').val();
+        response['touch'] = 0;  // not used
         console.log(response);
 
         return response;

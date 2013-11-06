@@ -9,7 +9,7 @@ window.TeamView = Backbone.View.extend({
                 that.render();
             }
         });
-
+        console.log("team/" + this.options.name + "/finalthird");
         this.chartModel = new ChartModel({url : "team/" + this.options.name + "/finalthird"});
 
         this.chartModel.fetch({
@@ -147,7 +147,7 @@ window.TeamView = Backbone.View.extend({
         });
     },
 
-    render: function (eventName) {
+    render: function () {
         var temp = Mustache.render(this.template(), {
             teamname : this.model.id,
             breakthrough : this.model.get("breakthrough"),

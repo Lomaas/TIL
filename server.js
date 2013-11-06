@@ -11,6 +11,7 @@ BAD_REQUEST = 2;
 winston = require('winston');
 winston.add(winston.transports.File, { filename: 'error.log' });
 
+async = require('async');
 ElasticSearchClient = require('elasticsearchclient');
 elasticSearchClient = new ElasticSearchClient(serverOptions);
 
@@ -37,6 +38,7 @@ app.get('/teams', teams.getTeams);
 app.get('/team/:name/players', teams.getPlayers);
 app.get('/team/:name', teams.getStats);
 app.get('/team/:name/finalthird', teams.getPassesIntoFinalThird);
+app.get('/team/:name/forwardpasses', teams.passesGoingForwardTeam);
 app.post('/team', teams.postNewTeam);
 
 app.get('/player/:id', player.getStats);

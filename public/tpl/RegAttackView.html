@@ -39,8 +39,8 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <select class="form-control">
-                        <option value="Etablert spill<">Etablert spill</option>
+                    <select class="form-control" id="typeOfAttack-form">
+                        <option value="Etablert spill">Etablert spill</option>
                         <option value="Gjennvinning langt angrep">Gjennvinning langt angrep</option>
                         <option value="Gjennvinning kort angrep">Gjennvinning kort angrep</option>
                         <option value="Kontring">Kontring</option>
@@ -55,7 +55,6 @@
                         <input class="form-control" placeholder="Zone" name="positionStart" type="number" />
                     </div>
                 </div>
-
                 <div class="form-group">
                     <select class="form-control" id="positionStart-form">
                         <option value="Gjenvinning">Gjenvinning</option>
@@ -65,7 +64,6 @@
                         <option value="Frispark">Frispark</option>
                     </select>
                 </div>
-
                 <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon">$</span>
@@ -91,18 +89,17 @@
                         <input class="form-control" placeholder="Zone" name="positionFinish" type="number" />
                     </div>
                 </div>
-                <div class="form-group" id="positionFinish-form">
-                    <select class="form-control">
-                        <option value="SHOTMISS">Shot MISS</option>
-                        <option value="SHOTTARGET">Shot TARGET</option>
-                        <option value="SHOTGOAL">Shot GOAL</option>
+                <div class="form-group">
+                    <select class="form-control" id="positionFinish-form">
+                        <option value="SHOTMISS">ShotMISS</option>
+                        <option value="SHOTTARGET">ShotTARGET</option>
+                        <option value="SHOTGOAL">ShotGOAL</option>
                     </select>
                 </div>
             </form>
             <button type="button" id="submitAttack" class="btn btn-primary">
                 <i class="icon-user icon-white"></i> Submit
             </button>
-
         </div>
     </div>
 </div>

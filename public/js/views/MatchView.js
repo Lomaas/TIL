@@ -17,9 +17,14 @@ window.MatchView = Backbone.View.extend({
                 that.render();
             }
         });
+
+        this.model.on('change', function(){
+            console.log('foo');
+            that.render();
+        });
     },
 
-    render: function (eventName) {
+    render: function () {
         console.log("in Render: %j", this.model.toJSON());
         console.log(this.model.getAttacksJSON());
 
@@ -41,7 +46,8 @@ window.MatchView = Backbone.View.extend({
          console.log("addNewAttack");
          var regAttackView = new RegAttackView({
              el : $('#attack-form'),
-             matchId : this.model.get('id')
+             matchId : this.model.get('id'),
+             matchModel : this.model
          });
     }
 });

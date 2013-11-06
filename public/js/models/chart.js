@@ -1,5 +1,8 @@
 window.ChartModel = Backbone.Model.extend({
-    url : "team/Tromsø/finalthird",
+    initialize : function(props){
+        console.log(props);
+        this.url = props.url;
+    },
 
     parse : function(resp){
         console.log(resp);

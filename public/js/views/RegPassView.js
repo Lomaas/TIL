@@ -29,6 +29,7 @@ window.RegPassView = Backbone.View.extend({
                 }
             },
             highlight: function(element) {
+                console.log('tries to highlight');
                 $(element).closest('.form-group').addClass('has-error');
             },
             unhighlight: function(element) {
@@ -37,6 +38,8 @@ window.RegPassView = Backbone.View.extend({
             errorElement: 'span',
             errorClass: 'help-block',
             errorPlacement: function(error, element) {
+                console.log('errorPlacement');
+
                 if(element.parent('.input-group').length) {
                     error.insertAfter(element.parent());
                 } else {

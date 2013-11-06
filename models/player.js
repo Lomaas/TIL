@@ -75,6 +75,9 @@ exports.getPlayersForTeam = function(team, callback){
                 "team" : team
             }
         },
+        "sort" : [
+            { "player_id" : "asc" }
+        ],
         "size" : 40
     };
 
