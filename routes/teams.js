@@ -39,6 +39,16 @@ exports.getPlayers = function(req, res){
     });
 };
 
+exports.involvementPerMatch = function(req, res){
+    console.log("involvementPerMatch");
+
+    attackModel.getInvolvementsPerMatchTeam(req.params.teamname, function callbackGetInvolvementsPerMatch(err, response){
+        if(err)  res.send(400);
+
+        res.jsonp(response);
+    });
+};
+
 exports.getStats = function(req, res){
     attackModel.getAttacksSummaryStatsForTeam(req.params.name, function(err, response){
         if(err)    res.send(400);

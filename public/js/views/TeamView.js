@@ -9,14 +9,34 @@ window.TeamView = Backbone.View.extend({
                 that.render();
             }
         });
-        console.log("team/" + this.options.name + "/finalthird");
-        this.chartModel = new ChartModel({url : "team/" + this.options.name + "/finalthird"});
 
-        this.chartModel.fetch({
-            success: function () {
+        async.parallel([
+            function(callback){
+                console.log("first");
+                that.chartModel = new ChartModel({url : "team/" + that.options.name + "/finalthird"});
+                that.chartModel.fetch({
+                    success: function () {
+                    callback();
+                    }
+                });
+            },
+            function(callback){
+                console.log("second");
+                that.playersList = new PlayerListCollection();
+                that.playersList.url = "team/" + that.options.name + "/players";
+
+                that.playersList.fetch({
+                    success: function () {
+                        that.playersView = new PlayersView({model : that.playersList});
+                        callback();
+                    }
+                });
+            }],
+            function callback(){
+                console.log("callback");
                 that.renderChartFinalThird();
             }
-        });
+        );
     },
 
     renderChartFinalThird : function(){
@@ -26,12 +46,10 @@ window.TeamView = Backbone.View.extend({
         var playerById = {};
         var playerByName = {};
         var finalthird = this.chartModel.get("facets");
-
         var keyPlayers = this.model.get("players");
-        console.log(keyPlayers);
-
-        var players = this.options.playersModel.toJSON();
+        var players = this.playersView.getModelData();
         var i;
+
         console.log(players);
 
         if(players == undefined)
@@ -50,10 +68,6 @@ window.TeamView = Backbone.View.extend({
                 "player_id" : players[i].player_id.toString(),
                 "team" : players[i].teamName
             }
-        }
-
-        for(i=0; i < finalthird; i++){
-            console.log(finalthird[i]);
         }
 
         var receivedPasses = this.model.get("ballReceived");

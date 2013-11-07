@@ -37,14 +37,9 @@ window.AppRouter = Backbone.Router.extend({
 	},
 
 	team : function(teamName){
-		this.playersList = new PlayerListCollection();
-		this.playersList.url = "team/" + teamName + "/players";
-		this.playersView = new PlayersView({model : this.playersList});
-
 		this.teamModel = new TeamModel({id : teamName});
-		this.teamView = new TeamView({model : this.teamModel, playersModel : this.playersList, name : teamName});
-
-		this.setNewView([this.teamView, this.playersView]);
+		this.teamView = new TeamView({model : this.teamModel, name : teamName});
+		this.setNewView([this.teamView]);
 	},
 
 	teams : function(){

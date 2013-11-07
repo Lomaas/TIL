@@ -42,7 +42,6 @@ exports.getAttacksSummaryStatsForTeam = function(team, callback){
                 "nested": "passes",
                 "terms": {
                     "field": "passes.toPlayer"
-
                 }
             },
             "breakthroughPlayer": {
@@ -158,6 +157,38 @@ exports.getBreakthroughsForPlayer = function(playerName, callback){
         },
         "facets": {
             "breakthrough": {
+                "terms": {
+                    "field": "breakthrough.untouched"
+                }
+            }
+        }
+    };
+
+    elasticSearchClient.search(indexNameAttacks, typeNameAttacks, queryObject)
+        .on('data', function (data) {
+            data = JSON.parse(data);
+            json = {};
+            console.log("Data %s", JSON.stringify(data, undefined, 2));
+            json['breakthrough'] = data.facets.breakthrough.terms;
+
+            callback(err = false, json);
+        })
+        .on('error', function (error) {
+            console.log(error)
+            callback(err = true, undefined);
+        })
+        .exec();
+};
+
+exports.getInvolvementsPerMatchTeam = function(teamName, callback){
+      var queryObject = {
+        "query" : {
+            "match" : {
+                "team" : teamName
+            }
+        },
+        "facets": {
+            "involvements": {
                 "terms": {
                     "field": "breakthrough.untouched"
                 }

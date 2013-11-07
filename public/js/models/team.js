@@ -24,7 +24,6 @@ window.TeamModel = Backbone.Model.extend({
 
         resp["players"] = {};
         _.each(resp.breakthroughPlayers, function(player){
-            console.log(player.term);
             resp.players[player.term.toString()] = {
                 "numBreakthrough" : player.count
             }

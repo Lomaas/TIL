@@ -96,7 +96,6 @@ function Rectangle(ctx, width, height, zonesX, zonesY, zonesDictX, zonesDictY){
 
 	    this.ctx.stroke();
 	    var iter;
-	    console.log(this.widthZone);
 
 	    for(iter=1; iter < this.zonesX; iter++){
 	        this.ctx.beginPath();
