@@ -59,6 +59,8 @@ window.AppRouter = Backbone.Router.extend({
 	    //Close the current view
 	    if (this.currentViews.length > 0) {
     	    _.each(this.currentViews, function(views){
+                if(typeof(views.removeSubViews) == "function")
+                    views.removeSubViews();
 	        	$(views.el).empty();
 				views.unbind();
 			});
@@ -71,7 +73,6 @@ window.AppRouter = Backbone.Router.extend({
 	    this.currentViews = views;
 	    return this;
 	}
-
 });
 
 templateLoader.load(["HomeView", "HeaderView", "MatchView", "TeamView", "TeamsView", "PlayersView", "PlayerView", "RegMatchView", "RegAttackView", "RegPassView"],

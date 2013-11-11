@@ -55,6 +55,7 @@ window.TeamView = Backbone.View.extend({
         if(players == undefined)
             alert("players undefined");
 
+
         for(i=0; i < players.length; i++){
             var name = players[i].name;
             var playerId = players[i].player_id.toString();
@@ -133,7 +134,7 @@ window.TeamView = Backbone.View.extend({
                 type: 'bar'
             },
             title: {
-                text: 'Which players is most involved in attacks/breakthrough player'
+                text: 'Involvements in attacks, passes into final third and total breakthroughs'
             },
             xAxis: {
                 categories: Object.keys(keyPlayers)
@@ -278,5 +279,12 @@ window.TeamView = Backbone.View.extend({
         rect.drawPercentNumbers(this.model.get("attackFinish").zones, this.model.get("attackFinish").total);
 
         return this;
+    },
+
+    removeSubViews : function(){
+        if(this.playersView != undefined){
+            $(this.playersView.el).empty();
+            this.playersView.unbind();
+        }
     }
 });

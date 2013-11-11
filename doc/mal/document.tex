@@ -1,0 +1,151 @@
+
+\documentclass[12pt,twoside,a4paper,openright]{book}
+\usepackage{floatflt,graphicx}           % Floating figures
+\usepackage{euler}
+\usepackage{float} %'H' for figures
+\usepackage{array}
+\usepackage{amsmath} %Math
+\usepackage{texdraw} %Gnuplot
+\usepackage[all]{xy} % Graphs with text
+\usepackage{algorithmic}
+\usepackage{xspace}
+\usepackage{listings}
+%\usepackage[utf8]{inputenc}
+\usepackage{pdfpages}
+\usepackage{subfigure}
+\usepackage[parfill]{parskip}
+%\usepackage{fullpage}
+%\usepackage{titlesec}
+\usepackage{listings}
+
+\usepackage[printonlyused]{acronym}
+
+
+%\setlength{\parindent}{0pt}
+%\setlength{\parskip}{\baselineskip}
+%\titlespacing\section{0pt}{12pt plus 4pt minus 2pt}{-6pt plus 2pt minus 2pt}
+
+
+\begin{document}
+
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+\renewcommand{\bibname}{References}
+\renewcommand{\contentsname}{Table of Contents}
+
+\newcommand{\TIL}{Troms{\o} IL\xspace}
+% Referencing macros
+\newcommand{\s}[1]{Section~\ref{#1}}
+\newcommand{\f}[1]{Fig.~\ref{#1}}
+\renewcommand{\t}[1]{Table~\ref{#1}}
+
+% Defining macros
+\newcommand{\Section}[1]{%
+ \section {#1}
+ \label {sec:#1}
+ \acresetall%
+}
+
+\newcommand{\Subsection}[1]{%
+ \subsection {#1}
+ \label {sec:#1}%
+}
+% Image definition
+\newcommand{\PdfImage}[2]{%
+ \begin{figure}
+  \centering
+  \includegraphics[page=#1,width=\linewidth]{images}
+  \caption{#2}
+  \label{pdf:#1}
+ \end{figure}
+} 
+
+\newcommand{\PngImage}[3]{%
+ \begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{#3}
+  \caption{#1}
+  \label{png:#2}
+ \end{figure}
+} 
+
+
+\pagestyle{empty}
+
+\sloppy
+\includepdf[pages=1]{frontpage.pdf}
+\cleardoublepage
+\pagenumbering{roman}
+\pagestyle{plain}
+
+\chapter*{Abstract}
+
+
+
+\chapter*{Acknowledgements}
+
+
+%%
+%
+%%% Table of content
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\tableofcontents	
+
+\chapter*{List of Acronyms}
+\begin{acronym}
+
+\acro{ACID}{Atomicity, Consistency, Isolation, Durability} % Example
+
+\end{acronym}
+
+
+\listoffigures
+
+\listoftables
+
+
+\pagestyle{plain}
+\cleardoublepage
+\pagenumbering{arabic}
+% Introduction
+\chapter{Introduction} \label{Introduction}
+\input{chapters/introduction}
+\acresetall
+% Background
+\chapter{Background} \label{Background}
+\input{chapters/background}
+\acresetall
+% Requirements
+\chapter{Requirement Specification} \label{Requirements}
+\input{chapters/requirementspec.tex}
+\acresetall
+
+% Model
+\chapter{System Model} \label{Model}
+\input{chapters/systemmodel}
+\acresetall
+
+% Design
+\chapter{Soccer Analytic toolkit} \label{Design}
+\input{chapters/designimplementation}
+\acresetall
+
+% Evaluation
+\chapter{Evaluation and Results} \label{Evaluation}
+\input{chapters/evaluation} 
+\acresetall
+
+% Conclusion
+\chapter{Conclusion} \label{Conclusion}
+\input{chapters/conclusion}
+\acresetall
+
+% References
+\bibliographystyle{plain}
+\bibliography{readlist}
+
+\appendix
+
+
+\end{document}

@@ -10,6 +10,7 @@ window.PlayersView = Backbone.View.extend({
         console.log("init HomeView");
         this.model.bind("reset", this.render, this);
         var that = this;
+        this.render();
     },
 
     render: function () {
@@ -17,7 +18,7 @@ window.PlayersView = Backbone.View.extend({
         var data = this.model.toJSON();
         var temp = Mustache.render(this.template(), {players : data});
         this.$el.html(temp);
-
+        console.log(this.$el);
         return this;
     },
 

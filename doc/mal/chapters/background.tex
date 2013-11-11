@@ -1,0 +1,49 @@
+
+
+\section{Related work} \label{Related work:capturing data}
+In this chapter we present some background related to creating a multi-media data repository. There are two main approaches: capturing data manually often by human annotating it, and automatic capturing. Automatic may or may not have a substep where a human has to filter/annotate the data. 
+
+\subsection{Manually capturing }
+
+\subsubsection{Opta }
+
+
+One of the big players Opta uses manual input to create their data repository. They have editorial teams across the world that captures data manually for the most popular soccer leagues. For example to capture statistics for one match, 3 humans have to be involved to be able to annotate all data. The data is captured via an application specifically created for the purpose of capturing data as quick and easily as possible. The editorial teams of Opta need to be able to identify a player, registrate a pass his made or a tackle, in a very short time to be able to keep up with the pace of the game. They study things like which shoe color a player has to be able to quickly identify the player.
+
+Opta capture all types of actions like passes, type of pass, attacks, and interceptions. For each action they log they add a series of description tags like pitch coordinate, player, team and time-stamp. For every single pass they registrate if it was a through ball, normal ball or even a headed flick on from a long ball. For shots they registrate the foot it was kicked with, if it was a volley and so on . All this is done while the match is playing. About 1600 individual events are recorded in a standard match. 
+
+\begin{lstlisting}
+<Event id="290575408" event_id="5" type_id="1" period_id="1" 
+min="0" sec="5" player_id="20856" team_id="810" outcome="1" 
+x="44.6"y="61.1" timestamp="2007-08-12T13:00:24.827" 
+last_modified="2007-08-12T13:00:25">
+<Q id="1774596260" qualifier_id="141" value="91.6"/>
+<Q id="1429253465" qualifier_id="140" value="49.9"/>
+<Q id="1084400575" qualifier_id="56" value="Back"/>
+</Event>
+\end{lstlisting}
+
+Here is an example of an event registrated in the Opta database. The event has a series of qualifiers describing it. Except from the obvious as timestamp and last modified dates we see that the player id, team id, time of event, x and y coordinates and the outcome of the event are registrated. Also we see that some extra details are included. In this example it maps to a pass from [44.6, 61.1] to [91.6, 49.9].
+
+\begin{lstlisting}
+<Q id="1774596260" qualifier_id="coordX" value="91.6"/>
+<Q id="1429253465" qualifier_id="coordY" value="49.9"/>
+<Q id="1084400575" qualifier_id="56" value="Back"/>
+\end{lstlisting}
+
+\subsection{Automatic capturing}
+SAP places sensors in shin guards, clothing, and in footballs. The data can be applied to individual and team movement profiles to track distances, speed averages, ball possession, player tendencies and more . 
+
+A similar system is ZXY where players wear a belt around their waist \cite{PTW}. This is able to track the player’s movement very detailed. It relies on a radio-based signaling substrate to provide real-time high-precision positional tracking, including acceleration and heart rate. The home arena for Tromsø IL, Alfheim, is currently equipped with 10 receivers . A receiver tracks an specific area of the soccer field and combined they cover the whole pitch with some redundancy areas. To compute the positional data the stationary radio receiver uses an advance vector based processing of the received radio signal. The data is aggregated and stored into a relational database.
+
+\subsubsection{Sensor based}
+
+
+
+\subsubsection{Fully automated multiple camera system}
+PROZONE3  is another system that tries to track players. Their data capture system incorporates 8-12 cameras, which is strategically positioned throughout the stadium. They claim to be able to track every movements of every player on the pitch every 10th of a second.  PROZONE3 system does not use trackers of any kind on the players. Di Salvo et al. [7] conducted an empirical evaluation of deployed ProZone systems at Old Trafford in Manchester and Reebook Stadium in Bolton, and concluded that the video camera deployment gives an accurate and valid motion analysis.
+
+
+\subsection{Presenting data}
+
+PROZONE comes  with software to present the data. 
