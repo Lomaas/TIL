@@ -31,17 +31,24 @@ Here is an example of an event registrated in the Opta database. The event has a
 <Q id="1084400575" qualifier_id="56" value="Back"/>
 \end{lstlisting}
 
+
+\subsubsection{PROZONE/AMISCO}
+PROZONE3  is another system that tries to track players. Their data capture system incorporates 8-12 cameras, which is strategically positioned throughout the stadium so it covers 100 percent of the ground with some redundancy in case of a faulty component. They also incoperate the TV-camera feed, which  always follows the ball. All cameras are hooked into one server and uploaded at the end of the game before sent to undertake the tracking process. 
+
+The coding and tracking process of the players movement and actions is a manual process at present time. The process of knowing where every players is and doing is still to be seen done by a software completely alone without human guiding. There is a large department dedicated for post processing the game. With the help of the many cameras with different camera angles the team track players and on the ball events. Events and players gets an positional tag by using the pitch dimensions and coordinates. As different football grounds houses different pitch sizes the pitch dimensions has to be taken into account by calibrating the cameras (ASK SIMON). How do you know how far a player has run? This is calculated from the events and notating where players has run combined with the known pitch size and coordinates. The whole input process is done in a own software which helps you minimize the amount of manual work. The software follows rules created by basic machine learning algorithms to validate and verify the input. A basic example would be if the ball goes out of play the system will now that the next event will be a throw in, corner kick or goal kick \cite{Prozone:indepth}.
+
+They claim to be able to track every movements of every player on the pitch every 10th of a second.  PROZONE3 system does not use physical trackers of any kind on the players. When it comes to accuracy Di Salvo et al. [7] conducted an empirical evaluation of deployed ProZone systems at Old Trafford in Manchester and Reebook Stadium in Bolton, and concluded that the video camera deployment gives an accurate and valid motion analysis. The data is after a match available through the PROZONE3 interface. 
+
+More importantly PROZONE offers opposition analysis.
+
 \subsection{Automatic capturing}
 SAP places sensors in shin guards, clothing, and in footballs. The data can be applied to individual and team movement profiles to track distances, speed averages, ball possession, player tendencies and more . 
 
-A similar system is ZXY where players wear a belt around their waist \cite{PTW}. This is able to track the player’s movement very detailed. It relies on a radio-based signaling substrate to provide real-time high-precision positional tracking, including acceleration and heart rate. The home arena for Tromsø IL, Alfheim, is currently equipped with 10 receivers . A receiver tracks an specific area of the soccer field and combined they cover the whole pitch with some redundancy areas. To compute the positional data the stationary radio receiver uses an advance vector based processing of the received radio signal. The data is aggregated and stored into a relational database.
+A similar system is the ZXY sport trackingsystem. The system is in used by premier league soccer teams in Norway. Data captured is stored in Sybase databases with each match requiring about 500-700MB storage  The players have to wear a belt around their waist to track their movement. The ZXY system is able to track the player’s movement very detailed with an accuracy of 0.5m.  It relies on a radio-based signaling substrate to provide real-time high-precision positional tracking, including acceleration and heart rate. The home arena for Tromsø IL, Alfheim, is currently equipped with 10 receivers . A receiver tracks an specific area of the soccer field and combined they cover the whole pitch with some redundancy areas. To compute the positional data the stationary radio receiver uses an advance vector based processing of the received radio signal. The data is aggregated and stored into a relational database.
+
+Doing queries on the data can give you all sprints for a certain player. Players in certain areas of the field have more intensive sprints when they first are involved thus are more vulnerable to injuries. Knowing the actual physical load on players can prevent injuries by regulating the training intensity and amount of time on the workout. 
 
 \subsubsection{Sensor based}
-
-
-
-\subsubsection{Fully automated multiple camera system}
-PROZONE3  is another system that tries to track players. Their data capture system incorporates 8-12 cameras, which is strategically positioned throughout the stadium. They claim to be able to track every movements of every player on the pitch every 10th of a second.  PROZONE3 system does not use trackers of any kind on the players. Di Salvo et al. [7] conducted an empirical evaluation of deployed ProZone systems at Old Trafford in Manchester and Reebook Stadium in Bolton, and concluded that the video camera deployment gives an accurate and valid motion analysis.
 
 
 \subsection{Presenting data}
