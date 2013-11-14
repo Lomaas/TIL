@@ -8,15 +8,15 @@
 \contentsline {section}{\numberline {2.1}Related work}{5}
 \contentsline {subsection}{\numberline {2.1.1}Manually capturing }{5}
 \contentsline {subsubsection}{\numberline {2.1.1.1}Opta }{5}
-\contentsline {subsection}{\numberline {2.1.2}Automatic capturing}{6}
-\contentsline {subsubsection}{\numberline {2.1.2.1}Sensor based}{7}
-\contentsline {subsubsection}{\numberline {2.1.2.2}Fully automated multiple camera system}{7}
-\contentsline {subsection}{\numberline {2.1.3}Presenting data}{7}
-\contentsline {chapter}{\numberline {3}Requirement Specification}{9}
-\contentsline {chapter}{\numberline {4}System Model}{11}
-\contentsline {chapter}{\numberline {5}Soccer Analytic toolkit}{13}
-\contentsline {chapter}{\numberline {6}Evaluation and Results}{15}
-\contentsline {chapter}{\numberline {7}Conclusion}{17}
-\contentsline {section}{\numberline {7.1}Achievements}{17}
-\contentsline {subsection}{\numberline {7.1.1}Concluding Remarks}{17}
-\contentsline {section}{\numberline {7.2}Future Work}{17}
+\contentsline {subsubsection}{\numberline {2.1.1.2}PROZONE/AMISCO}{6}
+\contentsline {subsection}{\numberline {2.1.2}Automatic capturing}{8}
+\contentsline {subsubsection}{\numberline {2.1.2.1}Sensor based}{8}
+\contentsline {subsection}{\numberline {2.1.3}Presenting data}{8}
+\contentsline {chapter}{\numberline {3}Requirement Specification}{11}
+\contentsline {chapter}{\numberline {4}System Model}{13}
+\contentsline {chapter}{\numberline {5}Soccer Analytic toolkit}{15}
+\contentsline {chapter}{\numberline {6}Evaluation and Results}{17}
+\contentsline {chapter}{\numberline {7}Conclusion}{19}
+\contentsline {section}{\numberline {7.1}Achievements}{19}
+\contentsline {subsection}{\numberline {7.1.1}Concluding Remarks}{19}
+\contentsline {section}{\numberline {7.2}Future Work}{19}

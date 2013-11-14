@@ -33,13 +33,19 @@ Here is an example of an event registrated in the Opta database. The event has a
 
 
 \subsubsection{PROZONE/AMISCO}
-PROZONE3  is another system that tries to track players. Their data capture system incorporates 8-12 cameras, which is strategically positioned throughout the stadium so it covers 100 percent of the ground with some redundancy in case of a faulty component. They also incoperate the TV-camera feed, which  always follows the ball. All cameras are hooked into one server and uploaded at the end of the game before sent to undertake the tracking process. 
+PROZONE3  is another system that tries to track players. Their data capture system incorporates 8-12 cameras, which is strategically positioned throughout the stadium so it covers 100 percent of the ground with some redundancy in case of a faulty component. They also incoperate the TV-camera feed, which obivously always follows the ball. All cameras are hooked into one server and uploaded at the end of the game before sent to undertake the tracking process. 
 
-The coding and tracking process of the players movement and actions is a manual process at present time. The process of knowing where every players is and doing is still to be seen done by a software completely alone without human guiding. There is a large department dedicated for post processing the game. With the help of the many cameras with different camera angles the team track players and on the ball events. Events and players gets an positional tag by using the pitch dimensions and coordinates. As different football grounds houses different pitch sizes the pitch dimensions has to be taken into account by calibrating the cameras (ASK SIMON). How do you know how far a player has run? This is calculated from the events and notating where players has run combined with the known pitch size and coordinates. The whole input process is done in a own software which helps you minimize the amount of manual work. The software follows rules created by basic machine learning algorithms to validate and verify the input. A basic example would be if the ball goes out of play the system will now that the next event will be a throw in, corner kick or goal kick \cite{Prozone:indepth}.
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=150mm]{images/general/prozonecam.png}
+\caption{The PROZONE camera system illustrated}
+\label{overflow}
+\end{figure}
 
-They claim to be able to track every movements of every player on the pitch every 10th of a second.  PROZONE3 system does not use physical trackers of any kind on the players. When it comes to accuracy Di Salvo et al. [7] conducted an empirical evaluation of deployed ProZone systems at Old Trafford in Manchester and Reebook Stadium in Bolton, and concluded that the video camera deployment gives an accurate and valid motion analysis. The data is after a match available through the PROZONE3 interface. 
+The coding and tracking process of the players movement and actions is a manual process at present time. The process of knowing where every players is and doing is still to be seen done by a software completely alone without human guiding. There is a large department dedicated for post processing the game. With the help of the many cameras with different camera angles the team track players and on the ball events. Events and players gets an positional tag by using the pitch dimensions and coordinates. As different football grounds houses different pitch sizes the pitch dimensions has to be taken into account by calibrating the cameras (ASK SIMON). How do you know how far a player has run? This is calculated from the events and notating where players has run combined with the known pitch size and coordinates. The whole input process is done in a own software which helps you minimize the amount of manual work. The software follows rules created by basic machine learning algorithms to validate and verify the input. A simple example would be if the ball goes out of play the system will now that the next event will be a throw in, corner kick or goal kick \cite{Prozone:indepth}.
 
-More importantly PROZONE offers opposition analysis.
+They claim to be able to track every movements of every player on the pitch every 10th of a second without using 3 any physical equipment on the players. When it comes to accuracy Di Salvo et al. [7] conducted an empirical evaluation of deployed ProZone systems at Old Trafford in Manchester and Reebook Stadium in Bolton, and concluded that the video camera deployment gives an accurate and valid motion analysis. The data is after a match available through the PROZONE3 interface. 
+
 
 \subsection{Automatic capturing}
 SAP places sensors in shin guards, clothing, and in footballs. The data can be applied to individual and team movement profiles to track distances, speed averages, ball possession, player tendencies and more . 
@@ -53,4 +59,28 @@ Doing queries on the data can give you all sprints for a certain player. Players
 
 \subsection{Presenting data}
 
-PROZONE comes  with software to present the data. 
+PROZONE comes with software to present the data. Through the opposition analysis
+
+2D animation
+Single player analysis
+Team analysis
+Pressing analysis
+Success/direction
+Player tempo
+Passing movements
+Receving the ball
+Player events
+
+On individual level you can get basic tatistics like shots, total passes, passing success, crosses, shots on target, balls received, tackles, fouls. 
+
+\cite{dailymailOnStatistics}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=150mm]{images/general/prozonestats.png}
+\caption{The PROZONE software - individual player analysis gives you statistics of performance over time}
+\label{overflow}
+\end{figure}
+
+
+
