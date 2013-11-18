@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.3)  14 NOV 2013 17:36
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.3)  18 NOV 2013 16:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -528,7 +528,17 @@ Package: xstring 2013/2/28  v1.7a  String manipulations (C Tellechea)
 )
 \AC@clearlist=\toks34
 )
-(./document.aux)
+(./document.aux
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+)
 \openout1 = `document.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
@@ -543,8 +553,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
-
-(/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count165
 \scratchdimen=\dimen168
@@ -768,37 +777,64 @@ LaTeX Warning: Citation `Prozone:indepth' on page 6 undefined on input line 45.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7 <./images/general/prozonecam.png>]
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¸ in font cmr12!
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
 
+<images/general/zxyoverview.png, id=136, 492.84125pt x 286.06876pt>
+File: images/general/zxyoverview.png Graphic file (type png)
 
-LaTeX Warning: Citation `dailymailOnStatistics' on page 8 undefined on input li
-ne 76.
+<use images/general/zxyoverview.png>
+Package pdftex.def Info: images/general/zxyoverview.png used on input line 64.
+(pdftex.def)             Requested size: 426.79134pt x 247.74289pt.
 
-<images/general/prozonestats.png, id=136, 656.4525pt x 450.68375pt>
-File: images/general/prozonestats.png Graphic file (type png)
-
-<use images/general/prozonestats.png>
-Package pdftex.def Info: images/general/prozonestats.png used on input line 80.
-
-(pdftex.def)             Requested size: 426.79134pt x 293.0166pt.
-
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 80--81
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 64--65
  [][] 
  []
 
-) [8] [9 <./images/general/prozonestats.png>] [10
+
+Underfull \vbox (badness 7238) has occurred while \output is active []
+
+ [8]
+<images/general/prozonestats.png, id=140, 656.4525pt x 450.68375pt>
+File: images/general/prozonestats.png Graphic file (type png)
+
+<use images/general/prozonestats.png>
+Package pdftex.def Info: images/general/prozonestats.png used on input line 94.
+
+(pdftex.def)             Requested size: 284.52756pt x 195.34439pt.
+ [9 <./images/general/zxyoverview.png>]
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¸ in font cmr12!
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¸ in font cmr12!
+
+<images/general/zxysoftware.png, id=144, 633.36626pt x 472.76625pt>
+File: images/general/zxysoftware.png Graphic file (type png)
+
+<use images/general/zxysoftware.png>
+Package pdftex.def Info: images/general/zxysoftware.png used on input line 111.
+
+(pdftex.def)             Requested size: 284.52756pt x 212.38216pt.
+
+
+LaTeX Warning: Citation `dailymailOnStatistics' on page 10 undefined on input l
+ine 116.
+
+) [10 <./images/general/prozonestats.png>] [11 <./images/general/zxysoftware.pn
+g>] [12
 
 ]
 Chapter 3.
-(./chapters/requirementspec.tex) [11] [12
+(./chapters/requirementspec.tex) [13] [14
 
 ]
 Chapter 4.
-(./chapters/systemmodel.tex) [13] [14
+(./chapters/systemmodel.tex) [15] [16
 
 ]
 Chapter 5.
@@ -807,34 +843,34 @@ Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
-) [15] [16
+) [17] [18
 
 ]
 Chapter 6.
-(./chapters/evaluation.tex) [17] [18
+(./chapters/evaluation.tex) [19] [20
 
 ]
 Chapter 7.
-(./chapters/conclusion.tex) (./document.bbl [19] [20
+(./chapters/conclusion.tex) (./document.bbl [21] [22
 
 ]
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¥ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¥ in font cmr12!
-) [21] (./document.aux)
+) [23] (./document.aux)
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8470 strings out of 493315
- 114610 string characters out of 6137904
- 248418 words of memory out of 5000000
- 11689 multiletter control sequences out of 15000+600000
+ 8480 strings out of 493315
+ 114918 string characters out of 6137904
+ 248458 words of memory out of 5000000
+ 11697 multiletter control sequences out of 15000+600000
  13637 words of font info for 55 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  40i,18n,45p,3243b,1081s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -844,10 +880,10 @@ Here is how much of TeX's memory you used:
 usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
 sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></us
 r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb>
-Output written on document.pdf (35 pages, 644290 bytes).
+Output written on document.pdf (37 pages, 1430953 bytes).
 PDF statistics:
- 203 PDF objects out of 1000 (max. 8388607)
- 103 compressed objects within 2 object streams
+ 214 PDF objects out of 1000 (max. 8388607)
+ 110 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

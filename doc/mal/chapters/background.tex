@@ -50,16 +50,34 @@ They claim to be able to track every movements of every player on the pitch ever
 \subsection{Automatic capturing}
 SAP places sensors in shin guards, clothing, and in footballs. The data can be applied to individual and team movement profiles to track distances, speed averages, ball possession, player tendencies and more . 
 
-A similar system is the ZXY sport trackingsystem. The system is in used by premier league soccer teams in Norway. Data captured is stored in Sybase databases with each match requiring about 500-700MB storage  The players have to wear a belt around their waist to track their movement. The ZXY system is able to track the player’s movement very detailed with an accuracy of 0.5m.  It relies on a radio-based signaling substrate to provide real-time high-precision positional tracking, including acceleration and heart rate. The home arena for Tromsø IL, Alfheim, is currently equipped with 10 receivers . A receiver tracks an specific area of the soccer field and combined they cover the whole pitch with some redundancy areas. To compute the positional data the stationary radio receiver uses an advance vector based processing of the received radio signal. The data is aggregated and stored into a relational database.
+A similar system is the ZXY sport trackingsystem. The system is in used by premier league soccer teams in Norway, including Tromsø IL. Data captured is stored in Sybase databases with each match requiring about 500-700MB storage  The players have to wear a belt around their waist for the system to work. The ZXY system is able to track the player’s movement very detailed with an accuracy of 0.5m. It has a resolution of 20 samples per second. It relies on a radio-based signaling substrate to provide real-time high-precision positional tracking, including acceleration and heart rate. The home arena for Tromsø IL, Alfheim, is currently equipped with 10 receivers . A receiver tracks an specific area of the soccer field and combined they cover the whole pitch with some redundancy areas. The communication from the belt to the receivers goes on a 2.45-5.2 G Hz frequency radio signal. To compute the positional data the stationary radio receiver uses an advance vector based processing of the received radio signal. The data is aggregated and stored into a relational database.
 
-Doing queries on the data can give you all sprints for a certain player. Players in certain areas of the field have more intensive sprints when they first are involved thus are more vulnerable to injuries. Knowing the actual physical load on players can prevent injuries by regulating the training intensity and amount of time on the workout. 
+Including the positions of the players the ZXY also gives you the step frequency and speed. 
+
+\subsection{Wrap up}
+The main problem with tracking systems that uses physical sensors is that usually only one of the teams wears the sensors.  This limits the functionality of the system as a opponent analysis system. You only get data for one team. 
+
+On the other hand you have the manually systems that requires some human annotation. These system are able to track both teams. As they rely on human annotation of some degree they get more rich data as well. This includes pass type, key-passes, tackles, interceptions and so on. 
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=150mm]{images/general/zxyoverview.png}
+\caption{The PROZONE software - individual player analysis gives you statistics of performance over time}
+\label{overflow}
+\end{figure}
+
 
 \subsubsection{Sensor based}
 
 
 \subsection{Presenting data}
 
-PROZONE comes with software to present the data. Through the opposition analysis
+Most presenting of data is based around single matches. Figure 2.2 shows an example of how FourFourTwo presents data from a match. They use statistics from Opta. 
+
+\subsubsection{Prozone}
+
+
+PROZONE comes with several softwares to illustrate the data. The most relevant is the opposition analysis system. 
 
 2D animation
 Single player analysis
@@ -71,16 +89,32 @@ Passing movements
 Receving the ball
 Player events
 
-On individual level you can get basic tatistics like shots, total passes, passing success, crosses, shots on target, balls received, tackles, fouls. 
-
-\cite{dailymailOnStatistics}
-
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=150mm]{images/general/prozonestats.png}
+\includegraphics[width=100mm]{images/general/prozonestats.png}
 \caption{The PROZONE software - individual player analysis gives you statistics of performance over time}
 \label{overflow}
 \end{figure}
+
+
+On individual level you can get basic tatistics like shots, total passes, passing success, crosses, shots on target, balls received, tackles, fouls. 
+
+Doing queries on the data can give you all sprints for a certain player. Players in certain areas of the field have more intensive sprints when they first are involved thus are more vulnerable to injuries. Knowing the actual physical load on players can prevent injuries by regulating the training intensity and amount of time on the workout.
+
+\subsubsection{ZXY}
+  
+ZXY provides you with a 3D graphic interface. This interface lets you see the players action in real time by reading the data stream to reproduce the players action. The data is streamed in real time into the database as the match goes on. While watching you can produce timestamps of different events and produce manual input which is time synchronized with the automatic data. Naturally you can build your own software on top of the database. Tromsø IL in collaboration with University of Tromsø has made several systems to complement the ZXY software. Muithu and Bagadus.
+
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=100mm]{images/general/zxysoftware.png}
+\caption{The ZXY software - tracking of players gives you information of distance covered, average speed and max speed. You also get a heat map of the players movement on the field.}
+\label{overflow}
+\end{figure}
+
+\cite{dailymailOnStatistics}
+
 
 
 
