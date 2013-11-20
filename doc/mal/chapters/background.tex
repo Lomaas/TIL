@@ -1,11 +1,30 @@
 
 
-\section{Related work} \label{Related work:capturing data}
 In this chapter we present some background related to creating a multi-media data repository. There are two main approaches: capturing data manually often by human annotating it, and automatic capturing. Automatic may or may not have a substep where a human has to filter/annotate the data. 
 
-\subsection{Manually capturing }
 
-\subsubsection{Opta }
+\section{Types of analyse}
+
+In soccer there are several phases where you use analytic to help you gain insight. 
+
+\subsection{Prematch}
+
+Pre-match you use analytic to find weaknesses in the opponents team, on individually bases or the team as whole. You look at your team matched up against your opponent. A typical situation is that the manager gets an video summary of the opponent highlighting the opponents strengths and weaknesses. The video summary is often made up by the coaching staff who may use tools like Interplay. 
+
+Typically in TV you have pundits discussing 
+
+
+\subsubsection{In match}
+
+During match the coaching staff continuously analysis the match and makes adjustment. Of course it is the players who makes all the decisions in the end, but the coach is the boss. 
+
+\subsubsection{Post match}
+
+
+
+\section{Manually capturing }
+
+\subsection{Opta }
 
 
 One of the big players Opta uses manual input to create their data repository. They have editorial teams across the world that captures data manually for the most popular soccer leagues. For example to capture statistics for one match, 3 humans have to be involved to be able to annotate all data. The data is captured via an application specifically created for the purpose of capturing data as quick and easily as possible. The editorial teams of Opta need to be able to identify a player, registrate a pass his made or a tackle, in a very short time to be able to keep up with the pace of the game. They study things like which shoe color a player has to be able to quickly identify the player.
@@ -96,15 +115,13 @@ Player events
 \label{overflow}
 \end{figure}
 
+On individual level you can get basic tactics like shots, total passes, passing success, crosses, shots on target, balls received, tackles, fouls. 
 
-On individual level you can get basic tatistics like shots, total passes, passing success, crosses, shots on target, balls received, tackles, fouls. 
-
-Doing queries on the data can give you all sprints for a certain player. Players in certain areas of the field have more intensive sprints when they first are involved thus are more vulnerable to injuries. Knowing the actual physical load on players can prevent injuries by regulating the training intensity and amount of time on the workout.
+Doing queries on the data can give you all sprints for a certain player. Players in certain areas of the field have more intensive sprints when they first are involved thus are more vulnerable to injuries. Knowing the actual physical load on players can prevent injuries by regulating the training intensity and amount of time on each exercise.
 
 \subsubsection{ZXY}
   
-ZXY provides you with a 3D graphic interface. This interface lets you see the players action in real time by reading the data stream to reproduce the players action. The data is streamed in real time into the database as the match goes on. While watching you can produce timestamps of different events and produce manual input which is time synchronized with the automatic data. Naturally you can build your own software on top of the database. Tromsø IL in collaboration with University of Tromsø has made several systems to complement the ZXY software. Muithu and Bagadus.
-
+ZXY provides you with a 3D graphic interface. This interface lets you see the players action in real time by reading the data stream to reproduce the players action. The data is streamed in real time into the database as the match goes on. While watching you can produce timestamps of different events and produce manual input which is time synchronized with the automatic data. Naturally you can build your own software on top of the Sybase database. Tromsø IL in collaboration with University of Tromsø has made several systems to complement the ZXY software. Muithu and Bagadus.
 
 \begin{figure}[ht!]
 \centering
@@ -114,7 +131,3 @@ ZXY provides you with a 3D graphic interface. This interface lets you see the pl
 \end{figure}
 
 \cite{dailymailOnStatistics}
-
-
-
-
