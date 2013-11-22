@@ -24,13 +24,14 @@
 \contentsline {chapter}{\numberline {5}Soccer Analytic toolkit}{19}
 \contentsline {section}{\numberline {5.1}System Architecture}{19}
 \contentsline {subsection}{\numberline {5.1.1}Domain model}{20}
-\contentsline {subsection}{\numberline {5.1.2}Storage}{20}
-\contentsline {subsection}{\numberline {5.1.3}Back-end}{20}
-\contentsline {subsubsection}{\numberline {5.1.3.1}Domain Model}{20}
-\contentsline {subsubsection}{\numberline {5.1.3.2}Elasticsearch}{20}
-\contentsline {subsubsection}{\numberline {5.1.3.3}Security}{20}
-\contentsline {chapter}{\numberline {6}Evaluation and Results}{21}
-\contentsline {chapter}{\numberline {7}Conclusion}{23}
-\contentsline {section}{\numberline {7.1}Achievements}{23}
-\contentsline {subsection}{\numberline {7.1.1}Concluding Remarks}{23}
-\contentsline {section}{\numberline {7.2}Future Work}{23}
+\contentsline {section}{\numberline {5.2}Implementation details}{20}
+\contentsline {subsection}{\numberline {5.2.1}Storage}{20}
+\contentsline {subsection}{\numberline {5.2.2}Back-end}{20}
+\contentsline {subsection}{\numberline {5.2.3}Front-end}{21}
+\contentsline {subsubsection}{\numberline {5.2.3.1}Security}{22}
+\contentsline {chapter}{\numberline {6}Evaluation and Results}{23}
+\contentsline {section}{\numberline {6.1}Limitations}{23}
+\contentsline {chapter}{\numberline {7}Conclusion}{25}
+\contentsline {section}{\numberline {7.1}Achievements}{25}
+\contentsline {subsection}{\numberline {7.1.1}Concluding Remarks}{25}
+\contentsline {section}{\numberline {7.2}Future Work}{25}

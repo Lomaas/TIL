@@ -9,8 +9,27 @@
 \label{overflow}
 \end{figure}
 
+
+
 \subsection{Domain model}
 
+
+\section{Implementation details}
+
+\begin{table}[ht]
+\caption{Software stack}
+\begin{center}
+\begin{tabular}{c|c}
+    \hline
+    \multicolumn{2}{c}{}\\
+    Web server& Node.js\\
+    Database& Elasticsearch\\
+    Client & web  browser \\
+\hline
+\end{tabular}
+\end{center}
+\label{tab:multicol}
+\end{table}
 
 
 \subsection{Storage}
@@ -31,25 +50,30 @@ Similar if the client sends new data for a match the middle-ware inserts the dat
 
 Front end is consist of a single page JavaScript application using Backbone.js as under-supporting framework. As it uses a MVC structure the models is responsible for AJAX communication with the back-end. 
 
-For a analytic toolkit to be sufficient a good UI is critical. Here several helper library is used to present the data. HighCharts.js is JavaScript library for illustrating graphs. A query on team generates a lot of statistics and rather than listing them up they are presented using charts. 
+For a analytic toolkit to be useful a good UI is critical. Here several helper library is used to present the data. Highcharts.js is JavaScript library for illustrating graphs. A query on team generates a lot of statistics and rather than listing them up they are presented using charts. This also gives us the advantage of displaying several numbers for each player and plot it in the same graph. In the image below we show the number of times a player has been involved in all attacks, number of passes into the final third of the pitch and the number of times a player has been the breakthrough-player.
 
-BILDE AV CHART
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=100mm]{images/general/chart_passes.png}
-\caption{Shows how the pass statistic is illustrated on the client by using HighCharts.js}
+\caption{Shows how the pass statistic is illustrated on the client by using Highcharts.js}
 \label{overflow}
 \end{figure}
 
 
-Positional data is created using the new feature of HTML5, canvas. 
+Positional data is created using the a new feature of HTML5, canvases. From the model you get all zones with a number that symbols shots taken from that zone. This is then plotted into the respective zones. 
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=85mm]{images/general/finishing_zones.png}
+\caption{Illustrations of which zones the team has finished off their attacks from, with percent (team: Tromsø IL)}
+\label{overflow}
+\end{figure}
+
+Backbone comes with a library Underscore.js that makes creating HTML pages with dynamic content easily. When you rending a new page on the site you can insert content retried from a model into the HTML and then render it.
 
 
-\subsubsection{Domain Model}
 
-
-\subsubsection{Elasticsearch}
 
 
 \subsubsection{Security}
-Secturity is not handled. This means anyone getting into the page can post new match data. 
+Secturity is not taken into convern. This means anyone getting into the page can post new match data. 
