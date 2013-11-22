@@ -22,6 +22,13 @@
 \contentsline {section}{\numberline {3.1}Overview}{13}
 \contentsline {chapter}{\numberline {4}System Model}{17}
 \contentsline {chapter}{\numberline {5}Soccer Analytic toolkit}{19}
+\contentsline {section}{\numberline {5.1}System Architecture}{19}
+\contentsline {subsection}{\numberline {5.1.1}Domain model}{20}
+\contentsline {subsection}{\numberline {5.1.2}Storage}{20}
+\contentsline {subsection}{\numberline {5.1.3}Back-end}{20}
+\contentsline {subsubsection}{\numberline {5.1.3.1}Domain Model}{20}
+\contentsline {subsubsection}{\numberline {5.1.3.2}Elasticsearch}{20}
+\contentsline {subsubsection}{\numberline {5.1.3.3}Security}{20}
 \contentsline {chapter}{\numberline {6}Evaluation and Results}{21}
 \contentsline {chapter}{\numberline {7}Conclusion}{23}
 \contentsline {section}{\numberline {7.1}Achievements}{23}

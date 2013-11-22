@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.3)  21 NOV 2013 22:26
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.3)  22 NOV 2013 19:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -541,6 +541,15 @@ LaTeX Warning: Label `overflow' multiply defined.
 
 LaTeX Warning: Label `overflow' multiply defined.
 
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
 )
 \openout1 = `document.aux'.
 
@@ -837,27 +846,37 @@ t>
 File: images/general/illustration_after_search.png Graphic file (type png)
  <use images/general/illustration_after_search.png>
 Package pdftex.def Info: images/general/illustration_after_search.png used on i
-nput line 9.
+nput line 12.
 (pdftex.def)             Requested size: 142.26378pt x 100.79492pt.
+
+<images/general/illustration_after_search2.png, id=156, 376.40625pt x 265.99374
+pt>
+File: images/general/illustration_after_search2.png Graphic file (type png)
+ <use images/general/illustration_after_search2.png>
+Package pdftex.def Info: images/general/illustration_after_search2.png used on 
+input line 19.
+(pdftex.def)             Requested size: 142.26378pt x 100.53479pt.
  [13
 
 ]
-<images/general/first_zones.png, id=159, 525.965pt x 366.36874pt>
+<images/general/first_zones.png, id=160, 525.965pt x 366.36874pt>
 File: images/general/first_zones.png Graphic file (type png)
 
 <use images/general/first_zones.png>
-Package pdftex.def Info: images/general/first_zones.png used on input line 24.
+Package pdftex.def Info: images/general/first_zones.png used on input line 37.
 (pdftex.def)             Requested size: 284.52756pt x 198.19954pt.
 
-<images/general/second_zones.png, id=161, 525.4029pt x 365.6862pt>
+<images/general/second_zones.png, id=162, 525.4029pt x 365.6862pt>
 File: images/general/second_zones.png Graphic file (type png)
 
 <use images/general/second_zones.png>
-Package pdftex.def Info: images/general/second_zones.png used on input line 26.
+Package pdftex.def Info: images/general/second_zones.png used on input line 39.
 
 (pdftex.def)             Requested size: 284.52756pt x 198.04233pt.
-) [14 <./images/general/illustration_after_search.png>] [15 <./images/general/f
-irst_zones.png> <./images/general/second_zones.png (PNG copy)>] [16
+) [14 <./images/general/illustration_after_search.png> <./images/general/illust
+ration_after_search2.png>] [15 <./images/general/first_zones.png> <./images/gen
+eral/second_zones.png (PNG copy)>]
+[16
 
 ]
 Chapter 4.
@@ -866,15 +885,20 @@ Chapter 4.
 ]
 Chapter 5.
 (./chapters/designimplementation.tex
-Missing character: There is no Ã in font cmr12!
-Missing character: There is no ¸ in font cmr12!
-Missing character: There is no Ã in font cmr12!
-Missing character: There is no ¸ in font cmr12!
-) [19] [20
+<images/general/arhitecture.png, id=180, 351.9549pt x 296.307pt>
+File: images/general/arhitecture.png Graphic file (type png)
 
-]
+<use images/general/arhitecture.png>
+Package pdftex.def Info: images/general/arhitecture.png used on input line 7.
+(pdftex.def)             Requested size: 284.52756pt x 239.5507pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19 <./images/general/arhitecture.png>]) [20]
 Chapter 6.
-(./chapters/evaluation.tex) [21] [22
+(./chapters/evaluation.tex) [21
+
+] [22
 
 ]
 Chapter 7.
@@ -894,10 +918,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8500 strings out of 493315
- 115479 string characters out of 6137904
+ 8510 strings out of 493315
+ 115862 string characters out of 6137904
  248520 words of memory out of 5000000
- 11711 multiletter control sequences out of 15000+600000
+ 11719 multiletter control sequences out of 15000+600000
  13637 words of font info for 55 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  40i,18n,45p,3243b,1081s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -907,10 +931,10 @@ Here is how much of TeX's memory you used:
 usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
 sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></us
 r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb>
-Output written on document.pdf (39 pages, 2079023 bytes).
+Output written on document.pdf (39 pages, 2103608 bytes).
 PDF statistics:
- 225 PDF objects out of 1000 (max. 8388607)
+ 228 PDF objects out of 1000 (max. 8388607)
  115 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
