@@ -26,7 +26,7 @@
 \contentsline {subsection}{\numberline {5.1.1}Domain model}{20}
 \contentsline {section}{\numberline {5.2}Implementation details}{20}
 \contentsline {subsection}{\numberline {5.2.1}Storage}{20}
-\contentsline {subsection}{\numberline {5.2.2}Back-end}{20}
+\contentsline {subsection}{\numberline {5.2.2}Back-end}{21}
 \contentsline {subsection}{\numberline {5.2.3}Front-end}{21}
 \contentsline {subsubsection}{\numberline {5.2.3.1}Security}{22}
 \contentsline {chapter}{\numberline {6}Evaluation and Results}{23}

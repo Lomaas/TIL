@@ -9,10 +9,46 @@
 \label{overflow}
 \end{figure}
 
-
+Client connects to the back-end web server via HTTP to request or insert information. There is two main interfaces; one for capturing new matches and attacks, and the second for analyse information. The back-end then again connects to an database to fetch or insert data. When fetching 
 
 \subsection{Domain model}
 
+The domain model is based around matches
+
+{     
+    "hometeam" : "Tromsø",
+    "awayteam" : "Rosenborg",
+    "score" : "1-0",
+    "date" : '2013-15-09',
+    "attacks": [
+        {
+            "time": 4,
+            "touch" : 1,
+            "team" : "Tromsø",
+            "breakthrough" : "None",
+            "breakthroughPlayer" : "None",
+            "typeOfAttack" : "Dødball",
+            "attackStart" : {
+                "pos" : 17,
+                "typeAction" : "Frispark",
+                "player" : 403,
+            },
+            "passes": [
+                {
+                    "fromPlayer": 403,
+                    "toPlayer": 393,
+                    "fromPos": 17,
+                    "toPos": 23,
+                    "action": "CROSS"
+                }
+            ],
+            "finish" : {
+                "player": 393,
+                "pos": 23,
+                "action": "SHOTMISS"
+            }
+        },
+}
 
 \section{Implementation details}
 
