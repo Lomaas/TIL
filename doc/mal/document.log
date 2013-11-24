@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.3)  24 NOV 2013 17:06
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.3)  24 NOV 2013 19:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -556,6 +556,9 @@ LaTeX Warning: Label `overflow' multiply defined.
 
 LaTeX Warning: Label `overflow' multiply defined.
 
+
+LaTeX Warning: Label `overflow' multiply defined.
+
 )
 \openout1 = `document.aux'.
 
@@ -908,31 +911,35 @@ Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
- [20]) [21]
-<images/general/chart_passes.png, id=191, 1179.40625pt x 510.90875pt>
+ [20])
+<images/general/all_matches.png, id=188, 1183.42125pt x 1065.9825pt>
+File: images/general/all_matches.png Graphic file (type png)
+
+<use images/general/all_matches.png>
+Package pdftex.def Info: images/general/all_matches.png used on input line 37.
+(pdftex.def)             Requested size: 284.52756pt x 256.2802pt.
+ [21] [22 <./images/general/all_matches.png>] <images/general/chart_passes.png,
+ id=195, 1179.40625pt x 510.90875pt>
 File: images/general/chart_passes.png Graphic file (type png)
 
 <use images/general/chart_passes.png>
-Package pdftex.def Info: images/general/chart_passes.png used on input line 75.
+Package pdftex.def Info: images/general/chart_passes.png used on input line 86.
 
 (pdftex.def)             Requested size: 284.52756pt x 123.25206pt.
- [22]
-<images/general/finishing_zones.png, id=195, 614.295pt x 416.55624pt>
+
+<images/general/finishing_zones.png, id=196, 614.295pt x 416.55624pt>
 File: images/general/finishing_zones.png Graphic file (type png)
 
 <use images/general/finishing_zones.png>
 Package pdftex.def Info: images/general/finishing_zones.png used on input line 
-84.
+95.
 (pdftex.def)             Requested size: 241.84842pt x 164.00081pt.
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
-)
-Underfull \vbox (badness 1275) has occurred while \output is active []
-
- [23 <./images/general/chart_passes.png> <./images/general/finishing_zones.png>
-] [24]
+ [23 <./images/general/chart_passes.png>]) [24 <./images/general/finishing_zone
+s.png>]
 Chapter 6.
 (./chapters/evaluation.tex) [25
 
@@ -956,10 +963,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8530 strings out of 493315
- 116322 string characters out of 6137904
+ 8535 strings out of 493315
+ 116476 string characters out of 6137904
  248531 words of memory out of 5000000
- 11733 multiletter control sequences out of 15000+600000
+ 11737 multiletter control sequences out of 15000+600000
  13637 words of font info for 55 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  40i,18n,45p,3243b,1385s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -969,10 +976,10 @@ Here is how much of TeX's memory you used:
 usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
 sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></us
 r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb>
-Output written on document.pdf (43 pages, 2157150 bytes).
+Output written on document.pdf (43 pages, 2198450 bytes).
 PDF statistics:
- 243 PDF objects out of 1000 (max. 8388607)
+ 244 PDF objects out of 1000 (max. 8388607)
  124 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
 
