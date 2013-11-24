@@ -23,15 +23,19 @@
 \contentsline {chapter}{\numberline {4}System Model}{17}
 \contentsline {chapter}{\numberline {5}Soccer Analytic toolkit}{19}
 \contentsline {section}{\numberline {5.1}System Architecture}{19}
+\contentsline {subsubsection}{\numberline {5.1.0.3}Interfaces}{20}
+\contentsline {subsubsection}{\numberline {5.1.0.4}Back-end}{20}
+\contentsline {subsubsection}{\numberline {5.1.0.5}Storage}{20}
 \contentsline {subsection}{\numberline {5.1.1}Domain model}{20}
-\contentsline {section}{\numberline {5.2}Implementation details}{20}
-\contentsline {subsection}{\numberline {5.2.1}Storage}{20}
-\contentsline {subsection}{\numberline {5.2.2}Back-end}{21}
-\contentsline {subsection}{\numberline {5.2.3}Front-end}{21}
-\contentsline {subsubsection}{\numberline {5.2.3.1}Security}{22}
-\contentsline {chapter}{\numberline {6}Evaluation and Results}{23}
-\contentsline {section}{\numberline {6.1}Limitations}{23}
-\contentsline {chapter}{\numberline {7}Conclusion}{25}
-\contentsline {section}{\numberline {7.1}Achievements}{25}
-\contentsline {subsection}{\numberline {7.1.1}Concluding Remarks}{25}
-\contentsline {section}{\numberline {7.2}Future Work}{25}
+\contentsline {section}{\numberline {5.2}Implemented interfaces}{21}
+\contentsline {section}{\numberline {5.3}Implementation details}{21}
+\contentsline {subsection}{\numberline {5.3.1}Storage}{21}
+\contentsline {subsection}{\numberline {5.3.2}Back-end}{22}
+\contentsline {subsection}{\numberline {5.3.3}Front-end}{22}
+\contentsline {subsubsection}{\numberline {5.3.3.1}Security}{24}
+\contentsline {chapter}{\numberline {6}Evaluation and Results}{25}
+\contentsline {section}{\numberline {6.1}Limitations}{25}
+\contentsline {chapter}{\numberline {7}Conclusion}{27}
+\contentsline {section}{\numberline {7.1}Achievements}{27}
+\contentsline {subsection}{\numberline {7.1.1}Concluding Remarks}{27}
+\contentsline {section}{\numberline {7.2}Future Work}{27}

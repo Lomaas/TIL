@@ -9,46 +9,35 @@
 \label{overflow}
 \end{figure}
 
-Client connects to the back-end web server via HTTP to request or insert information. There is two main interfaces; one for capturing new matches and attacks, and the second for analyse information. The back-end then again connects to an database to fetch or insert data. When fetching 
+The system architecture can be layered in to three layers; client, back-end, database. The control flow flows from the clients requesting something or inserting data, to the back-end and to the third layer, the database, and back up again in reverse order. 
+
+\subsubsection{Interfaces}
+There is several interfaces but the most important are for capturing new matches and attacks, and the for analyze information. The back-end then again connects to an database to fetch or insert data.  The request then returns up again in the stack on response from the database.
+
+\subsubsection{Back-end}
+
+The back-end is the middle layer between the client and the storage. Its main task is to serve the UI's to the clients, handle data insertions or queries by mapping them to database operations. 
+
+\subsubsection{Storage}
+
+The storage layers task is to persist data and handle search queries on the data. It consist of several indexes. 
 
 \subsection{Domain model}
 
-The domain model is based around matches
+The domain model is based around matches.
 
-{     
-    "hometeam" : "Tromsø",
-    "awayteam" : "Rosenborg",
-    "score" : "1-0",
-    "date" : '2013-15-09',
-    "attacks": [
-        {
-            "time": 4,
-            "touch" : 1,
-            "team" : "Tromsø",
-            "breakthrough" : "None",
-            "breakthroughPlayer" : "None",
-            "typeOfAttack" : "Dødball",
-            "attackStart" : {
-                "pos" : 17,
-                "typeAction" : "Frispark",
-                "player" : 403,
-            },
-            "passes": [
-                {
-                    "fromPlayer": 403,
-                    "toPlayer": 393,
-                    "fromPos": 17,
-                    "toPos": 23,
-                    "action": "CROSS"
-                }
-            ],
-            "finish" : {
-                "player": 393,
-                "pos": 23,
-                "action": "SHOTMISS"
-            }
-        },
-}
+\lstinputlisting{domainmodel.js}
+
+\section{Implemented interfaces}
+
+Interfaces implemented Several. GO
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=100mm]{images/general/chart_passes.png}
+\caption{Shows how the passing statistic is illustrated on the client by using Highcharts.js}
+\label{overflow}
+\end{figure}
 
 \section{Implementation details}
 
@@ -77,7 +66,7 @@ The main reason for using Elasticsearch is its search capability. In a single qu
 
 \subsection{Back-end}
 
-The back end is the middleware between the clients and the data layer. It exposes a RESTful interface over HTTP for the client to communicate. A request coming in is transformed to a database query based on the resource it tries to access. On answer from the database the result is transformed before returning it to the client. 
+The back end is the middle-ware between the clients and the data layer. It exposes a RESTful interface over HTTP for the client to communicate. A request coming in is transformed to a database query based on the resource it tries to access. On answer from the database the result is transformed before returning it to the client. 
 
 Similar if the client sends new data for a match the middle-ware inserts the data into the appropriate indexes.
 
@@ -91,10 +80,9 @@ For a analytic toolkit to be useful a good UI is critical. Here several helper l
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=100mm]{images/general/chart_passes.png}
-\caption{Shows how the pass statistic is illustrated on the client by using Highcharts.js}
+\caption{Shows how the passing statistic is illustrated on the client by using Highcharts.js}
 \label{overflow}
 \end{figure}
-
 
 Positional data is created using the a new feature of HTML5, canvases. From the model you get all zones with a number that symbols shots taken from that zone. This is then plotted into the respective zones. 
 
@@ -106,8 +94,6 @@ Positional data is created using the a new feature of HTML5, canvases. From the 
 \end{figure}
 
 Backbone comes with a library Underscore.js that makes creating HTML pages with dynamic content easily. When you rending a new page on the site you can insert content retried from a model into the HTML and then render it.
-
-
 
 
 
