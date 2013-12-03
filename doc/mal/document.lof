@@ -5,15 +5,15 @@
 \contentsline {figure}{\numberline {2.3}{\ignorespaces The PROZONE software - individual player analysis gives you statistics of performance over time}}{11}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces The ZXY software - tracking of players gives you information of distance covered, average speed and max speed. You also get a heat map of the players movement on the field.}}{12}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Example of one of the illustrations displaying key players and how they combine after a search on a specific team}}{14}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Example of one of the illustrations displaying typical passes for a player}}{14}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Visioned illustration displaying key players and how they combine given you have queried on a team}}{14}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Visioned illustration of typical passes for a player}}{14}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Dividing of pitch - the first suggestion had 18 zones. The team attacking attacks from left to right}}{15}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Dividing of pitch - the second suggestion had 18 zones. The team attacking attacks from left to right}}{15}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces }}{17}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces All matches registrated in the database are listed on this page}}{20}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Shows how the passing statistic is illustrated on the client by using Highcharts.js}}{21}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Illustrations of which zones the team has finished off their attacks from, with percent (team: Tromsø IL)}}{22}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces }}{19}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces All matches registrated in the database are listed on this page}}{22}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Shows how the passing statistic is illustrated on the client by using Highcharts.js}}{23}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Illustrations of which zones the team has finished off their attacks from, with percent (team: Tromsø IL)}}{24}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
