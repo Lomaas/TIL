@@ -3785,17 +3785,8 @@ Data [
           "typeOfAttack": "Gjennvinning kort angrep",
           "time": "84",
           "breakthroughPlayer": "Ruben Kristiansen",
-          "touch": 0,
-          "matchId": "8l-UcckpTly9Hs6wOzYu5A",
           "team": "Tromsø",
           "passes": [
-            {
-              "fromPlayer": "",
-              "toPos": "",
-              "fromPos": "",
-              "toPlayer": "",
-              "action": ""
-            },
             {
               "fromPlayer": "394",
               "toPos": "18",
@@ -3806,10 +3797,17 @@ Data [
             {
               "fromPlayer": "412",
               "toPos": "18",
+              "fromPos": "14",
+              "toPlayer": "413",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "412",
+              "toPos": "18",
               "fromPos": "18",
               "toPlayer": "413",
               "action": "PASS"
-            }
+            },
           ],
           "breakthrough": "1vs1 Mellomrom"
         },

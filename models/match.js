@@ -5,7 +5,8 @@ exports.getAllMatches = function(callback){
     var queryObject = { 
         "query" : {
             "match_all" : {}
-        }
+        },
+        "size" : 1000,
     };
 
     elasticSearchClient.search(indexNameMatches, typeNameMatches, queryObject)

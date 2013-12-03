@@ -1363,7 +1363,7 @@ insertMatch({
             "team" : "Vålerenga",
             "breakthrough" : "Pasning Bakrom",
             "breakthroughPlayer" : "Diego Calvo",
-            "typeOfAttack" : "Etablert langt angrep",
+            "typeOfAttack" : "Etablert angrep",
             "attackStart" : {
                 "pos" : 6,
                 "typeAction" : "Gjenvinning",
@@ -1634,8 +1634,8 @@ insertMatch({
             "time": 56,
             "team" : "Tromsø",
             "breakthrough" : "Pasning Bakrom",
-            "breakthroughPlayer" : "Ruben Krisitansen",
-            "typeOfAttack" : "Etablert langt angrep",
+            "breakthroughPlayer" : "Ruben Kristiansen",
+            "typeOfAttack" : "Gjenvinning langt angrep",
             "attackStart" : {
                 "pos" : 14,
                 "typeAction" : "Gjenvinning",
@@ -1708,7 +1708,7 @@ insertMatch({
             "finish" : {
                 "player": 406,
                 "pos": 19,
-                "action": "SHOTMISS"
+                "action": "SHOTGOAL"
             }
         },
         {
@@ -2097,7 +2097,7 @@ insertMatch({
             "team" : "Tromsø",
             "breakthrough" : "None",
             "breakthroughPlayer" : "None",
-            "typeOfAttack" : "Etablert langt angrep",
+            "typeOfAttack" : "Etablert angrep",
             "attackStart" : {
                 "pos" : 11,
                 "typeAction" : "Corner",
@@ -2206,8 +2206,8 @@ insertMatch({
             "touch" : 2,
             "team" : "Tromsø",
             "breakthrough" : "Pasning Bakrom",
-            "breakthroughPlayer" : "Ruben Krisitansen",
-            "typeOfAttack" : "Etablert langt angrep",
+            "breakthroughPlayer" : "Ruben Kristiansen",
+            "typeOfAttack" : "Etablert angrep",
             "attackStart" : {
                 "pos" : 2,
                 "typeAction" : "Gjenvinning",
@@ -2361,7 +2361,7 @@ insertMatch({
     ]
 });
 
-insertObject({
+insertMatch({
       "date": "2013-10-19",
       "hometeam": "Tromsø",
       "awayteam": "Viking",
@@ -2375,7 +2375,7 @@ insertObject({
           },
           "finish": {
             "player": "72",
-            "action": "",
+            "action": "SHOTTARGET",
             "pos": "23"
           },
           "time": "4",
@@ -2395,7 +2395,7 @@ insertObject({
         {
           "finish": {
             "player": "404",
-            "action": "",
+            "action": "SHOTGOAL",
             "pos": "23"
           },
           "attackStart": {
@@ -2417,7 +2417,7 @@ insertObject({
           },
           "finish": {
             "player": "411",
-            "action": "",
+            "action": "SHOTGOAL",
             "pos": "23"
           },
           "time": "18",
@@ -2451,7 +2451,7 @@ insertObject({
         {
           "finish": {
             "player": "395",
-            "action": "",
+            "action": "SHOTMISS",
             "pos": "23"
           },
           "attackStart": {
@@ -2488,7 +2488,7 @@ insertObject({
           },
           "finish": {
             "player": "406",
-            "action": "",
+            "action": "SHOTMISS",
             "pos": "19"
           },
           "time": "34",
@@ -2529,7 +2529,7 @@ insertObject({
         {
           "finish": {
             "player": "404",
-            "action": "",
+            "action": "SHOTMISS",
             "pos": "23"
           },
           "attackStart": {
@@ -2573,11 +2573,11 @@ insertObject({
           },
           "finish": {
             "player": "394",
-            "action": "",
+            "action": "SHOTTARGET",
             "pos": "22"
           },
           "time": "43",
-          "breakthroughPlayer": "",
+          "breakthroughPlayer": "None",
           "team": "Tromsø",
           "passes": [],
           "breakthrough": "None"
@@ -2585,7 +2585,7 @@ insertObject({
         {
           "finish": {
             "player": "396",
-            "action": "",
+            "action": "SHOTMISS",
             "pos": "25"
           },
           "attackStart": {
@@ -2594,7 +2594,7 @@ insertObject({
             "pos": "6"
           },
           "time": "45",
-          "breakthroughPlayer": "",
+          "breakthroughPlayer": "None",
           "passes": [
             {
               "fromPlayer": "403",
@@ -2664,7 +2664,7 @@ insertObject({
           },
           "finish": {
             "player": "413",
-            "action": "",
+            "action": "SHOTTARGET",
             "pos": "23"
           },
           "time": "62",
@@ -2690,7 +2690,7 @@ insertObject({
               "toPos": "18",
               "fromPos": "11",
               "toPlayer": "413",
-              "action": ""
+              "action": "PASS"
             }
           ],
           "breakthrough": "Pasning Bakrom"
@@ -2698,12 +2698,12 @@ insertObject({
         {
           "finish": {
             "player": "411",
-            "action": "",
+            "action": "SHOTTARGET",
             "pos": "23"
           },
           "attackStart": {
             "typeAction": "Gjenvinning",
-            "player": "",
+            "player": "411",
             "pos": "12"
           },
           "time": "64",
@@ -2756,11 +2756,11 @@ insertObject({
           },
           "finish": {
             "player": "413",
-            "action": "",
+            "action": "SHOTGOAL",
             "pos": "22"
           },
           "time": "71",
-          "breakthroughPlayer": "",
+          "breakthroughPlayer": "None",
           "team": "Tromsø",
           "passes": [
             {
@@ -2797,7 +2797,7 @@ insertObject({
         {
           "finish": {
             "player": "404",
-            "action": "",
+            "action": "SHOTMISS",
             "pos": "25"
           },
           "attackStart": {
@@ -2827,7 +2827,7 @@ insertObject({
           },
           "finish": {
             "player": "393",
-            "action": "",
+            "action": "SHOTGOAL",
             "pos": "23"
           },
           "time": "81",
@@ -2854,7 +2854,7 @@ insertObject({
         {
           "finish": {
             "player": "412",
-            "action": "",
+            "action": "SHOTTARGET",
             "pos": "23"
           },
           "attackStart": {
@@ -2893,13 +2893,12 @@ insertObject({
       ]
 });
 
-
-insertObject({
+insertMatch({
     "date": "2013-05-26",
     "hometeam": "Viking",
     "awayteam": "Tromsø",
     "score": "2-1",
-    attacks : [
+    "attacks" : [
         {
           "attackStart": {
             "typeAction": "Gjenvinning",
@@ -3144,7 +3143,7 @@ insertObject({
         {
           "finish": {
             "player": "413",
-            "action": "",
+            "action": "SHOTMISS",
             "pos": "23"
           },
           "attackStart": {
@@ -3153,7 +3152,6 @@ insertObject({
             "pos": "14"
           },
           "time": "85",
-          "touch": 0,
           "breakthroughPlayer": "None",
           "passes": [
             {
@@ -3177,111 +3175,691 @@ insertObject({
       ]
 });
 
-insertObject({
-    "hometeam" : "Tromsø",
-    "awayteam" : "Strømsgodset",
-    "score" : "0-0",
-    "date" : "2013-10-03",
-    "attacks" : [
+insertMatch({
+  "date": "2013-11-03",
+  "hometeam": "Tromsø",
+  "awayteam": "Strømsgodset",
+  "score": "0-0",
+  "attacks": [
         {
-            "time": "10",
-            "team": "Strømsgodset",
-            "breakthroughPlayer": "None",
-            "attackStart": {
-                "pos": "15",
-                "player": "33",
-                "typeAction": "Gjenvinning"
+          "attackStart": {
+            "typeAction": "Frispark",
+            "player": "393",
+            "pos": "10"
+          },
+          "finish": {
+            "player": "404",
+            "action": "SHOTTARGET",
+            "pos": "23"
+          },
+          "time": "3",
+          "breakthroughPlayer": "None",
+          "team": "Tromsø",
+          "passes": [
+            {
+              "fromPlayer": "393",
+              "toPos": "22",
+              "fromPos": "10",
+              "toPlayer": "411",
+              "action": "LONGBALL"
             },
-            "finish": {
-                "pos": "25",
-                "player": "42",
-                "action": "SHOTTARGET"
+            {
+              "fromPlayer": "411",
+              "toPos": "17",
+              "fromPos": "21",
+              "toPlayer": "403",
+              "action": "CROSS"
+            }
+          ],
+          "breakthrough": "None"
+        },
+        {
+          "finish": {
+            "player": "411",
+            "action": "SHOTMISS",
+            "pos": "23"
+          },
+          "attackStart": {
+            "typeAction": "Innkast",
+            "player": "397",
+            "pos": "26"
+          },
+          "time": "6",
+          "breakthroughPlayer": "None",
+          "passes": [
+            {
+              "fromPlayer": "397",
+              "toPos": "26",
+              "fromPos": "26",
+              "action": "PASS",
+              "toPlayer": "403"
             },
-            "passes": [
-                {
-                  "fromPlayer": "33",
-                  "fromPos": "15",
-                  "toPlayer": "32",
-                  "toPos": "15",
-                  "action": "PASS"
-                },
-                {
-                  "fromPlayer": "32",
-                  "fromPos": "11",
-                  "toPlayer": "36",
-                  "toPos": "14",
-                  "action": "PASS"
-                },
-                {
-                  "fromPlayer": "36",
-                  "fromPos": "14",
-                  "toPlayer": "41",
-                  "toPos": "14",
-                  "action": "PASS"
-                },
-                {
-                  "fromPlayer": "41",
-                  "fromPos": "14",
-                  "toPlayer": "32",
-                  "toPos": "10",
-                  "action": "PASS"
-                },
-                {
-                  "fromPlayer": "32",
-                  "fromPos": "10",
-                  "toPlayer": "33",
-                  "toPos": "11",
-                  "action": "PASS"
-                },
-                {
-                  "fromPlayer": "33",
-                  "fromPos": "16",
-                  "toPlayer": "35",
-                  "toPos": "16",
-                  "action": "PASS"
-                },
-                {
-                  "fromPlayer": "35",
-                  "fromPos": "16",
-                  "toPlayer": "33",
-                  "toPos": "16",
-                  "action": "PASS"
-                },
-                {
-                  "fromPlayer": "33",
-                  "fromPos": "12",
-                  "toPlayer": "32",
-                  "toPos": "11",
-                  "action": "PASS"
-                },
-                {
-                  "fromPlayer": "32",
-                  "fromPos": "11",
-                  "toPlayer": "44",
-                  "toPos": "14",
-                  "action": "PASS"
-                },
-                {
-                  "fromPlayer": "44",
-                  "fromPos": "14",
-                  "toPlayer": "48",
-                  "toPos": "17",
-                  "action": "PASS"
-                },
-                {
-                  "fromPlayer": "48",
-                  "fromPos": "17",
-                  "toPlayer": "42",
-                  "toPos": "25",
-                  "action": "CROSS"
-                }
-            ]
+            {
+              "fromPlayer": "403",
+              "toPos": "26",
+              "fromPos": "26",
+              "action": "PASS",
+              "toPlayer": "397"
+            },
+            {
+              "fromPlayer": "397",
+              "toPos": "26",
+              "fromPos": "26",
+              "action": "PASS",
+              "toPlayer": "403"
+            },
+            {
+              "fromPlayer": "403",
+              "toPos": "23",
+              "fromPos": "26",
+              "action": "PASS",
+              "toPlayer": "411"
+            }
+          ],
+          "team": "Tromsø",
+          "breakthrough": "None"
+        },
+        {
+          "finish": {
+            "player": "48",
+            "action": "SHOTMISS",
+            "pos": "23"
+          },
+          "attackStart": {
+            "typeAction": "Gjenvinning",
+            "player": "50",
+            "pos": "19"
+          },
+          "time": "15",
+          "breakthroughPlayer": "Muhamed Keita",
+          "passes": [
+            {
+              "fromPlayer": "50",
+              "toPos": "19",
+              "fromPos": "19",
+              "action": "PASS",
+              "toPlayer": "48"
+            },
+            {
+              "fromPlayer": "48",
+              "toPos": "19",
+              "fromPos": "19",
+              "action": "PASS",
+              "toPlayer": "35"
+            }
+          ],
+          "team": "Strømsgodset",
+          "breakthrough": "1vs1 Mellomrom"
+        },
+        {
+          "attackStart": {
+            "typeAction": "Gjenvinning",
+            "player": "403",
+            "pos": "19"
+          },
+          "finish": {
+            "player": "403",
+            "action": "SHOTMISS",
+            "pos": "19"
+          },
+          "time": "18",
+          "breakthroughPlayer": "None",
+          "team": "Tromsø",
+          "passes": [],
+          "breakthrough": "None"
+        },
+        {
+          "finish": {
+            "player": "55",
+            "action": "SHOTMISS",
+            "pos": "23"
+          },
+          "attackStart": {
+            "typeAction": "Gjenvinning",
+            "player": "42",
+            "pos": "16"
+          },
+          "time": "23",
+          "breakthroughPlayer": "Muhamed Keita",
+          "passes": [
+            {
+              "fromPlayer": "42",
+              "toPos": "16",
+              "fromPos": "16",
+              "action": "PASS",
+              "toPlayer": "32"
+            },
+            {
+              "fromPlayer": "32",
+              "toPos": "11",
+              "fromPos": "12",
+              "action": "PASS",
+              "toPlayer": "33"
+            },
+            {
+              "fromPlayer": "33",
+              "toPos": "10",
+              "fromPos": "11",
+              "action": "PASS",
+              "toPlayer": "36"
+            },
+            {
+              "fromPlayer": "36",
+              "toPos": "10",
+              "fromPos": "10",
+              "action": "PASS",
+              "toPlayer": "44"
+            },
+            {
+              "fromPlayer": "44",
+              "toPos": "11",
+              "fromPos": "10",
+              "action": "PASS",
+              "toPlayer": "41"
+            },
+            {
+              "fromPlayer": "41",
+              "toPos": "16",
+              "fromPos": "11",
+              "action": "PASS",
+              "toPlayer": "42"
+            },
+            {
+              "fromPlayer": "42",
+              "toPos": "12",
+              "fromPos": "16",
+              "action": "PASS",
+              "toPlayer": "33"
+            },
+            {
+              "fromPlayer": "33",
+              "toPos": "7",
+              "fromPos": "12",
+              "action": "PASS",
+              "toPlayer": "41"
+            },
+            {
+              "fromPlayer": "41",
+              "toPos": "10",
+              "fromPos": "7",
+              "action": "PASS",
+              "toPlayer": "32"
+            },
+            {
+              "fromPlayer": "32",
+              "toPos": "13",
+              "fromPos": "10",
+              "action": "PASS",
+              "toPlayer": "36"
+            },
+            {
+              "fromPlayer": "36",
+              "toPos": "14",
+              "fromPos": "13",
+              "action": "PASS",
+              "toPlayer": "44"
+            },
+            {
+              "fromPlayer": "44",
+              "toPos": "10",
+              "fromPos": "14",
+              "action": "PASS",
+              "toPlayer": "32"
+            },
+            {
+              "fromPlayer": "32",
+              "toPos": "11",
+              "fromPos": "10",
+              "action": "PASS",
+              "toPlayer": "33"
+            },
+            {
+              "fromPlayer": "33",
+              "toPos": "10",
+              "fromPos": "11",
+              "action": "PASS",
+              "toPlayer": "32"
+            },
+            {
+              "fromPlayer": "32",
+              "toPos": "13",
+              "fromPos": "10",
+              "action": "PASS",
+              "toPlayer": "36"
+            },
+            {
+              "fromPlayer": "36",
+              "toPos": "17",
+              "fromPos": "13",
+              "action": "PASS",
+              "toPlayer": "48"
+            },
+            {
+              "fromPlayer": "48",
+              "toPos": "23",
+              "fromPos": "21",
+              "action": "CROSS",
+              "toPlayer": "55"
+            }
+          ],
+          "team": "Strømsgodset",
+          "breakthrough": "Gjennombrudd Kant"
+        },
+        {
+          "attackStart": {
+            "typeAction": "Gjenvinning",
+            "player": "30",
+            "pos": "8"
+          },
+          "finish": {
+            "player": "50",
+            "action": "SHOTTARGET",
+            "pos": "23"
+          },
+          "time": "43",
+          "breakthroughPlayer": "Adama Diomand",
+          "team": "Strømsgodset",
+          "passes": [
+            {
+              "fromPlayer": "30",
+              "toPos": "7",
+              "fromPos": "8",
+              "toPlayer": "33",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "33",
+              "toPos": "11",
+              "fromPos": "7",
+              "toPlayer": "41",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "41",
+              "toPos": "20",
+              "fromPos": "11",
+              "toPlayer": "42",
+              "action": "LONGBALL"
+            },
+            {
+              "fromPlayer": "42",
+              "toPos": "16",
+              "fromPos": "20",
+              "toPlayer": "30",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "30",
+              "toPos": "19",
+              "fromPos": "19",
+              "toPlayer": "50",
+              "action": "PASS"
+            }
+          ],
+          "breakthrough": "1vs1 Mellomrom"
+        },
+        {
+          "typeOfAttack": "Gjenvinning kort angrep",
+          "finish": {
+            "player": "411",
+            "pos": "22"
+          },
+          "attackStart": {
+            "typeAction": "Gjenvinning",
+            "player": "403",
+            "pos": "22"
+          },
+          "time": "50",
+          "breakthroughPlayer": "None",
+          "passes": [
+            {
+              "fromPlayer": "403",
+              "toPos": "22",
+              "fromPos": "22",
+              "action": "PASS",
+              "toPlayer": "411"
+            }
+          ],
+          "team": "Tromsø",
+          "breakthrough": "None"
+        },
+        {
+          "attackStart": {
+            "typeAction": "Gjenvinning",
+            "player": "30",
+            "pos": "17"
+          },
+          "finish": {
+            "player": "50",
+            "pos": "24"
+          },
+          "typeOfAttack": "Gjenvinning kort angrep",
+          "time": "55",
+          "breakthroughPlayer": "Stefan Johansen",
+          "team": "Strømsgodset",
+          "passes": [
+            {
+              "fromPlayer": "30",
+              "toPos": "13",
+              "fromPos": "13",
+              "toPlayer": "32",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "32",
+              "toPos": "13",
+              "fromPos": "14",
+              "toPlayer": "30",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "30",
+              "toPos": "14",
+              "fromPos": "13",
+              "toPlayer": "32",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "32",
+              "toPos": "15",
+              "fromPos": "14",
+              "toPlayer": "41",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "41",
+              "toPos": "24",
+              "fromPos": "15",
+              "toPlayer": "50",
+              "action": "LONGBALL"
+            }
+          ],
+          "breakthrough": "Pasning Bakrom"
+        },
+        {
+          "typeOfAttack": "Gjenvinning kort angrep",
+          "finish": {
+            "player": "41",
+            "action": "SHOTMISS",
+            "pos": "19"
+          },
+          "attackStart": {
+            "typeAction": "Gjenvinning",
+            "player": "41",
+            "pos": "19"
+          },
+          "time": "63",
+          "breakthroughPlayer": "None",
+          "passes": [],
+          "team": "Strømsgodset",
+          "breakthrough": "None"
+        },
+        {
+          "attackStart": {
+            "typeAction": "Gjenvinning",
+            "player": "41",
+            "pos": "11"
+          },
+          "finish": {
+            "player": "49",
+            "action": "SHOTMISS",
+            "pos": "23"
+          },
+          "typeOfAttack": "Etablert spill",
+          "time": "71",
+          "breakthroughPlayer": "Stefan Johansen",
+          "team": "Strømsgodset",
+          "passes": [
+            {
+              "fromPlayer": "41",
+              "toPos": "14",
+              "fromPos": "19",
+              "toPlayer": "50",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "50",
+              "toPos": "18",
+              "fromPos": "14",
+              "toPlayer": "44",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "44",
+              "toPos": "21",
+              "fromPos": "18",
+              "toPlayer": "55",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "55",
+              "toPos": "23",
+              "fromPos": "21",
+              "toPlayer": "49",
+              "action": "CROSS"
+            }
+          ],
+          "breakthrough": "Pasning Mellomrom"
+        },
+        {
+          "typeOfAttack": "Gjenvinning kort angrep",
+          "finish": {
+            "player": "55",
+            "action": "SHOTMISS",
+            "pos": "23"
+          },
+          "attackStart": {
+            "typeAction": "Gjenvinning",
+            "player": "36",
+            "pos": "18"
+          },
+          "time": "78",
+          "breakthroughPlayer": "None",
+          "passes": [
+            {
+              "fromPlayer": "36",
+              "toPos": "23",
+              "fromPos": "19",
+              "action": "PASS",
+              "toPlayer": "55"
+            }
+          ],
+          "team": "Strømsgodset",
+          "breakthrough": "None"
+        },
+        {
+          "attackStart": {
+            "typeAction": "Gjenvinning",
+            "player": "406",
+            "pos": "15"
+          },
+          "finish": {
+            "player": "406",
+            "action": "SHOTTARGET",
+            "pos": "18"
+          },
+          "typeOfAttack": "Etablert spill",
+          "time": "80",
+          "breakthroughPlayer": "None",
+          "team": "Tromsø",
+          "passes": [
+            {
+              "fromPlayer": "406",
+              "toPos": "14",
+              "fromPos": "15",
+              "toPlayer": "394",
+              "action": "LONGBALL"
+            },
+            {
+              "fromPlayer": "394",
+              "toPos": "14",
+              "fromPos": "13",
+              "toPlayer": "406",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "406",
+              "toPos": "16",
+              "fromPos": "14",
+              "toPlayer": "397",
+              "action": "LONGBALL"
+            },
+            {
+              "fromPlayer": "397",
+              "toPos": "16",
+              "fromPos": "16",
+              "toPlayer": "395",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "395",
+              "toPos": "19",
+              "fromPos": "16",
+              "toPlayer": "411",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "411",
+              "toPos": "19",
+              "fromPos": "19",
+              "toPlayer": "406",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "406",
+              "toPos": "17",
+              "fromPos": "19",
+              "toPlayer": "394",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "394",
+              "toPos": "18",
+              "fromPos": "18",
+              "toPlayer": "406",
+              "action": "PASS"
+            }
+          ],
+          "breakthrough": "None"
+        },
+        {
+          "typeOfAttack": "Kontring",
+          "finish": {
+            "player": "55",
+            "action": "SHOTTARGET",
+            "pos": "22"
+          },
+          "attackStart": {
+            "typeAction": "5-meter",
+            "player": "41",
+            "pos": "7"
+          },
+          "time": "81",
+          "breakthroughPlayer": "None",
+          "passes": [
+            {
+              "fromPlayer": "41",
+              "toPos": "22",
+              "fromPos": "11",
+              "action": "LONGBALL",
+              "toPlayer": "55"
+            }
+          ],
+          "team": "Strømsgodset",
+          "breakthrough": "None"
+        },
+        {
+          "attackStart": {
+            "typeAction": "Gjenvinning",
+            "player": "394",
+            "pos": "10"
+          },
+          "finish": {
+            "player": "413",
+            "action": "SHOTMISS",
+            "pos": "18"
+          },
+          "typeOfAttack": "Gjenvinning kort angrep",
+          "time": "84",
+          "breakthroughPlayer": "Ruben Kristiansen",
+          "team": "Tromsø",
+          "passes": [
+            {
+              "fromPlayer": "394",
+              "toPos": "18",
+              "fromPos": "14",
+              "toPlayer": "412",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "412",
+              "toPos": "18",
+              "fromPos": "18",
+              "toPlayer": "413",
+              "action": "PASS"
+            },
+            {
+              "fromPlayer": "394",
+              "toPos": "18",
+              "fromPos": "14",
+              "toPlayer": "412",
+              "action": "PASS"
+            },
+          ],
+          "breakthrough": "1vs1 Mellomrom"
+        },
+        {
+          "typeOfAttack": "Kontring",
+          "finish": {
+            "player": "406",
+            "action": "SHOTTARGET",
+            "pos": "19"
+          },
+          "attackStart": {
+            "typeAction": "Gjenvinning",
+            "player": "395",
+            "pos": "6"
+          },
+          "time": "86",
+          "breakthroughPlayer": "Hendrik Helmke",
+          "passes": [
+            {
+              "fromPlayer": "395",
+              "toPos": "11",
+              "fromPos": "6",
+              "action": "PASS",
+              "toPlayer": "410"
+            },
+            {
+              "fromPlayer": "410",
+              "toPos": "12",
+              "fromPos": "11",
+              "action": "PASS",
+              "toPlayer": "407"
+            },
+            {
+              "fromPlayer": "407",
+              "toPos": "26",
+              "fromPos": "16",
+              "action": "LONGBALL",
+              "toPlayer": "411"
+            },
+            {
+              "fromPlayer": "411",
+              "toPos": "19",
+              "fromPos": "26",
+              "action": "PASS",
+              "toPlayer": "406"
+            }
+          ],
+          "team": "Tromsø",
+          "breakthrough": "Pasning Bakrom"
         }
-    ]
+      ]
 });
 
 
-insertObject({
+insertMatch({
       "attacks": [
         {
           "attackStart": {
@@ -3332,7 +3910,7 @@ insertObject({
           "breakthrough": "None"
         },
         {
-          "typeOfAttack": "Gjennvinning kort angrep",
+          "typeOfAttack": "Gjenvinning kort angrep",
           "finish": {
             "player": "30",
             "action": "SHOTMISS",
@@ -3369,7 +3947,7 @@ insertObject({
             "action": "SHOTMISS",
             "pos": "23"
           },
-          "typeOfAttack": "Gjennvinning kort angrep",
+          "typeOfAttack": "Gjenvinning kort angrep",
           "time": "52",
           "breakthroughPlayer": "None",
           "touch": 0,
@@ -3562,7 +4140,7 @@ insertObject({
 });
 
 
-insertObject({
+insertMatch({
       "date": "2013-09-27",
       "hometeam": "Sogndal",
       "awayteam": "Strømsgodset",
@@ -3866,7 +4444,7 @@ insertObject({
           "breakthrough": "1vs1 Bakrom"
         },
         {
-          "typeOfAttack": "Gjennvinning kort angrep",
+          "typeOfAttack": "Gjenvinning kort angrep",
           "finish": {
             "player": "55",
             "action": "SHOTGOAL",
@@ -4043,7 +4621,7 @@ insertObject({
           "breakthrough": "None"
         },
         {
-          "typeOfAttack": "Gjennvinning kort angrep",
+          "typeOfAttack": "Gjenvinning kort angrep",
           "finish": {
             "player": "41",
             "action": "SHOTTARGET",
@@ -4364,36 +4942,36 @@ insertObject({
       ]
 });
 
-insertObject({
+insertMatch({
     "date": "2013-06-29",
     "hometeam": "Strømsgodset",
     "awayteam": "Tromsø",
     "score": "3-1",
     "attacks": [
         {
-              "finish": {
-                "player": "50",
-                "action": "",
-                "pos": "50"
-              },
-              "attackStart": {
-                "typeAction": "Corner",
-                "player": "41",
-                "pos": "33"
-              },
-              "time": "16",
-              "breakthroughPlayer": "None",
-              "passes": [
-                {
-                  "fromPlayer": "41",
-                  "toPos": "24",
-                  "fromPos": "33",
-                  "action": "CROSS",
-                  "toPlayer": "50"
-                }
-              ],
-              "team": "Strømsgodset",
-              "breakthrough": "None"
+          "finish": {
+            "player": "50",
+            "action": "SHOTTARGET",
+            "pos": "50"
+          },
+          "attackStart": {
+            "typeAction": "Corner",
+            "player": "41",
+            "pos": "33"
+          },
+          "time": "16",
+          "breakthroughPlayer": "None",
+          "passes": [
+            {
+              "fromPlayer": "41",
+              "toPos": "24",
+              "fromPos": "33",
+              "action": "CROSS",
+              "toPlayer": "50"
+            }
+          ],
+          "team": "Strømsgodset",
+          "breakthrough": "None"
         },
         {
           "attackStart": {
@@ -4403,7 +4981,7 @@ insertObject({
           },
           "finish": {
             "player": "402",
-            "action": "",
+            "action": "SHOTMISS",
             "pos": "19"
           },
           "time": "20",
@@ -4415,7 +4993,7 @@ insertObject({
         {
           "finish": {
             "player": "481",
-            "action": "",
+            "action": "SHOTMISS",
             "pos": "22"
           },
           "attackStart": {
@@ -4434,7 +5012,7 @@ insertObject({
               "toPlayer": "403"
             },
             {
-              "fromPlayer": "401",
+              "fromPlayer": "403",
               "toPos": "22",
               "fromPos": "22",
               "action": "PASS",
@@ -4452,7 +5030,7 @@ insertObject({
           },
           "finish": {
             "player": "44",
-            "action": "",
+            "action": "SHOTTARGET",
             "pos": "23"
           },
           "time": "25",
@@ -4486,7 +5064,7 @@ insertObject({
         {
           "finish": {
             "player": "406",
-            "action": "",
+            "action": "SHOTTARGET",
             "pos": "23"
           },
           "attackStart": {
@@ -4518,7 +5096,7 @@ insertObject({
       ]
 });
 
-insertObject(
+insertMatch({
     "date": "2013-09-22",
     "hometeam": "Sarpsborg",
     "awayteam": "Tromsø",
@@ -4532,7 +5110,7 @@ insertObject(
           },
           "finish": {
             "player": "406",
-            "action": "",
+            "action": "SHOTTARGET",
             "pos": "23"
           },
           "time": "4",
@@ -4552,7 +5130,7 @@ insertObject(
         {
           "finish": {
             "player": "411",
-            "action": "",
+            "action": "SHOTMISS",
             "pos": "23"
           },
           "attackStart": {
@@ -4596,7 +5174,7 @@ insertObject(
           },
           "finish": {
             "player": "394",
-            "action": "",
+            "action": "SHOTTARGET",
             "pos": "22"
           },
           "time": "34",
@@ -4618,7 +5196,7 @@ insertObject(
               "action": "LONGBALL"
             }
           ],
-          "breakthrough": "Gjennombrudd kant"
+          "breakthrough": "Gjennombrudd Kant"
         },
         {
           "attackStart": {
@@ -4628,7 +5206,7 @@ insertObject(
           },
           "finish": {
             "player": "410",
-            "action": "",
+            "action": "SHOTTARGET",
             "pos": "19"
           },
           "time": "45",
@@ -4648,7 +5226,7 @@ insertObject(
         {
           "finish": {
             "player": "411",
-            "action": "",
+            "action": "SHOTTARGET",
             "pos": "23"
           },
           "attackStart": {
@@ -4685,15 +5263,14 @@ insertObject(
           "breakthrough": "Pasning Bakrom"
         }
       ],
-    }
-);
+});
 
 
-insertObject(
+insertMatch({
       "date": "2013-05-10",
       "hometeam": "Strømsgodset",
       "awayteam": "Vålerenga",
-      "score": "2-1"
+      "score": "2-1",
       "attacks": [
         {
           "attackStart": {
@@ -4706,7 +5283,7 @@ insertObject(
             "action": "SHOTTARGET",
             "pos": "19"
           },
-          "typeOfAttack": "Gjennvinning kort angrep",
+          "typeOfAttack": "Gjenvinning kort angrep",
           "time": "2",
           "breakthroughPlayer": "None",
           "team": "Strømsgodset",
@@ -4714,7 +5291,7 @@ insertObject(
           "breakthrough": "None"
         },
         {
-          "typeOfAttack": "Gjennvinning kort angrep",
+          "typeOfAttack": "Gjenvinning kort angrep",
           "finish": {
             "player": "50",
             "action": "SHOTTARGET",
@@ -4886,7 +5463,7 @@ insertObject(
             "action": "SHOTTARGET",
             "pos": "23"
           },
-          "typeOfAttack": "Gjennvinning kort angrep",
+          "typeOfAttack": "Gjenvinning kort angrep",
           "time": "49",
           "breakthroughPlayer": "None",
           "team": "Strømsgodset",
@@ -5038,7 +5615,7 @@ insertObject(
           "breakthrough": "None"
         },
         {
-          "typeOfAttack": "Gjennvinning kort angrep",
+          "typeOfAttack": "Gjenvinning kort angrep",
           "finish": {
             "player": "35",
             "action": "SHOTMISS",
@@ -5084,14 +5661,8 @@ insertObject(
           "team": "Strømsgodset",
           "breakthrough": "None"
         }
-      ]
-    }
-);
-
-
-insertObject(
-
-);
+    ]
+});
 
 
 function insertMatch(object){
