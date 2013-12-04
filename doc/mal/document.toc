@@ -11,12 +11,12 @@
 \contentsline {subsubsection}{\numberline {2.1.1.2}Post match}{6}
 \contentsline {section}{\numberline {2.2}Manually capturing }{6}
 \contentsline {subsection}{\numberline {2.2.1}Opta }{6}
-\contentsline {subsubsection}{\numberline {2.2.1.1}PROZONE/AMISCO}{7}
+\contentsline {subsubsection}{\numberline {2.2.1.1}Prozone}{7}
 \contentsline {subsection}{\numberline {2.2.2}Automatic capturing}{9}
-\contentsline {subsection}{\numberline {2.2.3}Wrap up}{9}
+\contentsline {subsection}{\numberline {2.2.3}Wrap up}{10}
 \contentsline {subsubsection}{\numberline {2.2.3.1}Sensor based}{10}
 \contentsline {subsection}{\numberline {2.2.4}Presenting data}{10}
-\contentsline {subsubsection}{\numberline {2.2.4.1}Prozone}{10}
+\contentsline {subsubsection}{\numberline {2.2.4.1}Prozone}{11}
 \contentsline {subsubsection}{\numberline {2.2.4.2}ZXY}{11}
 \contentsline {chapter}{\numberline {3}Requirement Specification}{13}
 \contentsline {section}{\numberline {3.1}Overview}{13}

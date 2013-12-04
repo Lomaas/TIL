@@ -24,14 +24,14 @@ Using data gathered from sports data company like Opta you can get statistics li
 
 \subsubsection{Post match}
 
-During the post match the coach team goes through the game to evaluate the team performance. This is valuable as you get very concrete information about good and bad. You can highlight situations in the match to help players understand tactical aspects by visualizing them.
+During the post match the coach team goes through the game to evaluate the team performance. This is valuable as you get very concrete information about good and bad. You can highlight situations in the match to help players understand tactical aspects.
 
 \section{Manually capturing }
 
 \subsection{Opta }
 
 
-One of the big players Opta uses manual input to create their data repository. They have editorial teams across the world that captures data manually for the most popular soccer leagues. For example to capture statistics for one match, 3 humans have to be involved to be able to annotate all data. The data is captured via an application specifically created for the purpose of capturing data as quick and easily as possible. The editorial teams of Opta need to be able to identify a player, registrate a pass his made or a tackle, in a very short time to be able to keep up with the pace of the game. They study things like which shoe color a player has to be able to quickly identify the player.
+One of the big players Opta uses manual input to create their data repository. They have editorial teams across the world that captures data manually for the most popular soccer leagues and other sports. For example to capture statistics for one match, 3 humans have to be involved to be able to annotate all data. The data is captured via an application specifically created for the purpose of capturing data as quick and easily as possible. The editorial teams of Opta need to be able to identify a player, registrate a pass his made or a tackle, in a very short time to be able to keep up with the pace of the game. They study things like which shoe color a player has to be able to quickly identify a player.
 
 Opta capture all types of actions like passes, type of pass, attacks, and interceptions. For each action they log they add a series of description tags like pitch coordinate, player, team and time-stamp. For every single pass they registrate if it was a through ball, normal ball or even a headed flick on from a long ball. For shots they registrate the foot it was kicked with, if it was a volley and so on . All this is done while the match is playing. About 1600 individual events are recorded in a standard match. 
 
@@ -46,7 +46,7 @@ last_modified="2007-08-12T13:00:25">
 </Event>
 \end{lstlisting}
 
-Here is an example of an event registrated in the Opta database. The event has a series of qualifiers describing it. Except from the obvious as timestamp and last modified dates we see that the player id, team id, time of event, x and y coordinates and the outcome of the event are registrated. Also we see that some extra details are included. In this example it maps to a pass from [44.6, 61.1] to [91.6, 49.9].
+Above is an example of an event registrated in the Opta database. The event has a series of qualifiers describing it. Except from the obvious as timestamp and last modified dates we see that the player id, team id, time of event, x and y coordinates and the outcome of the event are registrated. Also we see that some extra details are included. In this example it maps to a pass from [44.6, 61.1] to [91.6, 49.9]. 
 
 \begin{lstlisting}
 <Q id="1774596260" qualifier_id="coordX" value="91.6"/>
@@ -54,21 +54,21 @@ Here is an example of an event registrated in the Opta database. The event has a
 <Q id="1084400575" qualifier_id="56" value="Back"/>
 \end{lstlisting}
 
-
-\subsubsection{PROZONE/AMISCO}
-PROZONE3  is another system that tries to track players. Their data capture system incorporates 8-12 cameras, which is strategically positioned throughout the stadium so it covers 100 percent of the ground with some redundancy in case of a faulty component. They also incoperate the TV-camera feed, which obivously always follows the ball. All cameras are hooked into one server and uploaded at the end of the game before sent to undertake the tracking process. 
+\subsubsection{Prozone}
+Prozone is a video-based system that tries to track players in team sports. Their data capture system incorporates 8-12 cameras, which is strategically positioned throughout the stadium to cover 100 percent of the ground, but with some redundancy in case of a faulty component. They also incorporate the TV-camera feed, which always follows the ball. All cameras are hooked into one server and uploaded at the end of the game before sent to undertake the tracking process. As different football grounds houses different pitch sizes the pitch dimensions has to be taken into account by calibrating the cameras. This is done when the system is installed by an operator. 
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=150mm]{images/general/prozonecam.png}
-\caption{The PROZONE camera system illustrated}
+\caption{The Prozone camera system illustrated}
 \label{overflow}
 \end{figure}
 
-The coding and tracking process of the players movement and actions is a manual process at present time. The process of knowing where every players is and doing is still to be seen done by a software completely alone without human guiding. There is a large department dedicated for post processing the game. With the help of the many cameras with different camera angles the team track players and on the ball events. Events and players gets an positional tag by using the pitch dimensions and coordinates. As different football grounds houses different pitch sizes the pitch dimensions has to be taken into account by calibrating the cameras (ASK SIMON). How do you know how far a player has run? This is calculated from the events and notating where players has run combined with the known pitch size and coordinates. The whole input process is done in a own software which helps you minimize the amount of manual work. The software follows rules created by basic machine learning algorithms to validate and verify the input. A simple example would be if the ball goes out of play the system will now that the next event will be a throw in, corner kick or goal kick \cite{Prozone:indepth}.
+The coding and tracking process of the players movement and actions is a sort of manual process at present time. First each camera feed goes through each own tracking process determining image co-ordinates and continuous trajectories for each player.The output from all the cameras is then combined into one dataset. Going into the algorithm for this is out of the scope of this project. In the final stage the manual work comes into the loop. There has to be a quality control group of operators dedicated for post processing the game. First the operators has to map the players identity and with the their corresponding start location. The operators will then follow the video feed checking that the identification of all players remain constant during the match. The tracking process may run into problems when two players collide or have any other physical contact as it becomes unclear who is who. To map video image co-ordinates to pitch co-ordinates Prozone uses computer vision homography calibration process.
 
-They claim to be able to track every movements of every player on the pitch every 10th of a second without using 3 any physical equipment on the players. When it comes to accuracy Di Salvo et al. [7] conducted an empirical evaluation of deployed ProZone systems at Old Trafford in Manchester and Reebook Stadium in Bolton, and concluded that the video camera deployment gives an accurate and valid motion analysis. The data is after a match available through the PROZONE3 interface. 
+The whole input process is done in a own software which helps you minimize the amount of manual work for the operators. The software follows rules created by basic machine learning algorithms to validate and verify the input. A simple example would be if the ball goes out of play the system will now that the next event will be a throw in, corner kick or goal kick \cite{Prozone:indepth}.
 
+Prozone claims to be able to track every movements of every player on the pitch every 10th of a second without using any physical equipment on the players. Di Salvo et al. \cite{Prozone:validation} conducted an empirical evaluation of deployed ProZone systems at Old Trafford in Manchester and Reebook Stadium in Bolton, and concluded that the video camera deployment gives an accurate and valid motion analysis. The data is after a match available through the PROZONE3 interface for analysis. 
 
 \subsection{Automatic capturing}
 SAP places sensors in shin guards, clothing, and in footballs. The data can be applied to individual and team movement profiles to track distances, speed averages, ball possession, player tendencies and more . 
@@ -115,7 +115,7 @@ Player events
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=100mm]{images/general/prozonestats.png}
-\caption{The PROZONE software - individual player analysis gives you statistics of performance over time}
+\caption{The Prozone software - individual player analysis gives you statistics of performance over time}
 \label{overflow}
 \end{figure}
 

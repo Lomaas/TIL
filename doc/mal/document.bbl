@@ -6,9 +6,17 @@ D.~E. Comer, David Gries, Michael~C. Mulder, Allen Tucker, A.~Joe Turner, and
 \newblock Computing as a discipline.
 \newblock {\em Commun. ACM}, 32(1):9--23, January 1989.
 
-\bibitem{PTW}
-Pål~Haloversen Håvard D.~Johansen, Svein Arne~Pettersen and Dag Johansen.
-\newblock Combining video and player telemetry for evidence-based decisions in
-  soccer.
+\bibitem{dailymailOnStatistics}
+MARTIN HARDY.
+
+\bibitem{Prozone:validation}
+Collins; Barry McNeill; Marco~Cardinale Valter, Di Salvo;~Adam.
+\newblock Validation of prozone ®: A new video-based performance analysis
+  system.
+
+\bibitem{Prozone:indepth}
+Mark Venables.
+\newblock Sportstech: Football, 2013.
+\newblock [Online; accessed 12-November-2013].
 
 \end{thebibliography}
