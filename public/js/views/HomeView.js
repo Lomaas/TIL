@@ -30,8 +30,7 @@ window.HomeView = Backbone.View.extend({
 
             matches.push({"name" : match.get("hometeam") + " - " + match.get("awayteam"), 
                 "matchId" : match.id, 
-                "keyPlayer" : "Bendik", 
-                "numAttacks" : match.get("attacks").length, 
+                "numAttacks" : match.get("attacks").length,
                 "score" : match.get("score"),
                 "date" : match.get("date")
             });

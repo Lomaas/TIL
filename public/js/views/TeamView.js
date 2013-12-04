@@ -134,7 +134,7 @@ window.TeamView = Backbone.View.extend({
                 type: 'bar'
             },
             title: {
-                text: 'Involvements in attacks, passes into final third and total breakthroughs'
+                text: 'Involvements in attacks, passes into final third and total breakthroughs for each player'
             },
             xAxis: {
                 categories: Object.keys(keyPlayers)
@@ -173,14 +173,14 @@ window.TeamView = Backbone.View.extend({
 
         this.$el.html(temp);
 
-
-
         var dataPieChart = [];
         var dataBarChart = [];
         var dataBarTerms = [];
+        var total = 0;
 
         _.each(this.model.get("typeOfAttack"), function(attack){
             dataPieChart.push([attack.term, attack.count]);
+            total = total + attack.count;
         });
 
         $('#typesOfAttack').highcharts({
@@ -190,7 +190,7 @@ window.TeamView = Backbone.View.extend({
                 plotShadow: false
             },
             title: {
-                text: 'Types of attack'
+                text: 'Types of attack (total: ' + total.toString() + ')'
             },
             plotOptions: {
                 pie: {

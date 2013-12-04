@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.3)  4 DEC 2013 18:47
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.3)  4 DEC 2013 19:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -799,49 +799,46 @@ Overfull \hbox (36.79134pt too wide) in paragraph at lines 62--63
  []
 
 [8 <./images/general/prozonecam.png>]
+
+LaTeX Warning: Citation `ZXY:mainsite' on page 9 undefined on input line 75.
+
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no ™ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
-
-Underfull \vbox (badness 6808) has occurred while \output is active []
-
- [9]
-<images/general/zxyoverview.png, id=142, 492.84125pt x 286.06876pt>
+<images/general/zxyoverview.png, id=139, 492.84125pt x 286.06876pt>
 File: images/general/zxyoverview.png Graphic file (type png)
 
 <use images/general/zxyoverview.png>
-Package pdftex.def Info: images/general/zxyoverview.png used on input line 87.
+Package pdftex.def Info: images/general/zxyoverview.png used on input line 79.
 (pdftex.def)             Requested size: 426.79134pt x 247.74289pt.
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 87--88
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 79--80
  [][] 
  []
 
-[10 <./images/general/zxyoverview.png>]
+[9] [10 <./images/general/zxyoverview.png>]
 <images/general/prozonestats.png, id=146, 656.4525pt x 450.68375pt>
 File: images/general/prozonestats.png Graphic file (type png)
 
 <use images/general/prozonestats.png>
-Package pdftex.def Info: images/general/prozonestats.png used on input line 117
+Package pdftex.def Info: images/general/prozonestats.png used on input line 112
 .
 (pdftex.def)             Requested size: 284.52756pt x 195.34439pt.
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
- [11 <./images/general/prozonestats.png>]
-<images/general/zxysoftware.png, id=151, 633.36626pt x 472.76625pt>
+
+<images/general/zxysoftware.png, id=147, 633.36626pt x 472.76625pt>
 File: images/general/zxysoftware.png Graphic file (type png)
 
 <use images/general/zxysoftware.png>
-Package pdftex.def Info: images/general/zxysoftware.png used on input line 132.
+Package pdftex.def Info: images/general/zxysoftware.png used on input line 127.
 
 (pdftex.def)             Requested size: 284.52756pt x 212.38216pt.
-) [12 <./images/general/zxysoftware.png>]
+) [11 <./images/general/prozonestats.png>]
+[12 <./images/general/zxysoftware.png>]
 Chapter 3.
 (./chapters/requirementspec.tex
 Missing character: There is no Ã in font cmr12!
@@ -953,14 +950,17 @@ Missing character: There is no Â in font cmr12!
 Missing character: There is no ® in font cmr12!
 ) [29] (./document.aux)
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8537 strings out of 493315
- 116525 string characters out of 6137904
+ 8538 strings out of 493315
+ 116539 string characters out of 6137904
  247537 words of memory out of 5000000
- 11739 multiletter control sequences out of 15000+600000
+ 11740 multiletter control sequences out of 15000+600000
  13637 words of font info for 55 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  40i,18n,45p,3243b,1385s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -970,7 +970,7 @@ Here is how much of TeX's memory you used:
 usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
 sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></us
 r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb>
-Output written on document.pdf (43 pages, 2199600 bytes).
+Output written on document.pdf (43 pages, 2199687 bytes).
 PDF statistics:
  244 PDF objects out of 1000 (max. 8388607)
  124 compressed objects within 2 object streams

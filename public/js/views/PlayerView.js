@@ -19,7 +19,7 @@ window.PlayerView = Backbone.View.extend({
             {
                 stats : this.model.toJSON(), 
                 name : this.model.get("currentPlayer").name,
-                team : this.model.get("currentPlayer").team
+                team : this.model.get("currentPlayer").team,
             }
         );
         this.$el.html(temp);

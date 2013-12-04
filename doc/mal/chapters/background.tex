@@ -71,26 +71,21 @@ The whole input process is done in a own software which helps you minimize the a
 Prozone claims to be able to track every movements of every player on the pitch every 10th of a second without using any physical equipment on the players. Di Salvo et al. \cite{Prozone:validation} conducted an empirical evaluation of deployed ProZone systems at Old Trafford in Manchester and Reebook Stadium in Bolton, and concluded that the video camera deployment gives an accurate and valid motion analysis. The data is after a match available through the PROZONE3 interface for analysis. 
 
 \subsection{Automatic capturing}
-SAP places sensors in shin guards, clothing, and in footballs. The data can be applied to individual and team movement profiles to track distances, speed averages, ball possession, player tendencies and more . 
 
-A similar system is the ZXY sport trackingsystem. The system is in used by premier league soccer teams in Norway, including Tromsø IL. Data captured is stored in Sybase databases with each match requiring about 500-700MB storage  The players have to wear a belt around their waist for the system to work. The ZXY system is able to track the player’s movement very detailed with an accuracy of 0.5m. It has a resolution of 20 samples per second. It relies on a radio-based signaling substrate to provide real-time high-precision positional tracking, including acceleration and heart rate. The home arena for Tromsø IL, Alfheim, is currently equipped with 10 receivers . A receiver tracks an specific area of the soccer field and combined they cover the whole pitch with some redundancy areas. The communication from the belt to the receivers goes on a 2.45-5.2 G Hz frequency radio signal. To compute the positional data the stationary radio receiver uses an advance vector based processing of the received radio signal. The data is aggregated and stored into a relational database.
-
-Including the positions of the players the ZXY also gives you the step frequency and speed. 
-
-\subsection{Wrap up}
-The main problem with tracking systems that uses physical sensors is that usually only one of the teams wears the sensors.  This limits the functionality of the system as a opponent analysis system. You only get data for one team. 
-
-On the other hand you have the manually systems that requires some human annotation. These system are able to track both teams. As they rely on human annotation of some degree they get more rich data as well. This includes pass type, key-passes, tackles, interceptions and so on. 
+A system that uses sensors is the ZXY sport trackingsystem \cite{ZXY:mainsite}. The system is in used by premier league soccer teams in Norway, including Tromsø IL and Rosenborg BK. Data captured is stored in Sybase databases with each match requiring about 500-700MB storage  The players have to wear a belt around their waist for the system to be able to track their movements. The ZXY system is able to track the players movement very detailed with an accuracy of 0.5m. It has a resolution of 20 samples per second. The technology behind it relies on a radio-based signaling substrate to provide real-time high-precision positional tracking, also including acceleration and heart rate. A installation of receivers is required for the system to work. The home arena for Tromsø IL, Alfheim, is currently equipped with 10 receivers . A receiver tracks an specific area of the soccer field and combined they cover the whole pitch with some redundancy areas. The communication from the belt to the receivers goes on a 2.45-5.2 G Hz frequency radio signal. To compute the positional data the stationary radio receiver uses an advance vector based processing of the received radio signal. The data is aggregated and stored into a relational database. Including the positions of the players the ZXY also gives you the step frequency and speed. 
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=150mm]{images/general/zxyoverview.png}
-\caption{The PROZONE software - individual player analysis gives you statistics of performance over time}
+\caption{Overview of the ZXY system with receivers placed at the stadium and players wearing sensors}
 \label{overflow}
 \end{figure}
 
 
-\subsubsection{Sensor based}
+\subsection{Wrap up}
+The main problem with tracking systems that uses physical sensors is that usually only one of the teams wears the sensors.  This limits the functionality of the system as a opponent analysis system. You only get data for one team. 
+
+On the other hand you have the manually systems that requires some human annotation. These system are able to track both teams. As they rely on human annotation of some degree they get more rich data as well, but requires strict rules to not mess up the semantics. 
 
 
 \subsection{Presenting data}
@@ -100,7 +95,7 @@ Most presenting of data is based around single matches. Figure 2.2 shows an exam
 \subsubsection{Prozone}
 
 
-PROZONE comes with several softwares to illustrate the data. The most relevant is the opposition analysis system. 
+Prozone comes with several softwares to illustrate the data. The most relevant for this project is the opposition analysis system. 
 
 2D animation
 Single player analysis
