@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.3)  4 DEC 2013 19:12
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.3)  5 DEC 2013 11:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -860,42 +860,51 @@ Package pdftex.def Info: images/general/illustration_after_search2.png used on
 input line 18.
 (pdftex.def)             Requested size: 142.26378pt x 100.53479pt.
 
-Underfull \vbox (badness 2538) has occurred while \output is active []
+Underfull \vbox (badness 5217) has occurred while \output is active []
 
  [13
 
 ]
-<images/general/first_zones.png, id=160, 525.965pt x 366.36874pt>
+<images/general/different_breakthroughs.png, id=160, 794.97pt x 248.93pt>
+File: images/general/different_breakthroughs.png Graphic file (type png)
+
+<use images/general/different_breakthroughs.png>
+Package pdftex.def Info: images/general/different_breakthroughs.png used on inp
+ut line 29.
+(pdftex.def)             Requested size: 142.26378pt x 44.54716pt.
+ [14 <./images/general/illustration_after_search.png> <./images/general/illustr
+ation_after_search2.png> <./images/general/different_breakthroughs.png>]
+<images/general/first_zones.png, id=164, 525.965pt x 366.36874pt>
 File: images/general/first_zones.png Graphic file (type png)
 
 <use images/general/first_zones.png>
-Package pdftex.def Info: images/general/first_zones.png used on input line 33.
+Package pdftex.def Info: images/general/first_zones.png used on input line 40.
 (pdftex.def)             Requested size: 284.52756pt x 198.19954pt.
 
-<images/general/second_zones.png, id=162, 525.4029pt x 365.6862pt>
+<images/general/second_zones.png, id=166, 525.4029pt x 365.6862pt>
 File: images/general/second_zones.png Graphic file (type png)
 
 <use images/general/second_zones.png>
-Package pdftex.def Info: images/general/second_zones.png used on input line 35.
+Package pdftex.def Info: images/general/second_zones.png used on input line 42.
 
 (pdftex.def)             Requested size: 284.52756pt x 198.04233pt.
 )
-Underfull \vbox (badness 1521) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14 <./images/general/illustration_after_search.png> <./images/general/illustr
-ation_after_search2.png>] [15 <./images/general/first_zones.png> <./images/gene
-ral/second_zones.png (PNG copy)>] [16
-
-]
+ [15 <./images/general/first_zones.png> <./images/general/second_zones.png (PNG
+ copy)>]
+[16]
 Chapter 4.
 (./chapters/designimplementation.tex
-<images/general/arhitecture.png, id=173, 351.9549pt x 296.307pt>
+<images/general/arhitecture.png, id=174, 351.9549pt x 296.307pt>
 File: images/general/arhitecture.png Graphic file (type png)
 
 <use images/general/arhitecture.png>
 Package pdftex.def Info: images/general/arhitecture.png used on input line 7.
 (pdftex.def)             Requested size: 284.52756pt x 239.5507pt.
- [17 <./images/general/arhitecture.png>]
+ [17
+
+ <./images/general/arhitecture.png>]
 (./domainmodel.js
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
@@ -904,14 +913,14 @@ Missing character: There is no ¸ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
  [18])
-<images/general/all_matches.png, id=182, 1183.42125pt x 1065.9825pt>
+<images/general/all_matches.png, id=183, 1183.42125pt x 1065.9825pt>
 File: images/general/all_matches.png Graphic file (type png)
 
 <use images/general/all_matches.png>
 Package pdftex.def Info: images/general/all_matches.png used on input line 37.
 (pdftex.def)             Requested size: 284.52756pt x 256.2802pt.
  [19] [20 <./images/general/all_matches.png>] <images/general/chart_passes.png,
- id=189, 1179.40625pt x 510.90875pt>
+ id=190, 1179.40625pt x 510.90875pt>
 File: images/general/chart_passes.png Graphic file (type png)
 
 <use images/general/chart_passes.png>
@@ -919,7 +928,7 @@ Package pdftex.def Info: images/general/chart_passes.png used on input line 86.
 
 (pdftex.def)             Requested size: 284.52756pt x 123.25206pt.
 
-<images/general/finishing_zones.png, id=190, 614.295pt x 416.55624pt>
+<images/general/finishing_zones.png, id=191, 614.295pt x 416.55624pt>
 File: images/general/finishing_zones.png Graphic file (type png)
 
 <use images/general/finishing_zones.png>
@@ -957,10 +966,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8538 strings out of 493315
- 116539 string characters out of 6137904
+ 8543 strings out of 493315
+ 116753 string characters out of 6137904
  247537 words of memory out of 5000000
- 11740 multiletter control sequences out of 15000+600000
+ 11744 multiletter control sequences out of 15000+600000
  13637 words of font info for 55 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  40i,18n,45p,3243b,1385s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -970,10 +979,10 @@ Here is how much of TeX's memory you used:
 usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
 sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></us
 r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb>
-Output written on document.pdf (43 pages, 2199687 bytes).
+Output written on document.pdf (43 pages, 2407682 bytes).
 PDF statistics:
- 244 PDF objects out of 1000 (max. 8388607)
+ 245 PDF objects out of 1000 (max. 8388607)
  124 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
