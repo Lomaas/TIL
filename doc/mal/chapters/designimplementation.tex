@@ -70,9 +70,26 @@ In principal, since the data input is generated in the web browser (with JavaScr
 
 \subsection{Front-end}
 
-Front end is consist of a single page JavaScript application using Backbone.js as under-supporting framework. Backbone uses a MVC model to structure the code. Data is represented as models in backbone. Models is responsible for AJAX communication with the back-end. 
+Front end is consist of a single page JavaScript application using Backbone.js as under-supporting framework. Backbone uses a MVC model to structure the code. With Backbone your views will update automatic when data changes. In the following sections the architecture of the client and how different concepts is used will be described. 
 
-For a analytic toolkit to be useful a good UI is critical. Here several helper library is used to present the data. Highcharts.js is JavaScript library for illustrating graphs. A query on team generates a lot of statistics and rather than listing them up they are presented using charts. This also gives us the advantage of displaying several numbers for each player and plot it in the same graph. In the image below we show the number of times a player has been involved in all attacks, number of passes into the final third of the pitch and the number of times a player has been the breakthrough-player.
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=150mm]{images/architecture/backbone_architecture.png}
+\caption{Architecture of the client side}
+\label{overflow}
+\end{figure}
+
+\subsubsection{Models}
+
+Data is represented as models in backbone. The model has mainly to responsibilities. First is whenever a update on a models data occurs the model notifies the views that has subscribed for update events for that particular model. The second is that models is responsible for AJAX communication  with the back-end. An example is when a user creates registrates a new attack for a match. He fills out a form and press submit. Then a new Attack Model is created. Calling save on the instance of the model will send an AJAX post request to the server with the models data in the HTTP body.
+
+Similar to a Attack Model we have Player Model that handles everything around players. When you click yourself into a players profile the model will fetch statistics from the back-end, notify the view that the data is ready, and the view will be rendered.
+
+There is also a Match Model (fetching and registrating matches), Team Model (viewing statistics), and a Pass Model (saving passes). They work it the same way as the models described above.
+
+\subsubsection{Views}
+
+For a analytic toolkit to be useful a good UI is critical. Here several helper library is used to present the data. Highcharts.js is JavaScript library for illustrating graphs \cite{}. A query on team generates a lot of statistics and rather than listing them up they are presented using charts. This also gives us the advantage of displaying several numbers for each player and plot it in the same graph. In the image below we show the number of times a player has been involved in all attacks, number of passes into the final third of the pitch and the number of times a player has been the breakthrough-player.
 
 \begin{figure}[ht!]
 \centering

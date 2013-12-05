@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.3)  5 DEC 2013 18:40
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.3)  5 DEC 2013 21:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -568,6 +568,12 @@ LaTeX Warning: Label `overflow' multiply defined.
 
 LaTeX Warning: Label `overflow' multiply defined.
 
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
 )
 \openout1 = `document.aux'.
 
@@ -969,54 +975,69 @@ Underfull \vbox (badness 3746) has occurred while \output is active []
 File: images/implementation/API.png Graphic file (type png)
 
 <use images/implementation/API.png>
-Package pdftex.def Info: images/implementation/API.png used on input line 68.
+Package pdftex.def Info: images/implementation/API.png used on input line 66.
 (pdftex.def)             Requested size: 284.52756pt x 181.89899pt.
  [22]
-<images/general/chart_passes.png, id=200, 1179.40625pt x 510.90875pt>
+<images/architecture/backbone_architecture.png, id=200, 469.755pt x 270.2898pt>
+File: images/architecture/backbone_architecture.png Graphic file (type png)
+<use images/architecture/backbone_architecture.png>
+Package pdftex.def Info: images/architecture/backbone_architecture.png used on 
+input line 77.
+(pdftex.def)             Requested size: 426.79134pt x 245.56816pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 77--78
+ [][] 
+ []
+
+[23 <./images/implementation/API.png>]
+<images/general/chart_passes.png, id=205, 1179.40625pt x 510.90875pt>
 File: images/general/chart_passes.png Graphic file (type png)
 
 <use images/general/chart_passes.png>
-Package pdftex.def Info: images/general/chart_passes.png used on input line 81.
+Package pdftex.def Info: images/general/chart_passes.png used on input line 95.
 
 (pdftex.def)             Requested size: 284.52756pt x 123.25206pt.
 
-<images/general/finishing_zones.png, id=201, 614.295pt x 416.55624pt>
+<images/general/finishing_zones.png, id=206, 614.295pt x 416.55624pt>
 File: images/general/finishing_zones.png Graphic file (type png)
 
 <use images/general/finishing_zones.png>
 Package pdftex.def Info: images/general/finishing_zones.png used on input line 
-90.
+104.
 (pdftex.def)             Requested size: 241.84842pt x 164.00081pt.
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
- [23 <./images/implementation/API.png>]) [24 <./images/general/chart_passes.png
-> <./images/general/finishing_zones.png>]
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [24 <./images/architecture/backbone_architecture.png>] [25 <./images/general/c
+hart_passes.png> <./images/general/finishing_zones.png>] [26
+
+]
 Chapter 5.
 (./chapters/demo.tex
-<images/general/all_matches.png, id=209, 1183.42125pt x 1065.9825pt>
+<images/general/all_matches.png, id=217, 1183.42125pt x 1065.9825pt>
 File: images/general/all_matches.png Graphic file (type png)
 
 <use images/general/all_matches.png>
 Package pdftex.def Info: images/general/all_matches.png used on input line 8.
 (pdftex.def)             Requested size: 284.52756pt x 256.2802pt.
-) [25
-
-] [26 <./images/general/all_matches.png>]
+) [27] [28 <./images/general/all_matches.png>]
 Chapter 6.
-(./chapters/evaluation.tex) [27
+(./chapters/evaluation.tex) [29
 
-] [28
+] [30
 
 ]
 Chapter 7.
-(./chapters/conclusion.tex) (./document.bbl [29] [30
+(./chapters/conclusion.tex) (./document.bbl [31] [32
 
 ]
 Missing character: There is no Â in font cmr12!
 Missing character: There is no ® in font cmr12!
-) [31] (./document.aux)
+) [33] (./document.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1025,10 +1046,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8565 strings out of 493315
- 117560 string characters out of 6137904
+ 8570 strings out of 493315
+ 117784 string characters out of 6137904
  248537 words of memory out of 5000000
- 11760 multiletter control sequences out of 15000+600000
+ 11764 multiletter control sequences out of 15000+600000
  13637 words of font info for 55 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  40i,18n,45p,3243b,1385s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1038,10 +1059,10 @@ Here is how much of TeX's memory you used:
 usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
 sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></us
 r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb>
-Output written on document.pdf (45 pages, 2983332 bytes).
+Output written on document.pdf (47 pages, 2997266 bytes).
 PDF statistics:
- 256 PDF objects out of 1000 (max. 8388607)
- 128 compressed objects within 2 object streams
+ 264 PDF objects out of 1000 (max. 8388607)
+ 132 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 101 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 106 words of extra memory for PDF output out of 10000 (max. 10000000)
 
