@@ -20,23 +20,26 @@
 \contentsline {chapter}{\numberline {3}Requirement Specification}{13}
 \contentsline {section}{\numberline {3.1}Overview}{13}
 \contentsline {section}{\numberline {3.2}Capture}{14}
-\contentsline {section}{\numberline {3.3}Present}{16}
-\contentsline {chapter}{\numberline {4}Soccer Analytic toolkit}{17}
-\contentsline {section}{\numberline {4.1}System Architecture}{17}
-\contentsline {subsubsection}{\numberline {4.1.0.3}Interfaces}{18}
-\contentsline {subsubsection}{\numberline {4.1.0.4}Back-end}{18}
-\contentsline {subsubsection}{\numberline {4.1.0.5}Storage}{18}
-\contentsline {subsection}{\numberline {4.1.1}Domain model}{18}
-\contentsline {section}{\numberline {4.2}Interfaces}{19}
-\contentsline {section}{\numberline {4.3}Implementation details}{19}
-\contentsline {subsection}{\numberline {4.3.1}Storage}{20}
-\contentsline {subsection}{\numberline {4.3.2}Back-end}{21}
-\contentsline {subsection}{\numberline {4.3.3}Front-end}{21}
-\contentsline {subsubsection}{\numberline {4.3.3.1}Security}{22}
-\contentsline {chapter}{\numberline {5}Demo}{23}
-\contentsline {chapter}{\numberline {6}Evaluation and Results}{25}
-\contentsline {section}{\numberline {6.1}Limitations}{25}
-\contentsline {chapter}{\numberline {7}Conclusion}{27}
-\contentsline {section}{\numberline {7.1}Achievements}{27}
-\contentsline {subsection}{\numberline {7.1.1}Concluding Remarks}{27}
-\contentsline {section}{\numberline {7.2}Future Work}{27}
+\contentsline {section}{\numberline {3.3}Present}{15}
+\contentsline {section}{\numberline {3.4}Summary}{16}
+\contentsline {chapter}{\numberline {4}Soccer Analytic toolkit}{19}
+\contentsline {section}{\numberline {4.1}System Architecture}{19}
+\contentsline {subsubsection}{\numberline {4.1.0.3}Interface}{20}
+\contentsline {subsubsection}{\numberline {4.1.0.4}Back-end}{20}
+\contentsline {subsubsection}{\numberline {4.1.0.5}Storage}{20}
+\contentsline {subsection}{\numberline {4.1.1}Domain model}{20}
+\contentsline {section}{\numberline {4.2}Implementation details}{21}
+\contentsline {subsection}{\numberline {4.2.1}Storage}{22}
+\contentsline {subsubsection}{\numberline {4.2.1.1}Indexes}{22}
+\contentsline {subsection}{\numberline {4.2.2}Back-end}{22}
+\contentsline {subsubsection}{\numberline {4.2.2.1}API}{23}
+\contentsline {subsection}{\numberline {4.2.3}Front-end}{23}
+\contentsline {subsubsection}{\numberline {4.2.3.1}Security}{24}
+\contentsline {chapter}{\numberline {5}Demo}{25}
+\contentsline {section}{\numberline {5.1}Interfaces}{25}
+\contentsline {chapter}{\numberline {6}Evaluation and Results}{27}
+\contentsline {section}{\numberline {6.1}Limitations}{27}
+\contentsline {chapter}{\numberline {7}Conclusion}{29}
+\contentsline {section}{\numberline {7.1}Achievements}{29}
+\contentsline {subsection}{\numberline {7.1.1}Concluding Remarks}{29}
+\contentsline {section}{\numberline {7.2}Future Work}{29}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.3)  5 DEC 2013 11:39
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.3)  5 DEC 2013 18:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -559,6 +559,15 @@ LaTeX Warning: Label `overflow' multiply defined.
 
 LaTeX Warning: Label `overflow' multiply defined.
 
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
 )
 \openout1 = `document.aux'.
 
@@ -732,6 +741,8 @@ Package pdftex.def Info: frontpage.pdf, page1 used on input line 75.
 ] (./document.lof
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¸ in font cmr12!
 )
 \tf@lof=\write7
 \openout7 = `document.lof'.
@@ -844,120 +855,168 @@ Chapter 3.
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
 
-<images/general/illustration_after_search.png, id=155, 599.23875pt x 424.58624p
-t>
-File: images/general/illustration_after_search.png Graphic file (type png)
- <use images/general/illustration_after_search.png>
-Package pdftex.def Info: images/general/illustration_after_search.png used on i
-nput line 11.
-(pdftex.def)             Requested size: 142.26378pt x 100.79492pt.
-
-<images/general/illustration_after_search2.png, id=156, 376.40625pt x 265.99374
+<images/general/illustration_after_search2.png, id=155, 376.40625pt x 265.99374
 pt>
 File: images/general/illustration_after_search2.png Graphic file (type png)
  <use images/general/illustration_after_search2.png>
 Package pdftex.def Info: images/general/illustration_after_search2.png used on 
-input line 18.
+input line 11.
 (pdftex.def)             Requested size: 142.26378pt x 100.53479pt.
+
+<images/general/illustration_after_search.png, id=156, 599.23875pt x 424.58624p
+t>
+File: images/general/illustration_after_search.png Graphic file (type png)
+ <use images/general/illustration_after_search.png>
+Package pdftex.def Info: images/general/illustration_after_search.png used on i
+nput line 12.
+(pdftex.def)             Requested size: 142.26378pt x 100.79492pt.
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¸ in font cmr12!
 
 Underfull \vbox (badness 5217) has occurred while \output is active []
 
  [13
 
 ]
-<images/general/different_breakthroughs.png, id=160, 794.97pt x 248.93pt>
+<images/general/prev_domain_model.png, id=160, 1802.735pt x 834.11626pt>
+File: images/general/prev_domain_model.png Graphic file (type png)
+
+<use images/general/prev_domain_model.png>
+Package pdftex.def Info: images/general/prev_domain_model.png used on input lin
+e 23.
+(pdftex.def)             Requested size: 142.26378pt x 65.81427pt.
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¸ in font cmr12!
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¸ in font cmr12!
+ [14 <./images/general/illustration_after_search2.png> <./images/general/illust
+ration_after_search.png> <./images/general/prev_domain_model.png>]
+<images/general/different_breakthroughs.png, id=164, 794.97pt x 248.93pt>
 File: images/general/different_breakthroughs.png Graphic file (type png)
 
 <use images/general/different_breakthroughs.png>
 Package pdftex.def Info: images/general/different_breakthroughs.png used on inp
-ut line 29.
+ut line 37.
 (pdftex.def)             Requested size: 142.26378pt x 44.54716pt.
- [14 <./images/general/illustration_after_search.png> <./images/general/illustr
-ation_after_search2.png> <./images/general/different_breakthroughs.png>]
-<images/general/first_zones.png, id=164, 525.965pt x 366.36874pt>
+
+<images/general/first_zones.png, id=165, 525.965pt x 366.36874pt>
 File: images/general/first_zones.png Graphic file (type png)
 
 <use images/general/first_zones.png>
-Package pdftex.def Info: images/general/first_zones.png used on input line 40.
+Package pdftex.def Info: images/general/first_zones.png used on input line 48.
 (pdftex.def)             Requested size: 284.52756pt x 198.19954pt.
 
-<images/general/second_zones.png, id=166, 525.4029pt x 365.6862pt>
+<images/general/second_zones.png, id=167, 525.4029pt x 365.6862pt>
 File: images/general/second_zones.png Graphic file (type png)
 
 <use images/general/second_zones.png>
-Package pdftex.def Info: images/general/second_zones.png used on input line 42.
+Package pdftex.def Info: images/general/second_zones.png used on input line 50.
 
 (pdftex.def)             Requested size: 284.52756pt x 198.04233pt.
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15 <./images/general/first_zones.png> <./images/general/second_zones.png (PNG
- copy)>]
-[16]
+<images/architecture/conceptual_architecture.png, id=168, 411.939pt x 350.5095p
+t>
+File: images/architecture/conceptual_architecture.png Graphic file (type png)
+ <use images/architecture/conceptual_architecture.png>
+Package pdftex.def Info: images/architecture/conceptual_architecture.png used o
+n input line 66.
+(pdftex.def)             Requested size: 426.79134pt x 363.14676pt.
+
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 66--67
+ [][] 
+ []
+
+[15 <./images/general/different_breakthroughs.png>]) [16 <./images/general/firs
+t_zones.png> <./images/general/second_zones.png (PNG copy)>] [17 <./images/arch
+itecture/conceptual_architecture.png>] [18
+
+]
 Chapter 4.
 (./chapters/designimplementation.tex
-<images/general/arhitecture.png, id=174, 351.9549pt x 296.307pt>
+<images/general/arhitecture.png, id=184, 351.9549pt x 296.307pt>
 File: images/general/arhitecture.png Graphic file (type png)
 
 <use images/general/arhitecture.png>
 Package pdftex.def Info: images/general/arhitecture.png used on input line 7.
 (pdftex.def)             Requested size: 284.52756pt x 239.5507pt.
- [17
-
- <./images/general/arhitecture.png>]
+ [19 <./images/general/arhitecture.png>]
 (./domainmodel.js
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
+ [20]
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
- [18])
-<images/general/all_matches.png, id=183, 1183.42125pt x 1065.9825pt>
-File: images/general/all_matches.png Graphic file (type png)
+)
+<images/implementation/software_stack.png, id=192, 746.79pt x 161.60374pt>
+File: images/implementation/software_stack.png Graphic file (type png)
 
-<use images/general/all_matches.png>
-Package pdftex.def Info: images/general/all_matches.png used on input line 37.
-(pdftex.def)             Requested size: 284.52756pt x 256.2802pt.
- [19] [20 <./images/general/all_matches.png>] <images/general/chart_passes.png,
- id=190, 1179.40625pt x 510.90875pt>
+<use images/implementation/software_stack.png>
+Package pdftex.def Info: images/implementation/software_stack.png used on input
+ line 38.
+(pdftex.def)             Requested size: 284.52756pt x 61.57033pt.
+
+
+LaTeX Warning: Citation `elasticsearch:mainsite' on page 21 undefined on input 
+line 45.
+
+
+Underfull \vbox (badness 3746) has occurred while \output is active []
+
+ [21 <./images/implementation/software_stack.png>]
+<images/implementation/API.png, id=196, 745.78625pt x 476.78125pt>
+File: images/implementation/API.png Graphic file (type png)
+
+<use images/implementation/API.png>
+Package pdftex.def Info: images/implementation/API.png used on input line 68.
+(pdftex.def)             Requested size: 284.52756pt x 181.89899pt.
+ [22]
+<images/general/chart_passes.png, id=200, 1179.40625pt x 510.90875pt>
 File: images/general/chart_passes.png Graphic file (type png)
 
 <use images/general/chart_passes.png>
-Package pdftex.def Info: images/general/chart_passes.png used on input line 86.
+Package pdftex.def Info: images/general/chart_passes.png used on input line 81.
 
 (pdftex.def)             Requested size: 284.52756pt x 123.25206pt.
 
-<images/general/finishing_zones.png, id=191, 614.295pt x 416.55624pt>
+<images/general/finishing_zones.png, id=201, 614.295pt x 416.55624pt>
 File: images/general/finishing_zones.png Graphic file (type png)
 
 <use images/general/finishing_zones.png>
 Package pdftex.def Info: images/general/finishing_zones.png used on input line 
-95.
+90.
 (pdftex.def)             Requested size: 241.84842pt x 164.00081pt.
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
- [21 <./images/general/chart_passes.png>]) [22 <./images/general/finishing_zone
-s.png>]
+ [23 <./images/implementation/API.png>]) [24 <./images/general/chart_passes.png
+> <./images/general/finishing_zones.png>]
 Chapter 5.
-(./chapters/demo.tex) [23
+(./chapters/demo.tex
+<images/general/all_matches.png, id=209, 1183.42125pt x 1065.9825pt>
+File: images/general/all_matches.png Graphic file (type png)
 
-] [24
+<use images/general/all_matches.png>
+Package pdftex.def Info: images/general/all_matches.png used on input line 8.
+(pdftex.def)             Requested size: 284.52756pt x 256.2802pt.
+) [25
 
-]
+] [26 <./images/general/all_matches.png>]
 Chapter 6.
-(./chapters/evaluation.tex) [25] [26
+(./chapters/evaluation.tex) [27
+
+] [28
 
 ]
 Chapter 7.
-(./chapters/conclusion.tex) (./document.bbl [27] [28
+(./chapters/conclusion.tex) (./document.bbl [29] [30
 
 ]
 Missing character: There is no Â in font cmr12!
 Missing character: There is no ® in font cmr12!
-) [29] (./document.aux)
+) [31] (./document.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -966,10 +1025,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8543 strings out of 493315
- 116753 string characters out of 6137904
- 247537 words of memory out of 5000000
- 11744 multiletter control sequences out of 15000+600000
+ 8565 strings out of 493315
+ 117560 string characters out of 6137904
+ 248537 words of memory out of 5000000
+ 11760 multiletter control sequences out of 15000+600000
  13637 words of font info for 55 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  40i,18n,45p,3243b,1385s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -979,10 +1038,10 @@ Here is how much of TeX's memory you used:
 usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
 sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></us
 r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb>
-Output written on document.pdf (43 pages, 2407682 bytes).
+Output written on document.pdf (45 pages, 2983332 bytes).
 PDF statistics:
- 245 PDF objects out of 1000 (max. 8388607)
- 124 compressed objects within 2 object streams
+ 256 PDF objects out of 1000 (max. 8388607)
+ 128 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 101 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -5,79 +5,72 @@
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=100mm]{images/general/arhitecture.png}
-\caption{}
+\caption{Overall arhitecture of the system }
 \label{overflow}
 \end{figure}
 
 The system architecture can be layered in to three layers; client, back-end, database. The control flow flows from the clients requesting something or inserting data, to the back-end and to the third layer, the database, and back up again in reverse order. 
 
-\subsubsection{Interfaces}
-There is several interfaces but the most important are for capturing new matches and attacks, and the for analyze information. The back-end then again connects to an database to fetch or insert data.  The request then returns up again in the stack on response from the database.
+
+
+\subsubsection{Interface}
+
+The Soccer Analytic tool has one user interface - the web browser interface. Both the input and the analytic interface can be reached from this single web browser interface.
 
 \subsubsection{Back-end}
 
-The back-end is the middle layer between the client and the storage. Its main task is to serve the UI's to the clients, handle data insertions or queries by mapping them to database operations. 
+The back-end is the middle layer between the client and the storage. Its main task is to serve static files to the clients, handle data insertions or handling web request by mapping them to database operations. New data insertions will possible be inserted into several database indexes. The back-end will then ensure that all indexes are updated before returning success to the client.
 
 \subsubsection{Storage}
 
-The storage layers task is to persist data and handle search queries on the data. It consist of several indexes. 
+The storage layers task is to persist data and handle search queries on the data. It consist of several indexes that each store a part of domain model. 
 
 \subsection{Domain model}
 
-The domain model is based around matches.
+The domain model is based around matches. All attacks is wrapped into a match root. Attacks can be seen as subdocuments of the match document. Inside the attacks all passes lies with other information. This gives a easy way of understanding how all the data is related together. Below is a complete example of how it all is structured. The number of attacks and passes is stripped down to one in the example.
 
 \lstinputlisting{domainmodel.js}
 
-\section{Interfaces}
-
-The first page you are prompted with is the listing of all matches registered in the database. A click on match gives you details about that match and prompts you a interface for capturing new attacks if requested. Every field has to be submitted with an correct input value.
+\section{Implementation details}
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=100mm]{images/general/all_matches.png}
-\caption{All matches registrated in the database are listed on this page}
+\includegraphics[width=100mm]{images/implementation/software_stack.png}
+\caption{Software stack}
 \label{overflow}
 \end{figure}
 
-
-
-
-
-\section{Implementation details}
-
-\begin{table}[ht]
-\caption{Software stack}
-\begin{center}
-\begin{tabular}{c|c}
-    \hline
-    \multicolumn{2}{c}{}\\
-    Web server& Node.js\\
-    Database& Elasticsearch\\
-    Client & web  browser \\
-\hline
-\end{tabular}
-\end{center}
-\label{tab:multicol}
-\end{table}
-
-
 \subsection{Storage}
 
-The data storage is an elasticsearch database. Elasticsearch is document oriented and works extremely well with JSON. As our server is built on JavaScript working with JSON is easy. JSON-objects can be inserted right into the storage and elasticsearch will map fields and value accordingly.  Our data input is generated in the web browser which also uses JavaScript and could have been inserted right away into the database without any pre mapping.
-Elasticsearch takes advantages of embedded documents meaning we can store related data together. As an attack is usually made up of several passes you can store the passes as an embedded document inside the attack document so they can be retrieved in one query. 
+The data storage is an elasticsearch database\cite{elasticsearch:mainsite}. Elasticsearch is document oriented, schemaless and works extremely well with JSON. As our server is built on JavaScript working with JSON is easy. JSON-objects can be inserted right into the storage and elasticsearch will map fields and value accordingly. 
+Elasticsearch takes advantages of embedded documents meaning we can store related data together. As an attack is usually made up of several passes. With elasticsearch you can store the passes as an embedded document embedded in the attack document so they can be retrieved in one query. 
 
-The main reason for using Elasticsearch is its search capability. In a single query you can get counted how many passes all player for a team has played and received, number of times all players has been the breakthrough-player, type of attacks, most used zones for passing and finishing and so on. This makes it very easy and efficient to do queries for analyses on teams and players. After a query you can return all data directly to the client for him to expose to the end user.
+The main reason for using Elasticsearch is its search capability. In a single, simple to write query you can get counted how many passes all player for a team has played and received, number of times all players has been the breakthrough-player, type of attacks, most used zones for passing and finishing and so on. This makes it very easy and efficient to do queries for analyses on teams and players.  
+
+\subsubsection{Indexes}
+
+
 
 \subsection{Back-end}
 
 The back end is the middle-ware between the clients and the data layer. It exposes a RESTful interface over HTTP for the client to communicate. A request coming in is transformed to a database query based on the resource it tries to access. On answer from the database the result is transformed before returning it to the client. 
 
-Similar if the client sends new data for a match the middle-ware inserts the data into the appropriate indexes.
+Similar if the client sends new data for a match the middle-ware inserts the data into the appropriate indexes. The server will respond will HTTP status code 201 if all goes well or 400 on an error. The server uses HTTP code actively to tell the client the result of requests.
 
+In principal, since the data input is generated in the web browser (with JavaScript), it could have been inserted right away into the database without going through an extra middleware. However, this limits us as we cant combine multiple queries by going through the back-end. Cleaning of data before serving to the client would neither be possible. Normally you also do validation of the data at the back-end before inserting into your database.
+
+\subsubsection{API}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=100mm]{images/implementation/API.png}
+\caption{Overview of the web servers API}
+\label{overflow}
+\end{figure}
 
 \subsection{Front-end}
 
-Front end is consist of a single page JavaScript application using Backbone.js as under-supporting framework. As it uses a MVC structure the models is responsible for AJAX communication with the back-end. 
+Front end is consist of a single page JavaScript application using Backbone.js as under-supporting framework. Backbone uses a MVC model to structure the code. Data is represented as models in backbone. Models is responsible for AJAX communication with the back-end. 
 
 For a analytic toolkit to be useful a good UI is critical. Here several helper library is used to present the data. Highcharts.js is JavaScript library for illustrating graphs. A query on team generates a lot of statistics and rather than listing them up they are presented using charts. This also gives us the advantage of displaying several numbers for each player and plot it in the same graph. In the image below we show the number of times a player has been involved in all attacks, number of passes into the final third of the pitch and the number of times a player has been the breakthrough-player.
 

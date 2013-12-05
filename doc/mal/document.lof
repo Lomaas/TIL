@@ -6,15 +6,18 @@
 \contentsline {figure}{\numberline {2.4}{\ignorespaces The ZXY software - tracking of players gives you information of distance covered, average speed and max speed. You also get a heat map of the players movement on the field.}}{12}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Visioned illustration displaying key players and how they combine given you have queried on a team}}{14}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Visioned illustration of typical passes for a player}}{14}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Illustrations of different breakthroughs we want to registrate}}{14}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Dividing of pitch - the first suggestion had 18 zones. The team attacking attacks from left to right}}{15}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Dividing of pitch - the second suggestion had 18 zones. The team attacking attacks from left to right}}{15}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces A screencapture showing some data Tromsø IL captured in a previous analytic project}}{14}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Illustrations of different breakthroughs we want to registrate}}{15}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Dividing of pitch - the first suggestion had 18 zones}}{16}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Dividing of pitch - the second suggestion had 24 zones}}{16}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Conceptual arhitecture}}{17}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces }}{17}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces All matches registrated in the database are listed on this page}}{20}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Shows how the passing statistic is illustrated on the client by using Highcharts.js}}{21}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Illustrations of which zones the team has finished off their attacks from, with percent (team: Tromsø IL)}}{22}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Overall arhitecture of the system }}{19}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Software stack}}{21}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Shows how the passing statistic is illustrated on the client by using Highcharts.js}}{23}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Shows how the passing statistic is illustrated on the client by using Highcharts.js}}{24}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Illustrations of which zones the team has finished off their attacks from, with percent (team: Tromsø IL)}}{24}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces All matches registrated in the database are listed on this page}}{26}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
