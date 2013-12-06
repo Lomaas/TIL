@@ -31,18 +31,19 @@
 \contentsline {section}{\numberline {4.2}Implementation details}{21}
 \contentsline {subsection}{\numberline {4.2.1}Storage}{22}
 \contentsline {subsubsection}{\numberline {4.2.1.1}Indexes}{22}
-\contentsline {subsection}{\numberline {4.2.2}Back-end}{22}
+\contentsline {subsection}{\numberline {4.2.2}Back-end}{23}
 \contentsline {subsubsection}{\numberline {4.2.2.1}API}{23}
 \contentsline {subsection}{\numberline {4.2.3}Front-end}{23}
-\contentsline {subsubsection}{\numberline {4.2.3.1}Models}{23}
-\contentsline {subsubsection}{\numberline {4.2.3.2}Views}{24}
+\contentsline {subsubsection}{\numberline {4.2.3.1}Models}{24}
+\contentsline {subsubsection}{\numberline {4.2.3.2}Views}{25}
 \contentsline {subsubsection}{\numberline {4.2.3.3}Router}{26}
-\contentsline {subsection}{\numberline {4.2.4}Security}{26}
-\contentsline {chapter}{\numberline {5}Demo}{27}
-\contentsline {section}{\numberline {5.1}Interfaces}{27}
-\contentsline {chapter}{\numberline {6}Evaluation and Results}{29}
-\contentsline {section}{\numberline {6.1}Limitations}{29}
-\contentsline {chapter}{\numberline {7}Conclusion}{31}
-\contentsline {section}{\numberline {7.1}Achievements}{31}
-\contentsline {subsection}{\numberline {7.1.1}Concluding Remarks}{31}
-\contentsline {section}{\numberline {7.2}Future Work}{31}
+\contentsline {subsection}{\numberline {4.2.4}Getting players and teams into the database}{27}
+\contentsline {subsection}{\numberline {4.2.5}Security}{27}
+\contentsline {chapter}{\numberline {5}Demo}{29}
+\contentsline {section}{\numberline {5.1}Interfaces}{29}
+\contentsline {chapter}{\numberline {6}Evaluation and Results}{31}
+\contentsline {section}{\numberline {6.1}Limitations}{31}
+\contentsline {chapter}{\numberline {7}Conclusion}{33}
+\contentsline {section}{\numberline {7.1}Achievements}{33}
+\contentsline {subsection}{\numberline {7.1.1}Concluding Remarks}{33}
+\contentsline {section}{\numberline {7.2}Future Work}{33}

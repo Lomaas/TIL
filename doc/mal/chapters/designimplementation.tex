@@ -40,15 +40,19 @@ The domain model is based around matches. All attacks is wrapped into a match ro
 
 \subsection{Storage}
 
-The data storage is an elasticsearch database\cite{elasticsearch:mainsite}. Elasticsearch is document oriented, schemaless and works well with JSON\footnotemark. As our server is built on JavaScript working with JSON is easy. JSON-objects can be inserted right into the storage and elasticsearch will map fields and value accordingly. 
+The data storage is an elasticsearch database\cite{elasticsearch:mainsite}. Elasticsearch is document oriented, schemaless and works well with JSON\footnotemark. As our server is built on JavaScript working with JSON is easy. JSON-objects can be inserted right into the storage and elasticsearch will map fields and value accordingly, and make it available for search.
 Elasticsearch takes advantages of embedded documents meaning we can store related data together. As an attack is usually made up of several passes. With elasticsearch you can store the passes as an embedded document embedded in the attack document so they can be retrieved in one query. 
 
-The main reason for using Elasticsearch is its search capability. In a single, simple to write query you can get counted how many passes all player for a team has played and received, number of times all players has been the breakthrough-player, type of attacks, most used zones for passing and finishing and so on. This makes it very easy and efficient to do queries for analyses on teams and players.  
+The main reason for using Elasticsearch is its search capability. In the starting phase of the project MongoDB \footnotemark was the storage engine. However as some aggregation queries was hard to figure out how to do a change to elasticsearch was made. It should be noted that MongoDB supports map reduce operations. With some extra work the queries causing problems could possible have been done with MongoDB. However, with elasticsearch you can in a single, simple to write, query get counted how many passes all players for a team has played and received, the number of times all players has been the breakthrough-player in an attack, count type of attacks, count the most used zones for passing and finishing and so on. This makes it very easy and efficient to do queries for analyses on teams and players.  
 
 \footnotetext{http://www.json.org/}
+\footnotetext{http://www.mongodb.org/}
 
 \subsubsection{Indexes}
 
+Indexes in much like tables in a relational database in the way that they is a container for data. An index stores documents which is a bunch of key/value pairs like JSON. You can let elasticsearch automatic analyze the field data or you can use mappings. For supporting querying on players and other fields where the value is more than one word, you have to tell elasticsearch that it is a multi field. For example searching for player name ''Stefan Johansen'' when the field is not set as multi field will give you two results and not one as you would expect.
+
+In our project we have 5 different indexes. Team index which stores all the teams. Player index which stores all the players. Match index stores all data from a match including all attacks. Attack index stores information about attacks and last the pass index which stores passes. As may be noted there is data redundancy. You can argue that storage has become so cheap and if you can use a little bit extra space to gain performance you would do it. In this case it was done to be able to support aggregation functions on subdocuments.
 
 \subsection{Back-end}
 
@@ -123,14 +127,13 @@ A component not mentioned before that lies on the client is the router. The rout
 
 ADD A SECOND ILLUSTRATION ADDNING THE ROUTER.
 
-\subsection{Security}
-Secturity is not taken into concern. This means anyone getting into the page can post new match data. 
-
 \subsection{Getting players and teams into the database}
 
-Write something about it!
+Getting squads in a useful format like XML or JSON was harder than expected. On the norwegian football alliance's website you could download the squads for the current season only in PDF. Current squads is fetched from altomfotball.no, a website by the norwegian TV channel TV2. This is own python script meant to run only once to set up the database. For each team the script basically reads the HTML document with all players listed, parse out players name, and sends in to the web server.
 
 MORE ON DEVELOPMENT PROCESS? How zone map changed etc. A change from Mongodb to elasticsearch
 
 
+\subsection{Security}
+Secturity is not taken into concern. This means anyone getting into the page can post new match data and add attacks. This could have been fixed by requiring a login before getting access to the site. 
 
