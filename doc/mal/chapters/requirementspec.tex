@@ -11,21 +11,19 @@ The imagined system shall give you the key players in the offensive play of a gi
 \includegraphics[width=50mm]{images/general/illustration_after_search2.png}
 \includegraphics[width=50mm]{images/general/illustration_after_search.png}
 \caption{Visioned illustration displaying key players and how they combine given you have queried on a team}
-\label{overflow}
 \end{figure}
 
 \section{Capture}
 
-A domain model for the captured data is crucial to set as early as possible in the process.  Changes to the model slows the development process. Captured data has to be re-captured and previous queries on data may fail due to missing fields. The domain model should reflect what we want to get out of the system. It sets the boundary's for which information we can pull from the system afterwards. When defining requirements Tromsø IL gave us a domain model they have used for a previous analytic project. It presented a analytic breakdown of all goals for Manchester United in the 2011/2012 season in Barclays Premier League. This domain model was used became our foundation for our domain model.
+A domain model for the captured data is crucial to set as early as possible in the process.  Changes to the model slows the development process. Captured data has to be re-captured and previous queries on data may fail due to missing fields. The domain model should reflect what we want to get out of the system. It sets the boundary's for which information we can pull from the system afterwards. When defining requirements Tromsø IL gave us a domain model they have used for a previous analytic project. It presented a analytic breakdown of all goals for Manchester United in the 2011/2012 season in Barclays Premier League. This domain model became our foundation for our domain model.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=50mm]{images/general/prev_domain_model.png}
 \caption{A screencapture showing some data Tromsø IL captured in a previous analytic project}
-\label{overflow}
 \end{figure}
 
-The visioned system need a datastore. The data should be stored in database that has a rich query language. This for being able to support the large range of queries on the data. Good support for aggregate functions is crucial.  The data will consist of text and integers.
+The visioned system need a data store. The data should be stored in database that has a rich query language. This for being able to support the large range of queries on the data. Good support for aggregate functions is crucial.  The data will consist of text and integers.
 
 Additionally a interface for input will be required. This interface should ensure that the input data is correct. For example when defining what type of attack the attack is, only the predefined options should be valid as input. 
 
@@ -36,7 +34,6 @@ Initially we wanted to build a database of all the matches in the Norwegian prem
 \centering
 \includegraphics[width=50mm]{images/general/different_breakthroughs.png}
 \caption{Illustrations of different breakthroughs we want to registrate}
-\label{overflow}
 \end{figure}
 
 A definition of what a breakthrough player is: A player that does something extra that unbalance the other team. This can be a dribble past 1-2 players or a genius pass that opens deference of the opponents team. 
@@ -49,7 +46,6 @@ First problem was how to divide the pitch into zones. As we are looking for whic
 \caption{Dividing of pitch - the first suggestion had 18 zones}
 \includegraphics[width=100mm]{images/general/second_zones.png}
 \caption{Dividing of pitch - the second suggestion had 24 zones}
-\label{overflow}
 \end{figure}
 
 \section{Present}
@@ -64,6 +60,5 @@ We purpose a web interface here as it is accessible from many devices as long as
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=150mm]{images/architecture/conceptual_architecture.png}
-\caption{Conceptual arhitecture}
-\label{overflow}
+\caption{Conceptual architecture}
 \end{figure}

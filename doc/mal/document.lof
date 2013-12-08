@@ -10,7 +10,7 @@
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Illustrations of different breakthroughs we want to registrate}}{15}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Dividing of pitch - the first suggestion had 18 zones}}{16}
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Dividing of pitch - the second suggestion had 24 zones}}{16}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Conceptual arhitecture}}{17}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Conceptual architecture}}{17}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Overall architecture of the system }}{19}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Software stack}}{21}
@@ -28,4 +28,5 @@
 \contentsline {figure}{\numberline {5.7}{\ignorespaces Main interface for information about opponents - offensive play}}{37}
 \contentsline {figure}{\numberline {5.8}{\ignorespaces Main interface for information about opponents - defensive play‹}}{38}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Matches that have been captured and persisted into the database}}{40}
 \addvspace {10\p@ }

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.3)  8 DEC 2013 19:33
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.3)  8 DEC 2013 23:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -528,7 +528,41 @@ Package: xstring 2013/2/28  v1.7a  String manipulations (C Tellechea)
 )
 \AC@clearlist=\toks34
 )
-No file document.aux.
+(./document.aux
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `overflow' multiply defined.
+
+
+LaTeX Warning: Label `fig:team_analysis2' multiply defined.
+
+)
 \openout1 = `document.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
@@ -543,7 +577,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
 LaTeX Font Info:    ... okay on input line 29.
-(/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count165
 \scratchdimen=\dimen168
@@ -690,28 +724,35 @@ Package pdftex.def Info: frontpage.pdf, page1 used on input line 75.
 
 ] [3] [4
 
-]
-No file document.toc.
+] (./document.toc [5])
 \tf@toc=\write6
 \openout6 = `document.toc'.
 
-[5] [6
+ [6] [7
 
-] [7] [8
+] [8
 
-]
-No file document.lof.
+] (./document.lof
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¸ in font cmr12!
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¸ in font cmr12!
+ [9]
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ¹ in font cmr12!
+)
 \tf@lof=\write7
 \openout7 = `document.lof'.
 
-[9] [10
-
-]
-No file document.lot.
+ [10]
+(./document.lot)
 \tf@lot=\write8
 \openout8 = `document.lot'.
 
-[11] [12
+ [11
+
+] [12
 
 ]
 Chapter 1.
@@ -722,14 +763,10 @@ Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
-
-
-LaTeX Warning: Citation `computing_as_a_discipline' on page 2 undefined on inpu
-t line 25.
-
-[2]
+ [2]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 28.
- (/usr/local/texlive/2013/texmf-dist/tex/latex/base/omscmr.fd
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
@@ -770,15 +807,7 @@ Overfull \hbox (36.79134pt too wide) in paragraph at lines 62--63
  [][] 
  []
 
-
-LaTeX Warning: Citation `Prozone:indepth' on page 8 undefined on input line 69.
-
-
 [8 <./images/general/prozonecam.png>]
-
-LaTeX Warning: Citation `Prozone:validation' on page 9 undefined on input line 
-71.
-
 
 LaTeX Warning: Citation `ZXY:mainsite' on page 9 undefined on input line 75.
 
@@ -817,13 +846,8 @@ File: images/general/zxysoftware.png Graphic file (type png)
 Package pdftex.def Info: images/general/zxysoftware.png used on input line 127.
 
 (pdftex.def)             Requested size: 284.52756pt x 212.38216pt.
-
-
-LaTeX Warning: Citation `dailymailOnStatistics' on page 11 undefined on input l
-ine 132.
-
-) [11 <./images/general/prozonestats.png>] [12 <./images/general/zxysoftware.pn
-g>]
+) [11 <./images/general/prozonestats.png>]
+[12 <./images/general/zxysoftware.png>]
 Chapter 3.
 (./chapters/requirementspec.tex
 Missing character: There is no Ã in font cmr12!
@@ -857,7 +881,7 @@ File: images/general/prev_domain_model.png Graphic file (type png)
 
 <use images/general/prev_domain_model.png>
 Package pdftex.def Info: images/general/prev_domain_model.png used on input lin
-e 23.
+e 22.
 (pdftex.def)             Requested size: 142.26378pt x 65.81427pt.
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
@@ -870,21 +894,21 @@ File: images/general/different_breakthroughs.png Graphic file (type png)
 
 <use images/general/different_breakthroughs.png>
 Package pdftex.def Info: images/general/different_breakthroughs.png used on inp
-ut line 37.
+ut line 35.
 (pdftex.def)             Requested size: 142.26378pt x 44.54716pt.
 
 <images/general/first_zones.png, id=165, 525.965pt x 366.36874pt>
 File: images/general/first_zones.png Graphic file (type png)
 
 <use images/general/first_zones.png>
-Package pdftex.def Info: images/general/first_zones.png used on input line 48.
+Package pdftex.def Info: images/general/first_zones.png used on input line 45.
 (pdftex.def)             Requested size: 284.52756pt x 198.19954pt.
 
 <images/general/second_zones.png, id=167, 525.4029pt x 365.6862pt>
 File: images/general/second_zones.png Graphic file (type png)
 
 <use images/general/second_zones.png>
-Package pdftex.def Info: images/general/second_zones.png used on input line 50.
+Package pdftex.def Info: images/general/second_zones.png used on input line 47.
 
 (pdftex.def)             Requested size: 284.52756pt x 198.04233pt.
 
@@ -893,10 +917,10 @@ t>
 File: images/architecture/conceptual_architecture.png Graphic file (type png)
  <use images/architecture/conceptual_architecture.png>
 Package pdftex.def Info: images/architecture/conceptual_architecture.png used o
-n input line 66.
+n input line 62.
 (pdftex.def)             Requested size: 426.79134pt x 363.14676pt.
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 66--67
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 62--63
  [][] 
  []
 
@@ -984,9 +1008,6 @@ Missing character: There is no ¸ in font cmr12!
 ]
 Chapter 5.
 (./chapters/demo.tex
-
-LaTeX Warning: Reference `fig:mockup' on page 29 undefined on input line 6.
-
 <images/general/mockup.png, id=226, 681.54625pt x 1025.8325pt>
 File: images/general/mockup.png Graphic file (type png)
 
@@ -1014,16 +1035,7 @@ File: images/general/all_attacks.png Graphic file (type png)
 <use images/general/all_attacks.png>
 Package pdftex.def Info: images/general/all_attacks.png used on input line 34.
 (pdftex.def)             Requested size: 390.0pt x 310.38834pt.
-
-
-LaTeX Warning: Reference `fig:all_attacks' on page 29 undefined on input line 3
-9.
-
-[29]
-
-LaTeX Warning: Reference `fig:reg_attack' on page 30 undefined on input line 41
-.
-
+ [29]
 <images/general/reg_attack.png, id=233, 1090.0725pt x 1458.44875pt>
 File: images/general/reg_attack.png Graphic file (type png)
 
@@ -1031,24 +1043,12 @@ File: images/general/reg_attack.png Graphic file (type png)
 Package pdftex.def Info: images/general/reg_attack.png used on input line 45.
 (pdftex.def)             Requested size: 390.0pt x 521.79205pt.
 
-
-LaTeX Warning: Reference `fig:all_teams' on page 30 undefined on input line 50.
-
-
 <images/general/all_teams.png, id=234, 1164.35pt x 1095.09125pt>
 File: images/general/all_teams.png Graphic file (type png)
 
 <use images/general/all_teams.png>
 Package pdftex.def Info: images/general/all_teams.png used on input line 54.
 (pdftex.def)             Requested size: 390.0pt x 366.79518pt.
-
-
-LaTeX Warning: Reference `fig:team_analysis1' on page 30 undefined on input lin
-e 59.
-
-
-LaTeX Warning: Reference `fig:team_analysis2' on page 30 undefined on input lin
-e 59.
 
 
 LaTeX Warning: Reference `fig:team_analysis3' on page 30 undefined on input lin
@@ -1089,13 +1089,36 @@ Missing character: There is no ¹ in font cmr12!
 ng>] [37 <./images/general/team_analysis2.png>] [38 <./images/general/team_anal
 ysis3.png>]
 Chapter 6.
-(./chapters/evaluation.tex) [39
-
-] [40
+(./chapters/evaluation.tex
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¸ in font cmr12!
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¸ in font cmr12!
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¸ in font cmr12!
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¸ in font cmr12!
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¸ in font cmr12!
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¸ in font cmr12!
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¸ in font cmr12!
+ [39
 
 ]
+<images/general/matched_regged.png, id=270, 736.7525pt x 367.3725pt>
+File: images/general/matched_regged.png Graphic file (type png)
+
+<use images/general/matched_regged.png>
+Package pdftex.def Info: images/general/matched_regged.png used on input line 1
+7.
+(pdftex.def)             Requested size: 390.0pt x 194.46544pt.
+) [40 <./images/general/matched_regged.png>]
 Chapter 7.
-(./chapters/conclusion.tex) (./document.bbl [41] [42
+(./chapters/conclusion.tex) (./document.bbl [41
+
+] [42
 
 ]
 Missing character: There is no Â in font cmr12!
@@ -1105,14 +1128,14 @@ Missing character: There is no ® in font cmr12!
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8631 strings out of 493315
- 119236 string characters out of 6137904
- 248267 words of memory out of 5000000
- 11819 multiletter control sequences out of 15000+600000
+ 8646 strings out of 493315
+ 119549 string characters out of 6137904
+ 248614 words of memory out of 5000000
+ 11825 multiletter control sequences out of 15000+600000
  16782 words of font info for 69 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  40i,18n,45p,3243b,1385s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1125,10 +1148,10 @@ ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loca
 l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
 /texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/
 texlive/2013/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb>
-Output written on document.pdf (57 pages, 3850685 bytes).
+Output written on document.pdf (57 pages, 3899768 bytes).
 PDF statistics:
- 315 PDF objects out of 1000 (max. 8388607)
+ 316 PDF objects out of 1000 (max. 8388607)
  163 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 141 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 146 words of extra memory for PDF output out of 10000 (max. 10000000)
 
