@@ -1,0 +1,87 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="712" measuredH="1109" mockupW="678" mockupH="1023">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="34" y="86" w="678" h="1023" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Team%20View%0Ahttp%3A//129.160.242.60%3A3000/%23team/Troms%F8</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::SearchBox" x="156" y="170" w="204" h="-1" measuredW="120" measuredH="25" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Search</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="79" y="172" w="77" h="-1" measuredW="62" measuredH="26" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>18</size>
+        <text>Troms%F8</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::ColumnChart" x="232" y="210" w="352" h="153" measuredW="187" measuredH="175" zOrder="3" locked="false" isInGroup="-1"/>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::PieChart" x="79" y="245" w="117" h="106" measuredW="180" measuredH="180" zOrder="4" locked="false" isInGroup="-1"/>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::List" x="79" y="402" w="153" h="185" measuredW="100" measuredH="126" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>STATS%0AKey%20players%0ANumber%20of%20attacks%0APosession</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Image" x="257" y="402" w="327" h="204" measuredW="727" measuredH="506" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./angrep-andersen-12.png</src>
+        <text>Plot%20starting%20areas%20at%20attack</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::VSplitter" x="79" y="621" w="505" h="-1" measuredW="100" measuredH="11" zOrder="7" locked="false" isInGroup="-1"/>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="79" y="639" w="116" h="-1" measuredW="95" measuredH="26" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>18</size>
+        <text>Key%20players</text>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::Label" x="93" y="783" w="110" h="-1" measuredW="102" measuredH="26" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>18</size>
+        <text>Player%20name</text>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::Webcam" x="99" y="693" w="99" h="90" measuredW="177" measuredH="146" zOrder="10" locked="false" isInGroup="-1"/>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::Image" x="315" y="665" w="232" h="161" measuredW="765" measuredH="532" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./angrep-andersen_DangerAreas.png</src>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::Label" x="351" y="831" w="183" h="-1" measuredW="142" measuredH="26" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>18</size>
+        <text>Dangerous%20areas</text>
+      </controlProperties>
+    </control>
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::Image" x="315" y="872" w="232" h="162" measuredW="765" measuredH="532" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./angrep-andersen_key_passes.png</src>
+        <text>Key%20passes</text>
+      </controlProperties>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::Label" x="380" y="1042" w="103" h="-1" measuredW="97" measuredH="26" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>18</size>
+        <text>Key%20passes</text>
+      </controlProperties>
+    </control>
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::Image" x="64" y="869" w="227" h="181" measuredW="525" measuredH="410" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./angrepsanalyse.png</src>
+        <text>Mot%20recoverys</text>
+      </controlProperties>
+    </control>
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::Label" x="94" y="363" w="-1" h="-1" measuredW="86" measuredH="21" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Breakthroughs</text>
+      </controlProperties>
+    </control>
+    <control controlID="20" controlTypeID="com.balsamiq.mockups::Label" x="360" y="363" w="-1" h="-1" measuredW="86" measuredH="21" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Type%20of%20attack</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
