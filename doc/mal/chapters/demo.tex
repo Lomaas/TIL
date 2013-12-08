@@ -3,23 +3,23 @@
 
 \subsection{Mockup}
 
-Figure 5.1 shows a mockup of the team analysis page that was created before starting developing. There is two main sections; Team statistics and key players
+Figure \ref{fig:mockup} shows a mockup of the team analysis page that was created before starting developing. There is two main sections; team statistics and key players.
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=150mm]{images/general/mockup.png}
-\caption{All matches registrated in the database are listed on this page}
-\label{overflow}
+\includegraphics[width=1\textwidth]{images/general/mockup.png}
+\caption{A mockup of the main analytic page}
+\label{fig:mockup}
 \end{figure}
 
 
-\subsection{}
+\subsection{Implemented interfaces}
 
 The first page you are prompted with is the listing of all matches registered in the database. A click on match gives you details about that match and prompts you a interface for capturing new attacks if requested. Every field has to be submitted with an correct input value.
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=100mm]{images/general/all_matches.png}
+\includegraphics[width=1\textwidth]{images/general/all_matches.png}
 \caption{All matches registrated in the database are listed on this page}
 \label{overflow}
 \end{figure}
@@ -31,38 +31,64 @@ You registrate a new attack by pressing the «New attack» button.  Here you fil
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=80mm]{images/general/all_attacks.png}
+\includegraphics[width=1\textwidth]{images/general/all_attacks.png}
 \caption{Interface listing up all attacks for a match}
-\label{overflow}
+\label{fig:all_attacks}
 \end{figure}
 
-Clicking on a match gives you overview of all attacks registrated for that particular game. This view is only meant for quality checking the data.
-From the match you can registrate new attack attempts. This will prompt you with a fill in form for the attack. Attack start and attack end. Add the passes in the order they occur in the attack. 
+Clicking on a match gives you overview of all attacks registrated for that particular game (figure \ref{fig:all_attacks}). This view is only meant for quality checking the data.
+
+From the match you can registrate new attack attempts showed in figure \ref{fig:reg_attack}. This will prompt you with a fill in form for the attack. Attack start and attack end. Add the passes in the order they occur in the attack. 
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=80mm]{images/general/reg_attack.png}
+\includegraphics[width=1\textwidth]{images/general/reg_attack.png}
 \caption{Interface for registrating an attack}
-\label{overflow}
+\label{fig:reg_attack}
 \end{figure}
 
-Then you have the team selection; a simple layout listing all the teams in the Norwegian premier league. From here you select the team you want to analyze.
+Then you have the team selection (figure \ref{fig:all_teams}); a simple layout listing all the teams in the Norwegian premier league. From here you select the team you want to analyze.
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=80mm]{images/general/all_teams.png}
+\includegraphics[width=1\textwidth]{images/general/all_teams.png}
 \caption{Interface listing all teams}
-\label{overflow}
+\label{fig:all_teams}
 \end{figure}
 
-Then there is the main view used for analyzing a team. The view is not the same as the mockup. This comes from a various things. A description of different breakthroughs has been added to enlighten users of the system. Users of the system may or may not have been in the process of capturing the data. In the mockup key players where highlighted. In the final view various statistics is presented to the user and he can then click on players he find interesting to know more about.  The whole page is divided into 3 sections; Key aspects, offensive play, defensive play.
+Then there is the main view used for analyzing a team showed in figure \ref{fig:team_analysis1}, figure \ref{fig:team_analysis2} and figure \ref{fig:team_analysis3}. The view is not the same as the mockup. This comes from a various things. A description of different breakthroughs has been added to enlighten users of the system. Users of the system may or may not have been in the process of capturing the data. In the mockup key players where highlighted. In the final view various statistics is presented to the user and he can then click on players he find interesting to know more about.  The whole page is divided into 3 sections; Key aspects, offensive play, defensive play.
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=80mm]{images/general/team_analysis1.png}
-\includegraphics[width=80mm]{images/general/team_analysis2.png}
-\caption{Main interface for information about opponents}
-\label{overflow}
+\includegraphics[width=1\textwidth]{images/general/team_analysis1.png}
+\caption{Main interface for information about opponents - key aspects}
+\label{fig:team_analysis1}
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=1\textwidth]{images/general/team_analysis2.png}
+\caption{Main interface for information about opponents - offensive play}
+\label{fig:team_analysis2}
+\end{figure}
+
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=1\textwidth]{images/general/team_analysis3.png}
+\caption{Main interface for information about opponents - defensive play‹}
+\label{fig:team_analysis2}
 \end{figure}
 
 Clicking on a player brings you to the player view. Here individual statistics is highlighted. 
+
+\section{Capturing process}
+
+As mentioned, the process of capturing data is manually. This is time consuming work. In the beginning it took up to 1 hour to capture all attacks for a match. When you get used to the interface and is able to quickly identify players the time used went down 15-20 minutes. Where most of the time went was getting the players id by looking up in the database manually. The time spent also depends on which match you are capturing. For example when a top team meets a team in the bottom of the table there is usually more attacks to registrate. 
+
+The process of capturing has been the following:
+\begin{enumerate}
+  \item Download the match video.
+  \item Find the match in the VGLive.no archives. VGLive.no is used to quickly find all attacks ending with a finish
+  \item Registrate all the attack one by one via the implemented interface mentioned earlier.
+\end{enumerate}
