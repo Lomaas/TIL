@@ -107,16 +107,16 @@ For a analytic toolkit to be useful a good UI is critical. Here several helper l
 \label{fig:chart}
 \end{figure}
 
-Positional data is created using the a new feature of HTML5, canvas element. It lets you draw graphics on the fly in the web page. In this system it is used to create a element that symbols the different zones in our domain model. In the Team Model you have all zones with a number that symbols shots taken from that zone. This is then plotted into the respective zones.
+Positional data is created using the a new feature of HTML5, canvas element. It lets you draw graphics on the fly in the web page. In this system it is used to create a element that symbols the different zones in our domain model. In the Team Model you have all zones with a number that symbols shots taken from that zone. This is then plotted into the respective zones as figure \ref{fig:attacking_zones} is showing.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=85mm]{images/general/finishing_zones.png}
-\caption{Illustrations of which zones the team has finished off their attacks from, with percent (team: Tromsø IL)}
-\label{overflow}
+\caption{Illustrations of which zones the team has finished off their attacks from, with percent. Team - Tromsø IL)}
+\label{fig:attacking_zones}
 \end{figure}
 
-Backbone comes with a library Underscore.js\footnotemark that makes creating HTML pages with dynamic content easily. When you are rendering new content on the site you can insert data retried from a model dynamically into the HTML. In the example below the input is a an array of objects where each element in the array contains a key value pair 'name' : value. The html output of this will be a list of names.
+Backbone comes with a library Underscore.js\footnotemark that makes creating HTML pages with dynamic content easily. When you are rendering new content on the site you can insert data retried from a model dynamically into the HTML. In the example below the input is a an array of objects where each element in the array contains a key value pair 'name' : value. The HTML output of this will be a list of names.
 
 \lstinputlisting{underscore_example.html}
 
@@ -124,15 +124,15 @@ Backbone comes with a library Underscore.js\footnotemark that makes creating HTM
 
 \subsubsection{Router}
 
-A component not mentioned before that lies on the client is the router. The router is the glue that binds all the other moduels together. It handles the navigation between pages in the application. When users navigate on the page by clicking on links or buttons in a traditonal web page the back-end serves a new html page. In this page this click event is handled by a router module. The router model examins the URL request and routes the request to the mapped up view. The view is then responsible for calling fetch functions on the model and render the HTML.
+A component not mentioned before that lies on the client is the router. The router is the glue that binds all the other moduels together. It handles the navigation between pages in the application. When users navigate on the page by clicking on links or buttons in a traditonal web page the back-end serves a new HTML page. In this page this click event is handled by a router module. The router model examins the URL request and routes the request to the mapped up view. The view is then responsible for calling fetch functions on the model and render the HTML.
 
-ADD A SECOND ILLUSTRATION ADDNING THE ROUTER.
+ADD A SECOND ILLUSTRATION ADDNING THE ROUTER. ADD ``API'' ON CLIENT?
 
 \subsection{Getting players and teams into the database}
 
-Getting squads in a useful format like XML or JSON was harder than expected. On the norwegian football alliance's website you could download the squads for the current season only in PDF. Current squads is fetched from altomfotball.no, a website by the norwegian TV channel TV2. This is own python script meant to run only once to set up the database. For each team the script basically reads the HTML document with all players listed, parse out players name, and sends in to the web server.
+Getting squads in a useful format like XML or JSON was harder than expected. On the norwegian football alliance's website you could download the squads for the current season only in PDF. Current squads is fetched from altomfotball.no, a website by the norwegian TV channel TV2. The fetching process is a own python script meant to run only once to set up the database. For each team the script basically reads the HTML document with all players listed, parse out players name, and sends in to the web server.
 
-MORE ON DEVELOPMENT PROCESS? How zone map changed etc. A change from Mongodb to elasticsearch
+MORE ON DEVELOPMENT PROCESS? How zone map changed etc. 
 
 
 \subsection{Security}
