@@ -6,50 +6,51 @@
 \contentsline {section}{\numberline {1.5}Outline}{3}
 \contentsline {chapter}{\numberline {2}Related work}{5}
 \contentsline {section}{\numberline {2.1}Types of analysis}{5}
-\contentsline {subsection}{\numberline {2.1.1}Prematch}{5}
+\contentsline {subsection}{\numberline {2.1.1}Pre-match}{5}
 \contentsline {subsubsection}{\numberline {2.1.1.1}In match}{6}
-\contentsline {subsubsection}{\numberline {2.1.1.2}Post match}{6}
-\contentsline {section}{\numberline {2.2}Manually capturing }{6}
-\contentsline {subsection}{\numberline {2.2.1}Opta }{6}
-\contentsline {subsubsection}{\numberline {2.2.1.1}Prozone}{7}
-\contentsline {subsection}{\numberline {2.2.2}Automatic capturing}{9}
-\contentsline {subsection}{\numberline {2.2.3}Wrap up}{9}
-\contentsline {subsection}{\numberline {2.2.4}Presenting data}{10}
-\contentsline {subsubsection}{\numberline {2.2.4.1}Prozone}{10}
-\contentsline {subsubsection}{\numberline {2.2.4.2}ZXY}{11}
-\contentsline {chapter}{\numberline {3}Requirement Specification}{13}
-\contentsline {section}{\numberline {3.1}Overview}{13}
-\contentsline {section}{\numberline {3.2}Capture}{14}
-\contentsline {section}{\numberline {3.3}Present}{15}
-\contentsline {section}{\numberline {3.4}Summary}{16}
-\contentsline {chapter}{\numberline {4}Soccer Analytic toolkit}{19}
-\contentsline {section}{\numberline {4.1}System Architecture}{19}
-\contentsline {subsubsection}{\numberline {4.1.0.3}Interface}{20}
-\contentsline {subsubsection}{\numberline {4.1.0.4}Back-end}{20}
-\contentsline {subsubsection}{\numberline {4.1.0.5}Storage}{20}
-\contentsline {subsection}{\numberline {4.1.1}Domain model}{20}
-\contentsline {section}{\numberline {4.2}Implementation details}{21}
-\contentsline {subsection}{\numberline {4.2.1}Storage}{22}
-\contentsline {subsubsection}{\numberline {4.2.1.1}Indexes}{22}
-\contentsline {subsection}{\numberline {4.2.2}Back-end}{23}
-\contentsline {subsubsection}{\numberline {4.2.2.1}API}{23}
-\contentsline {subsection}{\numberline {4.2.3}Front-end}{23}
-\contentsline {subsubsection}{\numberline {4.2.3.1}Models}{24}
-\contentsline {subsubsection}{\numberline {4.2.3.2}Views}{25}
-\contentsline {subsubsection}{\numberline {4.2.3.3}Router}{26}
-\contentsline {subsection}{\numberline {4.2.4}Getting players and teams into the database}{27}
-\contentsline {subsection}{\numberline {4.2.5}Security}{27}
-\contentsline {chapter}{\numberline {5}Demo}{29}
-\contentsline {section}{\numberline {5.1}Interfaces}{29}
-\contentsline {subsection}{\numberline {5.1.1}Mockup}{29}
-\contentsline {subsection}{\numberline {5.1.2}Implemented interfaces}{29}
-\contentsline {section}{\numberline {5.2}Capturing process}{30}
-\contentsline {chapter}{\numberline {6}Evaluation and Results}{39}
-\contentsline {section}{\numberline {6.1}Methods}{39}
-\contentsline {subsection}{\numberline {6.1.1}User Survey}{39}
-\contentsline {subsection}{\numberline {6.1.2}Experiments and Results}{39}
-\contentsline {subsection}{\numberline {6.1.3}Test data}{39}
-\contentsline {section}{\numberline {6.2}Limitations}{40}
-\contentsline {chapter}{\numberline {7}Conclusion}{41}
-\contentsline {subsection}{\numberline {7.0.1}Concluding Remarks}{41}
-\contentsline {section}{\numberline {7.1}Future Work}{41}
+\contentsline {subsection}{\numberline {2.1.2}Post match}{7}
+\contentsline {section}{\numberline {2.2}Capturing of data}{7}
+\contentsline {subsection}{\numberline {2.2.1}Opta}{7}
+\contentsline {subsection}{\numberline {2.2.2}Prozone}{8}
+\contentsline {subsection}{\numberline {2.2.3}Automatic capturing}{10}
+\contentsline {subsection}{\numberline {2.2.4}Wrap up}{10}
+\contentsline {section}{\numberline {2.3}Presenting data}{11}
+\contentsline {subsection}{\numberline {2.3.1}Prozone}{11}
+\contentsline {subsection}{\numberline {2.3.2}ZXY}{12}
+\contentsline {subsection}{\numberline {2.3.3}FourFourTwo}{12}
+\contentsline {chapter}{\numberline {3}Requirement Specification}{15}
+\contentsline {section}{\numberline {3.1}Overview}{15}
+\contentsline {section}{\numberline {3.2}Capture}{16}
+\contentsline {section}{\numberline {3.3}Present}{17}
+\contentsline {section}{\numberline {3.4}Summary}{18}
+\contentsline {chapter}{\numberline {4}Soccer Analytic toolkit}{21}
+\contentsline {section}{\numberline {4.1}System Architecture}{21}
+\contentsline {subsubsection}{\numberline {4.1.0.1}Interface}{22}
+\contentsline {subsubsection}{\numberline {4.1.0.2}Back-end}{22}
+\contentsline {subsubsection}{\numberline {4.1.0.3}Storage}{22}
+\contentsline {subsection}{\numberline {4.1.1}Domain model}{22}
+\contentsline {section}{\numberline {4.2}Implementation details}{23}
+\contentsline {subsection}{\numberline {4.2.1}Storage}{24}
+\contentsline {subsubsection}{\numberline {4.2.1.1}Indexes}{24}
+\contentsline {subsection}{\numberline {4.2.2}Back-end}{25}
+\contentsline {subsubsection}{\numberline {4.2.2.1}API}{25}
+\contentsline {subsection}{\numberline {4.2.3}Front-end}{25}
+\contentsline {subsubsection}{\numberline {4.2.3.1}Models}{26}
+\contentsline {subsubsection}{\numberline {4.2.3.2}Views}{27}
+\contentsline {subsubsection}{\numberline {4.2.3.3}Router}{28}
+\contentsline {subsection}{\numberline {4.2.4}Getting players and teams into the database}{29}
+\contentsline {subsection}{\numberline {4.2.5}Security}{29}
+\contentsline {chapter}{\numberline {5}Demo}{31}
+\contentsline {section}{\numberline {5.1}Interfaces}{31}
+\contentsline {subsection}{\numberline {5.1.1}Mockup}{31}
+\contentsline {subsection}{\numberline {5.1.2}Implemented interfaces}{31}
+\contentsline {section}{\numberline {5.2}Capturing process}{32}
+\contentsline {chapter}{\numberline {6}Evaluation and Results}{41}
+\contentsline {section}{\numberline {6.1}Methods}{41}
+\contentsline {subsection}{\numberline {6.1.1}User Survey}{41}
+\contentsline {subsection}{\numberline {6.1.2}Experiments and Results}{41}
+\contentsline {subsection}{\numberline {6.1.3}Test data}{41}
+\contentsline {section}{\numberline {6.2}Limitations}{42}
+\contentsline {chapter}{\numberline {7}Conclusion}{43}
+\contentsline {subsection}{\numberline {7.0.1}Concluding Remarks}{43}
+\contentsline {section}{\numberline {7.1}Future Work}{43}

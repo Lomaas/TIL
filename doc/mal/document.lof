@@ -1,32 +1,34 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces The Prozone camera system illustrated}}{8}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Overview of the ZXY system with receivers placed at the stadium and players wearing sensors}}{10}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces The Prozone software - individual player analysis gives you statistics of performance over time}}{11}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces The ZXY software - tracking of players gives you information of distance covered, average speed and max speed. You also get a heat map of the players movement on the field.}}{12}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces A typical tweet from one of Opta's Twitter account}}{6}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces The Prozone camera system illustrated. Taken from Prozonesports.com}}{9}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Overview of the ZXY system with receivers placed at the stadium and players wearing sensors. Image from zxy.no}}{11}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces The Prozone software - individual player analysis gives you statistics of performance over time. Image from prozonesports.com}}{12}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces The ZXY software - tracking of players gives you information of distance covered, average speed and max speed. You also get a heat map of the players movement on the field. Image from zxy.no}}{13}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces . Taken from fourfourtwo.com}}{13}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Visioned illustration displaying key players and how they combine given you have queried on a team}}{14}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces A screencapture showing some data Tromsø IL captured in a previous analytic project}}{14}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Illustrations of different breakthroughs we want to registrate}}{15}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Dividing of pitch - the first suggestion had 18 zones}}{16}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Dividing of pitch - the second suggestion had 24 zones}}{16}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Conceptual architecture}}{17}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Visioned illustration displaying key players and how they combine given you have queried on a team}}{16}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces A screencapture showing some data Tromsø IL captured in a previous analytic project}}{16}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Illustrations of different breakthroughs we want to registrate}}{17}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Dividing of pitch - the first suggestion had 18 zones}}{18}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Dividing of pitch - the second suggestion had 24 zones}}{18}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Conceptual architecture}}{19}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Overall architecture of the system }}{19}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Software stack}}{21}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Overview of the web servers API}}{24}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Architecture of the client side}}{24}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Shows how the passing statistic is illustrated on the client by using Highcharts.js}}{25}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Illustrations of which zones the team has finished off their attacks from, with percent (team: Tromsø IL)}}{26}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Overall architecture of the system }}{21}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Software stack}}{23}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Overview of the web servers API}}{26}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Architecture of the client side}}{26}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Shows how the passing statistic is illustrated on the client by using Highcharts.js}}{27}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Illustrations of which zones the team has finished off their attacks from, with percent (team: Tromsø IL)}}{28}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces A mockup of the main analytic page}}{31}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces All matches registrated in the database are listed on this page}}{32}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Interface listing up all attacks for a match}}{33}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Interface for registrating an attack}}{34}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Interface listing all teams}}{35}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Main interface for information about opponents - key aspects}}{36}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Main interface for information about opponents - offensive play}}{37}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Main interface for information about opponents - defensive play‹}}{38}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces A mockup of the main analytic page}}{33}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces All matches registrated in the database are listed on this page}}{34}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Interface listing up all attacks for a match}}{35}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Interface for registrating an attack}}{36}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Interface listing all teams}}{37}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Main interface for information about opponents - key aspects}}{38}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Main interface for information about opponents - offensive play}}{39}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Main interface for information about opponents - defensive play‹}}{40}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Matches that have been captured and persisted into the database}}{40}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Matches that have been captured and persisted into the database}}{42}
 \addvspace {10\p@ }
