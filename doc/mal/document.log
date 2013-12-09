@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.3)  9 DEC 2013 20:46
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.3)  9 DEC 2013 21:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -545,12 +545,6 @@ LaTeX Warning: Label `overflow' multiply defined.
 LaTeX Warning: Label `overflow' multiply defined.
 
 
-LaTeX Warning: Label `overflow' multiply defined.
-
-
-LaTeX Warning: Label `overflow' multiply defined.
-
-
 LaTeX Warning: Label `fig:team_analysis2' multiply defined.
 
 )
@@ -942,11 +936,8 @@ File: images/general/second_zones.png Graphic file (type png)
 Package pdftex.def Info: images/general/second_zones.png used on input line 48.
 
 (pdftex.def)             Requested size: 284.52756pt x 198.04233pt.
- [17 <./images/general/different_breakthroughs.png>]
-Underfull \vbox (badness 5460) has occurred while \output is active []
-
- [18 <./images/general/first_zones.png> <./images/general/second_zones.png (PNG
- copy)>]
+ [17 <./images/general/different_breakthroughs.png>] [18 <./images/general/firs
+t_zones.png> <./images/general/second_zones.png (PNG copy)>]
 <images/architecture/conceptual_architecture.png, id=171, 411.939pt x 350.5095p
 t>
 File: images/architecture/conceptual_architecture.png Graphic file (type png)
@@ -988,11 +979,6 @@ Package pdftex.def Info: images/implementation/software_stack.png used on input
  line 36.
 (pdftex.def)             Requested size: 284.52756pt x 61.57033pt.
 
-
-LaTeX Warning: Citation `elasticsearch:mainsite' on page 23 undefined on input 
-line 43.
-
-
 Underfull \vbox (badness 3746) has occurred while \output is active []
 
  [23 <./images/implementation/software_stack.png>] [24]
@@ -1000,17 +986,17 @@ Underfull \vbox (badness 3746) has occurred while \output is active []
 File: images/implementation/API.png Graphic file (type png)
 
 <use images/implementation/API.png>
-Package pdftex.def Info: images/implementation/API.png used on input line 69.
+Package pdftex.def Info: images/implementation/API.png used on input line 70.
 (pdftex.def)             Requested size: 284.52756pt x 181.89899pt.
 
 <images/architecture/backbone_architecture.png, id=197, 469.755pt x 270.2898pt>
 File: images/architecture/backbone_architecture.png Graphic file (type png)
 <use images/architecture/backbone_architecture.png>
 Package pdftex.def Info: images/architecture/backbone_architecture.png used on 
-input line 82.
+input line 83.
 (pdftex.def)             Requested size: 426.79134pt x 245.56816pt.
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 82--83
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 83--84
  [][] 
  []
 
@@ -1020,7 +1006,7 @@ itecture.png>]
 File: images/general/chart_passes.png Graphic file (type png)
 
 <use images/general/chart_passes.png>
-Package pdftex.def Info: images/general/chart_passes.png used on input line 104
+Package pdftex.def Info: images/general/chart_passes.png used on input line 105
 .
 (pdftex.def)             Requested size: 284.52756pt x 123.25206pt.
  [27 <./images/general/chart_passes.png>]
@@ -1029,7 +1015,7 @@ File: images/general/finishing_zones.png Graphic file (type png)
 
 <use images/general/finishing_zones.png>
 Package pdftex.def Info: images/general/finishing_zones.png used on input line 
-113.
+114.
 (pdftex.def)             Requested size: 241.84842pt x 164.00081pt.
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
@@ -1165,10 +1151,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8680 strings out of 493315
- 120381 string characters out of 6137904
- 248711 words of memory out of 5000000
- 11856 multiletter control sequences out of 15000+600000
+ 8683 strings out of 493315
+ 120397 string characters out of 6137904
+ 248733 words of memory out of 5000000
+ 11859 multiletter control sequences out of 15000+600000
  16782 words of font info for 69 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  40i,18n,45p,3243b,1385s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1181,7 +1167,7 @@ ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loca
 l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
 /texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/
 texlive/2013/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb>
-Output written on document.pdf (59 pages, 9150792 bytes).
+Output written on document.pdf (59 pages, 9151644 bytes).
 PDF statistics:
  308 PDF objects out of 1000 (max. 8388607)
  190 compressed objects within 2 object streams
