@@ -54,8 +54,10 @@
 \contentsline {subsection}{\numberline {6.1.1}User Survey}{45}
 \contentsline {section}{\numberline {6.2}Experiments and Results}{46}
 \contentsline {subsection}{\numberline {6.2.1}Test data}{46}
-\contentsline {section}{\numberline {6.3}Limitations}{46}
-\contentsline {subsection}{\numberline {6.3.1}Input}{46}
-\contentsline {chapter}{\numberline {7}Conclusion}{47}
-\contentsline {subsection}{\numberline {7.0.2}Concluding Remarks}{47}
-\contentsline {section}{\numberline {7.1}Future Work}{47}
+\contentsline {subsection}{\numberline {6.2.2}SAT as a tool for opponent analytic}{46}
+\contentsline {subsection}{\numberline {6.2.3}SAT as a tool for identifying key players}{47}
+\contentsline {section}{\numberline {6.3}Discussion}{47}
+\contentsline {subsection}{\numberline {6.3.1}Input}{47}
+\contentsline {chapter}{\numberline {7}Conclusion}{49}
+\contentsline {subsection}{\numberline {7.0.2}Concluding Remarks}{49}
+\contentsline {section}{\numberline {7.1}Future Work}{49}

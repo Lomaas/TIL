@@ -1,0 +1,134 @@
+This is XeTeX, Version 3.1415926-2.5-0.9999.3 (TeX Live 2013) (format=cont-en 2013.11.3)  10 DEC 2013 17:57
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**introduction.tex
+(./introduction.tex
+
+systems         : BEWARE: synctex functionality is enabled!
+
+
+ConTeXt  ver: 2013.04.09 10:38 MKII  fmt: 2013.11.3  int: english/english
+
+system          : cont-new.mkii loaded
+(/usr/local/texlive/2013/texmf-dist/tex/context/base/cont-new.mkii
+systems         : beware: some patches loaded from cont-new.mkii
+)
+system          : cont-sys.tex loaded
+(/usr/local/texlive/2013/texmf-config/tex/context/user/cont-sys.tex
+(/usr/local/texlive/2013/texmf-dist/tex/context/base/type-siz.mkii)
+(/usr/local/texlive/2013/texmf-dist/tex/context/base/type-otf.mkii)
+(/usr/local/texlive/2013/texmf-dist/tex/context/base/type-xtx.mkii))
+system          : introduction.top loaded
+(./introduction.top)
+bodyfont        : 12pt rm is loaded
+language        : patterns nl->default:default->1->2:2 us->default:default->2->
+2:3 de->default:default->3->3:3 da->default:default->4->2:2 sv->default:default
+->5->2:2 af->default:default->6->2:2 gb->default:default->7->2:2 fr->default:de
+fault->8->2:2 es->default:default->9->2:2 ca->default:default->10->2:2 it->defa
+ult:default->11->2:2 la->default:default->12->2:2 pt->default:default->13->2:2 
+ro->default:default->14->2:2 pl->default:default->15->2:2 cs->default:default->
+16->2:2 sk->default:default->17->2:2 hr->default:default->18->2:2 sl->default:d
+efault->19->2:2 tr->default:default->20->2:2 tk->default:default->21->1:2 lt->d
+efault:default->22->2:2 agr->default:default->24->2:2 fi->default:default->25->
+2:2 hu->default:default->26->2:2 ru->default:default->28->2:2 uk->default:defau
+lt->29->3:3  loaded
+specials        : dvips loaded
+\openout3 = `introduction.tui'.
+
+\openout0 = `introduction-mpgraph.mp'.
+
+language        : language en is active
+specials        : loading definition file dpx
+(/usr/local/texlive/2013/texmf-dist/tex/context/base/spec-dpx.mkii
+specials        : loading definition file fdf
+(/usr/local/texlive/2013/texmf-dist/tex/context/base/spec-fdf.mkii))
+specials        : loading definition file xet
+(/usr/local/texlive/2013/texmf-dist/tex/context/base/spec-xet.mkii)
+section         : 1 Background
+publications    : file introduction.bbl not found, waiting for bibtex
+publications    : warning: cite argument bigdata:majorleague is unknown on line
+ 3
+publications    : warning: cite argument bigdata:milanlab is unknown on line 3
+publications    : warning: cite argument Prozone:indepth is unknown on line 9
+section         : 2 Problem definition
+section         : 3 Interpretation
+fonts           : resetting map file list
+fonts           : using map file: original-base
+fonts           : using map file: lm-math
+fonts           : using map file: lm-rm
+fonts           : using map file: texnansi-base
+fonts           : using map file: ec-base
+fonts           : using map file: qx-base
+fonts           : using map file: t5-base
+fonts           : using map file: 8r-base
+fonts           : using map file: original-ams-base
+fonts           : using map file: original-ams-euler
+fonts           : using map file: original-public-lm
+(./introduction.tuo)
+(/usr/local/texlive/2013/texmf-dist/tex/context/base/sort-def.mkii)
+(/usr/local/texlive/2013/texmf-dist/tex/context/base/sort-lan.mkii
+Invalid UTF-8 byte or sequence at line 102 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 102 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 103 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 103 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 104 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 104 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 105 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 105 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 106 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 106 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 107 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 107 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 108 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 108 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 109 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 109 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 110 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 110 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 115 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 115 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 116 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 116 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 117 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 117 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 150 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 150 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 152 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 152 replaced by U+FFFD.
+) [1.1]
+section         : 4 Methodology
+publications    : warning: cite argument computing_as_a_discipline is unknown o
+n line 27
+
+Overfull \hbox (12.74333pt too wide) in paragraph at lines 27--28
+[]\*12ptrmtfrm*: The final report of the ACM Task Force on the Core of Computer
+ Science [](Xxxxxxxxxx,
+
+\hbox(9.0+3.01198)x426.78743, glue set - 1.0
+.\hbox(0.0+0.0)x0.0
+.\*12ptrmtfrm*: The
+.\glue 3.912 plus 1.956 minus 1.304
+.\*12ptrmtfrm*: final
+.\glue 3.912 plus 1.956 minus 1.304
+.etc.
+
+! Undefined control sequence.
+l.29 \begin
+           {itemize}
+? 
+! Emergency stop.
+l.29 \begin
+           {itemize}
+End of file on the terminal!
+
+ 
+Here is how much of TeX's memory you used:
+ 974 strings out of 459391
+ 18157 string characters out of 5578929
+ 4681916 words of memory out of 9182337
+ 39344 multiletter control sequences out of 15000+600000
+ 12457 words of font info for 38 fonts, out of 8000000 for 9000
+ 305 hyphenation exceptions out of 8191
+ 39i,18n,45p,735b,641s stack positions out of 5000i,500n,10000p,200000b,80000s
+Output written on introduction.pdf (1 page).

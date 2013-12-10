@@ -1,18 +1,36 @@
 \begin{thebibliography}{1}
 
+\bibitem{Prozone:validation}
+Valter Di Salvo Adam Collins Barry McNeill~Marco Cardinale.
+\newblock Validation of prozone {\textregistered}: A new video-based
+  performance analysis system.
+\newblock {\em mordi}, 2006.
+
 \bibitem{computing_as_a_discipline}
 D.~E. Comer, David Gries, Michael~C. Mulder, Allen Tucker, A.~Joe Turner, and
   Paul~R. Young.
 \newblock Computing as a discipline.
 \newblock {\em Commun. ACM}, 32(1):9--23, January 1989.
 
-\bibitem{dailymailOnStatistics}
-MARTIN HARDY.
+\bibitem{PTW}
+H{\aa}vard D. Johansen Svein Arne Pettersen~P{\aa}l Haloversen and Dag
+  Johansen.
+\newblock Combining video and player telemetry for evidence-based decisions in
+  soccer.
+\newblock {\em Regional Centre for Sport, Exercise and Health - North}, 2013.
 
-\bibitem{Prozone:validation}
-Collins; Barry McNeill; Marco~Cardinale Valter, Di Salvo;~Adam.
-\newblock Validation of prozone ®: A new video-based performance analysis
-  system.
+\bibitem{dailymailOnStatistics}
+Martin Hardy.
+\newblock How the science of opta and prozone's statistics are changing the
+  premier league, Nov 2011.
+
+\bibitem{bigdata:milanlab}
+Jonathan Howard.
+\newblock Sports science and big data opportunities, October 2013.
+
+\bibitem{bigdata:majorleague}
+Jason Turbow.
+\newblock Soccer embraces big data to quantify the beautiful game, June 2012.
 
 \bibitem{Prozone:indepth}
 Mark Venables.

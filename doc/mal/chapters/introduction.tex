@@ -1,22 +1,22 @@
 \section{Background}
 
-Sports science is an increasingly hot topic (ref) and more and more teams are investing time and money into strategic development of big data and sports medicine. All this to increase the players performance on the field and reduce the risk of injuries. One of the pioneers in this field for a long time AC Milan established in as early as 2002 the MilanLab. The goal for the program was to get better and more concrete information about the players physicality by collecting data over time of players performance. In 2008 they took it to the next level partnering up with Microsoft to create more specialized software tools  for analyze and to organize the data better.
+Sports science is an increasingly hot topic and more and more soccer teams are investing time and money into strategic development of big data and sports science \cite{bigdata:majorleague}. All this to increase the players performance on the field and reduce the risk of injuries. One of the pioneers in this field for a long time AC Milan established in as early as 2002 the MilanLab \cite{bigdata:milanlab}. The goal for the program was to get better and more concrete information about the player’s physicality by collecting data over time of player’s performance. As AC Milan was one of the first to use big data, the use of big data today has exploded. Services like Opta and Prozone serves player statistics, heat maps, and video analytics of player’s performance. Fans get exposed to these statistics by clubs and broadcasting companies that uses it actively in their coverage of soccer games. The awareness of statistics for clubs and fans has possible never been higher than now \cite{dailymailOnStatistics}.
 
-As AC Milan was one of the first to use big data, the use of big data today has exploded. Services like Opta, Prozone and Match Analysis serves player statistics, heat maps, and video analytics of players performance. Fans gets exposed by these statistics by clubs and TV which uses it actively. The awareness of big data statistics for clubs and fans has possible never been higher than now.
+Soccer teams and athletes in general are constantly looking for possibilities to gain advantages over opponents. In soccer your next opponent is analyzed down to the smallest details to find weaknesses and strengths. All this to be able to take advantage of your opponents weak points and limits their strengths. The players should know what to expect from the opponent team. Detecting typical team plays and player movement of your opponent can help you prepare for the match. 
 
-Soccer teams and athletes in general are constantly looking for possibilities to gain advantages over opponents. In soccer your next opponent is analyzed down to the smallest details to find weaknesses and strengths. All this to be able to take advantage of your opponents weak points and limit their strengths. MAY REMOVE An example of a traditional weakness is a team playing 4-4-2 and gives up space between the lines (back-four and midfield). An strength can be finding this space, typical with a number 10 player.
+There are several ways to gather information about your opponent; from looking through whole matches to advanced tools, which can highlight key information for you. Some of them are expensive as Prozone \cite{Prozone:indepth} which is a complete system for capturing and presenting information. For small soccer clubs with relatively small budgets this can be a expensive investment. Another system is Interplay Sports, which Tromsø IL uses for game analytic. A video feed from any match can be used as the input letting you manually tag and describe situations in the match. In a sport where the next soccer match usually is in 3 days tools for filtering out the useless data is valuable.
 
-There are several ways to gather information about your opponent. From looking through whole matches to advanced tools, which can highlight key information for you. The information out there is enormous. Tools for filtering out the useless data is valuable in a field where the next soccer match usually is in 3 days. There are two main aspect of the analysis process; First you need to gather the information and secondly is how to present the information, usually for the coaching staff.
+In the analytic process there are two processes we will look at; first you need to gather the information and secondly is how to present the information gathered. 
 
 \section{Problem definition}
 
-This project will develop a system complementing the Muithu and Bagadus systems. Focus will be on soccer opponent analytics, where a data repository need to be developed capturing important events relevant for this type of analytics. Specially we want to identify the key players in a team. A user interface component providing the core information about the opponent should also be developed.
+This project will develop a system complementing the Muithu and Bagadus systems. Focus will be on soccer opponent analytics, where a data repository needs to be developed capturing important events relevant for this type of analytics. Especially we want to identify the key players offensive in a team. A user interface component providing the core information about the opponent should also be developed.
 
 \section{Interpretation}
 
-Our project is that providing an infrastructure for capturing events like attacks that leads to an attempt on the opponent goal, and presenting this information through an user interface. We are interested in how long it typically takes to capture all relevant events from a single match as this has to be done manually. The system is complementing other systems therefor we limit the amount of data captured from each match to only what we need to provide a useful system. Therefor a data model that reflects what we want to capture from each attack needs to be developed for being able to get relevant information for being used as a opponent analytic system.
+The project is that providing an infrastructure for capturing events like attacks that leads to an attempt on the opponent goal, and presenting this information through a user interface. We are interested in how long it typically takes to capture all relevant events from a single match, as this has to be done manually. A data model that reflects what we want to capture from each attack needs to be developed for being able to get relevant information for being used as a opponent analytic system.
 
-First a requirement specification shall be developed. Then a prototype and that fulfills the requirements. At last the system shall be evaluated by  specialist in the domain of soccer.
+First a requirement specification shall be developed. Then a prototype and that fulfills the requirements. At last specialist in the domain of soccer shall evaluate the system.
 
 The design and development processes will be performed in collaboration with staff of the Norwegian soccer club Trømsø IL. An end-user comparison of the system against currently available tools will perform a final evaluation, and the result of this evaluation will be used to conclude the project.
 
@@ -27,27 +27,31 @@ The final report of the ACM Task Force on the Core of Computer Science \cite{com
 \begin{itemize}
 \item \emph{Theory}: 
 Theory: Rooted in mathematics, the approach is to define problems, propose theorems and look to prove them in order to find new relationships and progress in computing.
-  
 \item \emph{Abstraction}: 
 Rooted in the experimental scientific method, the approach is to analyze a phenomenon by creating hypothesis, constructing models and simulations, and analyzing the results.
-  
 \item \emph{Design}: 
 Rooted in engineering, the approach is to state requirements and specifications, design and implement systems that solve the problem, and test the systems to systematically find the best solution to the given problem.
 
 \end{itemize}
 
-For this project the design process seems to be the most suitable out of the three paradigms. The design process consist of 4 steps and is expected to be iterated when tests reveal that the latest version of the system does not satisfactorily meet the requirements.
+For this project the design process seems to be the most suitable out of the three paradigms. The design process consists of 4 steps, which are repeated if tests reveal that the latest version of the system does not meet the requirements.
 
 \begin{itemize}
-  \item \emph{State requirements and specification}: A need or problem is identified, researched, and defined.
-  \item \emph{Design and implement the system}: Data models and a system architecture are designed. Prototypes are implemented.
-  \item \emph{Test the system}: Assessment and testing of the aforementioned prototypes.
+\item \emph{State requirements and specification}: A need or problem is identified, researched, and defined.
+\item \emph{Design and implement the system}: Data models and a system architecture are designed. Prototypes are implemented.
+\item \emph{Test the system}: Assessment and testing of the aforementioned prototypes.
 \end{itemize}
 
 \section{Outline}
 
 \begin{itemize}
-  \item \emph{Item 1}: Presents some background information related to the project
-  \item \emph{Item 2}: Describes the requirement specification
-  \item \emph{Item 3}: Describes the general system model
+\item \emph{Chapter 2}: Presents some related work to the project
+\item \emph{Chapter 3}: Describes the requirement specification
+\item \emph{Chapter 4}: Describes the design and implementation of the system
+\item \emph{Chapter 5}: Gives a demonstration of the system
+\item \emph{Chapter 6}: Evaluates and discuss the system
+\item \emph{Chapter 7}: Concludes the project 
 \end{itemize}
+
+
+

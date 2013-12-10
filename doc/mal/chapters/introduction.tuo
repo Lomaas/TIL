@@ -1,0 +1,33 @@
+%
+% loaded files: 0
+%
+%
+% temporary files: 0
+%
+%
+% commands: 20
+%
+\thisissectionseparator{-}%
+\thisisutilityversion{2008.10.14}%
+\usedmapfile{=}{original-base}%
+\usedmapfile{=}{lm-math}%
+\usedmapfile{=}{lm-rm}%
+\usedmapfile{=}{texnansi-base}%
+\usedmapfile{=}{ec-base}%
+\usedmapfile{=}{qx-base}%
+\usedmapfile{=}{t5-base}%
+\usedmapfile{=}{8r-base}%
+\usedmapfile{=}{original-ams-base}%
+\usedmapfile{=}{original-ams-euler}%
+\usedmapfile{=}{original-public-lm}%
+\initializevariable\usedoutputdriver{xetex}%
+\initializevariable\usedcolorchannels{}%
+\listentry{section}{1}{1}{Background}{2--0-0-1-0-0-0-0--1}{1}%
+\mainreference{}{cite-introduction-1}{2--0-0-1-0-0-0-0--1}{1}{bigdata:majorleague}%
+\mainreference{}{cite-introduction-2}{2--0-0-1-0-0-0-0--1}{1}{bigdata:milanlab}%
+\mainreference{}{cite-introduction-3}{2--0-0-1-0-0-0-0--1}{1}{Prozone:indepth}%
+\listentry{section}{2}{2}{Problem definition}{2--0-0-2-0-0-0-0--1}{1}%
+%
+% programs: 0
+%
+\endinput
