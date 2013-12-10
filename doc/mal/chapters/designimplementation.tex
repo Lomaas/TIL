@@ -126,13 +126,10 @@ Backbone comes with a library Underscore.js\footnotemark that makes creating HTM
 
 A component not mentioned before that lies on the client is the router. The router is the glue that binds all the other moduels together. It handles the navigation between pages in the application. When users navigate on the page by clicking on links or buttons in a traditonal web page the back-end serves a new HTML page. In this page this click event is handled by a router module. The router model examins the URL request and routes the request to the mapped up view. The view is then responsible for calling fetch functions on the model and render the HTML.
 
-ADD A SECOND ILLUSTRATION ADDNING THE ROUTER. ADD ``API'' ON CLIENT?
 
 \subsection{Getting players and teams into the database}
 
 Getting squads in a useful format like XML or JSON was harder than expected. On the norwegian football alliance's website you could download the squads for the current season only in PDF. Current squads is fetched from altomfotball.no, a website by the norwegian TV channel TV2. The fetching process is a own python script meant to run only once to set up the database. For each team the script basically reads the HTML document with all players listed, parse out players name, and sends in to the web server.
-
-MORE ON DEVELOPMENT PROCESS? How zone map changed etc. 
 
 
 \subsection{Security}
