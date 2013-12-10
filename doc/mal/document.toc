@@ -44,13 +44,18 @@
 \contentsline {section}{\numberline {5.1}Interfaces}{31}
 \contentsline {subsection}{\numberline {5.1.1}Mockup}{31}
 \contentsline {subsection}{\numberline {5.1.2}Implemented interfaces}{31}
-\contentsline {section}{\numberline {5.2}Capturing process}{32}
-\contentsline {chapter}{\numberline {6}Evaluation and Results}{41}
-\contentsline {section}{\numberline {6.1}Methods}{41}
-\contentsline {subsection}{\numberline {6.1.1}User Survey}{41}
-\contentsline {subsection}{\numberline {6.1.2}Experiments and Results}{41}
-\contentsline {subsection}{\numberline {6.1.3}Test data}{41}
-\contentsline {section}{\numberline {6.2}Limitations}{42}
-\contentsline {chapter}{\numberline {7}Conclusion}{43}
-\contentsline {subsection}{\numberline {7.0.1}Concluding Remarks}{43}
-\contentsline {section}{\numberline {7.1}Future Work}{43}
+\contentsline {subsubsection}{\numberline {5.1.2.1}Home page}{31}
+\contentsline {subsubsection}{\numberline {5.1.2.2}Registrating attacks}{32}
+\contentsline {subsubsection}{\numberline {5.1.2.3}Match view}{32}
+\contentsline {subsubsection}{\numberline {5.1.2.4}Team view}{32}
+\contentsline {section}{\numberline {5.2}Capturing process}{33}
+\contentsline {chapter}{\numberline {6}Evaluation and Results}{45}
+\contentsline {section}{\numberline {6.1}Methods}{45}
+\contentsline {subsection}{\numberline {6.1.1}User Survey}{45}
+\contentsline {section}{\numberline {6.2}Experiments and Results}{46}
+\contentsline {subsection}{\numberline {6.2.1}Test data}{46}
+\contentsline {section}{\numberline {6.3}Limitations}{46}
+\contentsline {subsection}{\numberline {6.3.1}Input}{46}
+\contentsline {chapter}{\numberline {7}Conclusion}{47}
+\contentsline {subsection}{\numberline {7.0.2}Concluding Remarks}{47}
+\contentsline {section}{\numberline {7.1}Future Work}{47}
