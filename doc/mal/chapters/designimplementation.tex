@@ -49,32 +49,32 @@ Figure \ref{fig:finalPitchDividing} shows the final version of the pitch dividin
 
 \subsection{Storage}
 
-The data storage is an elasticsearch database\footnote{http://www.elasticsearch.org/}. Elasticsearch is document oriented, schema less and works well with JSON\footnotemark. As our server is built on JavaScript working with JSON is easy. JSON-objects can be inserted right into the storage and elasticsearch will map fields and value accordingly, and make it available for search.
+The data storage is an elasticsearch database\footnote{http://www.elasticsearch.org/}. Elasticsearch is document oriented, schema less and works well with \ac{JSON}\footnotemark. As our server is built on JavaScript working with \ac{JSON} is easy. \ac{JSON}-objects can be inserted right into the storage and Elasticsearch will map fields and value accordingly, and make it available for search.
 Elasticsearch takes advantages of embedded documents meaning we can store related data together. An attack is usually made up of several passes these can be stored as an embedded document in the attack document. Then all pases can be retrieved in one query when fetching an attack.
 
-The main reason for using Elasticsearch is its search capability. In the starting phase of the project MongoDB \footnotemark was the storage engine. However as some aggregation queries was hard to figure out how to do a change to elasticsearch was made. It should be noted that MongoDB supports map reduce operations. With some extra work the queries causing problems could possible have been done with MongoDB. However, with elasticsearch you can in a single, simple to write query get counted how many passes all players for a team has played and received, the number of times all players has been the breakthrough-player in an attack, count type of attacks, count the most used zones for passing and finishing and so on. This makes it very easy and efficient to do queries for analyses on teams and players.
+The main reason for using Elasticsearch is its search capability. In the starting phase of the project MongoDB \footnotemark was the storage engine. However as some aggregation queries was hard to figure out how to do a change to Elasticsearch was made. It should be noted that MongoDB supports map reduce operations. With some extra work the queries causing problems could possible have been done with MongoDB. However, with Elasticsearch you can in a single, simple to write query get counted how many passes all players for a team has played and received, the number of times all players has been the breakthrough-player in an attack, count type of attacks, count the most used zones for passing and finishing and so on. This makes it very easy to do queries for analyses on teams and players.
 
 \footnotetext{http://www.json.org/}
 \footnotetext{http://www.mongodb.org/}
 
 \subsubsection{Indexes}
 
-Indexes in much like tables in a relational database in the way that they are a container for data. An index stores documents, which is a bunch of key/value pairs, like JSON. You can let elasticsearch automatic analyze the field data or you can use mappings. For supporting querying on players and other fields where the value is more than one word, you have to tell elasticsearch that it is a multi field. For example searching for player name ''Stefan Johansen'' when the field is not set as multi field will give you two results and not one as you would expect.
+Indexes in much like tables in a relational database in the way that they are a container for data. An index stores documents, which is a bunch of key/value pairs, like \ac{JSON}. You can let Elasticsearch automatic analyze the field data or you can use mappings. For supporting querying on players and other fields where the value is more than one word, you have to tell Elasticsearch that it is a multi field. For example searching for player name ''Stefan Johansen'' when the field is not set as multi field will give you two results and not one, as you would expect.
 
 In our project we have 5 different indexes. You have Team index, which holds all the teams. Player index which holds all the players. Match index holds and stores all data from a match including all attacks. Attack index stores information about attacks. Last you have the Pass index, which stores passes. Listing \ref{list:domainmodel} shows an example of data stored in the match, attack and pass indexes. 
 As may be noted there is data redundancy. You can argue that storage has become so cheap and if you can use a little bit extra space to gain performance you would do it. In this case it was done to be able to fully support aggregation functions on subdocuments.
 
 \subsection{Back-end}
 
-The back end is the middle-ware between the clients and the data layer. It exposes a RESTful\footnote{http://www.ibm.com/developerworks/webservices/library/ws-restful/} interface over HTTP for the client to communicate. A request coming in is transformed to a database query based on the resource it tries to access. On answer from the database the result is transformed before returning it to the client. 
+The back end is the middle-ware between the clients and the data layer. It exposes a \ac{REST}\footnote{http://www.ibm.com/developerworks/webservices/library/ws-restful/} interface over \ac{HTTP} for the client to communicate. A request coming in is transformed to a database query based on the resource it tries to access. On answer from the database the result is transformed before returning it to the client. 
 
-Similar if the client sends new data for a match the middle-ware inserts the data into the appropriate indexes. The server will respond will HTTP status code 201 if all goes well or 400 on an error. The server uses HTTP code actively to tell the client the result of requests.
+Similar if the client sends new data for a match the middle-ware inserts the data into the appropriate indexes. The server will respond will HTTP status code 201 if all goes well or 400 on an error. The server uses \ac{HTTP} code actively to tell the client the result of requests.
 
 In principal, since the data input is generated in the web browser (with JavaScript), it could have been inserted right away into the database without going through an extra middleware. However, this limits us, as we can’t combine multiple queries by going through the back-end. Cleaning of data before serving to the client would neither be possible. Normally you also do validation of the data at the back-end before inserting into your database.
 
 \subsubsection{API}
 
-The API of the web server is listed in figure \ref{fig:api}. As mentioned the API follows the REST principles. 
+The\ac{API} of the web server is listed in figure \ref{fig:api}. As mentioned the \ac{API} follows the \ac{REST} principles. 
 
 \begin{figure}[ht!]
 \centering
@@ -85,7 +85,7 @@ The API of the web server is listed in figure \ref{fig:api}. As mentioned the AP
 
 \subsection{Front-end}
 
-Front end is consisting of a single page JavaScript application using Backbone.js \footnotemark as under-supporting framework. Backbone uses a MVC model to structure the code. With Backbone your views will update automatic when data changes. In the following sections the architecture of the client and how different concepts is used will be described. 
+Front end is consisting of a single page JavaScript application using Backbone.js \footnotemark as under-supporting framework. Backbone uses a \ac{MVP} model to structure the code. With Backbone your views will update automatic when data changes. In the following sections the architecture of the client and how different concepts is used will be described. 
 
 \footnotetext{http://backbonejs.org/}
 
@@ -98,15 +98,19 @@ Front end is consisting of a single page JavaScript application using Backbone.j
 
 \subsubsection{Models}
 
-Data is represented as models in backbone. The model has mainly two responsibilities. First is whenever a update on a models data occurs the model notifies the views that has subscribed for update events for that particular model. The second is that models are responsible for AJAX communication with the back-end. An example is when a user registers a new attack for a match. He fills out a form and press the submit button. Then a new Attack Model is created. Calling save on the instance of the model will send an AJAX post request to the server with the models data in the HTTP body.
+Data is represented as models in backbone. The model has mainly two responsibilities. First is whenever an update on a models data occurs the model notifies the presenters that have subscribed for update events for that particular model. The second is that models are responsible for \ac{AJAX} communication with the back-end. An example is when a user registers a new attack for a match. He fills out a form and press the submit button. Then a new Attack Model is created. Calling save on the instance of the model will send an \ac{AJAX} post request to the server with the models data in the \ac{HTTP} body.
 
-Similar to an Attack Model we have Player Model that handles everything around players. When you click yourself into a players profile the model will fetch statistics from the back-end, notify the view that the data is ready, and the view will be rendered.
+Similar to an Attack Model we have Player Model that handles everything around players. When you click yourself into a players profile the model will fetch statistics from the back-end, notify the presenter that the data is ready, and the \ac{HTML} will be rendered in the web browser.
 
-There is also a Match Model for fetching and registration of matches, Team Model for viewing statistics, and a Pass Model for saving passes. They work it the same way as the models described above using AJAX to communicate with the back-end and notification views.
+There is also a Match Model for fetching and registration of matches, Team Model for viewing statistics, and a Pass Model for saving passes. They work it the same way as the models described above using \ac{AJAX} to communicate with the back-end and notification presenters on data changes.
+
+\subsubsection{Presenters}
+
+Presenters are the clue between the Model and the View (web page). Presenters can bind own functions to respond to models events. For example on data change event from a model the presenter will call its render function and the \ac{UI} will updated. Each presenter has a own \ac{HTML} div tag which he renders to. Including to subscribing to events on models the presenter can subscribe for view events that happens in the\ac{DOM}, events that the user triggers. Following up the example in the previous section on an attack registration. When a user press the submit button the presenter will be notified. He will create a model for the attack and calling the save method on the instance object.
 
 \subsubsection{Views}
 
-For a analytic toolkit to be useful a good UI is critical. Here several helper libraries are used to present the data. Highcharts.js\footnotemark is a JavaScript library for illustrating graphs. A query on team generates a lot of statistics and rather than listing them up they are presented using charts. This also gives us the advantage of displaying several numbers for each player and plots it in the same graph. In figure \ref{fig:chart} the number of times a player has been involved in all attacks, number of passes into the final third of the pitch and the number of times a player has been the breakthrough-player is shown.
+For a analytic toolkit to be useful a good presentation is critical. Here several helper libraries are used to present the data. Highcharts.js\footnotemark is a JavaScript library for illustrating graphs. A query on team generates a lot of statistics and rather than listing them up they are presented using charts. This also gives us the advantage of displaying several numbers for each player and plots it in the same graph. In figure \ref{fig:chart} the number of times a player has been involved in all attacks, number of passes into the final third of the pitch and the number of times a player has been the breakthrough-player is shown.
 
 \footnotetext{http://www.highcharts.com/}
 
@@ -138,11 +142,13 @@ A component not mentioned before that lies on the client is the router. The rout
 
 \subsection{Getting players and teams into the database}
 
-Getting squads in a useful format like XML or JSON was harder than expected. On the Norwegian football alliance's website you could download the squads for the current season only in PDF. Current squads is fetched from altomfotball.no, a website by the Norwegian TV channel TV2. The fetching process is an own python script meant to run only once to set up the database. For each team the script basically reads the HTML document with all players listed, parse out players name, and sends in to the web server.
+Getting squads in a useful format like \ac{XML} or \ac{JSON} was harder than expected. On the Norwegian football alliance's website you could download the squads for the current season, but only in PDF format. Current squads is fetched from altomfotball.no, a website by the Norwegian broadcasting company TV2. The fetching process is an own python script meant to run only once to set up the database. For each team the script basically reads the HTML document with all players listed, parse out players name, and sends in to the web server.
 
 
 \subsection{Security}
 Security is not taken into concern. This means anyone getting into the page can post new match data and add attacks. This could have been fixed by requiring a login before getting access to the site. 
+
+
 
 
 
