@@ -7,19 +7,19 @@
 \contentsline {figure}{\numberline {2.5}{\ignorespaces The ZXY software - tracking of players gives you information of distance covered, average speed and max speed. You also get a heat map of the players movement on the field. Image from zxy.no}}{13}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Illustration of all passes in to attacking third in the match Manchester United vs Newcastle United. Taken from fourfourtwo.com}}{14}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Visioned illustration displaying key players and how they combine given you have queried on a team}}{16}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces A screen capture showing some data Tromsø IL captured in a previous analytic project}}{16}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Illustrations of different breakthroughs we want to registrate}}{17}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Dividing of pitch - the first suggestion had 18 zones}}{18}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Dividing of pitch - the second suggestion had 24 zones}}{18}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Conceptual architecture}}{19}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces A screen capture showing some data Tromsø IL captured in a previous analytic project}}{16}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Illustrations of different breakthroughs we want to registrate}}{17}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Dividing of pitch - the first suggestion had 18 zones}}{18}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Dividing of pitch - the second suggestion had 24 zones}}{18}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Conceptual architecture}}{19}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Overall architecture of the system }}{21}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Software stack}}{23}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Overview of the web servers API}}{26}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Architecture of the client side}}{26}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Shows how the passing statistic is illustrated on the client by using Highcharts.js}}{27}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Illustrations of which zones the team has finished off their attacks from, with percent. Team - Tromsø IL)}}{28}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Overall architecture of the system }}{22}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Final pitch dividing. More zones have been added to the penalty box area than the initially design. }}{24}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Software stack}}{24}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Overview of the web servers API}}{27}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Architecture of the client side}}{27}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Shows how the passing statistic is illustrated on the client by using Highcharts.js}}{29}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Illustrations of which zones the team has finished off their attacks from, with percent. Team - Tromsø IL)}}{29}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces A mockup of the main analytic page}}{34}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces All matches registrated in the database are listed on this page}}{35}

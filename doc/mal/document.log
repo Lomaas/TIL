@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.3)  11 DEC 2013 09:41
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.3)  11 DEC 2013 14:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -535,12 +535,6 @@ LaTeX Warning: Label `overflow' multiply defined.
 
 LaTeX Warning: Label `overflow' multiply defined.
 
-
-LaTeX Warning: Label `overflow' multiply defined.
-
-
-LaTeX Warning: Label `fig:team_analysis2' multiply defined.
-
 )
 \openout1 = `document.aux'.
 
@@ -707,9 +701,9 @@ Package pdftex.def Info: frontpage.pdf, page1 used on input line 72.
 \tf@toc=\write6
 \openout6 = `document.toc'.
 
- [6] [7
+ [6] [7] [8
 
-] [8
+] [9] [10
 
 ] (./document.lof
 Missing character: There is no Ã in font cmr12!
@@ -719,7 +713,7 @@ Missing character: There is no ¸ in font cmr12!
 
 Underfull \vbox (badness 1163) has occurred while \output is active []
 
- [9]
+ [11]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ¹ in font cmr12!
@@ -731,13 +725,13 @@ Missing character: There is no “ in font cmr12!
 \openout7 = `document.lof'.
 
 
-[10] (./document.lot)
+[12] (./document.lot)
 \tf@lot=\write8
 \openout8 = `document.lot'.
 
- [11
+ [13
 
-] [12
+] [14
 
 ]
 Chapter 1.
@@ -786,7 +780,7 @@ defined on input line 9.
 LaTeX Warning: Reference `fig:optastats.png' on page 6 undefined on input line 
 13.
 
-<images/general/optastats.png, id=110, 525.965pt x 119.44624pt>
+<images/general/optastats.png, id=116, 525.965pt x 119.44624pt>
 File: images/general/optastats.png Graphic file (type png)
 
 <use images/general/optastats.png>
@@ -812,7 +806,7 @@ Overfull \hbox (25.94928pt too wide) in paragraph at lines 45--46
 [][][][][][][][][][][][][][][][] 
  []
 
-<images/general/prozonecam.png, id=117, 527.9725pt x 270.00874pt>
+<images/general/prozonecam.png, id=123, 527.9725pt x 270.00874pt>
 File: images/general/prozonecam.png Graphic file (type png)
 
 <use images/general/prozonecam.png>
@@ -830,7 +824,7 @@ Missing character: There is no ¸ in font cmr12!
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9 <./images/general/prozonecam.png>]
-<images/general/zxyoverview.png, id=126, 492.84125pt x 286.06876pt>
+<images/general/zxyoverview.png, id=133, 492.84125pt x 286.06876pt>
 File: images/general/zxyoverview.png Graphic file (type png)
 
 <use images/general/zxyoverview.png>
@@ -840,7 +834,7 @@ Package pdftex.def Info: images/general/zxyoverview.png used on input line 79.
 Underfull \vbox (badness 6032) has occurred while \output is active []
 
  [10]
-<images/general/prozonestats.png, id=133, 656.4525pt x 450.68375pt>
+<images/general/prozonestats.png, id=140, 656.4525pt x 450.68375pt>
 File: images/general/prozonestats.png Graphic file (type png)
 
 <use images/general/prozonestats.png>
@@ -853,7 +847,7 @@ Missing character: There is no ¸ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
 
-<images/general/zxysoftware.png, id=138, 633.36626pt x 472.76625pt>
+<images/general/zxysoftware.png, id=144, 633.36626pt x 472.76625pt>
 File: images/general/zxysoftware.png Graphic file (type png)
 
 <use images/general/zxysoftware.png>
@@ -864,7 +858,7 @@ Package pdftex.def Info: images/general/zxysoftware.png used on input line 114.
 Underfull \vbox (badness 6412) has occurred while \output is active []
 
  [12 <./images/general/prozonestats.png>]
-<images/general/fourfourtwo.png, id=142, 714.67pt x 323.2075pt>
+<images/general/fourfourtwo.png, id=148, 714.67pt x 323.2075pt>
 File: images/general/fourfourtwo.png Graphic file (type png)
 
 <use images/general/fourfourtwo.png>
@@ -883,160 +877,150 @@ Missing character: There is no ™ in font cmr12!
  [15
 
 ]
-<images/general/illustration_after_search2.png, id=152, 376.40625pt x 265.99374
-pt>
-File: images/general/illustration_after_search2.png Graphic file (type png)
- <use images/general/illustration_after_search2.png>
-Package pdftex.def Info: images/general/illustration_after_search2.png used on 
-input line 12.
-(pdftex.def)             Requested size: 142.26378pt x 100.53479pt.
-
-<images/general/illustration_after_search.png, id=153, 599.23875pt x 424.58624p
-t>
-File: images/general/illustration_after_search.png Graphic file (type png)
- <use images/general/illustration_after_search.png>
-Package pdftex.def Info: images/general/illustration_after_search.png used on i
-nput line 13.
-(pdftex.def)             Requested size: 142.26378pt x 100.79492pt.
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
 
-<images/general/prev_domain_model2.png, id=154, 1297.84875pt x 32.12pt>
+<images/general/prev_domain_model2.png, id=159, 1297.84875pt x 32.12pt>
 File: images/general/prev_domain_model2.png Graphic file (type png)
 
 <use images/general/prev_domain_model2.png>
 Package pdftex.def Info: images/general/prev_domain_model2.png used on input li
-ne 23.
+ne 16.
 (pdftex.def)             Requested size: 390.0pt x 9.65175pt.
 
-<images/general/prev_domain_model1.png, id=155, 1130.2225pt x 30.1125pt>
+<images/general/prev_domain_model1.png, id=160, 1130.2225pt x 30.1125pt>
 File: images/general/prev_domain_model1.png Graphic file (type png)
 
 <use images/general/prev_domain_model1.png>
 Package pdftex.def Info: images/general/prev_domain_model1.png used on input li
-ne 24.
+ne 17.
 (pdftex.def)             Requested size: 390.0pt x 10.39066pt.
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
- [16 <./images/general/illustration_after_search2.png> <./images/general/illust
-ration_after_search.png> <./images/general/prev_domain_model2.png> <./images/ge
-neral/prev_domain_model1.png>]
-<images/general/different_breakthroughs.png, id=159, 965.6075pt x 254.9525pt>
+
+<images/general/different_breakthroughs.png, id=161, 965.6075pt x 254.9525pt>
 File: images/general/different_breakthroughs.png Graphic file (type png)
 
 <use images/general/different_breakthroughs.png>
 Package pdftex.def Info: images/general/different_breakthroughs.png used on inp
-ut line 37.
+ut line 26.
 (pdftex.def)             Requested size: 390.0pt x 102.97119pt.
-
-<images/general/first_zones.png, id=160, 525.965pt x 366.36874pt>
+ [16 <./images/general/prev_domain_model2.png> <./images/general/prev_domain_mo
+del1.png>]
+<images/general/first_zones.png, id=165, 525.965pt x 366.36874pt>
 File: images/general/first_zones.png Graphic file (type png)
 
 <use images/general/first_zones.png>
-Package pdftex.def Info: images/general/first_zones.png used on input line 46.
+Package pdftex.def Info: images/general/first_zones.png used on input line 39.
 (pdftex.def)             Requested size: 284.52756pt x 198.19954pt.
 
-<images/general/second_zones.png, id=162, 525.4029pt x 365.6862pt>
+<images/general/second_zones.png, id=167, 525.4029pt x 365.6862pt>
 File: images/general/second_zones.png Graphic file (type png)
 
 <use images/general/second_zones.png>
-Package pdftex.def Info: images/general/second_zones.png used on input line 48.
+Package pdftex.def Info: images/general/second_zones.png used on input line 41.
 
 (pdftex.def)             Requested size: 284.52756pt x 198.04233pt.
- [17 <./images/general/different_breakthroughs.png>] [18 <./images/general/firs
-t_zones.png> <./images/general/second_zones.png (PNG copy)>]
+ [17 <./images/general/different_breakthroughs.png>]
 <images/architecture/conceptual_architecture.png, id=171, 411.939pt x 350.5095p
 t>
 File: images/architecture/conceptual_architecture.png Graphic file (type png)
  <use images/architecture/conceptual_architecture.png>
 Package pdftex.def Info: images/architecture/conceptual_architecture.png used o
-n input line 66.
+n input line 60.
 (pdftex.def)             Requested size: 426.79134pt x 363.14676pt.
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 66--67
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 60--61
  [][] 
  []
 
-) [19 <./images/architecture/conceptual_architecture.png>] [20
+) [18 <./images/general/first_zones.png> <./images/general/second_zones.png (PN
+G copy)>] [19 <./images/architecture/conceptual_architecture.png>] [20
 
 ]
 Chapter 4.
 (./chapters/designimplementation.tex
-<images/general/arhitecture.png, id=179, 351.9549pt x 296.307pt>
+<images/general/arhitecture.png, id=184, 351.9549pt x 296.307pt>
 File: images/general/arhitecture.png Graphic file (type png)
 
 <use images/general/arhitecture.png>
 Package pdftex.def Info: images/general/arhitecture.png used on input line 7.
-(pdftex.def)             Requested size: 284.52756pt x 239.5507pt.
- [21 <./images/general/arhitecture.png>]
-(./domainmodel.js
+(pdftex.def)             Requested size: 390.0pt x 328.34854pt.
+ [21] (./domainmodel.js [22 <./images/general/arhitecture.png>]
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
- [22]
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
 )
-<images/implementation/software_stack.png, id=188, 746.79pt x 161.60374pt>
+<images/general/capture_illustration.png, id=193, 525.4029pt x 364.9635pt>
+File: images/general/capture_illustration.png Graphic file (type png)
+
+<use images/general/capture_illustration.png>
+Package pdftex.def Info: images/general/capture_illustration.png used on input 
+line 35.
+(pdftex.def)             Requested size: 390.0pt x 270.92079pt.
+
+<images/implementation/software_stack.png, id=194, 746.79pt x 161.60374pt>
 File: images/implementation/software_stack.png Graphic file (type png)
 
 <use images/implementation/software_stack.png>
 Package pdftex.def Info: images/implementation/software_stack.png used on input
- line 36.
-(pdftex.def)             Requested size: 284.52756pt x 61.57033pt.
-
-Underfull \vbox (badness 3746) has occurred while \output is active []
-
- [23 <./images/implementation/software_stack.png>] [24]
-<images/implementation/API.png, id=196, 745.78625pt x 476.78125pt>
+ line 46.
+(pdftex.def)             Requested size: 390.0pt x 84.39444pt.
+ [23] [24 <./images/general/capture_illustration.png (PNG copy)> <./images/impl
+ementation/software_stack.png>]
+[25]
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+ <images/implementation/API.png, id=204, 745.78625pt x 476.78125pt>
 File: images/implementation/API.png Graphic file (type png)
 
 <use images/implementation/API.png>
-Package pdftex.def Info: images/implementation/API.png used on input line 70.
-(pdftex.def)             Requested size: 284.52756pt x 181.89899pt.
+Package pdftex.def Info: images/implementation/API.png used on input line 81.
+(pdftex.def)             Requested size: 390.0pt x 249.32448pt.
 
-<images/architecture/backbone_architecture.png, id=197, 469.755pt x 270.2898pt>
+<images/architecture/backbone_architecture.png, id=205, 469.755pt x 270.2898pt>
 File: images/architecture/backbone_architecture.png Graphic file (type png)
 <use images/architecture/backbone_architecture.png>
 Package pdftex.def Info: images/architecture/backbone_architecture.png used on 
-input line 83.
-(pdftex.def)             Requested size: 426.79134pt x 245.56816pt.
+input line 94.
+(pdftex.def)             Requested size: 390.0pt x 224.39821pt.
+ [26]
+Overfull \vbox (15.38931pt too high) has occurred while \output is active []
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 83--84
- [][] 
- []
 
-[25] [26 <./images/implementation/API.png> <./images/architecture/backbone_arch
-itecture.png>]
-<images/general/chart_passes.png, id=205, 1179.40625pt x 510.90875pt>
+[27 <./images/implementation/API.png> <./images/architecture/backbone_architect
+ure.png>]
+<images/general/chart_passes.png, id=214, 1179.40625pt x 510.90875pt>
 File: images/general/chart_passes.png Graphic file (type png)
 
 <use images/general/chart_passes.png>
-Package pdftex.def Info: images/general/chart_passes.png used on input line 105
+Package pdftex.def Info: images/general/chart_passes.png used on input line 115
 .
 (pdftex.def)             Requested size: 284.52756pt x 123.25206pt.
- [27 <./images/general/chart_passes.png>]
-<images/general/finishing_zones.png, id=209, 614.295pt x 416.55624pt>
+
+<images/general/finishing_zones.png, id=215, 614.295pt x 416.55624pt>
 File: images/general/finishing_zones.png Graphic file (type png)
 
 <use images/general/finishing_zones.png>
 Package pdftex.def Info: images/general/finishing_zones.png used on input line 
-114.
+124.
 (pdftex.def)             Requested size: 241.84842pt x 164.00081pt.
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
- (./underscore_example.html) [28 <./images/general/finishing_zones.png>]) [29] 
-[30
-
-]
+ [28] (./underscore_example.html)
+[29 <./images/general/chart_passes.png> <./images/general/finishing_zones.png>]
+) [30]
 Chapter 5.
 (./chapters/demo.tex
-<images/general/mockup.png, id=220, 681.54625pt x 1025.8325pt>
+<images/general/mockup.png, id=225, 681.54625pt x 1025.8325pt>
 File: images/general/mockup.png Graphic file (type png)
 
 <use images/general/mockup.png>
@@ -1046,7 +1030,7 @@ Package pdftex.def Info: images/general/mockup.png used on input line 9.
 
 LaTeX Warning: Float too large for page by 21.84926pt on input line 12.
 
-<images/general/all_matches.png, id=221, 1183.42125pt x 1065.9825pt>
+<images/general/all_matches.png, id=226, 1183.42125pt x 1065.9825pt>
 File: images/general/all_matches.png Graphic file (type png)
 
 <use images/general/all_matches.png>
@@ -1056,22 +1040,24 @@ Missing character: There is no Â in font cmr12!
 Missing character: There is no « in font cmr12!
 Missing character: There is no Â in font cmr12!
 Missing character: There is no » in font cmr12!
- [31]
-<images/general/all_attacks.png, id=225, 1170.3725pt x 931.48pt>
+ [31
+
+]
+<images/general/all_attacks.png, id=230, 1170.3725pt x 931.48pt>
 File: images/general/all_attacks.png Graphic file (type png)
 
 <use images/general/all_attacks.png>
 Package pdftex.def Info: images/general/all_attacks.png used on input line 33.
 (pdftex.def)             Requested size: 390.0pt x 310.38834pt.
 
-<images/general/reg_attack.png, id=226, 1090.0725pt x 1458.44875pt>
+<images/general/reg_attack.png, id=231, 1090.0725pt x 1458.44875pt>
 File: images/general/reg_attack.png Graphic file (type png)
 
 <use images/general/reg_attack.png>
 Package pdftex.def Info: images/general/reg_attack.png used on input line 46.
 (pdftex.def)             Requested size: 390.0pt x 521.79205pt.
 
-<images/general/all_teams.png, id=227, 1164.35pt x 1095.09125pt>
+<images/general/all_teams.png, id=232, 1164.35pt x 1095.09125pt>
 File: images/general/all_teams.png Graphic file (type png)
 
 <use images/general/all_teams.png>
@@ -1079,14 +1065,10 @@ Package pdftex.def Info: images/general/all_teams.png used on input line 57.
 (pdftex.def)             Requested size: 390.0pt x 366.79518pt.
 
 
-LaTeX Warning: Reference `fig:team_analysis3' on page 32 undefined on input lin
-e 62.
-
-
 LaTeX Warning: Reference `team_analysis4' on page 32 undefined on input line 62
 .
 
-<images/general/team_analysis1.png, id=228, 1197.47375pt x 1489.565pt>
+<images/general/team_analysis1.png, id=233, 1197.47375pt x 1489.565pt>
 File: images/general/team_analysis1.png Graphic file (type png)
 
 <use images/general/team_analysis1.png>
@@ -1094,7 +1076,7 @@ Package pdftex.def Info: images/general/team_analysis1.png used on input line 6
 6.
 (pdftex.def)             Requested size: 390.0pt x 485.12569pt.
 
-<images/general/team_analysis2.png, id=229, 631.35875pt x 1011.78pt>
+<images/general/team_analysis2.png, id=234, 631.35875pt x 1011.78pt>
 File: images/general/team_analysis2.png Graphic file (type png)
 
 <use images/general/team_analysis2.png>
@@ -1105,7 +1087,7 @@ Package pdftex.def Info: images/general/team_analysis2.png used on input line 7
 
 LaTeX Warning: Float too large for page by 59.8301pt on input line 76.
 
-<images/general/team_analysis3.png, id=230, 634.37pt x 544.0325pt>
+<images/general/team_analysis3.png, id=235, 634.37pt x 544.0325pt>
 File: images/general/team_analysis3.png Graphic file (type png)
 
 <use images/general/team_analysis3.png>
@@ -1116,7 +1098,7 @@ Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ¹ in font cmr12!
 
-<images/general/team_analysis4.png, id=231, 599.23875pt x 576.1525pt>
+<images/general/team_analysis4.png, id=236, 599.23875pt x 576.1525pt>
 File: images/general/team_analysis4.png Graphic file (type png)
 
 <use images/general/team_analysis4.png>
@@ -1127,7 +1109,7 @@ Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no “ in font cmr12!
 
-<images/general/player_view1.png, id=232, 1181.41376pt x 869.2475pt>
+<images/general/player_view1.png, id=237, 1181.41376pt x 869.2475pt>
 File: images/general/player_view1.png Graphic file (type png)
 
 <use images/general/player_view1.png>
@@ -1135,7 +1117,7 @@ Package pdftex.def Info: images/general/player_view1.png used on input line 97.
 
 (pdftex.def)             Requested size: 390.0pt x 286.9454pt.
 
-<images/general/player_view2.png, id=233, 624.3325pt x 897.3525pt>
+<images/general/player_view2.png, id=238, 624.3325pt x 897.3525pt>
 File: images/general/player_view2.png Graphic file (type png)
 
 <use images/general/player_view2.png>
@@ -1184,21 +1166,29 @@ Underfull \vbox (badness 3954) has occurred while \output is active []
  [45
 
 ]
-<images/general/matched_regged.png, id=278, 736.7525pt x 367.3725pt>
+<images/general/matched_regged.png, id=284, 736.7525pt x 367.3725pt>
 File: images/general/matched_regged.png Graphic file (type png)
 
 <use images/general/matched_regged.png>
 Package pdftex.def Info: images/general/matched_regged.png used on input line 1
 9.
 (pdftex.def)             Requested size: 390.0pt x 194.46544pt.
+Missing character: There is no Ã in font cmr12!
+Missing character: There is no ¸ in font cmr12!
+ [46 <./images/general/matched_regged.png>]
+Missing character: There is no Â in font cmr12!
+Missing character: There is no ¨ in font cmr12!
+Missing character: There is no Â in font cmr12!
+Missing character: There is no ¨ in font cmr12!
 
-Underfull \vbox (badness 5316) has occurred while \output is active []
+Underfull \vbox (badness 1360) has occurred while \output is active []
 
- [46 <./images/general/matched_regged.png>]) [47] [48
-
-]
+ [47])
+[48]
 Chapter 7.
-(./chapters/conclusion.tex) (./document.bbl [49] [50
+(./chapters/conclusion.tex) (./document.bbl [49
+
+] [50
 
 ]) [51] (./document.aux)
 
@@ -1209,13 +1199,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8718 strings out of 493315
- 121217 string characters out of 6137904
- 248799 words of memory out of 5000000
- 11891 multiletter control sequences out of 15000+600000
+ 8720 strings out of 493315
+ 121099 string characters out of 6137904
+ 252845 words of memory out of 5000000
+ 11894 multiletter control sequences out of 15000+600000
  16782 words of font info for 69 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 40i,18n,45p,3243b,1385s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 40i,18n,45p,3243b,1379s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
@@ -1225,10 +1215,10 @@ ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loca
 l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
 /texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/
 texlive/2013/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb>
-Output written on document.pdf (65 pages, 9208140 bytes).
+Output written on document.pdf (67 pages, 9522770 bytes).
 PDF statistics:
- 331 PDF objects out of 1000 (max. 8388607)
- 203 compressed objects within 3 object streams
+ 337 PDF objects out of 1000 (max. 8388607)
+ 208 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 176 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 171 words of extra memory for PDF output out of 10000 (max. 10000000)
 
