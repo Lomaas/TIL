@@ -43,29 +43,29 @@
 \contentsline {subsubsection}{\numberline {5.2.3.3}Presenters}{30}
 \contentsline {subsubsection}{\numberline {5.2.3.4}Views}{30}
 \contentsline {subsubsection}{\numberline {5.2.3.5}Router}{32}
-\contentsline {subsection}{\numberline {5.2.4}Building database – players and teams}{32}
+\contentsline {subsection}{\numberline {5.2.4}Building the database – players and teams}{32}
 \contentsline {subsection}{\numberline {5.2.5}Security}{32}
 \contentsline {chapter}{\numberline {6}Demo}{33}
 \contentsline {section}{\numberline {6.1}Interfaces}{33}
 \contentsline {subsection}{\numberline {6.1.1}Mockup}{33}
 \contentsline {subsection}{\numberline {6.1.2}Implemented interfaces}{33}
 \contentsline {subsubsection}{\numberline {6.1.2.1}Home page}{33}
-\contentsline {subsubsection}{\numberline {6.1.2.2}Registrating attacks}{34}
-\contentsline {subsubsection}{\numberline {6.1.2.3}Match view}{34}
-\contentsline {subsubsection}{\numberline {6.1.2.4}Team view}{34}
-\contentsline {section}{\numberline {6.2}Capturing process}{35}
-\contentsline {chapter}{\numberline {7}Evaluation and Results}{47}
-\contentsline {section}{\numberline {7.1}Methods}{47}
-\contentsline {subsection}{\numberline {7.1.1}User Survey}{47}
-\contentsline {section}{\numberline {7.2}Experiments and Results}{48}
-\contentsline {subsection}{\numberline {7.2.1}Test data and Assessors}{48}
-\contentsline {subsection}{\numberline {7.2.2}SAT as a tool for opponent analytic}{48}
-\contentsline {subsection}{\numberline {7.2.3}SAT as a tool for identifying key players}{49}
-\contentsline {subsection}{\numberline {7.2.4}UI-performance}{49}
-\contentsline {section}{\numberline {7.3}Discussion}{49}
-\contentsline {subsection}{\numberline {7.3.1}Input}{49}
-\contentsline {subsection}{\numberline {7.3.2}Interfaces}{50}
-\contentsline {subsection}{\numberline {7.3.3}Scalability}{50}
-\contentsline {chapter}{\numberline {8}Conclusion}{51}
-\contentsline {subsection}{\numberline {8.0.4}Concluding Remarks}{51}
-\contentsline {section}{\numberline {8.1}Future Work}{51}
+\contentsline {subsubsection}{\numberline {6.1.2.2}Register attacks}{35}
+\contentsline {subsubsection}{\numberline {6.1.2.3}Match view}{36}
+\contentsline {subsubsection}{\numberline {6.1.2.4}Team view}{36}
+\contentsline {section}{\numberline {6.2}Capturing process}{36}
+\contentsline {chapter}{\numberline {7}Evaluation and Results}{45}
+\contentsline {section}{\numberline {7.1}Methods}{45}
+\contentsline {subsection}{\numberline {7.1.1}User Survey}{45}
+\contentsline {section}{\numberline {7.2}Experiments and Results}{46}
+\contentsline {subsection}{\numberline {7.2.1}Test data and Assessors}{46}
+\contentsline {subsection}{\numberline {7.2.2}SAT as a tool for opponent analytic}{46}
+\contentsline {subsection}{\numberline {7.2.3}SAT as a tool for identifying key players}{47}
+\contentsline {subsection}{\numberline {7.2.4}UI-performance}{47}
+\contentsline {section}{\numberline {7.3}Discussion}{47}
+\contentsline {subsection}{\numberline {7.3.1}Input}{47}
+\contentsline {subsection}{\numberline {7.3.2}Interfaces}{48}
+\contentsline {subsection}{\numberline {7.3.3}Scalability}{48}
+\contentsline {chapter}{\numberline {8}Conclusion}{49}
+\contentsline {subsection}{\numberline {8.0.4}Concluding Remarks}{49}
+\contentsline {section}{\numberline {8.1}Future Work}{49}

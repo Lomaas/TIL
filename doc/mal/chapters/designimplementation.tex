@@ -118,7 +118,7 @@ Backbone uses a \ac{MVP} model to structure the code. With Backbone your views w
 
 \subsubsection{Models}
 
-In Backbone you handle data and communication with the back-end with something called models. A model has mainly two responsibilities; whenever an update on a models data occurs the model notifies the presenters that have subscribed for update events for that particular model (4). The second is that models are responsible for \ac{AJAX} communication with the back-end (3). An example is when a user registers a new attack for a match. He fills out a form and press the submit button (1). Then a new attack model is created. Calling save on the instance of the model will send an \ac{AJAX} post request to the server with the models data in the \ac{HTTP} body (3).
+In Backbone you handle data and communication with the back-end with objects called models. A model has mainly two responsibilities; whenever an update on a models data occurs the model notifies the presenters that have subscribed for update events for that particular model (4). The second is that models are responsible for \ac{AJAX} communication with the back-end (3). An example is when a user registers a new attack for a match. He fills out a form and press the submit button (1). Then a new attack model is created. Calling save on the instance of the model will send an \ac{AJAX} post request to the server with the models data in the \ac{HTTP} body (3).
 
 Similar to an attack model we have player model that handles everything around players. When you click yourself into a players profile the model will fetch statistics from the back-end, notify the presenter that the data is ready, and the \ac{HTML} will be rendered in the web browser.
 
@@ -166,7 +166,7 @@ A component not mentioned before is the router. The router is the glue that bind
 
 In the page the header is static and will only be rendered once when the user first visits the web page. 
 
-\subsection{Building database – players and teams}
+\subsection{Building the database – players and teams}
 
 Finding squads in a useful format like \ac{XML} or \ac{JSON} was harder than expected. On the Norwegian football alliance's website you could download the squads for the current season, but only in PDF format. Current squads is fetched from altomfotball.no, a website by the Norwegian broadcasting company TV2. The fetching process is an own python script meant to run only once to set up the database. For each team the script basically reads the HTML document with all players listed, parse out players name, and sends in to the web server.
 
