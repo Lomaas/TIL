@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.3)  12 DEC 2013 21:10
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.3)  12 DEC 2013 23:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -994,33 +994,40 @@ File: images/implementation/API.png Graphic file (type png)
 <use images/implementation/API.png>
 Package pdftex.def Info: images/implementation/API.png used on input line 99.
 (pdftex.def)             Requested size: 390.0pt x 249.32448pt.
-Package acronym Info: Label `acro:MVP' newly defined as it shall be overridden
+Package acronym Info: Label `acro:SPA' newly defined as it shall be overridden
 although it is yet undefined on input line 106.
+Package acronym Info: Label `acro:HTML' newly defined as it shall be overridden
 
-<images/architecture/backbone_architecture.png, id=208, 469.755pt x 270.2898pt>
+although it is yet undefined on input line 106.
+Package acronym Info: Label `acro:CSS' newly defined as it shall be overridden
+although it is yet undefined on input line 106.
+Package acronym Info: Label `acro:AJAX' newly defined as it shall be overridden
+
+although it is yet undefined on input line 106.
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no ™ in font cmr12!
+ [27]
+Package acronym Info: Label `acro:MVP' newly defined as it shall be overridden
+although it is yet undefined on input line 108.
+
+<images/architecture/backbone_architecture.png, id=212, 469.755pt x 270.2898pt>
 File: images/architecture/backbone_architecture.png Graphic file (type png)
 <use images/architecture/backbone_architecture.png>
 Package pdftex.def Info: images/architecture/backbone_architecture.png used on 
-input line 112.
+input line 114.
 (pdftex.def)             Requested size: 390.0pt x 224.39821pt.
- [27]
-Package acronym Info: Label `acro:AJAX' newly defined as it shall be overridden
-
-although it is yet undefined on input line 119.
-Package acronym Info: Label `acro:HTML' newly defined as it shall be overridden
-
-although it is yet undefined on input line 121.
  [28 <./images/implementation/API.png>]
 Package acronym Info: Label `acro:UI' newly defined as it shall be overridden
-although it is yet undefined on input line 127.
+although it is yet undefined on input line 129.
 Package acronym Info: Label `acro:DOM' newly defined as it shall be overridden
-although it is yet undefined on input line 127.
+although it is yet undefined on input line 129.
  [29 <./images/architecture/backbone_architecture.png>]
 <images/general/chart_passes.png, id=220, 1179.40625pt x 510.90875pt>
 File: images/general/chart_passes.png Graphic file (type png)
 
 <use images/general/chart_passes.png>
-Package pdftex.def Info: images/general/chart_passes.png used on input line 137
+Package pdftex.def Info: images/general/chart_passes.png used on input line 139
 .
 (pdftex.def)             Requested size: 284.52756pt x 123.25206pt.
 
@@ -1029,15 +1036,15 @@ File: images/general/finishing_zones.png Graphic file (type png)
 
 <use images/general/finishing_zones.png>
 Package pdftex.def Info: images/general/finishing_zones.png used on input line 
-146.
+148.
 (pdftex.def)             Requested size: 241.84842pt x 164.00081pt.
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
 Missing character: There is no Ã in font cmr12!
 Missing character: There is no ¸ in font cmr12!
- (./underscore_example.html) [30 <./images/general/chart_passes.png>]
+ [30 <./images/general/chart_passes.png>] (./underscore_example.html)
 Package acronym Info: Label `acro:XML' newly defined as it shall be overridden
-although it is yet undefined on input line 163.
+although it is yet undefined on input line 167.
  [31 <./images/general/finishing_zones.png>])
 [32]
 Chapter 6.
@@ -1209,12 +1216,16 @@ Chapter 8.
 ] [52
 
 ]
-Underfull \hbox (badness 1565) in paragraph at lines 37--42
+Underfull \hbox (badness 1565) in paragraph at lines 42--47
 \OT1/cmr/m/n/12 Stens-land, Carsten Gri-wodz, Dag Jo-hansen, and P^^Wal Halvors
 en.
  []
 
-[53]) [54] (./document.aux)
+
+Underfull \vbox (badness 1748) has occurred while \output is active []
+
+ [53])
+[54] (./document.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1223,10 +1234,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8783 strings out of 493315
- 121651 string characters out of 6137904
- 253477 words of memory out of 5000000
- 11957 multiletter control sequences out of 15000+600000
+ 8795 strings out of 493315
+ 121749 string characters out of 6137904
+ 253547 words of memory out of 5000000
+ 11969 multiletter control sequences out of 15000+600000
  16782 words of font info for 69 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  40i,18n,45p,3243b,1381s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1239,7 +1250,7 @@ ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loca
 l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
 /texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/
 texlive/2013/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb>
-Output written on document.pdf (70 pages, 9531468 bytes).
+Output written on document.pdf (70 pages, 9532232 bytes).
 PDF statistics:
  346 PDF objects out of 1000 (max. 8388607)
  214 compressed objects within 3 object streams

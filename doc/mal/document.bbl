@@ -33,6 +33,11 @@ D.~Johansen, M.~Stenhaug, R.B.A. Hansen, A.~Christensen, and P.-M. Hogmo.
 \newblock Muithu: Smaller footprint, potentially larger imprint.
 \newblock pages 205--214, 2012.
 
+\bibitem{ajax}
+Lori MacVittie.
+\newblock The impact of ajax on the network.
+\newblock {\em F5 Networks, Inc}, 2007.
+
 \bibitem{Saegrov2012}
 Simen S{\ae}grov, Alexander Eichhorn, J{\o}rgen Emerslund, H{\aa}kon~Kvale
   Stensland, Carsten Griwodz, Dag Johansen, and P{\aa}l Halvorsen.
@@ -45,6 +50,11 @@ Anderson Sally.
 \newblock Shots and goals in the big 4: Offensive performance across leagues in
   2010/11.
 \newblock http://www.soccerbythenumbers.com/, aug 2011.
+
+\bibitem{node.js}
+S.~Tilkov and S.~Vinoski.
+\newblock Node.js: Using javascript to build high-performance network programs.
+\newblock {\em Internet Computing, IEEE}, 14(6):80--83, 2010.
 
 \bibitem{bigdata:majorleague}
 Jason Turbow.

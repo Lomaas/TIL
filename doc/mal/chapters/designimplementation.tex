@@ -78,9 +78,9 @@ Listing \ref{list:domainmodel} shows an example of data stored from a match. As 
 \subsection{Back-end}
 
 \subsubsection{Overview}	
-The back-end is the middleware between the clients and the data layer and is written in Node.js\footnote{http://nodejs.org/}. It exposes a \ac{REST}\footnote{http://www.ibm.com/developerworks/webservices/library/ws-restful/} interface over \ac{HTTP} for the client to communicate. A request coming in is transformed to a database query based on the resource it tries to access. Node.js is built on Chrome’s JavaScript runtime\footnote{https://code.google.com/p/v8/} engine. It’s a relatively new and unproven platform, but has gained a lot of hype in the computer science community for its lightweight and efficient programming model. This comes from the even-driven and non-blocking I/O model. Per default, every request is handled by just one process running on one CPU core.
+The back-end is the middleware between the clients and the data layer and is written in Node.js\cite{node.js} It exposes a \ac{REST}\footnote{http://www.ibm.com/developerworks/webservices/library/ws-restful/} interface over \ac{HTTP} shown in figue \ref{fig:api} for the client to communicate. A request coming in is transformed to a database query based on the resource it tries to access. Node.js is built on Chrome’s JavaScript runtime\footnote{https://code.google.com/p/v8/} engine. It’s a relatively new and unproven platform, but has gained a lot of hype in the computer science community for its lightweight and efficient model. This comes from the even-driven and non-blocking I/O model. Per default, an instance of node runs in a single thread and does not utilize other CPU cores. When programming you need to avoid long, blocking computations as this will block the node process for handling new incoming requests. Our back-end uses non-blocking I/O calls when accessing the database and does minimal computation elsewhere. 
 
-\subsubsection{Routing}	
+\subsubsection{Routing}
 
 The back-end code is structured up in modules. Requests on the URL /players is routed to the Player module for handling. Similar, you have an attack module, pass module, team module, player module and a match module. A very often used URL is /team/:name. A \ac{HTTP} GET on this URL will be routed to the team module where a query for information about the specified team is run. On answer from the database, the result is transformed before returning it to the client. 
 
@@ -92,7 +92,7 @@ In principle, since the data input is generated in the web browser (with JavaScr
 
 \subsubsection{API}
 
-The\ac{API} of the web server is listed in figure \ref{fig:api}. As mentioned the \ac{API} follows the \ac{REST} principles. 
+The \ac{API} of the web server is listed in figure \ref{fig:api}. As mentioned the \ac{API} follows the \ac{REST} principles. Optimal, routes like /teams/:name/finalthird should not be needed as all statistics could have been returned when getting team statistics. 
 
 \begin{figure}[ht!]
 \centering
@@ -103,7 +103,9 @@ The\ac{API} of the web server is listed in figure \ref{fig:api}. As mentioned th
 
 \subsection{Front-end}
 
-Front end is consisting of a single page JavaScript application using Backbone.js \footnotemark as under-supporting framework. Backbone uses a \ac{MVP} model to structure the code. With Backbone your views will update automatic when data changes. In the following sections the architecture of the client and how different concepts is used will be described. 
+The front end is a \ac{SPA} \cite{} using Backbone.js\footnotemark as under-supporting library. This means that not every code is necessary loaded at once (\ac{HTML}, \ac{CSS} and JavaScript), but when needed. The whole page does not reload when users navigate around, only parts of it will be updated. This is all possible because of \ac{AJAX}. \ac{AJAX} is way for JavaScript running in a browser to make HTTP requests to back-end web servers. It’s asynchronously, meaning that the web page is still responsive and navigable during the request.\cite{ajax}
+
+Backbone uses a \ac{MVP} model to structure the code. With Backbone your views will update automatic when data changes. In the following sections the architecture of the client and how different concepts is used will be described. 
 
 \footnotetext{http://backbonejs.org/}
 
@@ -156,7 +158,9 @@ Backbone comes with a library Underscore.js\footnotemark that makes creating HTM
 
 \subsubsection{Router}
 
-A component not mentioned before that lies on the client is the router. The router is the glue that binds all the other modules together. It handles the navigation between pages in the application. When users navigate on the page by clicking on links or buttons in a traditional web page the back-end serves a new HTML page. Here, a router module handles this click event. The router model examines the URL request and routes the request to the view responsible for that specific route. The view will then call fetch functions on the model to get data from the back-end and render the HTML.
+A component not mentioned before that lies on the client is the router. The router is the glue that binds all the other modules together. It handles the navigation between pages in the application. When users navigate on the page by clicking on links or buttons in a traditional web page the back-end serves a new HTML page. Here, a router module handles this click event. The router model examines the URL request and routes the request to the presenter responsible for that specific route. The presenter will then call fetch functions on the model to get data from the back-end and render the HTML.
+
+In the page the header is static and will only be rendered once.
 
 \subsection{Getting players and teams into the database}
 
