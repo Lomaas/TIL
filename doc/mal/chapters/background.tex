@@ -1,16 +1,16 @@
-In this chapter we present some background related to analytic in the domain of soccer. We look at different types of analysis out there. This spans from pre-match to post-match. Then we go into how data is gathered and presented. For gathering of data there are two main approaches: manually often by human annotating it, and automatic capturing often by using sensors.
+In this chapter we present some background related to analytic in the domain of soccer. We look at different types of analysis out there. This spans from pre-match to post-match. Then we go into how data is gathered and presented. For gathering of data there are two main approaches: manually often by humans annotating it, and automatic capturing often by installing receivers and having players wear physical sensors for tracking.
 
 \section{Types of analysis}
 
-In soccer there are several phases where you use analytic to help you gain insight.  In this section we will look at the typical use cases of analytic. Not only soccer teams uses analytics, but also TV and fans widely uses statistics to build up under their arguments.
+In soccer there are several phases where you use analytic to help you gain insight. In this section we will look at the typical use cases of analytic. Not only soccer teams use analytics, but also broadcasting companies and fans widely use statistics to build up under their arguments.
 
 \subsection{Pre-match}
 
-Pre-match you use analytic to find weaknesses and strengths in the opponent team, on an individually level or as a team. You look at your team matched up against your opponent. A typical situation is that the manager gets a video summary of the opponent highlighting the opponent’s strengths and weaknesses. The coaching staff may use tools like Interplay to gather information and create the video summary. Other software like Prozone\ref{http://www.prozonesports.com/index.html} will also likely be used to break down the opponents offensive and defensive play. 
+Pre-match you use analytic to find weaknesses and strengths in the opponent team, on an individually level or as a team. You look at your team matched up against your opponent. A typical situation is that the manager gets a video summary of the opponent highlighting the opponent’s strengths and weaknesses. The coaching staff may use tools like Interplay to gather information and create the video summary. Other software like Prozone\footnote{http://www.prozonesports.com/index.html} will also likely be used to break down the opponents offensive and defensive play. 
 
 Typically in TV you have pundits bringing you analytic of key battles during the build up to the game. A typical thing is to look at battles like wingers versus backs, midfield clashes or striker versus central defenders. The battles are often illustrated with statistics or with video clips highlighting aspects of the both players game that will be decisive. 
 
-Fans are analyzing the game all the time. Except from TV they get exposed to analytic via social media. Opta is company that has taken full advantage of social medias. Figure \ref{fig:optastats.png} is a screenshot of a tweet from one of the many accounts Opta control. 
+Fans are analyzing the game all the time. Except from TV they get exposed to analytic via social media. Opta is company that has taken full advantage of social medias. Figure \ref{fig:optastats} is a screenshot of a tweet from one of the many accounts Opta control. 
 
 \begin{figure}[ht!]
 \centering
@@ -38,7 +38,7 @@ During the post match the coach team goes through the game to evaluate the team 
 
 One of the big players in the field of sport analytic Opta uses manual input to create their data repository. They have editorial teams across the world that captures data manually for the most popular soccer leagues and other sports. For example to capture statistics for a single match they have 3 humans annotating. The data is captured via an application specifically created for the purpose of capturing data as quick and easily as possible. The editorial teams of Opta need to be able to identify a player in a very short time to be able to keep up with the pace of the game. They even study things like which shoe color a player.
 
-Opta capture all types of actions like passes, type of pass, attacks, and interceptions to mention a few. For each action they log, they add a series of description tags like pitch coordinate, timestamp, which player and team. For every single pass they add descriptors if it was a through ball, normal ball or a headed flick on from a long ball. For shots they register the foot it was kicked with, if it was a volley and so on. All this is done while the match is playing. About 1600 individual events are recorded in a standard match.  This gives them a very rich database of events and a range of possible queries to run. 
+Opta capture all types of actions like passes, type of pass, attacks, and interceptions to mention a few. For each action they log, they add a series of description tags like pitch coordinate, timestamp, which player and team. For every single pass they add descriptors if it was a through ball, normal ball or a headed flick on from a long ball. For shots they register the foot it was kicked with, if it was a volley and so on. All this is done while the match is playing. About 1600 individual events are recorded in a standard match. This gives them a very rich database of events and a range of possible queries to run. 
 
 \begin{lstlisting}
 <Event id="290575408" event_id="5" type_id="1" period_id="1" 
@@ -106,7 +106,6 @@ On individual level you can get basic statistics like shots, total passes, passi
 Doing queries on the data can give you all sprints for a certain player. Players in certain areas of the field have more intensive sprints when they first are involved thus are more vulnerable to injuries. Knowing the actual physical load on players can prevent injuries by regulating the training intensity and amount of time on each exercise. You can get 2D animation of matches as they have tracked every players movement. 
 
 \subsection{ZXY}
-  
 ZXY provides you with a 3D graphic interface showed in figure \ref{fig:zxysoftware}. This interface lets you see the players action in real time by reading the data stream to reproduce the players action. The data is streamed in real time into the database as the match goes on. While watching you can produce timestamps of different events and produce manual input which is time synchronized with the automatic data. Naturally you can build your own software on top of the Sybase database. Tromsø IL in collaboration with University of Tromsø has made several systems to complement the ZXY software. Muithu and Bagadus.
 
 \begin{figure}[ht!]
@@ -128,3 +127,4 @@ graphical illustration done with the Stats Zone application highlighting passes 
 \caption{Illustration of all passes in to attacking third in the match Manchester United vs Newcastle United. Taken from fourfourtwo.com}
 \label{fig:fourfourtwo}
 \end{figure}
+
