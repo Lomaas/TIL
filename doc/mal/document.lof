@@ -18,9 +18,9 @@
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Final pitch dividing. More zones have been added to the penalty box area than the initially design. }}{24}
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Software stack}}{24}
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Overview of the web servers API}}{28}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Architecture of the client side}}{29}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Shows how the passing statistic is illustrated on the client by using Highcharts.js}}{30}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Illustrations of which zones the team has finished off their attacks from, with percent. Team - Tromsø IL)}}{31}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Architecture of the client side. The numerating is used to reference different behavior}}{29}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Shows how the passing statistic is illustrated on the client by using Highcharts.js}}{31}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Illustrations of which zones the team has finished their attacks from in percent. Team – \ac {TIL}}}{31}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {6.1}{\ignorespaces A mockup of the main analytic page}}{36}
 \contentsline {figure}{\numberline {6.2}{\ignorespaces All matches registrated in the database are listed on this page}}{37}

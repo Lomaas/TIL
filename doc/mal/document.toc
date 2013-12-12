@@ -38,11 +38,12 @@
 \contentsline {subsubsection}{\numberline {5.2.2.2}Routing}{27}
 \contentsline {subsubsection}{\numberline {5.2.2.3}API}{27}
 \contentsline {subsection}{\numberline {5.2.3}Front-end}{27}
-\contentsline {subsubsection}{\numberline {5.2.3.1}Models}{28}
-\contentsline {subsubsection}{\numberline {5.2.3.2}Presenters}{29}
-\contentsline {subsubsection}{\numberline {5.2.3.3}Views}{30}
-\contentsline {subsubsection}{\numberline {5.2.3.4}Router}{31}
-\contentsline {subsection}{\numberline {5.2.4}Getting players and teams into the database}{32}
+\contentsline {subsubsection}{\numberline {5.2.3.1}Models}{29}
+\contentsline {subsubsection}{\numberline {5.2.3.2}Collections}{30}
+\contentsline {subsubsection}{\numberline {5.2.3.3}Presenters}{30}
+\contentsline {subsubsection}{\numberline {5.2.3.4}Views}{30}
+\contentsline {subsubsection}{\numberline {5.2.3.5}Router}{32}
+\contentsline {subsection}{\numberline {5.2.4}Building database – players and teams}{32}
 \contentsline {subsection}{\numberline {5.2.5}Security}{32}
 \contentsline {chapter}{\numberline {6}Demo}{33}
 \contentsline {section}{\numberline {6.1}Interfaces}{33}
