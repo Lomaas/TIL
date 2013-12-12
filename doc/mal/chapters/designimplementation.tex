@@ -4,22 +4,22 @@
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=1\textwidth]{images/general/arhitecture.png}
+\includegraphics[width=1\textwidth]{images/architecture/architecture.png}
 \caption{Overall architecture of the system }
 \label{overflow}
 \end{figure}
 
-The system architecture can be layered in to three layers; client, back-end, database. The control flow flows from the clients requesting something or inserting data, to the back-end and to the third layer, the database, and back up again in reverse order. 
+The system architecture can be layered into three layers; client, back-end and database. The control flows from the clients requesting a page or inserting data, to the back-end who communicates with the storage. From the storage the execution cycle is reversed. The storage will execute what it’s been asked to do by the back-end and return the result to the back-end. The back-end then again returns the result to the client.
 
-\subsubsection{Interface}
+\subsection{Interfaces (1)}
 
-The Soccer Analytic tool has one user interface - the web browser interface. Both the input and the analytic interface can be reached from this single web browser interface.
+The Soccer Analytic tool has one user interface - the web browser interface. Both the capturing and the analytic interface’s can be reached from this single web browser interface. All interfaces are created on the client. The client will get data from the back-end and construct the interfaces dynamically. 
 
-\subsubsection{Back-end}
+\subsection{Back-end (2)}
 
-The back-end is the middle layer between the client and the storage. Its main task is to serve static files to the clients, handle data insertions or handling web request by mapping them to database operations. New data insertions will possible be inserted into several database indexes. The back-end will then ensure that all indexes are updated before returning success to the client.
+The back-end is the middle layer between the client and the storage. Its main task is to serve static files to the clients, handle data insertions or handling web request by mapping them to database operations. New data insertions are possible inserted into several database indexes. The back-end will then ensure that all indexes are updated before returning success to the client. 
 
-\subsubsection{Storage}
+\subsection{Storage (3)}
 
 The storage layers task is to persist data and handle search queries on the data. It consists of several indexes that each stores a part of the domain model. 
 
@@ -49,28 +49,46 @@ Figure \ref{fig:finalPitchDividing} shows the final version of the pitch dividin
 
 \subsection{Storage}
 
-The data storage is an elasticsearch database\footnote{http://www.elasticsearch.org/}. Elasticsearch is document oriented, schema less and works well with \ac{JSON}\footnotemark. As our server is built on JavaScript working with \ac{JSON} is easy. \ac{JSON}-objects can be inserted right into the storage and Elasticsearch will map fields and value accordingly, and make it available for search.
-Elasticsearch takes advantages of embedded documents meaning we can store related data together. An attack is usually made up of several passes these can be stored as an embedded document in the attack document. Then all pases can be retrieved in one query when fetching an attack.
+The data storage is an Elasticsearch database\footnote{http://www.elasticsearch.org/}. Elasticsearch is document oriented, schema less and works well with \ac{JSON}\footnotemark. As our server is built on JavaScript, working with \ac{JSON} is easy. \ac{JSON}-objects can be inserted right into the storage and Elasticsearch will map fields and value accordingly, and make it available for search.
+Elasticsearch takes advantages of embedded documents meaning we can store related data together. An attack is usually made up of several passes these can be stored as an embedded document in the attack document. Then all passes can be retrieved in one query when fetching an attack.
 
-The main reason for using Elasticsearch is its search capability. In the starting phase of the project MongoDB \footnotemark was the storage engine. However as some aggregation queries was hard to figure out how to do a change to Elasticsearch was made. It should be noted that MongoDB supports map reduce operations. With some extra work the queries causing problems could possible have been done with MongoDB. However, with Elasticsearch you can in a single, simple to write query get counted how many passes all players for a team has played and received, the number of times all players has been the breakthrough-player in an attack, count type of attacks, count the most used zones for passing and finishing and so on. This makes it very easy to do queries for analyses on teams and players.
+The main reason for using Elasticsearch is its search capability. In the starting phase of the project MongoDB \footnotemark was the storage engine. However as some aggregation queries were hard to figure out how to do, a change to Elasticsearch was made. It should be noted that MongoDB supports map reduce operations. With some extra work the queries causing problems could possible have been done with MongoDB. However, with Elasticsearch you can in a single, simple to write query get counted how many passes all players for a team has played and received, the number of times all players has been the breakthrough-player in an attack, count type of attacks, count the most used zones for passing and finishing and so on. This makes it very easy and efficient to do queries for analyses on teams and players.
+
+Another feature of Elasticsearch is how easy it is to scale it by adding new nodes to your cluster. It is built to scale horizontally out of the box. Elasticsearch uses a sharding technique to spread data across the cluster.  Basically, it breaks up the data into smaller chunks spreading it across the cluster of machines to achieve scalability and performance. The configuration setup is highly adjustable letting you specify number of shards and replicas the storage shall keep. Adding a new machine to the cluster will automatically start a reorganizing process of the data to take advantage of the extra hardware. 
 
 \footnotetext{http://www.json.org/}
 \footnotetext{http://www.mongodb.org/}
 
 \subsubsection{Indexes}
 
-Indexes in much like tables in a relational database in the way that they are a container for data. An index stores documents, which is a bunch of key/value pairs, like \ac{JSON}. You can let Elasticsearch automatic analyze the field data or you can use mappings. For supporting querying on players and other fields where the value is more than one word, you have to tell Elasticsearch that it is a multi field. For example searching for player name ''Stefan Johansen'' when the field is not set as multi field will give you two results and not one, as you would expect.
+Indexes are much like tables in a relational database in the way that they are a container for data. An index stores documents, which is a bunch of key/value pairs, like \ac{JSON}. You can let Elasticsearch automatic analyze the field data or you can use mappings. For supporting querying on players and other fields where the value is more than one word, you have to tell Elasticsearch that it is a multi field. For example, searching for player name ''Stefan Johansen'' when the field is not set as multi field will give out two results and not one, as you would expect.
 
-In our project we have 5 different indexes. You have Team index, which holds all the teams. Player index which holds all the players. Match index holds and stores all data from a match including all attacks. Attack index stores information about attacks. Last you have the Pass index, which stores passes. Listing \ref{list:domainmodel} shows an example of data stored in the match, attack and pass indexes. 
-As may be noted there is data redundancy. You can argue that storage has become so cheap and if you can use a little bit extra space to gain performance you would do it. In this case it was done to be able to fully support aggregation functions on subdocuments.
+In our project we have 5 different indexes. 
+\begin{itemize}
+\item \emph{Team index}: Holds all the teams.
+\item \emph{Player index}: Holds all players for every team.
+\item \emph{Match index}: Holds all data from every match, including all attacks for each match.
+\item \emph{Attack index}: Holds all attacks in every match.
+\item \emph{Pass index}: Holds all passes in every attack.
+\end{itemize}
+
+Listing \ref{list:domainmodel} shows an example of data stored from a match. As may be noted there is data redundancy as some indexes stores the same information. One can argue that storage has become so cheap and if you can use a little bit extra space to gain performance you would do it. In this case it was done to be able to fully support aggregation functions on subdocuments.
+
 
 \subsection{Back-end}
 
-The back end is the middle-ware between the clients and the data layer. It exposes a \ac{REST}\footnote{http://www.ibm.com/developerworks/webservices/library/ws-restful/} interface over \ac{HTTP} for the client to communicate. A request coming in is transformed to a database query based on the resource it tries to access. On answer from the database the result is transformed before returning it to the client. 
+\subsubsection{Overview}	
+The back-end is the middleware between the clients and the data layer and is written in Node.js\footnote{http://nodejs.org/}. It exposes a \ac{REST}\footnote{http://www.ibm.com/developerworks/webservices/library/ws-restful/} interface over \ac{HTTP} for the client to communicate. A request coming in is transformed to a database query based on the resource it tries to access. Node.js is built on Chrome’s JavaScript runtime\footnote{https://code.google.com/p/v8/} engine. It’s a relatively new and unproven platform, but has gained a lot of hype in the computer science community for its lightweight and efficient programming model. This comes from the even-driven and non-blocking I/O model. Per default, every request is handled by just one process running on one CPU core.
 
-Similar if the client sends new data for a match the middle-ware inserts the data into the appropriate indexes. The server will respond will HTTP status code 201 if all goes well or 400 on an error. The server uses \ac{HTTP} code actively to tell the client the result of requests.
+\subsubsection{Routing}	
 
-In principal, since the data input is generated in the web browser (with JavaScript), it could have been inserted right away into the database without going through an extra middleware. However, this limits us, as we can’t combine multiple queries by going through the back-end. Cleaning of data before serving to the client would neither be possible. Normally you also do validation of the data at the back-end before inserting into your database.
+The back-end code is structured up in modules. Requests on the URL /players is routed to the Player module for handling. Similar, you have an attack module, pass module, team module, player module and a match module. A very often used URL is /team/:name. A \ac{HTTP} GET on this URL will be routed to the team module where a query for information about the specified team is run. On answer from the database, the result is transformed before returning it to the client. 
+
+Similar, if the client sends new data for a match the server will insert the data into the appropriate indexes. The server will respond will HTTP status code 201 if all goes well or 400 on an error. The server uses \ac{HTTP} code actively to tell the client the result of requests. For all \ac{HTTP} POST requests the server will send status code 201, meaning that a new resource is created. For \ac{HTTP} GET requests the server responds as normal with status code 200, if all went well. 
+
+No URL route uses \ac{HTTP} PUT and DELETE methods. These methods could have been used for deleting or updating attacks or passes. Typically, an operator will do a mistake while capturing new attacks. 
+
+In principle, since the data input is generated in the web browser (with JavaScript), it could have been inserted right away into the database without going through an extra middleware. However, this limits us, as we can’t combine multiple queries by going through the back-end. Cleaning of data before serving to the client would neither be possible. Normally, you also do validation of the data at the back-end before inserting into your database.
 
 \subsubsection{API}
 
@@ -147,6 +165,8 @@ Getting squads in a useful format like \ac{XML} or \ac{JSON} was harder than exp
 
 \subsection{Security}
 Security is not taken into concern. This means anyone getting into the page can post new match data and add attacks. This could have been fixed by requiring a login before getting access to the site. 
+
+
 
 
 

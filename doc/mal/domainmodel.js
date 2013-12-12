@@ -1,5 +1,5 @@
 {     
-    "hometeam" : "Tromsø",
+    "hometeam" : "Tromso",
     "awayteam" : "Rosenborg",
     "score" : "1-0",
     "date" : '2013-15-09',
@@ -7,10 +7,10 @@
         {
             "time": 4,
             "touch" : 1,
-            "team" : "Tromsø",
+            "team" : "Tromso",
             "breakthrough" : "None",
             "breakthroughPlayer" : "None",
-            "typeOfAttack" : "Dødball",
+            "typeOfAttack" : "Dodball",
             "attackStart" : {
                 "pos" : 17,
                 "typeAction" : "Frispark",

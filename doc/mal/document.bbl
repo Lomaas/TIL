@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{Prozone:validation}
 Valter Di Salvo Adam Collins Barry McNeill~Marco Cardinale.
@@ -27,6 +27,18 @@ Martin Hardy.
 \bibitem{bigdata:milanlab}
 Jonathan Howard.
 \newblock Sports science and big data opportunities, October 2013.
+
+\bibitem{muithu}
+D.~Johansen, M.~Stenhaug, R.B.A. Hansen, A.~Christensen, and P.-M. Hogmo.
+\newblock Muithu: Smaller footprint, potentially larger imprint.
+\newblock pages 205--214, 2012.
+
+\bibitem{Saegrov2012}
+Simen S{\ae}grov, Alexander Eichhorn, J{\o}rgen Emerslund, H{\aa}kon~Kvale
+  Stensland, Carsten Griwodz, Dag Johansen, and P{\aa}l Halvorsen.
+\newblock {BAGADUS}: An integrated system for soccer analysis (demo).
+\newblock In {\em Proc. of the ACM/IEEE International Conference on Distributed
+  Smart Cameras}, November 2012.
 
 \bibitem{soccerbynumbers}
 Anderson Sally.
