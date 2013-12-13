@@ -28,6 +28,12 @@ Martin Hardy.
 Jonathan Howard.
 \newblock Sports science and big data opportunities, October 2013.
 
+\bibitem{satisfaction}
+John~A. Hoxmeier and Chris DiCesare.
+\newblock System response time and user satisfaction: An experimental study of
+  browser-based applications.
+\newblock psu.edu, 1999.
+
 \bibitem{muithu}
 D.~Johansen, M.~Stenhaug, R.B.A. Hansen, A.~Christensen, and P.-M. Hogmo.
 \newblock Muithu: Smaller footprint, potentially larger imprint.
@@ -37,6 +43,11 @@ D.~Johansen, M.~Stenhaug, R.B.A. Hansen, A.~Christensen, and P.-M. Hogmo.
 Lori MacVittie.
 \newblock The impact of ajax on the network.
 \newblock {\em F5 Networks, Inc}, 2007.
+
+\bibitem{nielsen}
+Jakob Nielsen.
+\newblock {\em Usability Engineering}, chapter Interactive technologies.
+\newblock Morgan Kaufmann Publishers, 1993.
 
 \bibitem{Saegrov2012}
 Simen S{\ae}grov, Alexander Eichhorn, J{\o}rgen Emerslund, H{\aa}kon~Kvale

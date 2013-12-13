@@ -18,19 +18,27 @@ In the other sections key players and their statistics is listed. You have an ov
 \subsection{Implemented interfaces}
 
 \subsubsection{Home page}
-The first page you are prompted with is the listing of all matches registered in the database as figure \ref{fig:all_matches}. A click on match gives you details about that match and prompts you an interface for capturing new attacks if requested. Every field has to be submitted with a correct input value.
+The first page you are prompted with is the listing of all matches registered in the database as figure \ref{fig:all_matches}. A click on match gives you details about that match and prompts you an interface for capturing new attacks if requested. Here you fill out every field in the form.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=100mm]{images/interfaces/all_matches.png}
-\caption{All matches registrated in the database are listed on this page. Image is cropped.}
+\caption{All matches registrated in the database are listed on this page. Image is cropped not listing all matches.}
 \label{fig:all_matches}
 \end{figure}
 
-The whole web page follows a theme throughout the pages. This theme is the standard theme in the \ac{CSS} and JavaScript library Bootstrap\footnote{ http://getbootstrap.com/}. Bootstrap makes the website by default responsive. This means the content on the site is automatically re-sized out from your browser window dimensions.
+Clicking New match sends you to match register interface shown in figure \ref{fig:reg_match}. The users have to register the match he wants to capture data before anything else.
 
-\subsubsection{Register attacks}
-You register a new attack by pressing the «New attack» button. Here you fill in the result and date of the match. When you submit the match you will be sent back to the home page. 
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=1\textwidth]{images/demo/reg_match.png}
+\caption{Interface for registering a match}
+\label{fig:reg_match}
+\end{figure}
+
+
+The whole web page follows a theme throughout the pages. This theme is the standard theme in the \ac{CSS} and JavaScript library Bootstrap\footnote{ http://getbootstrap.com/}. Bootstrap makes the website by default responsive. This means the content on the site is automatically re-sized out from your browser window size.
+
 
 \begin{figure}[ht!]
 \centering
@@ -41,13 +49,13 @@ You register a new attack by pressing the «New attack» button. Here you fill i
 
 \subsubsection{Match view}
 
-Clicking on a match gives you overview of all attacks registrated for that particular game shown in figure \ref{fig:all_attacks}. This view is only meant for quality checking the data.
+Clicking on a match gives you overview of all attacks registered for that particular game shown in figure \ref{fig:all_attacks}. This view is only meant for quality checking the data.
 
-From the match page you can add new attack attempts, as figure \ref{fig:reg_attack} shows. This will prompt you with a fill in form for the attack. Attack start, attack end, breakthrough player, time and team needs to be filled out. The passes in the attack are added by pressing new pass. This will add a new pass to the form.
+From the match page you can add new attack attempts in the interface figure \ref{fig:reg_attack} shows. The user will fill in the form for the attack. Attack start, attack end, breakthrough player, time and team needs to be filled out. The passes in the attack are added by pressing new pass. This will add a new pass to the form. Passes can be deleted by clicking the red remove pass button. 
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=1\textwidth]{images/general/reg_attack.png}
+\includegraphics[width=100mm]{images/general/reg_attack.png}
 \caption{Interface for register an attack.}
 \label{fig:reg_attack}
 \end{figure}
@@ -58,12 +66,12 @@ Then you have the team selection page shown in figure \ref{fig:all_teams}). This
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=1\textwidth]{images/general/all_teams.png}
+\includegraphics[width=100mm]{images/general/all_teams.png}
 \caption{Interface listing all teams.}
 \label{fig:all_teams}
 \end{figure}
 
-Then there is the main view used for analyzing a team, showed in figure \ref{fig:team_analysis1}, figure \ref{fig:team_analysis2} and figure \ref{fig:team_analysis3}. The page design is not exactly the same as the mockup. This comes from a various things. A description of different breakthroughs has been added to enlighten users of the system. Users of the system may or may not have been involved in the process of capturing the data and therefor-extra information is needed to clarify concepts. In the mockup key players where highlighted. In the final view various statistics is presented to the user and he can then click on players he find interesting to know more about as shown in figure \ref{team_analysis4}. The whole page is divided into 3 sections; key aspects, offensive play and defensive play.
+Then there is the main view used for analyzing a team, showed in figure \ref{fig:team_analysis1}, figure \ref{fig:team_analysis2} and figure \ref{fig:team_analysis3}. The page design is not exactly the same as the mockup. This comes from a various things. A description of different breakthroughs has been added to enlighten users of the system. Users of the system may or may not have been involved in the process of capturing the data and therefor-extra information is needed to clarify concepts. In the mockup key players where highlighted. In the final view various statistics is presented to the user and he can then click on players he find interesting to know more about as shown in figure \ref{fig:team_analysis4}. The whole page is divided into 4 sections; key aspects, offensive play, defensive play and players.
 
 \begin{figure}[ht!]
 \centering
@@ -90,9 +98,11 @@ Then there is the main view used for analyzing a team, showed in figure \ref{fig
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=1\textwidth]{images/general/team_analysis4.png}
-\caption{All players are listed below the analytic sections. Clicking on a player brings you up to the player view.}
+\caption{All players are listed below the team analytic page. Clicking on a player brings you to the player view.}
 \label{fig:team_analysis4}
 \end{figure}
+
+\subsubsection{Player view}
 
 Clicking on a player brings you to the player view shown in figure \ref{fig:player_view1} and figure \ref{fig:player_view2}. Here individual statistics is highlighted. 
 
@@ -114,14 +124,30 @@ Clicking on a player brings you to the player view shown in figure \ref{fig:play
 \section{Capturing process}
 \label{sec:capprocess}
 
-As mentioned, the process of capturing data is manually. In the beginning it took up to 1 hour to capture all attacks for a match. When you get used to the interface and is able to quickly identify players the time used went down 15-20 minutes. Where most of the time went was getting the players id by looking up in the database manually. 
+As mentioned, the process of capturing data is manually. In the beginning it took up to 1 hour to capture all attacks for a match. When you get used to the interface and is able to quickly identify players the time used went down 15-20 minutes. Where most of the time went was getting the players id by looking up in the database manually. To speed up the capturing process the starting 11 names and their corresponding ID where written down with the formation the team plays in to a piece of paper before starting. This also helps identifying players, which can be a bit of a hassle. Match videos came in the resolution 640 * 360 pixels, which is not very good. In addition, on some stadiums there is a running track around the pitch meaning that the grand stands and the main camera is located further away from the pitch. It makes it even harder to identify players on the opposite side of the where the camera is. Having the formation of the team on a paper helps you to identify the players.
 
 The process of capturing has been the following:
 \begin{enumerate}
 \item Download the match video.
-\item Find the match in the VGLive.no archives. VGLive.no is used to quickly find all attacks ending with a finish
-\item Capture all the attack one by one via the implemented interface mentioned earlier.
+\item Find the match in the VGLive.no archives. VGLive.no is used to quickly find all attacks ending with a finish. Figure \ref{fig:vglive} shows some comments from a match.
+\item Register the match by filling out the form in figure \ref{fig:reg_match}.
+\item Start finding possible attacks to capture by using VGLive's annotation and jumping in the video. Every event has a time in VGLive.
+\item Capture every attack that leads to an attempt on goal one by one via the interface shown in figure \ref{fig:reg_attack}.
 \end{enumerate}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=1\textwidth]{images/demo/vglive}
+\caption{VGLive.no writes about events in the match. Attempts on goal are tagged with an icon. In the screenshot minute 32 and minute 38 has this icon.}
+\label{fig:vglive}
+\end{figure}
+
+
+
+
+
+
+
 
 
 

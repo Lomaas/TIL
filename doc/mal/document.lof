@@ -23,16 +23,19 @@
 \contentsline {figure}{\numberline {5.7}{\ignorespaces Illustrations of which zones the team has finished their attacks from in percent. Team – \ac {TIL}}}{31}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {6.1}{\ignorespaces A mockup of the main analytic page}}{34}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces All matches registrated in the database are listed on this page. Image is cropped}}{35}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Interface listing up all attacks for a match}}{35}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Interface for registrating an attack}}{37}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Interface listing all teams}}{38}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Main interface for information about opponents - key aspects}}{39}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Main interface for information about opponents - offensive play}}{40}
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Main interface for information about opponents - defensive play‹}}{41}
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Main interface for information about opponents – all players}}{42}
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Player view highlighting individual statistics}}{43}
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Player view highlighting individual statistics}}{44}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces All matches registrated in the database are listed on this page. Image is cropped not listing all matches.}}{35}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Interface for registering a match}}{35}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Interface listing up all attacks for a match.}}{36}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Interface for register an attack.}}{37}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Interface listing all teams.}}{38}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Main interface for information about opponents - key aspects.}}{39}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Main interface for information about opponents - offensive play.}}{40}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Main interface for information about opponents - defensive play.}}{41}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces All players are listed below the team analytic page. Clicking on a player brings you to the player view.}}{42}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Player view highlighting individual statistics}}{43}
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Player view highlighting individual statistics}}{44}
+\contentsline {figure}{\numberline {6.13}{\ignorespaces VGLive.no writes about events in the match. Attempts on goal are tagged with an icon. In the screenshot minute 32 and minute 38 has this icon.}}{45}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Matches that have been captured and persisted into the database}}{46}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Matches that have been captured and persisted into the database}}{49}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Table with the size of each index and total size}}{50}
 \addvspace {10\p@ }
