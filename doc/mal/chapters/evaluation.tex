@@ -1,4 +1,4 @@
-This chapter presents methods used to evaluate the system; results collected evaluating the system and a discussion around the system.	
+This chapter presents methods used to evaluate the system; results collected evaluating the system and a discussion around the system. 
 
 \section{Methods}
 \subsection{User Survey}
@@ -45,7 +45,14 @@ In the evaluation the database had been populated with data from \ac{TIL} and St
 \subsection{SAT as a tool for opponent analytic}
 % SAT gives you valuable information about opponents that the current systems you use today don’t provide
 
-In this user servey the assessors where asked how SAT is as a complementary opponent analytic tool. In the requirement process we specified that the system should to be a complementing tool and not a direct replacement of the systems in use. The results shows that most of the assessors values what the system provides. 
+In this user servey the assessors where asked how SAT is as a complementary opponent analytic tool. In the requirement process we specified that the system should to be a complementing tool and not a direct replacement of the systems in use. The results shown in figure \ref{fig:user_servery1} shows that most of the assessors values what the system provides. 
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=1\textwidth]{images/evaluation/user_servery1}
+\caption{User server 1}
+\label{fig:user_servery1}
+\end{figure}
 
 Assessors not in the Tromsø IL system do not necessarily use or have experience with an existing tool. Therefor the statement was re-phrased. The assessors were asked how SAT is as an opponent analytic tool, a stand-alone product. The results shows
 
@@ -53,7 +60,16 @@ From these results we can conclude that the end-users view the Soccer Analytic T
 
 \subsection{SAT as a tool for identifying key players}
 
-In this user servey the assessors where asked how SAT is as a tool for identifying key players in a soccer team. This was one of the main goals of the system. We can see from the results of the User Servey that the system identifies key players well. All votes for ¨strongly agree¨. 
+In this user servey the assessors where asked how SAT is as a tool for identifying key players in a soccer team. This was one of the main goals of the system. 
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=1\textwidth]{images/evaluation/user_servery2}
+\caption{User server 2}
+\label{fig:user_servery2}
+\end{figure}
+
+We can see from the results of the user servey that the system identifies key players well. All votes for ¨strongly agree¨.
 
 \subsection{UI-performance}
 UI performance was measured by testing the most content rich web page the team analytic page for \ac{TIL}. All the response times were measured by doing 20 samples. Tests where run at localhost with server and database running on the same machine, meaning that a further increase in time would likely be seen if the system was in production. Figure \ref{fig:uiperform} lists the results.
@@ -89,9 +105,9 @@ In section \ref{sec:capprocess} it is mentioned that you have to store the playe
 
 \subsection{Accuracy}
 
-There is minimal quality checking of the input data except from the match view page that lists every attack captured, meant for external operators to verify the data. Other than that you have to trust the operator that is capturing match data. The input is to some degree subjective for some data like identifying breakthroughs. In some situations one operator may say that it was a breakthrough and another wouldn't agree. This may not be the biggest problem if you set some rules to follow for the operators. Identifying the zone for an event can also be a bit tricky. A low camera angel makes it harder to judge the pitch dividing.  
+There is minimal quality checking of the input data except from the match view page that lists every attack captured, meant for external operators to verify the data. Other than that you have to trust the operator that is capturing match data. The input is to some degree subjective for some data like identifying breakthroughs. In some situations one operator may say that it was a breakthrough and another wouldn't agree. This may not be the biggest problem if you set some rules to follow for the operators. Identifying the zone for an event can also be a bit tricky. A low camera angel makes it harder to judge the pitch dividing. 
 
-An average match is around 31.6kb size large. In comparison with ZXY a match is around 500-700mb. A better comparison would be against the statistic provider Opta as they are more in the same genre as our system using only manual input. As previously mentioned, they capture every pass in the game meaning that they most likely store more data per match. Another question is do you need this extra data to get a good opponent analytic system.
+In our test data an average match is around 31.6kb size large, but we only capture attacks from one team. However, it is not much data in comparison with ZXY where a match is around 500-700mb. A better comparison would be against Opta as they are more in the same genre as our system, using only manual input. As previously mentioned, they capture every pass in the game meaning that they most likely store more data per match. Another question is do you need this extra data to get a good opponent analytic system.
 
 \subsection{Domain model}
 The domain model has been dedicated a lot of time to in the process of defining and building the system. It was crucial to have a domain model that reflected what type of opponent analytic information the system should give the end-user. What is enough data? Having a larger domain model would increase time spent in the process of capturing data. 
@@ -102,8 +118,7 @@ A thing that could have been changed to get more precise analytic information is
 
 A thing to take into consideration is the amount of matches in the database under the tests. A system in production would contain a lot more matches and would increase the response time. Evaluate how long the team query takes..
 
-In \ac{SPA} you don't necessary get all the files at once, but when you need them. On render, the web browser will first get the root \ac{HTML} document and then start requesting all other files that is referenced. JavaScript files can be bundled to one file saving a lot of network traffic. When doing a clean reload of the team analytic page (non 303 Not Modified status codes) Google Developer Tools reports that total 55 requests is done to the back-end, requesting various files and requests against the \ac{REST} \ac{API}.
-
+In a \ac{SPA} you don't necessary get all the files at once, but when you need them. On render, the web browser will first get the root \ac{HTML} document and then start requesting all other files that is referenced in the document, like \ac{CSS} and \ac{JavaScript} files. Bundling all JavaScript files can to one file would save a lot of network traffic. Doing a reload of the team analytic page (non 303 Not Modified status codes) Google Developer Tools reports that total 55 requests is done to the back-end, fetching various files and requests to the REST API.
 
 \subsection{Scalability}
 
@@ -118,6 +133,8 @@ In the system it is clear that it is the storage that is the bottleneck of the s
 \subsection{Usability}
 
 One comment from an end user was about the graphical components illustrating statistics on the client. Improving the graphical components would increase the overall experience of the system. This has not been one of the main focuses during the development of the system. However, different illustration techniques are used by combining HTML5 features and JavaScript library's to illustrate analytic information. 
+
+
 
 
 
