@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.3)  14 DEC 2013 17:01
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.3)  14 DEC 2013 20:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1230,6 +1230,12 @@ File: images/evaluation/user_servery2.png Graphic file (type png)
 Package pdftex.def Info: images/evaluation/user_servery2.png used on input line
  69.
 (pdftex.def)             Requested size: 390.0pt x 332.06566pt.
+File: images/evaluation/user_servery2.png Graphic file (type png)
+
+<use images/evaluation/user_servery2.png>
+Package pdftex.def Info: images/evaluation/user_servery2.png used on input line
+ 81.
+(pdftex.def)             Requested size: 390.0pt x 332.06566pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -1238,42 +1244,39 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: images/evaluation/uipeform.png Graphic file (type png)
 
 <use images/evaluation/uipeform.png>
-Package pdftex.def Info: images/evaluation/uipeform.png used on input line 81.
+Package pdftex.def Info: images/evaluation/uipeform.png used on input line 92.
 (pdftex.def)             Requested size: 390.0pt x 109.77042pt.
- [51 <./images/evaluation/user_servery1.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [52 <./images/evaluation/user_servery2.png> <./images/evaluation/uipeform.png>
-]
-<images/evaluation/compa.png, id=315, 1158.3275pt x 204.765pt>
+ [51 <./images/evaluation/user_servery1.png>] <images/evaluation/compa.png, id=
+311, 1158.3275pt x 204.765pt>
 File: images/evaluation/compa.png Graphic file (type png)
 
 <use images/evaluation/compa.png>
-Package pdftex.def Info: images/evaluation/compa.png used on input line 98.
+Package pdftex.def Info: images/evaluation/compa.png used on input line 109.
 (pdftex.def)             Requested size: 390.0pt x 68.94116pt.
+ [52 <./images/evaluation/user_servery2.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Underfull \vbox (badness 2027) has occurred while \output is active []
-
- [53 <./images/evaluation/compa.png>]
+ [53 <./images/evaluation/uipeform.png>]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
- [54]
-Package acronym Info: Label `acro:HTML' overridden on input line 127.
-Package acronym Info: Label `acro:CSS' overridden on input line 127.
-) [55] [56
-
-]
+ [54 <./images/evaluation/compa.png>]
+Package acronym Info: Label `acro:HTML' overridden on input line 138.
+Package acronym Info: Label `acro:CSS' overridden on input line 138.
+ [55])
+[56]
 Chapter 8.
-(./chapters/conclusion.tex) (./document.bbl [57] [58
+(./chapters/conclusion.tex [57
 
-]
+]) (./document.bbl [58]
 Underfull \hbox (badness 1565) in paragraph at lines 53--58
 \OT1/cmr/m/n/12 Stens-land, Carsten Gri-wodz, Dag Jo-hansen, and P^^Wal Halvors
 en.
  []
 
-[59]) [60] (./document.aux)
+[59
+
+]) [60] (./document.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1282,10 +1285,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8854 strings out of 493315
- 123164 string characters out of 6137904
- 253643 words of memory out of 5000000
- 12018 multiletter control sequences out of 15000+600000
+ 8856 strings out of 493315
+ 123192 string characters out of 6137904
+ 253654 words of memory out of 5000000
+ 12020 multiletter control sequences out of 15000+600000
  16782 words of font info for 69 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  40i,18n,45p,3243b,1385s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1298,7 +1301,7 @@ ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loca
 l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
 /texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/
 texlive/2013/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb>
-Output written on document.pdf (76 pages, 9653732 bytes).
+Output written on document.pdf (76 pages, 9655895 bytes).
 PDF statistics:
  375 PDF objects out of 1000 (max. 8388607)
  228 compressed objects within 3 object streams

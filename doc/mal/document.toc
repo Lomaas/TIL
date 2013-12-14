@@ -64,15 +64,18 @@
 \contentsline {subsection}{\numberline {7.2.2}Test data}{49}
 \contentsline {subsection}{\numberline {7.2.3}SAT as a tool for opponent analytic}{49}
 \contentsline {subsection}{\numberline {7.2.4}SAT as a tool for identifying key players}{50}
-\contentsline {subsection}{\numberline {7.2.5}UI-performance}{51}
-\contentsline {subsection}{\numberline {7.2.6}Compatibility}{53}
-\contentsline {section}{\numberline {7.3}Discussion}{53}
-\contentsline {subsection}{\numberline {7.3.1}Input}{53}
+\contentsline {subsection}{\numberline {7.2.5}User servey comments}{51}
+\contentsline {subsection}{\numberline {7.2.6}UI-performance}{51}
+\contentsline {subsection}{\numberline {7.2.7}Compatibility}{52}
+\contentsline {section}{\numberline {7.3}Discussion}{54}
+\contentsline {subsection}{\numberline {7.3.1}Input}{54}
 \contentsline {subsection}{\numberline {7.3.2}Accuracy}{54}
-\contentsline {subsection}{\numberline {7.3.3}Domain model}{54}
-\contentsline {subsection}{\numberline {7.3.4}UI Performance}{54}
-\contentsline {subsection}{\numberline {7.3.5}Scalability}{55}
-\contentsline {subsection}{\numberline {7.3.6}Usability}{55}
+\contentsline {subsection}{\numberline {7.3.3}Domain model}{55}
+\contentsline {subsection}{\numberline {7.3.4}UI Performance}{55}
+\contentsline {subsection}{\numberline {7.3.5}Usability}{56}
 \contentsline {chapter}{\numberline {8}Conclusion}{57}
-\contentsline {subsection}{\numberline {8.0.7}Concluding Remarks}{57}
-\contentsline {section}{\numberline {8.1}Future Work}{57}
+\contentsline {subsection}{\numberline {8.0.6}Concluding Remarks}{57}
+\contentsline {section}{\numberline {8.1}Future Work}{58}
+\contentsline {subsection}{\numberline {8.1.1}Quality checking}{58}
+\contentsline {subsection}{\numberline {8.1.2}New queries}{58}
+\contentsline {subsection}{\numberline {8.1.3}Two team view}{58}
