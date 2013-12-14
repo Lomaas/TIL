@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.3)  14 DEC 2013 23:38
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.3)  15 DEC 2013 00:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1229,12 +1229,12 @@ Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
 
-<images/evaluation/comments.png, id=302, 600.2425pt x 132.495pt>
+<images/evaluation/comments.png, id=302, 608.2725pt x 158.5925pt>
 File: images/evaluation/comments.png Graphic file (type png)
 
 <use images/evaluation/comments.png>
 Package pdftex.def Info: images/evaluation/comments.png used on input line 81.
-(pdftex.def)             Requested size: 390.0pt x 86.08836pt.
+(pdftex.def)             Requested size: 390.0pt x 101.68517pt.
  [50 <./images/evaluation/matched_regged.png>] <images/evaluation/uipeform.png,
  id=306, 741.77126pt x 208.78pt>
 File: images/evaluation/uipeform.png Graphic file (type png)
@@ -1264,17 +1264,8 @@ Package acronym Info: Label `acro:CSS' overridden on input line 140.
 [56]
 Chapter 8.
 (./chapters/conclusion.tex
-Package acronym Info: Label `acro:TIL' overridden on input line 9.
-Package acronym Info: Label `acro:SIF' newly defined as it shall be overridden
-although it is yet undefined on input line 11.
-
-
-Package acronym Warning: Acronym `SIF' is not defined on input line 11.
-
-
-Package acronym Warning: Acronym `SIF' is not defined on input line 11.
-
-[57
+Package acronym Info: Label `acro:TIL' overridden on input line 10.
+ [57
 
 ] [58]) (./document.bbl [59] [60
 
@@ -1293,10 +1284,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8866 strings out of 493315
- 123385 string characters out of 6137904
- 253661 words of memory out of 5000000
- 12029 multiletter control sequences out of 15000+600000
+ 8864 strings out of 493315
+ 123373 string characters out of 6137904
+ 253669 words of memory out of 5000000
+ 12027 multiletter control sequences out of 15000+600000
  16782 words of font info for 69 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  40i,18n,45p,3243b,1385s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1309,7 +1300,7 @@ ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loca
 l/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
 /texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/
 texlive/2013/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb>
-Output written on document.pdf (78 pages, 9658210 bytes).
+Output written on document.pdf (78 pages, 9660113 bytes).
 PDF statistics:
  382 PDF objects out of 1000 (max. 8388607)
  232 compressed objects within 3 object streams
