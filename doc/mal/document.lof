@@ -14,7 +14,7 @@
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Dividing of pitch - the second suggestion had 24 zones}}{18}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Conceptual architecture.}}{19}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Overall architecture of the system }}{21}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Overall architecture of the system }}{22}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Final pitch dividing. More zones have been added to the penalty box area than the initially design. }}{24}
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Software stack}}{24}
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Overview of the web servers API}}{28}
@@ -38,9 +38,9 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {7.1}{\ignorespaces Table with the size of each index and the total size of all indexes}}{49}
 \contentsline {figure}{\numberline {7.2}{\ignorespaces Matches that have been captured and persisted into the database}}{50}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces SAT as a tool for opponent analytic}}{51}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces SAT as a tool for identifying key players}}{52}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces User server 2}}{53}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces SAT as a tool for opponent analytic. Experts answers varying from neutral to strongly agree.}}{51}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces SAT as a tool for identifying key players. Experts answers varying from neutral to strongly agree.}}{52}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces User servey comments}}{52}
 \contentsline {figure}{\numberline {7.6}{\ignorespaces UI Performance test results. }}{53}
 \contentsline {figure}{\numberline {7.7}{\ignorespaces Compatibility test by running the web page in different browsers. Screenshot from powermapper.com free trial version}}{54}
 \addvspace {10\p@ }

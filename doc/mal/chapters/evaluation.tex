@@ -17,11 +17,11 @@ To measure the UI Performance we use Google Chrome DevTools\footnote{https://dev
 
 In the requirement specification we stated that going for a web page would ensure compatibility and accessibility. Every device now has a web browser and therefor the page can be reached from anywhere as long as you have an Internet connection. 
 
-To test this we use PowerMapper\footnote{ http://try.powermapper.com/demo/sortsite } website testing and site mapping tool. This test checks a wide range of things like browser support, dead links and accessibility. We use it to for compatibility testing for web browsers.
+To test this we use PowerMapper\footnote{ http://try.powermapper.com/demo/sortsite } website testing and site mapping tool. This test checks a wide range of things like browser support, dead links and accessibility. We use it for compatibility testing for web browsers.
 
 \section{Experiments and Results}
 
-In the tests \ac{TIL} have been used to evaluate the system. In the tests we are looking to see if we have achieved or goals listed in the requirements. To recapture the main goals; we wanted to identify key players in soccer opponent teams and we wanted to create a system that difference it from the existing systems and at the same time provides valuable information for opponent soccer analytic. 
+In the tests \ac{TIL} and external experts in soccer have been used to evaluate the system. In the tests we are looking to see if we have achieved our goals listed in the requirements. To recapture the main goals; we wanted to create a system that difference it from the existing systems teams and at the same time provide information that can be used for opponent soccer analytic. We specifically wanted to identify key players.
 
 \subsection{Database size}
 In figure \ref{fig:dbsize} the size of the different indexes in the database is listed. Match related data is stored in the match, attack and pass index. The total size of those 3 indexes is 379.5kb and with a total of 12 matches in the database. This means that an average match stored takes around 31.6kb of storage.
@@ -52,40 +52,40 @@ In this user servey the assessors where asked how SAT is as a complementary oppo
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=1\textwidth]{images/evaluation/user_servery1}
-\caption{SAT as a tool for opponent analytic}
+\caption{SAT as a tool for opponent analytic. Experts answers varying from neutral to strongly agree.}
 \label{fig:user_servery1}
 \end{figure}
 
 Assessors not in the \ac{TIL} system do not necessarily use or have experience with an existing tool for opponent analytic. Therefor the statement was re-phrased. The assessors were asked how SAT is as an opponent analytic tool, a stand-alone product. The results listed at the right side in figure \ref{fig:user_servey1} shows that the majority of assessors was satisfied we the system with answers varying from neutral to strongly agree.
 
-From these results we can conclude that the assessors view the Soccer Analytic Tool as a good system for providing information about soccer opponents. The information retrieved by using the tool is useful for analyzing your soccer opponent. The assessors would have the system rather not having it.
+From these results we can conclude that the assessors view the Soccer Analytic Tool as a good system for providing information about soccer opponents. The assessors would have the system rather not having it. Assessors not from \ac{TIL} has various experience in using analytic tools. SAT was developed with the knowledge of the systems that was in use at Alfheim today. We speculate that this is the reason the system is not as appealing for people not in the \ac{TIL} system. It is unclear what tools others is using or has experience with.
 
 \subsection{SAT as a tool for identifying key players}
 
-In this user servey the assessors where asked how SAT is as a tool for identifying key players in a soccer team. This was one of the main goals of the system. The results of the user servey is shown in figure \ref{fig:user_servery2}.
+In this user servey the assessors where asked how SAT is as a tool for identifying key players in a soccer team. This was one of the main goals of the system. The results of the user servey is shown in figure \ref{fig:user_servery2}. 
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=1\textwidth]{images/evaluation/user_servery2}
-\caption{SAT as a tool for identifying key players}
+\caption{SAT as a tool for identifying key players. Experts answers varying from neutral to strongly agree.}
 \label{fig:user_servery2}
 \end{figure}
 
-We can see from the results of the user servey that the assessors agree that the system lets you identify key players in the opponent team. The varying from neutral to strongly agree.
+We can see from the results of the user servey that the assessors agrees strongly that the system lets you identify key players in the opponent team. Assessor’s answers varying from neutral to strongly agree.
 
 \subsection{User servey comments}
-Assessors came with comments including to answering the user server. These comments are summarized in figure \ref{fig:comments}.
+Assessors came with comments including to answering the user servey. These comments are summarized in figure \ref{fig:comments}.
 
 \begin{figure}[ht!]
 \centering
-\includegraphics[width=1\textwidth]{images/evaluation/user_servery2}
-\caption{User server 2}
+\includegraphics[width=1\textwidth]{images/evaluation/comments}
+\caption{User servey comments}
 \label{fig:comments}
 \end{figure}
 
 
 \subsection{UI-performance}
-UI performance was measured by testing the most content rich web page the team analytic page for \ac{TIL}. All the response times were measured by doing 20 samples. Tests where run at localhost with server and database running on the same machine, meaning that a further increase in time would likely be seen if the system was in production. Figure \ref{fig:uiperform} lists the results.
+UI performance was measured by testing the most content rich web page the team analytic page for \ac{TIL}. All the response times were measured by doing 20 samples. Tests where run at localhost with server and database running on the same machine, meaning that a further increase in time would likely be seen if the system was in production. Total size for all requests was 1.6 MB. Figure \ref{fig:uiperform} lists the results.
 
 \begin{figure}[ht!]
 \centering
@@ -94,15 +94,19 @@ UI performance was measured by testing the most content rich web page the team a
 \label{fig:uiperform}
 \end{figure}
 
-Two tests were run to see the difference of a DOM load and a fully page load (all requests to the back-end done). The difference between the two is that in the latter we also add the time for the requests for team statistics as these requests are run when the JavaScript code is executed. 
+Two tests were run to see the difference of a \ac{DOM} load and a fully page load (all requests to the back-end done). The difference between the two is that in the latter we also add the time for the requests for team statistics as these requests are run when the JavaScript code is executed. The user will see that the page is loaded but is missing some content because of the team statistics requests.
 
-The last test 
+The results show that we are well below the 1000ms threshold in both tests Nielsen \cite{nielsen} suggested. The maximum delay was 695 ms over the 20 samples for complete page load and 488 ms for \ac{DOM} load. Requests for team statistics took in average 188.6 ms to complete. This includes 3 requests to the back-end API:
+\begin{itemize}
+\item \emph{/team/Troms{\o}/finalthird}: Passes into final third of the pitch.
+\item \emph{/teams/Troms{\o}}: Team statistics.
+\item \emph{/players/Troms{\o}}: Fetching all players.
+\end{itemize}
 
-The results show that we are below the 1000ms threshold in both tests Nielsen \cite{nielsen} suggested. 
 
 \subsection{Compatibility}
 
-Figure \ref{fig:compa} shows the result after running the page in different web browsers with the PowerMapper tool. The results shows that the web page works in most browsers except from some issues in older Internet Explorer versions. We can conclude that the page has good compatibility with different web browsers making in accessible on many platforms.
+Figure \ref{fig:compa} shows the result after running the page in different web browsers with the PowerMapper tool. The results show that the web page works in most browsers except from some issues in older Internet Explorer versions. We can conclude that the page has good compatibility with different web browsers making in accessible on many platforms.
 
 \begin{figure}[ht!]
 \centering
@@ -133,12 +137,13 @@ A thing that could have been changed to get more precise analytic information is
 
 A thing to take into consideration is the amount of matches in the database under the tests. A system in production would contain a lot more matches and would increase the response time. 
 
-
 In a \ac{SPA} you don't necessary get all the files at once, but when you need them. On render, the web browser will first get the root \ac{HTML} document and then start requesting all other files that is referenced in the document, like \ac{CSS} and JavaScript files. Bundling all JavaScript files can to one file would save a lot of network traffic. Doing a complete reload of the team analytic page Google Developer Tools reports that total 55 requests is done to the back-end, fetching various files and requests to the REST API.
 
 \subsection{Usability}
 
 Several assessors noted that improving the graphical components would increase the overall experience of the system and make the system easier to use. This has not been one of the main focuses during the development of the system. However, from the results of the user servers the system must be to some degree usable in the way of the assessors find the information useful. 
+
+
 
 
 

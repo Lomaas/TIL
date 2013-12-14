@@ -1,23 +1,23 @@
 This chapter presents our achievements, gives some concluding remarks and outlines possible future work.
 
-In this project, develops and evaluates a system for capturing, persisting and presenting information in the field of soccer opponent analysis. Particularly we have focused on identifying key players in the opponent team 
+In this project, we develop and evaluate a system for capturing, persisting and presenting information in the field of soccer opponent analysis. Particularly we have focused on identifying key players in the opponent team. The problem definition is as follow:
 
-\textit{This thesis will develop a system complementing the Muithu and Bagadus systems. Focus will be on soccer opponent analytics, where a data repository need to be developed capturing important events relevant for this type of analytics. Specially we want to identify the key players in a team. A user interface component providing the core information about the opponent should also be developed.}
+\textit{This thesis will develop a system complementing the Muithu and Bagadus systems. Focus will be on soccer opponent analytics, where a data repository needs to be developed capturing important events relevant for this type of analytics. Especially, we want to identify the key players in a team. A user interface component providing the core information about the opponent should also be developed.}
 
-In the requirement specification we stated what we wanted from the system; a system that identifies key players in the offensive play of a soccer team. We also wanted to be able to see where on the field the key players contribute from.
+In the requirement specification we stated what we wanted from the system; a complementary opponent analytic system that among other things identifies key players in the offensive play of a soccer team. We wanted to be able to see where on the field the key players contribute. Including to this we wanted an interface for capturing events for soccer opponent analytic and estimate how long the process of capturing these events would take. Lastly, we needed to figure out what to capture from matches
 
-To conclude we can say that we have achieved that to a certain degree looking at the result of the user servery. Assessors in the evaluation agrees that the system provides you with useful information about soccer opponents. 
+In the process we have been collaborating with \ac{TIL} to develop a domain model for our system resulting in several rounds of discussions before settling Some prototyping was done to illustrate different type of statistics the system could provide.
+
+In order to evaluate the system user serverys was conducted with \ac{TIL} and other experts in the domain of soccer. These assessors has been testing the system with real data from total 12 games where \ac{TIL} and \ac{SIF} have been involved. Results from the evaluation showed that the assessors would like to have the system rather than not having it. As an opponent analytic tool the response were positive among assessor. We speculate that this 
+To conclude we can say that we have achieved our goal to a looking at the results of the user servery. Assessors in the evaluation agrees that the system provides you with useful information about soccer opponents. 
 
 \subsection{Concluding Remarks}
 
-Building a system for soccer is complex task. There is many different terms in the field making it hard to make a vocabulary for your system. Soccer experts also values information differently and can figure out completely different things from the same statistic. 
-
+Building a system for soccer is complex task. There are many different terms in the field making it hard to make a vocabulary for your system. Soccer experts also values information differently and can figure out completely different things from the same statistic. 
 
 \section{Future Work}
 
-\subsection{Quality checking}
-
-Simple quality checks of the data can be added on the back-end:
+Simple quality checks of the data can be added on the back-end to improve accuracy of the data:
 
 \begin{itemize}
 \item \emph{Players}: In attacks with more than two passes is register. The attack start player should be the same as the sender of the first pass, or with no passes, the player finishing the attack. 
@@ -27,13 +27,11 @@ Simple quality checks of the data can be added on the back-end:
 
 Including to this, the single match page could have been updated with delete and edit buttons for attacks. This for operators to be able to correct or delete wrong data.
 
-\subsection{New queries}
+There is still a lot more queries than can be done on the data gathered. Examples includes listing what type of passes players play; cross, pass, longball. The same goes for type of finishes; shot miss, shot target or shot goal. This would need to be discussed with experts in the domain to quantify what can be useful. However, there are many possibilities. 
 
-There is still a lot more queries than can be done on the data gathered. Examples includes listing what type of passes players play; cross, pass, longball. The same goes for type of finishes; shot miss, shot target or shot goal. This would need to be discussed with experts in the domain to quantify what can be useful. However, there is many possibilities. 
+Giving the end users the possibility to see statistics for two teams at the same time. The statistic for one team itself might not be so interesting if you don't have something to compare it to. Graphical components in the system could have had a way to select a team to compare with.
 
-\subsection{Two team view}
+Another feature would be a team VS team page where two teams are compared up to each other.
 
-Giving the end users the possibility to see statistics for two teams at the same time. The statistic for one team itself might not be so interesting if you don't have something to compare it to.  Graphical components in the system could have had a way to select a team to compare with.
 
-Another feature would be a team vs team page where two teams are compared up to each other.
 
