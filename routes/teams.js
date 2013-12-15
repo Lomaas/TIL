@@ -4,7 +4,7 @@ var playerModel = require('./../models/player');
 var passModel = require('./../models/pass');
 
 exports.getTeams = function (req, res) {
-    console.log("Find all Teams");
+    console.log("GetTeams");
 
     teamModel.getTeams(function(err, response){
         if(err) res.send(400);
@@ -14,8 +14,7 @@ exports.getTeams = function (req, res) {
 };
 
 exports.postNewTeam = function(req, res){
-    console.log("New team");
-    console.log(JSON.stringify(req.body));
+    console.log("PostNewTeam");
 
     teamModel.postNewTeam(req.body, function(response){
         switch(response){
@@ -30,7 +29,7 @@ exports.postNewTeam = function(req, res){
 };
 
 exports.getPlayers = function(req, res){
-    console.log("GET PLAYERS FOR TEAM-----" + req.params.name);
+    console.log("GetPlayers " + req.params.name);
 
     playerModel.getPlayersForTeam(req.params.name, function callbackPlayersForTeam(err, response){
         if(err) res.send(400);
@@ -59,40 +58,38 @@ exports.getStats = function(req, res){
 
 exports.getPassesIntoFinalThird = function(req, res){
     playerModel.getPlayersForTeam(req.params.name, function(err, players){
-        if(err) res.send(400);
+        if(err) { res.send(400); return; }
 
-        passModel.passesIntoFinalThirdTeam(players[0]._source.player_id, players[players.length - 1]._source.player_id, function callbackPassesIntoFinalThird(err, response){
-            if(err) res.send(400);
-            var json = {};
-            var i = 0;
-            var tmp;
+        passModel.passesIntoFinalThirdTeam(players[0]._source.player_id, players[players.length - 1]._source.player_id, 
+            function callbackPassesIntoFinalThird(err, response){
+                if(err) res.send(400);
+                var json = {};
+                var i = 0;
+                var tmp;
 
-            for(i=0; i < players.length; i++){
-                tmp = players[i]._source;
+                for(i=0; i < players.length; i++){
+                    tmp = players[i]._source;
 
-                json[tmp.player_id] = {
-                    "name" : tmp.name,
-                    "count" : 0
+                    json[tmp.player_id] = {
+                        "name" : tmp.name,
+                        "count" : 0
+                    };
+                }
+
+                for(i=0; i < response.facets.fromPlayer.terms.length; i++){
+                    tmp = response.facets.fromPlayer.terms[i];
+                    console.log("test" + json[tmp.term]);
+                    json[tmp.term]['count'] = tmp.count;
                 };
-            }
 
-            console.log(response.facets.fromPlayer);
-
-            for(i=0; i < response.facets.fromPlayer.terms.length; i++){
-                tmp = response.facets.fromPlayer.terms[i];
-                console.log("test" + json[tmp.term]);
-                json[tmp.term]['count'] = tmp.count;
-            };
-            console.log(json);
-
-            res.jsonp({"facets" : json});
-        });
+                res.jsonp({"facets" : json});
+            });
     });
 };
 
 exports.passesGoingForwardTeam = function(req, res){
     playerModel.getPlayersForTeam(req.params.name, function(err, players){
-        if(err) res.send(400);
+        if(err) { res.send(400); return; }
 
         passModel.passesGoingForwardTeam(players[0]._source.player_id, players[players.length - 1]._source.player_id, function callbackPassesForward(err, response){
             if(err) res.send(400);
@@ -113,10 +110,8 @@ exports.passesGoingForwardTeam = function(req, res){
 
             for(i=0; i < response.facets.fromPlayer.terms.length; i++){
                 tmp = response.facets.fromPlayer.terms[i];
-                console.log("test" + json[tmp.term]);
                 json[tmp.term]['count'] = tmp.count;
             };
-            console.log(json);
 
             res.jsonp({"facets" : json});
         });

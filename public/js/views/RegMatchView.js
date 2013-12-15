@@ -54,10 +54,8 @@ window.RegMatchView = Backbone.View.extend({
 
     postNewMatchData : function(e){
         e.preventDefault();
-        console.log("postNewMatchData");
         var response = {};
         response['attacks'] = [];
-        console.log($('form').serializeArray());
 
         _.each($('form').serializeArray(), function(obj){
             var name = obj.name;
@@ -74,8 +72,7 @@ window.RegMatchView = Backbone.View.extend({
         response['score'] = response.hometeamGoals + "-" + response.awayteamGoals;
         delete response['hometeamGoals'];
         delete response['awayteamGoals'];
-        console.log(response);
-        new MatchModel(response).save();
+        new MatchModel(response).save();    // AJAX request, post match data
 
         app.navigate("", true);
     },

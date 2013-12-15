@@ -2,7 +2,6 @@ window.PlayerView = Backbone.View.extend({
     el : $('#player'),
 
     initialize: function (options) {
-        console.log("init Player View");
         var that = this;
 
         that.model.fetch({
@@ -13,8 +12,7 @@ window.PlayerView = Backbone.View.extend({
     },
 
     render: function () {
-        console.log("in Render: %j", this.model.toJSON());
-
+        // Render HTML first, so that we can find DIVs to insert graphs and canvas to.
         var temp = Mustache.render(this.template(),
             {
                 stats : this.model.toJSON(), 
@@ -41,14 +39,13 @@ window.PlayerView = Backbone.View.extend({
         rect = new Rectangle(ctx, width, height, Config.zonesX, Config.zonesY, Config.zonesDictX, Config.zonesDictY);
         rect.drawPitch();
         rect.drawPercentNumbers(this.model.get("facetsToPlayer").toPos.terms, this.model.get("facetsToPlayer").toPos.total);
-        console.log(this.model);
 
         $('#passesChart').highcharts({
             chart: {
                 type: 'bar'
             },
             title: {
-                text: 'Passes received and played for ' + this.model.get("currentPlayer").name
+                text: this.model.get("currentPlayer").name + ' passes played and received'
             },
             xAxis: {
                 categories: this.model.get("playerXaxis")
@@ -77,8 +74,6 @@ window.PlayerView = Backbone.View.extend({
             url: "stats/breakthroughs/" + this.model.get("currentPlayer").name,
             dataType : "json",
             success: function getBreakthroughs(resp, textStatus, jqXHR){
-                console.log("RESPONSE %j", resp);
-
                 var dataPieChart = [];
                 _.each(resp.breakthrough, function(breakthrough){
                     dataPieChart.push([breakthrough.term, breakthrough.count]);
@@ -98,7 +93,7 @@ window.PlayerView = Backbone.View.extend({
                 plotShadow: false
             },
             title: {
-                text: 'Breakthrough'
+                text: 'Types of breakthrough'
             },
             plotOptions: {
                 pie: {

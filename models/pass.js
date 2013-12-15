@@ -61,11 +61,10 @@ exports.getPassStatsFromPlayer = function(userId, callback){
 
         })
         .on('done', function(done){
-            //always returns 0 right now
             console.log("Done ", done);
         })
         .on('error', function(error){
-            console.log("Error ", error);
+            winston.log('error', error);
         })
         .exec();
 };
@@ -123,7 +122,7 @@ var getPassStatsToPlayer = function(userId, callback){
             callback(err = false, response);
         })
         .on('error', function(error){
-            console.log("Error ", error);
+            winston.log('error', error);
             callback(err = false, undefined);
         })
         .exec();
@@ -187,21 +186,16 @@ exports.passesIntoFinalThird = function(userId, callback){
     elasticSearchClient.search(indexNamePasses, typeNamePasses, queryObject)
         .on('data', function(data) {
             data = JSON.parse(data);
-
-            console.log("Data %s", JSON.stringify(data, undefined, 2));
             callback(err = false, data.hits);
         })
         .on('error', function(error){
-            console.log("Error ", error);
+            winston.log('error', error);
             callback(err = false, undefined);
         })
         .exec();
 };
 
 exports.passesIntoFinalThirdTeam = function(rangeStart, rangeEnd, callback){
-    console.log(rangeStart);
-    console.log(rangeEnd);
-
     var queryObject = {
         "query": {
             "bool": {
@@ -249,15 +243,13 @@ exports.passesIntoFinalThirdTeam = function(rangeStart, rangeEnd, callback){
     elasticSearchClient.search(indexNamePasses, typeNamePasses, queryObject)
         .on('data', function(data) {
             data = JSON.parse(data);
-
-            console.log("Data %s", JSON.stringify(data, undefined, 2));
             response = {};
             response['facets'] = data.facets;
             response['hits'] = data.hits;
             callback(err = false, response);
         })
         .on('error', function(error){
-            console.log("Error ", error);
+            winston.log('error', error);
             callback(err = false, undefined);
         })
         .exec();
@@ -320,15 +312,13 @@ exports.passesGoingForwardTeam = function(rangeStart, rangeEnd, callback){
     elasticSearchClient.search(indexNamePasses, typeNamePasses, queryObject)
         .on('data', function(data) {
             data = JSON.parse(data);
-
-            console.log("Data %s", JSON.stringify(data, undefined, 2));
             response = {};
             response['facets'] = data.facets;
             response['hits'] = data.hits;
             callback(err = false, response);
         })
         .on('error', function(error){
-            console.log("Error ", error);
+            winston.log('error', error);
             callback(err = false, undefined);
         })
         .exec();

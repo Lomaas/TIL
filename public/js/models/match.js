@@ -8,7 +8,7 @@ window.MatchModel = Backbone.Model.extend({
             var tmp = new AttackModel(attack);
             listOfModels.push(tmp);
         });
-        // console.log(listOfModels);
+
         return listOfModels;
     },
 
@@ -23,7 +23,6 @@ window.MatchModel = Backbone.Model.extend({
     },
 
     parse : function(resp){
-        console.log("%j", resp);
         return resp._source;
     }
 });
@@ -40,7 +39,7 @@ window.MatchListCollection = Backbone.Collection.extend({
             tmp.id = match._id;
             listOfModels.push(tmp);
         });
-        // console.log(listOfModels);
+
         return listOfModels;
     }
 

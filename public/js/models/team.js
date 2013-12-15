@@ -2,7 +2,8 @@ window.TeamModel = Backbone.Model.extend({
     urlRoot : 'team',
 
     getPasses: function(){
-    	 var listOfModels = []
+    	 var listOfModels = [];
+         
         _.each(this.get('passes'), function(attack){
             var tmp = new PassModel(attack);
             listOfModels.push(tmp);
@@ -11,7 +12,6 @@ window.TeamModel = Backbone.Model.extend({
     },
 
     parse: function(resp){
-    	console.log(resp);
         var breakthroughXaxis = [];
         var breakthroughValues = [];
 
@@ -42,13 +42,12 @@ window.TeamListCollection = Backbone.Collection.extend({
 
     parse : function(resp) {
         var listOfModels = [];
-        console.log(resp);
+
         _.each(resp, function(match){
-            console.log(match._source);
             var tmp = new TeamModel(match._source)
             listOfModels.push(tmp);
         });
-        console.log(listOfModels);
+
         return listOfModels;
     }
 

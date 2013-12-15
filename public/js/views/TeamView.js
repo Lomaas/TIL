@@ -2,7 +2,6 @@ window.TeamView = Backbone.View.extend({
     el : $('#team'),
 
     initialize: function () {
-        console.log("init Team");
         var that = this;
         this.model.fetch({
             success: function () {
@@ -12,11 +11,10 @@ window.TeamView = Backbone.View.extend({
 
         async.parallel([
             function(callback){
-                console.log("first");
                 that.chartModel = new ChartModel({url : "team/" + that.options.name + "/finalthird"});
                 that.chartModel.fetch({
                     success: function () {
-                    callback();
+                        callback();
                     }
                 });
             },
@@ -33,7 +31,7 @@ window.TeamView = Backbone.View.extend({
                 });
             }],
             function callback(){
-                console.log("callback");
+                // Final callback
                 that.renderChartFinalThird();
             }
         );
@@ -49,8 +47,6 @@ window.TeamView = Backbone.View.extend({
         var keyPlayers = this.model.get("players");
         var players = this.playersView.getModelData();
         var i;
-
-        console.log(players);
 
         if(players == undefined)
             alert("players undefined");
@@ -163,6 +159,7 @@ window.TeamView = Backbone.View.extend({
     },
 
     render: function () {
+        // Render HTML first, so that we can find DIVs to insert graphs and canvas to.
         var temp = Mustache.render(this.template(), {
             teamname : this.model.id,
             breakthrough : this.model.get("breakthrough"),

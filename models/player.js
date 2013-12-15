@@ -19,7 +19,7 @@ exports.newPlayer = function(player, callback){
 }
 
 exports.getPlayer = function(player_id, callback){
-    console.log("GET PLAYER FOR TEAM-----");
+    console.log("GetPlayer");
 
     var queryObject = { 
         "query" : {
@@ -32,15 +32,13 @@ exports.getPlayer = function(player_id, callback){
     elasticSearchClient.search(indexNamePlayer, typeNamePlayer, queryObject)
 	    .on('data', function(data) {
 	        data = JSON.parse(data);
-	        console.log("getPlayer %s", JSON.stringify(data, undefined, 2));
 	        callback(data.hits.hits[0]._source);
 	    })
 	    .on('done', function(done){
-	        //always returns 0 right now
 	        console.log(done);
 	    })
 	    .on('error', function(error){
-	        console.log(error)
+	        winston.log('error', error);
 	    })
 	    .exec();
 };
@@ -55,15 +53,13 @@ exports.getSomePlayers = function(players, callback){
     elasticSearchClient.search(indexNamePlayer, typeNamePlayer, queryObject)
 	    .on('data', function(data) {
 	        data = JSON.parse(data);
-	        console.log("getSomePlayers %s", JSON.stringify(data, undefined, 2));
 	        callback(data.hits.hits);
 	    })
 	    .on('done', function(done){
-	        //always returns 0 right now
 	        console.log(done);
 	    })
 	    .on('error', function(error){
-	        console.log(error)
+	        winston.log('error', error);
 	    })
 	    .exec();
 }
@@ -84,11 +80,10 @@ exports.getPlayersForTeam = function(team, callback){
     elasticSearchClient.search(indexNamePlayer, typeNamePlayer, queryObject)
 	    .on('data', function(data) {
 	        data = JSON.parse(data);
-	        console.log("Data %s", JSON.stringify(data, undefined, 2));
 	        callback(err = false, data.hits.hits);
 	    })
 	    .on('error', function(error){
-	        console.log(error)
+	        winston.log('error', error);
 	        callback(err = true, undefined);
 	    })
 	    .exec();

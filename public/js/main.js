@@ -19,7 +19,6 @@ window.AppRouter = Backbone.Router.extend({
 	home : function(){
 		this.matchList = new MatchListCollection();
 		this.homeView = new HomeView({model: this.matchList});
-		console.log(this.matchList.toJSON());
 		this.setNewView([this.homeView]);
 	},
 
@@ -29,8 +28,6 @@ window.AppRouter = Backbone.Router.extend({
 	},
 	
 	matchDetails : function(matchId){
-		console.log("Changing View, match: %s", matchId);
-
 		var matchModel = new MatchModel({id : matchId});
 		this.matchView = new MatchView({model: matchModel});
 		this.setNewView([this.matchView]);

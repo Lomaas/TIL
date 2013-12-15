@@ -8,7 +8,6 @@ window.MatchView = Backbone.View.extend({
     },
 
     initialize: function () {
-        console.log("init MatchView");
         this.model.bind("reset", this.render, this);
         var that = this;
 
@@ -19,15 +18,11 @@ window.MatchView = Backbone.View.extend({
         });
 
         this.model.on('change', function(){
-            console.log('foo');
             that.render();
         });
     },
 
     render: function () {
-        console.log("in Render: %j", this.model.toJSON());
-        console.log(this.model.getAttacksJSON());
-
         var attacks = this.model.getAttacksJSON();
         var temp = Mustache.render(
             this.template(), 
@@ -43,7 +38,6 @@ window.MatchView = Backbone.View.extend({
     },
 
     addNewAttack : function(e){
-         console.log("addNewAttack");
          var regAttackView = new RegAttackView({
              el : $('#attack-form'),
              matchId : this.model.get('id'),

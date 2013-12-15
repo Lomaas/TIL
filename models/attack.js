@@ -8,11 +8,9 @@ exports.newAttack = function(attack, callback){
 
     elasticSearchClient.bulk(commands, {})
         .on('done', function(done){
-            console.log(done);
             callback(OK_REQUEST);
         })
         .on('error', function(error){
-            console.log(error);
             winston.log('error', error);
             callback(BAD_REQUEST);
         })
@@ -21,7 +19,6 @@ exports.newAttack = function(attack, callback){
 
 
 exports.getAttacksSummaryStatsForTeam = function(team, callback){
-    console.log("Get attacks summary stats for team:: %s", team);
     var json = {};
 
     var queryObject = {
@@ -85,7 +82,6 @@ exports.getAttacksSummaryStatsForTeam = function(team, callback){
     elasticSearchClient.search(indexNameAttacks, typeNameAttacks, queryObject)
         .on('data', function (data) {
             data = JSON.parse(data);
-            console.log("Data %s", JSON.stringify(data, undefined, 2));
 
             json['breakthroughPlayers'] = data.facets.breakthroughPlayer.terms;
             json['breakthrough'] = data.facets.breakthrough.terms;
@@ -108,7 +104,7 @@ exports.getAttacksSummaryStatsForTeam = function(team, callback){
             callback(err = false, json);
         })
         .on('error', function (error) {
-            console.log(error)
+            winston.log('error', error);
             callback(err = true, undefined);
         })
         .exec();
@@ -135,13 +131,12 @@ exports.getAssistKing = function(playerName, callback){
         .on('data', function (data) {
             data = JSON.parse(data);
             json = {};
-            console.log("Data %s", JSON.stringify(data, undefined, 2));
             json['breakthrough'] = data.facets.breakthrough.terms;
 
             callback(err = false, json);
         })
         .on('error', function (error) {
-            console.log(error)
+            winston.log('error', error);
             callback(err = true, undefined);
         })
         .exec();
@@ -168,13 +163,12 @@ exports.getBreakthroughsForPlayer = function(playerName, callback){
         .on('data', function (data) {
             data = JSON.parse(data);
             json = {};
-            console.log("Data %s", JSON.stringify(data, undefined, 2));
             json['breakthrough'] = data.facets.breakthrough.terms;
 
             callback(err = false, json);
         })
         .on('error', function (error) {
-            console.log(error)
+            winston.log('error', error);
             callback(err = true, undefined);
         })
         .exec();
@@ -200,37 +194,13 @@ exports.getInvolvementsPerMatchTeam = function(teamName, callback){
         .on('data', function (data) {
             data = JSON.parse(data);
             json = {};
-            console.log("Data %s", JSON.stringify(data, undefined, 2));
             json['breakthrough'] = data.facets.breakthrough.terms;
 
             callback(err = false, json);
         })
         .on('error', function (error) {
-            console.log(error)
+            winston.log('error', error);
             callback(err = true, undefined);
         })
         .exec();
 };
-
-
-//exports.getMatchAttacks = function(mId, callback){
-//    var queryObject = {
-//        "query" : {
-//            "match" : {
-//                "matchId" : mId
-//            }
-//        }
-//    };
-//
-//    elasticSearchClient.search(indexNameAttacks, typeNameAttacks, queryObject)
-//        .on('data', function(data) {
-//            data = JSON.parse(data);
-//            console.log("Data %s", JSON.stringify(data.hits.hits, undefined, 2));
-//            callback(err = false, data.hits.hits);
-//        })
-//        .on('error', function(error){
-//	        winston.log('error', error);
-//            callback(err = true, undefined);
-//        })
-//        .exec();
-//};

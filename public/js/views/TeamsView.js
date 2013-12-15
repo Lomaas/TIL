@@ -6,8 +6,6 @@ window.TeamsView = Backbone.View.extend({
     },
 
     initialize: function () {
-        console.log("init Teams View");
-
         var that = this;
         that.model.fetch({
             success: function () {
@@ -18,8 +16,6 @@ window.TeamsView = Backbone.View.extend({
     },
 
     render: function (eventName) {
-        console.log("in Render: %j", this.model.toJSON())
-
         var temp = Mustache.render(this.template(), {teams : this.model.toJSON()});
         this.$el.html(temp);
 
@@ -29,7 +25,6 @@ window.TeamsView = Backbone.View.extend({
     clicked : function(e){
         e.preventDefault();
         var id = $(e.currentTarget).data("id");
-        console.log(id);
         app.navigate('team/' + id, true);
     }
 });

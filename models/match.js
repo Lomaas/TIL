@@ -11,8 +11,7 @@ exports.getAllMatches = function(callback){
 
     elasticSearchClient.search(indexNameMatches, typeNameMatches, queryObject)
         .on('data', function(data) {
-            data = JSON.parse(data);
-            console.log("Data %s", JSON.stringify(data.hits.hits, undefined, 2));
+            data = JSON.parse(data);    // extra seralization step
  			callback(data.hits.hits);
         })
         .on('done', function(done){
@@ -30,13 +29,12 @@ exports.getMatch = function(mId, callback){
             "match" : {
                 "_id" : mId
             }
-        }
+        },
     };
 
     elasticSearchClient.search(indexNameMatches, typeNameMatches, queryObject)
         .on('data', function(data) {
             data = JSON.parse(data);
-            console.log("Data %s", JSON.stringify(data.hits.hits, undefined, 2));
             callback(err=false, data.hits.hits[0]);
         })
         .on('error', function(error){
@@ -53,7 +51,6 @@ exports.newMatch = function(match, callback){
 
     elasticSearchClient.bulk(commands, {})
 	    .on('done', function(done){
-	        console.log(done);
 	        callback(OK_REQUEST);
 	    })
 	    .on('error', function(error){
@@ -65,7 +62,6 @@ exports.newMatch = function(match, callback){
 
 exports.newAttackForMatch = function(attack, matchId, callback){
     this.getMatch(matchId, function getMatchCallback(err, response){
-//        console.log("res %s", JSON.stringify(response, undefined, 2));
         var match = response._source;
         match.attacks.push(attack);
 
@@ -75,7 +71,6 @@ exports.newAttackForMatch = function(attack, matchId, callback){
 
         elasticSearchClient.bulk(commands, {})
             .on('done', function(done){
-                console.log(done);
                 callback(OK_REQUEST);
             })
             .on('error', function(error){

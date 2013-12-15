@@ -6,7 +6,6 @@ window.RegPassView = Backbone.View.extend({
     },
 
     initialize: function () {
-        console.log("init RegPassView");
         this.render();
 
         $('#pass-form').validate({
@@ -29,7 +28,6 @@ window.RegPassView = Backbone.View.extend({
                 }
             },
             highlight: function(element) {
-                console.log('tries to highlight');
                 $(element).closest('.form-group').addClass('has-error');
             },
             unhighlight: function(element) {
@@ -38,8 +36,6 @@ window.RegPassView = Backbone.View.extend({
             errorElement: 'span',
             errorClass: 'help-block',
             errorPlacement: function(error, element) {
-                console.log('errorPlacement');
-
                 if(element.parent('.input-group').length) {
                     error.insertAfter(element.parent());
                 } else {
@@ -50,7 +46,6 @@ window.RegPassView = Backbone.View.extend({
     },
 
     render: function () {
-        console.log("in Render RegPassView");
         var temp = Mustache.render(this.template(), {});
         this.$el.html(temp);
         return this;

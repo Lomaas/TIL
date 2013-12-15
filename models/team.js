@@ -14,12 +14,10 @@ exports.getTeams = function(callback){
     elasticSearchClient.search(indexNameTeams, typeNameTeams, queryObject)
         .on('data', function(data) {
             data = JSON.parse(data);
-            console.log("getTeams %s", JSON.stringify(data, undefined, 2));
-
             callback(err = false, data.hits.hits);
         })
         .on('error', function(error){
-            console.log(error);
+            winston.log('error', error);
             callback(err = true, undefined);
         })
         .exec();

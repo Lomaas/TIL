@@ -1,4 +1,4 @@
-var serverOptions = {
+var serverOptionsDB = {
     host: 'localhost',
     port: 9200,
     secure: false
@@ -8,12 +8,14 @@ var serverOptions = {
 OK_REQUEST = 1;
 BAD_REQUEST = 2;
 
+// Logging
 winston = require('winston');
 winston.add(winston.transports.File, { filename: 'error.log' });
 
 async = require('async');
+
 ElasticSearchClient = require('elasticsearchclient');
-elasticSearchClient = new ElasticSearchClient(serverOptions);
+elasticSearchClient = new ElasticSearchClient(serverOptionsDB);
 
 var express = require('express'),
     matches = require('./routes/matches'),
@@ -24,12 +26,13 @@ var express = require('express'),
  
 var app = express();
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'));	// server static files
 
 app.configure(function(){
   app.use(express.bodyParser());
 });
 
+// API
 app.get('/matches', matches.getAllMatches);
 app.get('/match/:id', matches.getMatch);
 app.post('/match', matches.postNewMatch);
@@ -51,6 +54,7 @@ app.post('/attack', attacks.postNewAttack);
 app.post('/pass', passes.newPass);
 
 app.get('/stats/breakthroughs/:name', player.getBreakthroughsForPlayer);
+app.get('/stats/involvements/:teamname', teams.involvementPerMatch);
 
 
 app.listen(3000);

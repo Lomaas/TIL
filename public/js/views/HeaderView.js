@@ -9,7 +9,6 @@ window.HeaderView = Backbone.View.extend({
     },
     
     initialize: function () {
-        console.log("init headerView");
         this.render();
     },
 
@@ -24,12 +23,9 @@ window.HeaderView = Backbone.View.extend({
         if (e.keyCode != 13) return;
         console.log(        $('#tags').val());
         app.navigate('team/' + $('#tags').val(), true);
-        // Change Route to teams view
-
     },
 
     onClickListTeam: function(event){
-        console.log($("#list_teams"));
         $("#list_teams").attr("class", "active");
         $("#list_home").attr("class", "");
         $("#list_players").attr("class", "");

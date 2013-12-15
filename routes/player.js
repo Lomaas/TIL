@@ -3,9 +3,10 @@ var playerModel = require('./../models/player');
 var attackModel = require('./../models/attack');
 
 exports.getStats = function (req, res){
-    console.log("get stats " + req.params.id.toString());
+    console.log("GetStats " + req.params.id.toString());
     var currentPlayer;
     var playerResponse;
+
     async.parallel([
         function(callback){
             playerModel.getPlayer(req.params.id, function(player){
@@ -15,7 +16,6 @@ exports.getStats = function (req, res){
         },
         function(callback){
             passModel.getPassStatsFromPlayer(parseInt(req.params.id), function(response){
-                console.log("Data %s", JSON.stringify(response, undefined, 2));
 
                 var i;
                 var playerArray = [];
@@ -65,11 +65,9 @@ exports.getStats = function (req, res){
                 });
             });
         }
-    ], function callback(response){
-        console.log("final callback");
+    ], 
+    function callback(response){
         response['currentPlayer'] = currentPlayer;
-        console.log("Data %s", JSON.stringify(response, undefined, 2));
-
         res.jsonp(response);
     });
 };
@@ -88,8 +86,6 @@ exports.getPassesForPlayer = function(req, res){
     elasticSearchClient.search(indexNameElastic, typeNameElastic, queryObject)
         .on('data', function(data) {
             data = JSON.parse(data);
-            console.log("Data %s", JSON.stringify(data.hits.hits, undefined, 2));
-
             res.jsonp(data);
         })
         .on('done', function(done){
@@ -103,7 +99,7 @@ exports.getPassesForPlayer = function(req, res){
 
 exports.getPassesIntoFinalThird = function(req, res){
     passModel.passesIntoFinalThird(req.params.id, function callbackPassesIntoFinalThird(err, response){
-        if(err) res.send(400);
+        if(err) { res.send(400); return; }
 
         res.jsonp(response);
     });
@@ -128,7 +124,7 @@ exports.newPlayer = function(req, res){
 
 exports.getBreakthroughsForPlayer = function(req, res){
     attackModel.getBreakthroughsForPlayer(req.params.name, function callbackGetBreakthPlayer(err, response){
-        if(err) res.send(400);
+        if(err) { res.send(400); return; }
 
         res.jsonp(response);
     });

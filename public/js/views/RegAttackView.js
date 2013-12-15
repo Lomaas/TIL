@@ -16,7 +16,6 @@ window.RegAttackView = Backbone.View.extend({
     },
 
     render: function () {
-        console.log("in Render RegAttackView");
         var temp = Mustache.render(this.template(), {});
         this.$el.html(temp);
 
@@ -70,7 +69,6 @@ window.RegAttackView = Backbone.View.extend({
     },
 
     addNewPass : function(e){
-        console.log("addnewpass");
         var divEl = 'newPass-' + this.counter.toString();
         $('#passes').append('<div id="'+ divEl + '"> </div>');
         var regPassView = new RegPassView({el : $('#' + divEl)});
@@ -85,7 +83,6 @@ window.RegAttackView = Backbone.View.extend({
 
     submitAttack : function(e){
         e.preventDefault();
-        console.log("submitAttack");
         var that = this;
 
         var response = this.fixResponse($('form').serializeArray());
@@ -93,11 +90,9 @@ window.RegAttackView = Backbone.View.extend({
 
         attackModel.save(null, {
             success: function (model, response) {
-                console.log("success");
                 that.matchModel.fetch();
             },
             error: function (model, response) {
-                console.log("error");
                 alert("The attack could not be submitted");
             }
         });
@@ -109,7 +104,6 @@ window.RegAttackView = Backbone.View.extend({
     fixResponse : function(array){
         var passes = [];
         var response = {};
-        console.log(array);
 
         for(var i=0; i < array.length; i++){
             var obj = array[i];
@@ -153,7 +147,6 @@ window.RegAttackView = Backbone.View.extend({
         response['breakthrough'] = $('#breakthrough-form').val();
         response['typeOfAttack'] = $('#typeOfAttack-form').val();
         response['touch'] = 0;  // not used
-        console.log(response);
 
         return response;
     }
