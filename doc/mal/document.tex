@@ -81,7 +81,7 @@
 
 
 \chapter*{Acknowledgements}
-
+\input{chapters/acknowledgement}
 
 %%
 %
@@ -90,7 +90,7 @@
 \setcounter{tocdepth}{3}
 \tableofcontents	
 
-\chapter{List of Acronyms}
+\chapter*{List of Acronyms}
 \begin{acronym}
 
 \acro{UI}{User Interface} % Example
@@ -111,9 +111,7 @@
 
 \end{acronym}
 
-
 \listoffigures
-
 \listoftables
 
 \pagestyle{plain}
@@ -153,6 +151,7 @@
 \acresetall
 
 % References
+\addcontentsline{toc}{chapter}{References}
 \bibliographystyle{plain}
 \bibliography{readlist}
 

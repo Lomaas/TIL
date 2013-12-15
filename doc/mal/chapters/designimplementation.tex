@@ -9,11 +9,11 @@
 \label{overflow}
 \end{figure}
 
-The system architecture can be layered into three layers; client, back-end and database. The control flows from the clients requesting a page or inserting data, to the back-end who communicates with the storage. From the storage the execution cycle is reversed. The storage will execute what it’s been asked to do by the back-end and return the result to the back-end. The back-end then again returns the result to the client.
+The system architecture can be layered into three layers; client, back-end and database. The control flows from the clients requesting a page or inserting data, to the back-end who communicates with the storage. From the storage the execution cycle is reversed. The storage will execute what it’s been asked to do by the back-end and return the result. The back-end then again returns the result to the client.
 
 \subsection{Interfaces (1)}
 
-The Soccer Analytic tool has one user interface - the web browser interface. Both the capturing and the analytic interface’s can be reached from this single web browser interface. All interfaces are created on the client. The client will get data from the back-end and construct the interfaces dynamically. 
+The Soccer Analytic tool has one user interface - the web browser interface. Both the capturing and the analytic interface’s can be reached from this single web browser interface running on the same domain. All interfaces are created on the client. The client will get data from the back-end and construct the interfaces dynamically. 
 
 \subsection{Back-end (2)}
 
@@ -37,7 +37,7 @@ The domain model is based around matches. All attacks are wrapped into a match r
 \label{fig:finalPitchDividing}
 \end{figure}
 
-Figure \ref{fig:finalPitchDividing} shows the final version of the pitch dividing with a illustration of how an attack is captured. Player 4 plays to player 10 from zone 13 to 14. Player 10 transports the ball until he passes to player 15 from zone 18 to 22. Player 15 tries a finish from zone 22 inside the penalty area. The reason for going for more zones in the penalty area was to be able to see more specific where attacks are finished.
+Figure \ref{fig:finalPitchDividing} shows the final version of the pitch dividing with a illustration of how an attack is captured. Player 4 plays to player 10 from zone 13 to 14. Player 10 transports the ball until he passes to player 15 from zone 18 to 22. Player 15 tries a finish from zone 22 inside the penalty area. The reason for going for more zones in the penalty area was a specific request by \ac{TIL} to be able to see more specific where attacks are finished from.
 
 \section{Implementation details}
 
@@ -49,12 +49,12 @@ Figure \ref{fig:finalPitchDividing} shows the final version of the pitch dividin
 
 \subsection{Storage}
 
-The data storage is an Elasticsearch database\footnote{http://www.elasticsearch.org/}. Elasticsearch is document oriented, schema less and works well with \ac{JSON}\footnotemark. As our server is built on JavaScript, working with \ac{JSON} is easy. \ac{JSON}-objects can be inserted right into the storage and Elasticsearch will map fields and value accordingly, and make it available for search.
-Elasticsearch takes advantages of embedded documents meaning we can store related data together. An attack is usually made up of several passes these can be stored as an embedded document in the attack document. Then all passes can be retrieved in one query when fetching an attack.
+The data storage is an Elasticsearch\footnote{http://www.elasticsearch.org/} database. Elasticsearch is document oriented, schema less and works well with \ac{JSON}\footnotemark. As our server is built on JavaScript, working with \ac{JSON} is easy. \ac{JSON}-objects can be inserted right into the storage and Elasticsearch will map fields and value accordingly, and make it available for search.
+Elasticsearch takes advantages of embedded documents meaning we can store related data together. An attack is usually made up of several passes and these can be stored as an embedded document in the attack document. Then all passes can be retrieved in one query when fetching an attack.
 
 The main reason for using Elasticsearch is its search capability. In the starting phase of the project MongoDB \footnotemark was the storage engine. However as some aggregation queries were hard to figure out how to do, a change to Elasticsearch was made. It should be noted that MongoDB supports map reduce operations. With some extra work the queries causing problems could possible have been done with MongoDB. However, with Elasticsearch you can in a single, simple to write query get counted how many passes all players for a team has played and received, the number of times all players has been the breakthrough-player in an attack, count type of attacks, count the most used zones for passing and finishing and so on. This makes it very easy and efficient to do queries for analyses on teams and players.
 
-Another feature of Elasticsearch is how easy it is to scale it by adding new nodes to your cluster. It is built to scale horizontally out of the box. Elasticsearch uses a sharding technique to spread data across the cluster.  Basically, it breaks up the data into smaller chunks spreading it across the cluster of machines to achieve scalability and performance. The configuration setup is highly adjustable letting you specify number of shards and replicas the storage shall keep. Adding a new machine to the cluster will automatically start a reorganizing process of the data to take advantage of the extra hardware. 
+Another feature of Elasticsearch is how easy it is to scale it by adding new nodes to your cluster. It is built to scale horizontally out of the box. Elasticsearch uses a sharding technique to spread data across the cluster.  Basically, it breaks up the data into smaller chunks spreading it across the cluster of machines to achieve scalability and performance. The configuration setup is highly adjustable letting you specify number of shards and replicas the storage shall keep. Adding a new machine to the cluster will automatically start a reorganizing process of the data to take advantage of the extra hardware. This make it suitable as our storage if we wanted to expand the project by adding more data and having more end users.
 
 \footnotetext{http://www.json.org/}
 \footnotetext{http://www.mongodb.org/}
@@ -72,13 +72,21 @@ In our project we have 5 different indexes.
 \item \emph{Pass index}: Holds all passes in every attack.
 \end{itemize}
 
-Listing \ref{list:domainmodel} shows an example of data stored from a match. As may be noted there is data redundancy as some indexes stores the same information. One can argue that storage has become so cheap and if you can use a little bit extra space to gain performance you would do it. In this case it was done to be able to fully support aggregation functions on subdocuments.
+Listing \ref{list:domainmodel} shows an example of data stored from a match. As may be noted there is data redundancy as some indexes stores the same information. One can argue that storage has become so cheap and if you can use a little bit extra space to gain performance you would do it. In this case it was done to be able to fully support aggregation functions on subdocuments explained in more details in section \ref{sec:facets}
+
+\subsection{Facets}
+\label{sec:facets}
+Doing searches in Elasticsearch returns documents that matches your query. Facets provide an ability to do aggregation functions on the result-documents from you query. In the system, this feature is used a lot. An example is a query on all attack documents matching a team name. After fetching every document, aggregation functions will run on the resulting set of documents. This includes counting the number of times a player has been the sender and receiver of a pass, number of times he has been the breakthrough player, sum all the type of attacks etc. 
+
+Elasticsearch will return the root document when you do a match query on a field in a subdocument. Since attacks for both teams are stored inside the same match document, we would get both teams attacks when doing a match query on a team attack. This would again lead to aggregation functions running on both teams attack something that is not correct. Therefor, we have some data redundancy in our database.
+
+Another solution would be to store only attacks for both teams in a separate match document. This would lead to a little more complex query when fetching matches, but save us from storing duplicated attacks and passes. If this were to be implemented again, it would have been the solution.
 
 
 \subsection{Back-end}
 
 \subsubsection{Overview}	
-The back-end is the middleware between the clients and the data layer and is written in Node.js\cite{node.js} It exposes a \ac{REST}\footnote{http://www.ibm.com/developerworks/webservices/library/ws-restful/} interface over \ac{HTTP} shown in figue \ref{fig:api} for the client to communicate. A request coming in is transformed to a database query based on the resource it tries to access. Node.js is built on Chrome’s JavaScript runtime\footnote{https://code.google.com/p/v8/} engine. It’s a relatively new and unproven platform, but has gained a lot of hype in the computer science community for its lightweight and efficient model. This comes from the even-driven and non-blocking I/O model. Per default, an instance of node runs in a single thread and does not utilize other CPU cores. When programming you need to avoid long, blocking computations as this will block the node process for handling new incoming requests. Our back-end uses non-blocking I/O calls when accessing the database and does minimal computation elsewhere. 
+The back-end is the middleware between the clients and the data layer and is written in Node.js\cite{node.js} It exposes a \ac{REST}\footnote{http://www.ibm.com/developerworks/webservices/library/ws-restful/} interface over \ac{HTTP} shown in figue \ref{fig:api} for the client to communicate. A request coming in is transformed to a database query based on the resource (URL) it tries to access. Node.js is a packaged compilation of Googles JavaScript engine\footnote{https://code.google.com/p/v8/} engine. It’s a relatively new (being released in 2009) and unproven platform, but has gained a lot of hype in the computer science community for its lightweight and efficient model. This comes from the even-driven and non-blocking I/O model. Per default, an instance of node runs in a single thread and does not utilize other CPU cores. When programming you need to avoid long, blocking computations as this will block the node process for handling new incoming requests. Our back-end uses non-blocking I/O calls when accessing the database and does minimal computation elsewhere. 
 
 \subsubsection{Routing}
 
