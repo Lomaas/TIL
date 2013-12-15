@@ -49,13 +49,13 @@
 \contentsline {section}{\numberline {5.1}Interfaces}{35}
 \contentsline {subsection}{\numberline {5.1.1}Mockup}{35}
 \contentsline {subsection}{\numberline {5.1.2}Implemented interfaces}{35}
-\contentsline {subsubsection}{\numberline {5.1.2.1}Home page}{36}
-\contentsline {subsection}{\numberline {5.1.3}New match}{37}
-\contentsline {subsection}{\numberline {5.1.4}Match view}{38}
-\contentsline {subsection}{\numberline {5.1.5}New attack}{38}
-\contentsline {subsection}{\numberline {5.1.6}Teams view}{40}
-\contentsline {subsection}{\numberline {5.1.7}Team view}{40}
-\contentsline {subsubsection}{\numberline {5.1.7.1}Player view}{45}
+\contentsline {subsection}{\numberline {5.1.3}Home page}{36}
+\contentsline {subsection}{\numberline {5.1.4}New match}{37}
+\contentsline {subsection}{\numberline {5.1.5}Match view}{38}
+\contentsline {subsection}{\numberline {5.1.6}New attack}{38}
+\contentsline {subsection}{\numberline {5.1.7}Teams view}{40}
+\contentsline {subsection}{\numberline {5.1.8}Team view}{40}
+\contentsline {subsection}{\numberline {5.1.9}Player view}{45}
 \contentsline {section}{\numberline {5.2}Capturing process}{48}
 \contentsline {chapter}{\numberline {6}Evaluation and Results}{51}
 \contentsline {section}{\numberline {6.1}Methods}{51}
