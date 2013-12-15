@@ -35,46 +35,49 @@
 \contentsline {subsection}{\numberline {4.2.2}Facets}{26}
 \contentsline {subsection}{\numberline {4.2.3}Back-end}{27}
 \contentsline {subsubsection}{\numberline {4.2.3.1}Overview}{27}
-\contentsline {subsubsection}{\numberline {4.2.3.2}Routing}{27}
+\contentsline {subsubsection}{\numberline {4.2.3.2}Routing}{28}
 \contentsline {subsubsection}{\numberline {4.2.3.3}API}{28}
-\contentsline {subsection}{\numberline {4.2.4}Front-end}{28}
-\contentsline {subsubsection}{\numberline {4.2.4.1}Models}{29}
-\contentsline {subsubsection}{\numberline {4.2.4.2}Collections}{30}
+\contentsline {subsection}{\numberline {4.2.4}Clients}{29}
+\contentsline {subsubsection}{\numberline {4.2.4.1}Models}{30}
+\contentsline {subsubsection}{\numberline {4.2.4.2}Collections}{31}
 \contentsline {subsubsection}{\numberline {4.2.4.3}Presenters}{31}
 \contentsline {subsubsection}{\numberline {4.2.4.4}Views}{31}
 \contentsline {subsubsection}{\numberline {4.2.4.5}Router}{33}
-\contentsline {subsection}{\numberline {4.2.5}Building the database – players and teams}{33}
-\contentsline {subsection}{\numberline {4.2.6}Security}{33}
+\contentsline {subsection}{\numberline {4.2.5}Building the database, players and teams}{33}
+\contentsline {subsection}{\numberline {4.2.6}Security}{34}
 \contentsline {chapter}{\numberline {5}Demo}{35}
 \contentsline {section}{\numberline {5.1}Interfaces}{35}
 \contentsline {subsection}{\numberline {5.1.1}Mockup}{35}
 \contentsline {subsection}{\numberline {5.1.2}Implemented interfaces}{35}
-\contentsline {subsubsection}{\numberline {5.1.2.1}Home page}{35}
-\contentsline {subsubsection}{\numberline {5.1.2.2}Match view}{37}
-\contentsline {subsubsection}{\numberline {5.1.2.3}Team view}{38}
-\contentsline {subsubsection}{\numberline {5.1.2.4}Player view}{38}
-\contentsline {section}{\numberline {5.2}Capturing process}{39}
-\contentsline {chapter}{\numberline {6}Evaluation and Results}{49}
-\contentsline {section}{\numberline {6.1}Methods}{49}
-\contentsline {subsection}{\numberline {6.1.1}User Survey}{49}
-\contentsline {subsection}{\numberline {6.1.2}UI Performance}{49}
-\contentsline {subsection}{\numberline {6.1.3}Compatibility}{50}
-\contentsline {section}{\numberline {6.2}Experiments and Results}{50}
-\contentsline {subsection}{\numberline {6.2.1}Database size}{51}
-\contentsline {subsection}{\numberline {6.2.2}Test data}{51}
-\contentsline {subsection}{\numberline {6.2.3}SAT as a tool for opponent analytic}{51}
-\contentsline {subsection}{\numberline {6.2.4}SAT as a tool for identifying key players}{52}
-\contentsline {subsection}{\numberline {6.2.5}User servey comments}{53}
-\contentsline {subsection}{\numberline {6.2.6}UI-performance}{53}
-\contentsline {subsection}{\numberline {6.2.7}Compatibility}{55}
-\contentsline {section}{\numberline {6.3}Discussion}{56}
-\contentsline {subsection}{\numberline {6.3.1}Input}{56}
-\contentsline {subsection}{\numberline {6.3.2}Accuracy}{56}
-\contentsline {subsection}{\numberline {6.3.3}Domain model}{57}
-\contentsline {subsection}{\numberline {6.3.4}UI Performance}{57}
-\contentsline {subsection}{\numberline {6.3.5}Usability}{58}
-\contentsline {chapter}{\numberline {7}Conclusion}{59}
-\contentsline {section}{\numberline {7.1}Achievements}{59}
-\contentsline {section}{\numberline {7.2}Concluding Remarks}{60}
-\contentsline {section}{\numberline {7.3}Future Work}{60}
-\contentsline {chapter}{References}{61}
+\contentsline {subsubsection}{\numberline {5.1.2.1}Home page}{36}
+\contentsline {subsection}{\numberline {5.1.3}New match}{37}
+\contentsline {subsection}{\numberline {5.1.4}Match view}{38}
+\contentsline {subsection}{\numberline {5.1.5}New attack}{38}
+\contentsline {subsection}{\numberline {5.1.6}Teams view}{40}
+\contentsline {subsection}{\numberline {5.1.7}Team view}{40}
+\contentsline {subsubsection}{\numberline {5.1.7.1}Player view}{45}
+\contentsline {section}{\numberline {5.2}Capturing process}{48}
+\contentsline {chapter}{\numberline {6}Evaluation and Results}{51}
+\contentsline {section}{\numberline {6.1}Methods}{51}
+\contentsline {subsection}{\numberline {6.1.1}User Survey}{51}
+\contentsline {subsection}{\numberline {6.1.2}UI Performance}{51}
+\contentsline {subsection}{\numberline {6.1.3}Compatibility}{52}
+\contentsline {section}{\numberline {6.2}Experiments and Results}{52}
+\contentsline {subsection}{\numberline {6.2.1}Database size}{53}
+\contentsline {subsection}{\numberline {6.2.2}Test data}{53}
+\contentsline {subsection}{\numberline {6.2.3}SAT as a tool for opponent analytic}{53}
+\contentsline {subsection}{\numberline {6.2.4}SAT as a tool for identifying key players}{55}
+\contentsline {subsection}{\numberline {6.2.5}User servey comments}{55}
+\contentsline {subsection}{\numberline {6.2.6}UI-performance}{55}
+\contentsline {subsection}{\numberline {6.2.7}Compatibility}{57}
+\contentsline {section}{\numberline {6.3}Discussion}{58}
+\contentsline {subsection}{\numberline {6.3.1}Input}{58}
+\contentsline {subsection}{\numberline {6.3.2}Accuracy}{58}
+\contentsline {subsection}{\numberline {6.3.3}Domain model}{59}
+\contentsline {subsection}{\numberline {6.3.4}UI Performance}{59}
+\contentsline {subsection}{\numberline {6.3.5}Usability}{60}
+\contentsline {chapter}{\numberline {7}Conclusion}{61}
+\contentsline {section}{\numberline {7.1}Achievements}{61}
+\contentsline {section}{\numberline {7.2}Concluding Remarks}{62}
+\contentsline {section}{\numberline {7.3}Future Work}{63}
+\contentsline {chapter}{References}{63}

@@ -17,9 +17,9 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Final pitch dividing. More zones have been added to the penalty box area than the initially design. }}{24}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Software stack}}{25}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Overview of the web servers API}}{29}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Architecture of the client side. The numerating is used to reference different behavior}}{30}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Shows how the passing statistic is illustrated on the client by using Highcharts.js}}{32}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Illustrations of which zones the team has finished their attacks from in percent. Team – \ac {TIL}}}{32}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Architecture of the client side. Numeration is used to reference different behavior in the text}}{30}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Shows how the passing statistic is illustrated on the client by using Highcharts.js.}}{32}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Shows which zones the \ac {TIL} has finished their attacks from in percent.}}{32}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces A mockup of the main analytic page}}{36}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces All matches registrated in the database are listed on this page. Image is cropped not listing all matches.}}{37}
@@ -27,19 +27,19 @@
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Interface listing up all attacks for a match.}}{38}
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Interface for register an attack.}}{39}
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Interface listing all teams.}}{40}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Main interface for information about opponents - key aspects.}}{41}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Main interface for information about opponents - offensive play.}}{42}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Main interface for information about opponents - defensive play.}}{43}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces All players are listed below the team analytic page. Clicking on a player brings you to the player view.}}{44}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Player view highlighting individual statistics}}{45}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Player view highlighting individual statistics}}{46}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces VGLive.no writes about events in the match. Attempts on goal are tagged with an icon. In the screenshot minute 32 and minute 38 has this icon.}}{47}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Main interface for information about opponents - key aspects.}}{42}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Main interface for information about opponents - offensive play.}}{43}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Main interface for information about opponents - defensive play.}}{44}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces All players are listed below the team analytic page. Clicking on a player brings you to the player view.}}{45}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Player view highlighting individual statistics}}{46}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Player view highlighting individual statistics}}{47}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces VGLive.no writes about events in the match. Attempts on goal are tagged with an icon. In the screenshot minute 32 and minute 38 has this icon.}}{49}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Table with the size of each index and the total size of all indexes}}{51}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Matches that have been captured and persisted into the database}}{52}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces SAT as a tool for opponent analytic. Experts answers varying from neutral to strongly agree.}}{53}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces SAT as a tool for identifying key players. Experts answers varying from neutral to strongly agree.}}{54}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces User servey comments}}{54}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces UI Performance test results. }}{55}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Compatibility test by running the web page in different browsers. Screenshot from powermapper.com free trial version}}{56}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Table with the size of each index and the total size of all indexes}}{53}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Matches that have been captured and persisted into the database}}{54}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces SAT as a tool for opponent analytic. Experts answers varying from neutral to strongly agree.}}{54}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces SAT as a tool for identifying key players. Experts answers varying from neutral to strongly agree.}}{56}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces User servey comments}}{56}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces UI Performance test results. }}{57}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Compatibility test by running the web page in different browsers. Screenshot from powermapper.com free trial version}}{58}
 \addvspace {10\p@ }

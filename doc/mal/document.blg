@@ -4,45 +4,45 @@ The top-level auxiliary file: document.aux
 The style file: plain.bst
 Database file #1: readlist.bib
 Warning--empty journal in muithu
-You've used 14 entries,
+You've used 15 entries,
             2118 wiz_defined-function locations,
-            576 strings with 6180 characters,
-and the built_in function-call counts, 3839 in all, are:
-= -- 348
-> -- 194
+            580 strings with 6237 characters,
+and the built_in function-call counts, 4054 in all, are:
+= -- 367
+> -- 201
 < -- 2
-+ -- 79
-- -- 64
-* -- 225
-:= -- 660
-add.period$ -- 39
-call.type$ -- 14
-change.case$ -- 73
++ -- 82
+- -- 66
+* -- 233
+:= -- 698
+add.period$ -- 42
+call.type$ -- 15
+change.case$ -- 76
 chr.to.int$ -- 0
-cite$ -- 15
-duplicate$ -- 142
-empty$ -- 319
-format.name$ -- 64
-if$ -- 797
+cite$ -- 16
+duplicate$ -- 154
+empty$ -- 341
+format.name$ -- 66
+if$ -- 843
 int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 9
-newline$ -- 70
-num.names$ -- 28
-pop$ -- 109
+int.to.str$ -- 15
+missing$ -- 11
+newline$ -- 75
+num.names$ -- 30
+pop$ -- 117
 preamble$ -- 1
-purify$ -- 60
+purify$ -- 63
 quote$ -- 0
-skip$ -- 114
+skip$ -- 120
 stack$ -- 0
-substring$ -- 130
-swap$ -- 24
+substring$ -- 135
+swap$ -- 25
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 54
+type$ -- 56
 warning$ -- 1
-while$ -- 33
-width$ -- 16
-write$ -- 139
+while$ -- 35
+width$ -- 17
+write$ -- 149
 (There was 1 warning)

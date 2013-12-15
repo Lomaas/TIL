@@ -1,21 +1,25 @@
 This chapter presents our achievements, gives some concluding remarks and outlines possible future work.
 
 \section{Achievements}
-In this project, we develop and evaluate a system for capturing, persisting and presenting information in the field of soccer opponent analysis. Particularly we have focused on identifying key players in the opponent team. The problem definition is as follow:
+In this project, we develop and evaluate a system for capturing, persisting and presenting information in the field of soccer opponent analysis. The problem definition is as follow:
 
 \textit{This project will develop a system complementing the Muithu and Bagadus systems. Focus will be on soccer opponent analytics, where a data repository needs to be developed capturing important events relevant for this type of analytics. Especially we want to identify the key players offensive in a team. A user interface component presenting the core information about the opponent should also be developed and evaluated.}
 
 In the requirement specification we stated what we wanted from the system; a complementary opponent analytic system that among other things identifies key players in the offensive play of a soccer team. We wanted to be able to see where on the field the key players contribute. Including to this we wanted an interface for capturing events for soccer opponent analytic and estimate how long the process of capturing these events would take. Lastly, we needed to figure out what to capture from matches.
 
-In the process we have been collaborating with \ac{TIL} to develop a domain model for our system resulting in several rounds of discussions before settling. Some prototyping was done to illustrate different type of statistics the system could provide. 
+In the process we have been collaborating with \ac{TIL} to develop a domain model for our system resulting in several rounds of discussions before settling. Some prototyping was done to illustrate different type of statistics the system could provide. In the end, we have built an interface for capturing attacks, a back-end exposing an API for storing and querying the data captured and an interface presenting this information.
 
-In order to evaluate the system user serverys was conducted with \ac{TIL} and other experts in the domain of soccer. These assessors has been testing the system with real data from total 12 games where \ac{TIL} and {\SIF} have been involved. Assessors where asked to state how much they agree with different statements on a Likert-scale. From the evaluation results we can conclude that the assessors view the Soccer Analytic Tool as a good system for providing information about soccer opponents. The assessors would have the system rather not having it. Expert assessors ratings variated from neutral to strongly agree on the system as a opponent analytic tool. 
+In order to evaluate the system, user serverys was conducted with \ac{TIL} and other experts in the domain of soccer. These assessors has been testing the system with real data from total 12 games where \ac{TIL} and {\SIF} have been involved. Assessors where asked to state how much they agree with different statements on a Likert-scale. From the evaluation results we can conclude that the assessors view the Soccer Analytic Tool as a tool able to provide useful information about soccer opponents, and especially to identify key players in the opponent team. The assessors would have the system rather than not having it. Expert assessors ratings variated from neutral to strongly agree for both statements.
 
-When gathering test data we found out that a typical match takes around 45 minutes to capture with the current interface. We suggested that implementing a complementary interface for selecting players would decrease the time with 20 minutes.
+When gathering test data we found out that a typical match takes around 45 minutes to capture with the current interface. We suggested that implementing a complementary interface for selecting players would decrease the time with 20 minutes. We also found out that the process of capturing attacks can be a bit of a hassle. A good video feed of the match with a high resolution would help in identifying players.
 
 \section{Concluding Remarks}
 
-Building a system for soccer is complex task. There are many different terms in the field making it hard to make a vocabulary for your system. Soccer experts also values information differently and can figure out completely different things from the same statistic. 
+Through the evaluation we can say that we accomplished to build a soccer opponent analytic tool. We would have liked more participants in the evaluation to be surer about the evaluation results. The assessors was however positive to the system.
+
+Building a system for soccer is complex task. There are many different terms in the field making it hard to make a vocabulary for your system. In our system we decided to go for \ac{TIL}s terminology (in Norwegian) to avoid misunderstandings. 
+
+As a final remark we can say that using Node.js and Elasticsearch have been a joy, taking into consideration that both is relatively new platforms and technologies. 
 
 \section{Future Work}
 
@@ -34,6 +38,8 @@ There is still many possible queries than can be done on the data gathered. Exam
 Giving the end users the possibility to see statistics for two teams at the same time. The statistic for one team itself might not be so interesting if you don't have something to compare it to. Graphical components in the system could have had a way to select a team to compare with.
 
 Another feature would be a team versus team page where two teams are compared up to each other.
+
+
 
 
 

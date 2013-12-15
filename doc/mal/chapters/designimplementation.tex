@@ -86,21 +86,23 @@ Another solution would be to store only attacks for both teams in a separate mat
 \subsection{Back-end}
 
 \subsubsection{Overview}	
-The back-end is the middleware between the clients and the data layer and is written in Node.js\cite{node.js} It exposes a \ac{REST}\footnote{http://www.ibm.com/developerworks/webservices/library/ws-restful/} interface over \ac{HTTP} shown in figue \ref{fig:api} for the client to communicate. A request coming in is transformed to a database query based on the resource (URL) it tries to access. Node.js is a packaged compilation of Googles JavaScript engine\footnote{https://code.google.com/p/v8/} engine. It’s a relatively new (being released in 2009) and unproven platform, but has gained a lot of hype in the computer science community for its lightweight and efficient model. This comes from the even-driven and non-blocking I/O model. Per default, an instance of node runs in a single thread and does not utilize other CPU cores. When programming you need to avoid long, blocking computations as this will block the node process for handling new incoming requests. Our back-end uses non-blocking I/O calls when accessing the database and does minimal computation elsewhere. 
+The back-end is the middleware between the clients and the data layer and is written in Node.js\cite{node.js} It exposes a \ac{REST}\footnote{http://www.ibm.com/developerworks/webservices/library/ws-restful/} interface over \ac{HTTP} shown in figue \ref{fig:api} for the client to communicate. A request coming in is transformed to a database query based on the resource (URL) it tries to access. Node.js is a packaged compilation of Googles JavaScript engine\footnote{https://code.google.com/p/v8/} engine. It’s a relatively new (being released in 2009) and unproven platform, but has gained a lot of hype in the computer science community for its lightweight and efficient model. This comes from the even-driven and non-blocking I/O model. Per default, an instance of node runs in a single thread and does not utilize other CPU cores. When writing a web server with Node.js, you need to avoid long, blocking computations as this will block the node process for handling new incoming requests. Our back-end uses non-blocking I/O calls when accessing the database to avoid this issue.
+
+The back-end takes use of several node packages\footnote{https://npmjs.org/}, including the Express framework, which is a web framework. Communication between the clients and back-end is in JSON\footnote{http://json.org/} format.
 
 \subsubsection{Routing}
 
-The back-end code is structured up in modules. Requests on the URL /players is routed to the Player module for handling. Similar, you have an attack module, pass module, team module, player module and a match module. A very often used URL is /team/:name. A \ac{HTTP} GET on this URL will be routed to the team module where a query for information about the specified team is run. On answer from the database, the result is transformed before returning it to the client. 
+The web server code is structured up in modules. For example requests on the URL /players is routed to the Player module for further handling. Similar, you have an attack module, pass module, team module, player module and a match module. A very often used URL is /team/:name. A \ac{HTTP} GET on this URL will be routed to the team module where a query for information about the specified team is run. On answer from the database, the result is transformed before returning it to the client. 
 
-Similar, if the client sends new data for a match the server will insert the data into the appropriate indexes. The server will respond will HTTP status code 201 if all goes well or 400 on an error. The server uses \ac{HTTP} code actively to tell the client the result of requests. For all \ac{HTTP} POST requests the server will send status code 201, meaning that a new resource is created. For \ac{HTTP} GET requests the server responds as normal with status code 200, if all went well. 
+Similar, if the client sends new data for a match the server will insert the data into the appropriate indexes. The server will respond will HTTP status code 201 if all goes well or 400 on an error. The server uses \ac{HTTP} code actively to tell the client the result of a request. For all \ac{HTTP} POST requests the server will send status code 201, meaning that a new resource is created. For \ac{HTTP} GET requests the server responds as normal with status code 200, if all went well. 
 
 No URL route uses \ac{HTTP} PUT and DELETE methods. These methods could have been used for deleting or updating attacks or passes. Typically, an operator will do a mistake while capturing new attacks. 
 
-In principle, since the data input is generated in the web browser (with JavaScript), it could have been inserted right away into the database without going through an extra middleware. However, this limits us, as we can’t combine multiple queries by going through the back-end. Cleaning of data before serving to the client would neither be possible. Normally, you also do validation of the data at the back-end before inserting into your database.
+In principle, since the data input is generated in the web browser (with JavaScript), it could have been inserted right away into the database because of Elasticsearch \ac{CRUD} API\footnote{http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/docs.html}.  Having the server API we can hide details from the client as combining multiple queries, joining and cleaning of data. Normally, you validation of the data at the back-end is done before inserting into to the database. The client also needs to get the client code from somewhere.
 
 \subsubsection{API}
 
-The \ac{API} of the web server is listed in figure \ref{fig:api}. As mentioned the \ac{API} follows the \ac{REST} principles. Optimal, routes like /teams/:name/finalthird should not be needed as all statistics could have been returned when getting team statistics. 
+The \ac{API} of the web server is listed in figure \ref{fig:api}. As mentioned the \ac{API} follows the basic \ac{REST} principles using the URL as a resource identifier and HTTP methods like GET and DELETE to specify actions to be taken on the resource.
 
 \begin{figure}[ht!]
 \centering
@@ -109,9 +111,9 @@ The \ac{API} of the web server is listed in figure \ref{fig:api}. As mentioned t
 \label{fig:api}
 \end{figure}
 
-\subsection{Front-end}
+\subsection{Clients}
 
-The front end is a \ac{SPA} \cite{} using Backbone.js\footnotemark as under-supporting library. This means that not every code is necessary loaded at once (\ac{HTML}, \ac{CSS} and JavaScript), but when needed. Also the whole page does not reload when users navigate around, only parts of it will be updated. This is all possible because of \ac{AJAX}. \ac{AJAX} is way for JavaScript running in a browser to make HTTP requests to back-end web servers. It’s asynchronously, meaning that the web page is still responsive and navigable during the request\cite{ajax}.
+The front end is a \ac{SPA} using Backbone.js\footnotemark as under-supporting library. This means that not every code is necessary loaded at once (\ac{HTML}, \ac{CSS} and JavaScript), but when needed. Also the whole page does not reload when users navigate around, only parts of it will be updated. This is all possible because of \ac{AJAX}, a way for JavaScript running in a browser to make HTTP requests to back-end web servers. It’s asynchronously, meaning that the web page is still responsive and navigable during the request\cite{ajax}.
 
 Backbone uses a \ac{MVP} model to structure the code. With Backbone your views will update automatic when data changes. You use Backbones models and presenters (called views in the documentation of Backbone) by letting your own models and presenters inherit Backbones basic classes. Figure \ref{fig:backbone_architecture} shows how the overall architecture of the front-end. In the following sections the architecture of the client and how different concepts is used will be described. 
 
@@ -120,13 +122,13 @@ Backbone uses a \ac{MVP} model to structure the code. With Backbone your views w
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=1\textwidth]{images/architecture/backbone_architecture.png}
-\caption{Architecture of the client side. The numerating is used to reference different behavior}
+\caption{Architecture of the client side. Numeration is used to reference different behavior in the text}
 \label{fig:backbone_architecture}
 \end{figure}
 
 \subsubsection{Models}
 
-In Backbone you handle data and communication with the back-end with objects called models. A model has mainly two responsibilities; whenever an update on a models data occurs the model notifies the presenters that have subscribed for update events for that particular model (4). The second is that models are responsible for \ac{AJAX} communication with the back-end (3). An example is when a user registers a new attack for a match. He fills out a form and press the submit button (1). Then a new attack model is created. Calling save on the instance of the model will send an \ac{AJAX} post request to the server with the models data in the \ac{HTTP} body (3).
+In Backbone you encapsulate data and do communication with the back-end with objects called models. A model has mainly two responsibilities; whenever an update on a models data occurs the model notifies the presenters that have subscribed for update events for that particular model (4). The second is that models are responsible for \ac{AJAX} communication with the back-end (3). An example is when a user registers a new attack for a match. He fills out a form and press the submit button (1). Then a new attack model containing the data type in the form. Calling save on the  model will send an \ac{AJAX} post request to the server with the models data in the \ac{HTTP} body (3).
 
 Similar to an attack model we have player model that handles everything around players. When you click yourself into a players profile the model will fetch statistics from the back-end, notify the presenter that the data is ready, and the \ac{HTML} will be rendered in the web browser.
 
@@ -137,49 +139,49 @@ Collections are a set of models. It has almost the same functionality as a model
 
 \subsubsection{Presenters}
 
-Presenters are the glue between the Backbone models and the view (web page).  Presenters can bind own functions to respond to models events. For example on data change event from a model the presenter will call its render function and the \ac{UI} will updated (4). Each presenter has a own \ac{HTML} div tag which he renders to. Including to subscribing to events on models the presenter can subscribe for view events that happens in the\ac{DOM}, events that the user triggers (1). Following up the example in the previous section on an attack registration. When a user press the submit button the presenter will be notified. He will create a model for the attack and calling the save method on the instance object. 
+Presenters are the glue between the Backbone models and the view (web page).  Presenters can bind own functions to respond to models events. For example on data change event from a model the presenter will call its render function and the \ac{UI} will be updated (4). Each presenter has a own \ac{HTML} div tag which it inserts HTML to. Including to subscribing to events on models, the presenter can subscribe for view events that happens in the \ac{DOM}, events that the user triggers (1). Following up the example in the previous section, on an attack registration. When a user press the submit button the presenter will be notified. He will create a model for the attack and call the save method on the instance object. 
 
-On initialization of a presenter object it is initialized with a model or a collection depending on the view it should render.  After the model has fetched its data the presenters render function will be called. This is where the data is inserted into the \ref{HTML} template explained in more details in the following sections.
+On initialization of a presenter object it is initialized with a model or a collection depending on the view it should render.  After the model/collection has fetched its data the presenters render function will be called. This is where the data is inserted into the \ac{HTML} template (5) explained in more details in the next sections.
 
 \subsubsection{Views}
 
-For an analytic toolkit to be useful a good presentation is critical. Here several helper libraries are used to present the data. Highcharts.js\footnotemark is a JavaScript library for illustrating graphs. A query on team generates a lot of statistics and rather than listing them up they are presented using charts. Using charts gives us the advantage of displaying several numbers for each player by plotting it in the same graph. In figure \ref{fig:chart} the number of times a player has been involved in all attacks, the number of passes into the final third of the pitch and the number of times a player has been the breakthrough-player is shown.
+For an analytic toolkit to be useful a good presentation is critical. Here several helper libraries are used to present the data. Highcharts.js\footnotemark is a JavaScript library for illustrating statistics. A query on team generates a lot of statistics and rather than listing them up they are presented using charts. Using charts gives us the advantage of displaying several numbers for each player by plotting it in the same graph. In figure \ref{fig:chart} the number of times a player has been involved in all attacks, the number of passes into the final third of the pitch and the number of times a player has been the breakthrough-player is shown.
 
 \footnotetext{http://www.highcharts.com/}
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=100mm]{images/general/chart_passes.png}
-\caption{Shows how the passing statistic is illustrated on the client by using Highcharts.js}
+\caption{Shows how the passing statistic is illustrated on the client by using Highcharts.js.}
 \label{fig:chart}
 \end{figure}
 
-Positional data is created using the new feature of HTML5, canvas element. It lets you draw graphics on the fly in the web page. In this system it is used to create an element that symbol the different zones in our domain model. The team model will fetch data from the back-end containing numbers for all zones that symbols shots taken from that zone. This is then plotted into the respective zones as figure \ref{fig:attacking_zones} is showing.
+To display statistics as where attacks have been finished from we are using the \ac{HTML} canvas element. It lets you draw graphics on the fly in the web page. In this system it is used to create an element that symbols the different zones in our domain model by drawing a soccer pitch with the all the zones plotted. The team model will fetch data from the back-end containing numbers for all zones. This is then plotted into the respective zones on the pitch as figure \ref{fig:attacking_zones} is showing.
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=85mm]{images/general/finishing_zones.png}
-\caption{Illustrations of which zones the team has finished their attacks from in percent. Team – \ac{TIL}}
+\caption{Shows which zones the \ac{TIL} has finished their attacks from in percent.}
 \label{fig:attacking_zones}
 \end{figure}
 
-Backbone comes with a library Underscore.js\footnotemark that makes creating HTML pages with dynamic content easily. When you are rendering new content on the site you can insert data retried from a model dynamically into the HTML. In the example below the input is a an array of objects where each element in the array contains a key value pair 'name' : value. The HTML output of this will be a list of names.
+Backbone comes with a library Underscore.js\footnotemark that makes creating HTML pages with dynamic content easy. When you are rendering new content on the site you can insert data retried from a model dynamically into the HTML. This is the presenters responsibility (5). In the example below the input is a an array of objects where each element in the array contains a key value pair 'name' : value. The HTML output of this will be a list of all player names in the array. 
 
 \lstinputlisting{underscore_example.html}
 \footnotetext{http://underscorejs.org/}
 
 \subsubsection{Router}
 
-A component not mentioned before is the router. The router is the glue that binds all the other Backbone modules together. It handles the navigation between pages in the application. When users navigate on the page by clicking on links or buttons in a traditional web page the back-end serves a new HTML page. Here, a router module handles this click event. The router model examines the URL request and routes the request to the presenter responsible for that specific route. This is mapped inside the router. The presenter will then call fetch functions on the model to get data from the back-end and render the HTML.
+A component not mentioned before is the router. The router is the glue that binds all the other Backbone modules together. It handles the navigation between pages in the application. When users navigate on the page by clicking on links or buttons in a traditional web page the back-end serves a new HTML page. Here, a router module handles this click event. The router model examines the URL request and routes the request to the presenter responsible for that specific route. This is mapped inside the router. The presenter will then call fetch functions on the model to get data from the back-end and render the HTML to its assigned DIV.
 
-In the page the header is static and will only be rendered once when the user first visits the web page. 
+The header on the page is static and will only be rendered once when the user first visits the web page. 
 
-\subsection{Building the database – players and teams}
+\subsection{Building the database, players and teams}
 
 Finding squads in a useful format like \ac{XML} or \ac{JSON} was harder than expected. On the Norwegian football alliance's website you could download the squads for the current season, but only in PDF format. Current squads is fetched from altomfotball.no, a website by the Norwegian broadcasting company TV2. The fetching process is an own python script meant to run only once to set up the database. For each team the script basically reads the HTML document with all players listed, parse out players name, and sends in to the web server.
 
 \subsection{Security}
-Security is not taken into concern. This means anyone getting into the page can post new match data and add attacks. This could have been fixed by requiring a login before getting access to the site. 
+Security is not taken into concern in the system. This means anyone getting into the page can post new match data and add attacks. This could have been fixed by requiring a login before getting access to the site. 
 
 
 
