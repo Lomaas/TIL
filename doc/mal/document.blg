@@ -3,46 +3,48 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: document.aux
 The style file: plain.bst
 Database file #1: readlist.bib
+Warning--entry type for "SPA" isn't style-file defined
+--line 12 of file readlist.bib
 Warning--empty journal in muithu
-You've used 15 entries,
+You've used 16 entries,
             2118 wiz_defined-function locations,
-            580 strings with 6237 characters,
-and the built_in function-call counts, 4054 in all, are:
-= -- 367
-> -- 201
+            584 strings with 6306 characters,
+and the built_in function-call counts, 4249 in all, are:
+= -- 383
+> -- 208
 < -- 2
-+ -- 82
-- -- 66
-* -- 233
-:= -- 698
-add.period$ -- 42
-call.type$ -- 15
-change.case$ -- 76
++ -- 86
+- -- 68
+* -- 238
+:= -- 729
+add.period$ -- 44
+call.type$ -- 16
+change.case$ -- 80
 chr.to.int$ -- 0
-cite$ -- 16
-duplicate$ -- 154
-empty$ -- 341
-format.name$ -- 66
-if$ -- 843
+cite$ -- 17
+duplicate$ -- 161
+empty$ -- 363
+format.name$ -- 68
+if$ -- 885
 int.to.chr$ -- 0
-int.to.str$ -- 15
+int.to.str$ -- 16
 missing$ -- 11
-newline$ -- 75
-num.names$ -- 30
-pop$ -- 117
+newline$ -- 79
+num.names$ -- 32
+pop$ -- 125
 preamble$ -- 1
-purify$ -- 63
+purify$ -- 66
 quote$ -- 0
-skip$ -- 120
+skip$ -- 130
 stack$ -- 0
-substring$ -- 135
-swap$ -- 25
+substring$ -- 141
+swap$ -- 26
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 56
+type$ -- 60
 warning$ -- 1
-while$ -- 35
-width$ -- 17
-write$ -- 149
-(There was 1 warning)
+while$ -- 37
+width$ -- 18
+write$ -- 156
+(There were 2 warnings)

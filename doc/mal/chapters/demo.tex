@@ -9,7 +9,7 @@
 \label{fig:mockup}
 \end{figure}
 
-Figure \ref{fig:mockup} shows a mockup of the team analysis page that was created before starting developing. There are two main sections in the mockup: team statistics and key players. This mockup was used as the base for which type of statistics the team analytic page should give and was worked out in collaboration with \ac{TIL}.
+Figure \ref{fig:mockup} shows a mockup of the team analytic page that was created before starting developing. There are two main sections in the mockup: team statistics and key players. This mockup was used as the base for which type of statistics the team analytic page should give and was worked out in collaboration with \ac{TIL}.
 
 In the team statistics section, types of attack (counter attack, long attack etc.) is illustrated in a graph, there is an overview of different breakthroughs, basic statistics like key players, number of attacks, average possession is listed, and a plotting of which zones attacks are started from.
 
@@ -54,7 +54,7 @@ Clicking New match sends you to match register interface shown in figure \ref{fi
 Clicking on a match gives you overview of all attacks registered for that particular game shown in figure \ref{fig:all_attacks}. This view is only meant for quality checking the data.
 
 \subsection{New attack}
-From the match page you can add new attack attempts. Figure \ref{fig:reg_attack} shows the form. Attack start, attack end, breakthrough player, time and team needs to be filled out. Extra passes in the attack are added by pressing new pass. This will add a new pass to the form. Passes can be deleted by clicking the red remove pass button.
+From the match page you can add new attack attempts. Figure \ref{fig:reg_attack} shows the form for this. Attack start, attack end, breakthrough player, time and team needs to be filled out. Extra passes in the attack are added by pressing new pass. This will add a new pass to the form. Passes can be deleted by clicking the red remove pass button.
 
 \begin{figure}[H]
 \centering
@@ -64,8 +64,7 @@ From the match page you can add new attack attempts. Figure \ref{fig:reg_attack}
 \end{figure}
 
 \subsection{Teams view}
-
-Then you have the team selection page shown in figure \ref{fig:all_teams}. You navigate to this by pressing the tab at the top of the page. This is a simple layout listing all the teams in the Norwegian premier league. From here you select the team you want to analyze.
+Then you have the team selection page shown in figure \ref{fig:all_teams}. You navigate to this by pressing the tab ''Teams'' at the top of the page. This is a simple layout listing all the teams in the Norwegian premier league. From here you select the team you want to analyze.
 
 \begin{figure}[H]
 \centering
@@ -76,7 +75,7 @@ Then you have the team selection page shown in figure \ref{fig:all_teams}. You n
 
 \subsection{Team view}
 
-Then there is the main view used for analyzing a team, showed in figure \ref{fig:team_analysis1}, figure \ref{fig:team_analysis2} and figure \ref{fig:team_analysis3}. The page design is not exactly the same as the mockup. This comes from a various things. A description of different breakthroughs has been added to enlighten users of the system. Users of the system may or may not have been involved in the process of capturing the data and therefor-extra information is needed to clarify concepts. In the mockup key players where highlighted. In the final view various statistics is presented to the user and he can then click on players he find interesting to know more about as shown in figure \ref{fig:team_analysis4}. The whole page is divided into 4 sections; key aspects, offensive play, defensive play and players.
+Then there is the main view used for analyzing a team, showed in figure \ref{fig:team_analysis1}, figure \ref{fig:team_analysis2} and figure \ref{fig:team_analysis3}. The page design is not exactly the same as the mockup. This comes from a various things. A description of different breakthroughs has been added to enlighten users of the system. Users of the system may or may not have been involved in the process of capturing the data and therefor-extra information is needed to clarify concepts. In the mockup, key players where highlighted. In the final view various statistics is presented to the user and he can then click on players he find interesting to know more about as shown in figure \ref{fig:team_analysis4}. The whole page is divided into 4 sections; key aspects, offensive play, defensive play and players.
 
 \begin{figure}[H]
 \centering
@@ -129,7 +128,7 @@ Clicking on a player brings you to the player view shown in figure \ref{fig:play
 \section{Capturing process}
 \label{sec:capprocess}
 
-As mentioned, the process of capturing data is manually. In the beginning it took up to 1 hour to capture all attacks for a match. When you get used to the interface and is able to quickly identify players the time used went down 15-20 minutes. Where most of the time went was getting the players id by looking up in the database manually. To speed up the capturing process the starting 11 names and their corresponding ID where written down with the formation the team plays in to a piece of paper before starting. This also helps identifying players, which can be a bit of a hassle. Match videos came in the resolution 640 * 360 pixels, which is not very good. In addition, on some stadiums there is a running track around the pitch meaning that the grand stands and the main camera is located further away from the pitch. It makes it even harder to identify players on the opposite side of the where the camera is. Having the formation of the team on a paper helps you to identify the players.
+As mentioned, the process of capturing data is manually. In the beginning it took up to 1 hour to capture all attacks for a match. When you get used to the interface and is able to quickly identify players the time used went down 15-20 minutes. Where most of the time went was getting the players ID by looking up in the database manually. To speed up the capturing process the starting 11 names and their corresponding ID where written down with the formation the team plays in to a piece of paper before starting. This also helps identifying players, which can be a bit of a hassle. Match videos came in the resolution 640 * 360 pixels, which is not very good. In addition, on some stadiums there is a running track around the pitch meaning that the grand stands and the main camera is located further away from the pitch. It makes it even harder to identify players on the opposite side of the where the camera is. Having the formation of the team on a paper helps a lot in these case.
 
 The process of capturing was as following:
 \begin{enumerate}

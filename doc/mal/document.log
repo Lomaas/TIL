@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.3)  16 DEC 2013 00:18
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.3)  16 DEC 2013 02:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -711,12 +711,10 @@ Missing character: There is no ™ in font cmr12!
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
-Missing character: There is no Ã in font cmr12!
-Missing character: There is no ¸ in font cmr12!
 Package acronym Info: Label `acro:TIL' newly defined as it shall be overridden
-although it is yet undefined on input line 21.
+although it is yet undefined on input line 10.
 
-Underfull \vbox (badness 1303) has occurred while \output is active []
+Underfull \vbox (badness 1655) has occurred while \output is active []
 
  [11])
 \tf@lof=\write7
@@ -771,8 +769,7 @@ File: images/general/optastats.png Graphic file (type png)
 <use images/general/optastats.png>
 Package pdftex.def Info: images/general/optastats.png used on input line 17.
 (pdftex.def)             Requested size: 390.0pt x 88.5729pt.
-Missing character: There is no Ã in font cmr12!
-Missing character: There is no ¸ in font cmr12!
+Package acronym Info: Label `acro:TIL' overridden on input line 26.
 Package acronym Info: Label `acro:ZXY' newly defined as it shall be overridden
 although it is yet undefined on input line 28.
  [6 <./images/general/optastats.png>]
@@ -797,7 +794,6 @@ Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
  [8]
-Package acronym Info: Label `acro:TIL' overridden on input line 73.
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
@@ -852,9 +848,6 @@ Package pdftex.def Info: images/general/fourfourtwo.png used on input line 123.
 Chapter 3.
 (./chapters/requirementspec.tex
 Package acronym Info: Label `acro:TIL' overridden on input line 1.
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no ™ in font cmr12!
  [15
 
 ]
@@ -881,10 +874,6 @@ File: images/requirement/prev_domain_model3.png Graphic file (type png)
 Package pdftex.def Info: images/requirement/prev_domain_model3.png used on inpu
 t line 16.
 (pdftex.def)             Requested size: 390.0pt x 19.56857pt.
-Missing character: There is no Ã in font cmr12!
-Missing character: There is no ¸ in font cmr12!
-Missing character: There is no Ã in font cmr12!
-Missing character: There is no ¸ in font cmr12!
 
 <images/general/different_breakthroughs.png, id=161, 965.6075pt x 254.9525pt>
 File: images/general/different_breakthroughs.png Graphic file (type png)
@@ -909,24 +898,26 @@ File: images/general/second_zones.png Graphic file (type png)
 Package pdftex.def Info: images/general/second_zones.png used on input line 40.
 
 (pdftex.def)             Requested size: 284.52756pt x 198.04233pt.
-
-Underfull \vbox (badness 2326) has occurred while \output is active []
-
+Package acronym Info: Label `acro:UI' newly defined as it shall be overridden
+although it is yet undefined on input line 56.
  [17 <./images/general/different_breakthroughs.png>]
-<images/architecture/conceptual_architecture.png, id=171, 411.939pt x 350.5095p
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18 <./images/general/first_zones.png> <./images/general/second_zones.png (PNG
+ copy)>]
+<images/architecture/conceptual_architecture.png, id=175, 411.939pt x 350.5095p
 t>
 File: images/architecture/conceptual_architecture.png Graphic file (type png)
  <use images/architecture/conceptual_architecture.png>
 Package pdftex.def Info: images/architecture/conceptual_architecture.png used o
-n input line 60.
+n input line 64.
 (pdftex.def)             Requested size: 426.79134pt x 363.14676pt.
 
-Overfull \hbox (36.79134pt too wide) in paragraph at lines 60--61
+Overfull \hbox (36.79134pt too wide) in paragraph at lines 64--65
  [][] 
  []
 
-) [18 <./images/general/first_zones.png> <./images/general/second_zones.png (PN
-G copy)>] [19 <./images/architecture/conceptual_architecture.png>] [20
+) [19 <./images/architecture/conceptual_architecture.png>] [20
 
 ]
 Chapter 4.
@@ -941,11 +932,15 @@ e 7.
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no ™ in font cmr12!
- [21] [22 <./images/architecture/architecture.png>] (./domainmodel.js)
-<images/general/capture_illustration.png, id=193, 525.4029pt x 364.9635pt>
+ [21]
+Package acronym Info: Label `acro:HTTP' newly defined as it shall be overridden
+
+although it is yet undefined on input line 24.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22 <./images/architecture/architecture.png>] (./domainmodel.js [23])
+<images/general/capture_illustration.png, id=197, 525.4029pt x 364.9635pt>
 File: images/general/capture_illustration.png Graphic file (type png)
 
 <use images/general/capture_illustration.png>
@@ -954,9 +949,6 @@ line 35.
 (pdftex.def)             Requested size: 390.0pt x 270.92079pt.
 Package acronym Info: Label `acro:TIL' overridden on input line 40.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [23]
 <images/implementation/software_stack.png, id=198, 746.79pt x 161.60374pt>
 File: images/implementation/software_stack.png Graphic file (type png)
 
@@ -967,88 +959,82 @@ Package pdftex.def Info: images/implementation/software_stack.png used on input
 Package acronym Info: Label `acro:JSON' newly defined as it shall be overridden
 
 although it is yet undefined on input line 52.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [24 <./images/general/capture_illustration.png (PNG copy)>] [25 <./images/impl
 ementation/software_stack.png>]
-[26]
+Underfull \vbox (badness 1365) has occurred while \output is active []
+
+ [26]
 Package acronym Info: Label `acro:REST' newly defined as it shall be overridden
 
-although it is yet undefined on input line 89.
-Package acronym Info: Label `acro:HTTP' newly defined as it shall be overridden
-
-although it is yet undefined on input line 89.
+although it is yet undefined on input line 88.
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
 
-Underfull \vbox (badness 4531) has occurred while \output is active []
-
- [27]
+[27]
 Package acronym Info: Label `acro:CRUD' newly defined as it shall be overridden
 
-although it is yet undefined on input line 101.
+although it is yet undefined on input line 100.
 Package acronym Info: Label `acro:API' newly defined as it shall be overridden
-although it is yet undefined on input line 105.
-
-<images/implementation/API.png, id=212, 745.78625pt x 476.78125pt>
+although it is yet undefined on input line 104.
+ [28] <images/implementation/API.png, id=215, 745.78625pt x 476.78125pt>
 File: images/implementation/API.png Graphic file (type png)
 
 <use images/implementation/API.png>
-Package pdftex.def Info: images/implementation/API.png used on input line 109.
+Package pdftex.def Info: images/implementation/API.png used on input line 108.
 (pdftex.def)             Requested size: 390.0pt x 249.32448pt.
 Package acronym Info: Label `acro:SPA' newly defined as it shall be overridden
-although it is yet undefined on input line 116.
+although it is yet undefined on input line 115.
 Package acronym Info: Label `acro:HTML' newly defined as it shall be overridden
 
-although it is yet undefined on input line 116.
+although it is yet undefined on input line 115.
 Package acronym Info: Label `acro:CSS' newly defined as it shall be overridden
-although it is yet undefined on input line 116.
+although it is yet undefined on input line 115.
 Package acronym Info: Label `acro:AJAX' newly defined as it shall be overridden
 
-although it is yet undefined on input line 116.
+although it is yet undefined on input line 115.
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no ™ in font cmr12!
-
-Underfull \vbox (badness 1910) has occurred while \output is active []
-
- [28]
 Package acronym Info: Label `acro:MVP' newly defined as it shall be overridden
-although it is yet undefined on input line 118.
-
-<images/architecture/backbone_architecture.png, id=216, 469.755pt x 270.2898pt>
+although it is yet undefined on input line 117.
+ [29 <./images/implementation/API.png>]
+<images/architecture/backbone_architecture.png, id=219, 469.755pt x 270.2898pt>
 File: images/architecture/backbone_architecture.png Graphic file (type png)
 <use images/architecture/backbone_architecture.png>
 Package pdftex.def Info: images/architecture/backbone_architecture.png used on 
-input line 124.
+input line 123.
 (pdftex.def)             Requested size: 390.0pt x 224.39821pt.
- [29 <./images/implementation/API.png>] [30 <./images/architecture/backbone_arc
-hitecture.png>]
-Package acronym Info: Label `acro:UI' newly defined as it shall be overridden
-although it is yet undefined on input line 142.
+ [30 <./images/architecture/backbone_architecture.png>]
+Package acronym Info: Label `acro:UI' overridden on input line 141.
 Package acronym Info: Label `acro:DOM' newly defined as it shall be overridden
-although it is yet undefined on input line 142.
-
-<images/general/chart_passes.png, id=224, 1179.40625pt x 510.90875pt>
+although it is yet undefined on input line 141.
+ [31]
+<images/general/chart_passes.png, id=227, 1179.40625pt x 510.90875pt>
 File: images/general/chart_passes.png Graphic file (type png)
 
 <use images/general/chart_passes.png>
-Package pdftex.def Info: images/general/chart_passes.png used on input line 154
+Package pdftex.def Info: images/general/chart_passes.png used on input line 153
 .
 (pdftex.def)             Requested size: 284.52756pt x 123.25206pt.
- [31]
+
 <images/general/finishing_zones.png, id=228, 614.295pt x 416.55624pt>
 File: images/general/finishing_zones.png Graphic file (type png)
 
 <use images/general/finishing_zones.png>
 Package pdftex.def Info: images/general/finishing_zones.png used on input line 
-163.
+162.
 (pdftex.def)             Requested size: 241.84842pt x 164.00081pt.
- [32 <./images/general/chart_passes.png> <./images/general/finishing_zones.png>
-] (./underscore_example.html)
+ (./underscore_example.html [32 <./images/general/chart_passes.png>])
 Package acronym Info: Label `acro:XML' newly defined as it shall be overridden
-although it is yet undefined on input line 181.
- [33])
-[34]
+although it is yet undefined on input line 180.
+
+Underfull \vbox (badness 5711) has occurred while \output is active []
+
+ [33 <./images/general/finishing_zones.png>]) [34]
 Chapter 5.
 (./chapters/demo.tex
 <images/general/mockup.png, id=239, 681.54625pt x 1025.8325pt>
@@ -1283,13 +1269,13 @@ en.
 
 [65]) [66] (./document.aux) ) 
 Here is how much of TeX's memory you used:
- 8883 strings out of 493315
- 123803 string characters out of 6137904
+ 8885 strings out of 493315
+ 123813 string characters out of 6137904
  253714 words of memory out of 5000000
- 12041 multiletter control sequences out of 15000+600000
+ 12043 multiletter control sequences out of 15000+600000
  16782 words of font info for 69 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 40i,18n,45p,3243b,1081s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 40i,18n,45p,3243b,1385s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2013/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publ
@@ -1300,7 +1286,7 @@ onts/cm/cmr8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmsy10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmti12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/
 euler/eufm10.pfb>
-Output written on document.pdf (82 pages, 9681301 bytes).
+Output written on document.pdf (82 pages, 9683986 bytes).
 PDF statistics:
  396 PDF objects out of 1000 (max. 8388607)
  241 compressed objects within 3 object streams

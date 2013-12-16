@@ -146,7 +146,9 @@ In a \ac{SPA} you don't necessary get all the files at once, but when you need t
 
 Several assessors noted that improving the graphical components would increase the overall experience of the system and make the system easier to use. This has not been one of the main focuses during the development of the system. However, from the results of the user servers the system must be to some degree usable in the way of the assessors find the information presented useful. In future work it would be naturally to focus more on usability of the client taking in Human-Computer Interaction in \cite{hci}.
 
+\subsection{Scalability}
 
+Scalability has not been one of the requirements of the system. However, some simple tests were run to see how Elasticsearch handles new nodes joining the cluster. When adding a new node by starting a new instance of Elasticsearch, Elasticsearch started replicating shards to the new host. When setting the number of replicas to two, Elasticsearch started replicating immediately to achieve two replicas per shard, spreading it over different machines. In total 3 machines was up and running with shards. In this very simple test we saw that Elasticsearch can possible scale up by adding more hardware to handle more load, if this should be needed, and that it is configurable to handle your needs. Investigating more into this, checking how new nodes influences the response time, is left as future work.
 
 
 
